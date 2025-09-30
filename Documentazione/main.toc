@@ -1,0 +1,57 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Descrizione del progetto}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Descrizione sintetica del problema}{4}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Diagramma delle Classi}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}UML}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Architettura}{6}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Descrizione dei Package e delle Classi}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Package \textit {Boundary}}{8}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Classe LoginFrame}{8}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Classe HomepageChef}{8}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Classe NuovoCorsoFrame}{8}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Classe CorsiFrame}{8}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Classe SessioniFrame}{9}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Classe InserimentoSessioneFrame}{9}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}Classe RicetteFrame}{9}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.8}Classe NotificheFrame}{9}{subsection.3.1.8}%
+\contentsline {subsection}{\numberline {3.1.9}Classe InvioNotificheFrame}{9}{subsection.3.1.9}%
+\contentsline {subsection}{\numberline {3.1.10}Classe RiepilogoMensileFrame}{9}{subsection.3.1.10}%
+\contentsline {section}{\numberline {3.2}Package \textit {Control}}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Classe Controller}{10}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Package \textit {Entity}}{11}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Classe Chef}{11}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Classe Corso}{11}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Classe Notifica}{11}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Classe Prepara}{11}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Classe Ricetta}{11}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Classe Sessione}{12}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Classe SessioneInPresenza}{12}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Classe SessioneOnline}{12}{subsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.3.9}Classe Topic}{12}{subsection.3.3.9}%
+\contentsline {section}{\numberline {3.4}Package \textit {DaoInterface}}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Package \textit {DAO}}{14}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Classe ChefDAO}{14}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Classe CorsoDAO}{14}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Classe NotificaDAO}{14}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Classe PreparaDAO}{14}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Classe RicettaDAO}{14}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}Classe SessioneOnlineDAO}{15}{subsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.5.7}Classe SessioneInPresenzaDAO}{15}{subsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.5.8}Classe TopicDAO}{15}{subsection.3.5.8}%
+\contentsline {section}{\numberline {3.6}Package \textit {DbConnection}}{16}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Classe DbConnection}{16}{subsection.3.6.1}%
+\contentsline {chapter}{\numberline {4}Funzionalit^^c3^^a0 e Guida All'Utente}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Login Chef}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Homepage Chef}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Nuovo Corso}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}I Miei Corsi}{20}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Gestione Sessioni}{21}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Inserimento Nuova Sessione}{22}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Gestione Ricette}{23}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Notifiche}{25}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Nuova Notifica}{26}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Riepilogo Mensile}{27}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Repository GitHub}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Cos'^^c3^^a8 una Repository}{28}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Accesso al Codice}{28}{section.5.2}%
