@@ -1,10 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  30 SEP 2025 16:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  2 OCT 2025 09:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/carmineamato/Desktop/Documentazione/main.tex
-(/Users/carmineamato/Desktop/Documentazione/main.tex
+**/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex
+
+(/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
 
@@ -689,30 +690,70 @@ File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@layerboxsaved@background=\box69
 ))
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip55
+\multirow@cntb=\count335
+\multirow@dima=\skip56
+\bigstrutjot=\dimen280
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count336
+\float@exts=\toks36
+\float@box=\box70
+\@float@everytoks=\toks37
+\@floatcapt=\box71
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/tools/array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen281
+\ar@mcellbox=\box72
+\extrarowheight=\dimen282
+\NC@list=\toks38
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box73
+)
+\TX@col@width=\dimen283
+\TX@old@table=\dimen284
+\TX@old@col=\dimen285
+\TX@target=\dimen286
+\TX@delta=\dimen287
+\TX@cols=\count337
+\TX@ftn=\toks39
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
 x/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count335
+\l__color_backend_stack_int=\count338
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -748,23 +789,23 @@ LaTeX Font Info:    ... okay on input line 31.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 31.
-LaTeX Info: Redefining \it@ccap on input line 31.
+LaTeX Info: Redefining \it@ocap on input line 35.
+LaTeX Info: Redefining \it@ccap on input line 35.
 
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/cont
 ext/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count336
-\scratchdimen=\dimen280
-\scratchbox=\box70
-\nofMPsegments=\count337
-\nofMParguments=\count338
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count339
-\MPscratchDim=\dimen281
-\MPnumerator=\count340
-\makeMPintoPDFobject=\count341
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count339
+\scratchdimen=\dimen288
+\scratchbox=\box74
+\nofMPsegments=\count340
+\nofMParguments=\count341
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count342
+\MPscratchDim=\dimen289
+\MPnumerator=\count343
+\makeMPintoPDFobject=\count344
+\everyMPtoPDFconversion=\toks41
 )
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
 x/epstopdf-pkg/epstopdf-base.sty
@@ -776,16 +817,16 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 x/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count342
-Package hyperref Info: Link coloring ON on input line 31.
+\c@lstlisting=\count345
+Package hyperref Info: Link coloring ON on input line 35.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<logo-federico-II.pdf, id=226, 501.79471pt x 499.8675pt>
+<logo-federico-II.pdf, id=6, 501.79471pt x 499.8675pt>
 File: logo-federico-II.pdf Graphic file (type pdf)
 <use logo-federico-II.pdf>
-Package pdftex.def Info: logo-federico-II.pdf  used on input line 33.
+Package pdftex.def Info: logo-federico-II.pdf  used on input line 37.
 (pdftex.def)             Requested size: 99.58464pt x 99.20135pt.
 
 
@@ -800,205 +841,50 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37     \tableofcontents
-                          [1] (main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 4.
-
-
-[2
-
-])
+l.41     \tableofcontents
+                          [1] (main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
 
 
-[3] (inputs/DescrizioneDelProblema.tex
-Capitolo 1.
-)
-
-[4
+[2
 
 ]
-
-[5]
-Capitolo 2.
-(inputs/UML.tex
-<UninaFoodLabApp.png, id=318, 11153.67pt x 5669.18pt>
-File: UninaFoodLabApp.png Graphic file (type png)
-<use UninaFoodLabApp.png>
-Package pdftex.def Info: UninaFoodLabApp.png  used on input line 5.
-(pdftex.def)             Requested size: 399.21791pt x 202.8533pt.
-) (inputs/Architettura.tex
-
-[6
-
- <./UninaFoodLabApp.png (PNG copy)>])
-
-[7]
-Capitolo 3.
-(inputs/DescrizioneBoundary.tex
-
-[8
-
-])
-
-[9] (inputs/DescrizioneControl.tex)
-
-[10] (inputs/descrizioneEntity.tex
-
-[11])
-
-[12] (inputs/DescrizioneDaoInterface.tex)
-
-[13] (inputs/DescrizioneDao.tex
-
-[14])
-
-[15] (inputs/DescrizioneDBConnection.tex)
-
-[16]
-Capitolo 4.
-(inputs/GuidaAll'Utente/Login Chef.tex
-<Images/Login.png, id=369, 814.04124pt x 624.3325pt>
-File: Images/Login.png Graphic file (type png)
-<use Images/Login.png>
-Package pdftex.def Info: Images/Login.png  used on input line 5.
-(pdftex.def)             Requested size: 354.86412pt x 272.16356pt.
-)
-(inputs/GuidaAll'Utente/HomepageChef.tex
-
-[17
-
- <./Images/Login.png>]
-<Images/Homepage.png, id=377, 1025.8325pt x 724.7075pt>
-File: Images/Homepage.png Graphic file (type png)
-<use Images/Homepage.png>
-Package pdftex.def Info: Images/Homepage.png  used on input line 5.
-(pdftex.def)             Requested size: 354.86412pt x 250.6989pt.
-)
-
-[18 <./Images/Homepage.png>] (inputs/GuidaAll'Utente/NuovoCorso.tex
-<Images/NuovoCorso.png, id=385, 749.80125pt x 684.5575pt>
-File: Images/NuovoCorso.png Graphic file (type png)
-<use Images/NuovoCorso.png>
-Package pdftex.def Info: Images/NuovoCorso.png  used on input line 4.
-(pdftex.def)             Requested size: 399.21791pt x 364.48502pt.
-)
-
-[19 <./Images/NuovoCorso.png>] (inputs/GuidaAll'Utente/IMieiCorsi.tex
-<Images/IMieiCorsi.png, id=392, 925.4575pt x 624.3325pt>
-File: Images/IMieiCorsi.png Graphic file (type png)
-<use Images/IMieiCorsi.png>
-Package pdftex.def Info: Images/IMieiCorsi.png  used on input line 5.
-(pdftex.def)             Requested size: 354.86412pt x 239.40181pt.
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|\T1/cmr/m/n/12 aaaaaaaaaa aaaaaaaaaa^^e0^^c0^^c1Err-fr-ghhhhhhhhHhhhhh
+ []
 
 
-[20 <./Images/IMieiCorsi.png>]
-<Images/GestioneSessioni.png, id=399, 1126.2075pt x 825.0825pt>
-File: Images/GestioneSessioni.png Graphic file (type png)
-<use Images/GestioneSessioni.png>
-Package pdftex.def Info: Images/GestioneSessioni.png  used on input line 20.
-(pdftex.def)             Requested size: 354.86412pt x 259.9779pt.
 
-
-[21 <./Images/GestioneSessioni.png>]
-<Images/NuovaSessione.png, id=406, 624.3325pt x 523.9575pt>
-File: Images/NuovaSessione.png Graphic file (type png)
-<use Images/NuovaSessione.png>
-Package pdftex.def Info: Images/NuovaSessione.png  used on input line 35.
-(pdftex.def)             Requested size: 354.86412pt x 297.81941pt.
-
-
-[22 <./Images/NuovaSessione.png>]
-<Images/GestioneRicette.png, id=413, 724.7075pt x 624.3325pt>
-File: Images/GestioneRicette.png Graphic file (type png)
-<use Images/GestioneRicette.png>
-Package pdftex.def Info: Images/GestioneRicette.png  used on input line 49.
-(pdftex.def)             Requested size: 354.86412pt x 305.71602pt.
-
-
-[23 <./Images/GestioneRicette.png>]
-<Images/SovrascrizioneRicette.png, id=420, 604.2575pt x 301.125pt>
-File: Images/SovrascrizioneRicette.png Graphic file (type png)
-<use Images/SovrascrizioneRicette.png>
-Package pdftex.def Info: Images/SovrascrizioneRicette.png  used on input line 6
-0.
-(pdftex.def)             Requested size: 354.86412pt x 176.84433pt.
-)
-
-[24 <./Images/SovrascrizioneRicette.png>] (inputs/GuidaAll'Utente/Notifiche.tex
-<Images/Notifiche.png, id=428, 1025.8325pt x 724.7075pt>
-File: Images/Notifiche.png Graphic file (type png)
-<use Images/Notifiche.png>
-Package pdftex.def Info: Images/Notifiche.png  used on input line 4.
-(pdftex.def)             Requested size: 354.86412pt x 250.6989pt.
-
-
-[25 <./Images/Notifiche.png>]
-<Images/InviaNotifica.png, id=435, 724.7075pt x 624.3325pt>
-File: Images/InviaNotifica.png Graphic file (type png)
-<use Images/InviaNotifica.png>
-Package pdftex.def Info: Images/InviaNotifica.png  used on input line 14.
-(pdftex.def)             Requested size: 354.86412pt x 305.71602pt.
-)
-
-[26 <./Images/InviaNotifica.png>] (inputs/GuidaAll'Utente/RiepilogoMensile.tex
-<Images/RiepilogoMensile.png, id=442, 1326.9575pt x 925.4575pt>
-File: Images/RiepilogoMensile.png Graphic file (type png)
-<use Images/RiepilogoMensile.png>
-Package pdftex.def Info: Images/RiepilogoMensile.png  used on input line 4.
-(pdftex.def)             Requested size: 399.21791pt x 278.41606pt.
-)
-
-[27 <./Images/RiepilogoMensile.png>] (inputs/repository.tex
-Capitolo 5.
-)
-
-[28
-
-] (main.aux)
+[3] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A8BCC6A038694CDABAD84F332668B326;8407.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23223 strings out of 468226
- 439714 string characters out of 5420954
- 830925 words of memory out of 5000000
- 51249 multiletter control sequences out of 15000+600000
- 639483 words of font info for 63 fonts, out of 8000000 for 9000
+ 23129 strings out of 468226
+ 435818 string characters out of 5420954
+ 832417 words of memory out of 5000000
+ 51291 multiletter control sequences out of 15000+600000
+ 635434 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,101p,500b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,10n,101p,504b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/pk
-/ljfour/jknappen/ec/dpi600/ecbx1440.pk> </Users/carmineamato/Library/Applicatio
-n Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1728.pk> </
+/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/carmineamato/Library/Applicatio
+n Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </
 Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfo
-ur/jknappen/ec/dpi600/tcrm1200.pk> </Users/carmineamato/Library/Application Sup
-port/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users
+ur/jknappen/ec/dpi600/ecrm1440.pk> </Users/carmineamato/Library/Application Sup
+port/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/eccc2488.pk> </Users
 /carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jk
-nappen/ec/dpi600/ecti1200.pk> </Users/carmineamato/Library/Application Support/
-MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/carm
-ineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappe
-n/ec/dpi600/ecbx2488.pk> </Users/carmineamato/Library/Application Support/MiKTe
-X/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/carmineam
-ato/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/
-dpi600/ecrm1440.pk> </Users/carmineamato/Library/Application Support/MiKTeX/tex
-mfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/eccc2488.pk> </Users/carmineamato/L
-ibrary/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi60
-0/eccc1440.pk> </Users/carmineamato/Library/Application Support/MiKTeX/texmfs/d
-ata/fonts/pk/ljfour/jknappen/ec/dpi600/eccc1728.pk>
-Output written on main.pdf (29 pages, 4888259 bytes).
+nappen/ec/dpi600/eccc1440.pk> </Users/carmineamato/Library/Application Support/
+MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/eccc1728.pk>
+Output written on main.pdf (4 pages, 191381 bytes).
 PDF statistics:
- 882 PDF objects out of 1000 (max. 8388607)
- 97 named destinations out of 1000 (max. 500000)
- 518 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 5 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
