@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1760013653.71405 "/home/bruno/GitKraken/BugBoard26-INGSW2526_015-/Documentazione/main.tex" "main.pdf" "main" 1760013654.70182 0
+["pdflatex"] 1760014313.18488 "/home/bruno/GitKraken/BugBoard26-INGSW2526_015-/Documentazione/main.tex" "main.pdf" "main" 1760014314.11902 0
   "/home/bruno/GitKraken/BugBoard26-INGSW2526_015-/Documentazione/main.tex" 1760012112.1425 3326 a84b2cd17ab902cd2105b444d306470b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1640468671 3136 aac2e2476de8af6c827239df395814ee ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -191,12 +191,12 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1752247522.25752 4547823 614eba97e0451aad345770236b030e55 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1755377366 7759955 a19bf2a09b78411e020364d9746f43e8 ""
-  "main.aux" 1760013654.59466 4568 785c7be681460c4d17cc6511930408f3 "pdflatex"
-  "main.out" 1760013654.59566 83 58cacf3907a7d4fa5391880d30f3c761 "pdflatex"
+  "main.aux" 1760014314.05385 5007 39b9172fc475b92ca0c0710539463206 "pdflatex"
+  "main.out" 1760014314.05485 217 e030b8f4c502fa3ca6ddf3737be28410 "pdflatex"
   "main.tex" 1760012112.1425 3326 a84b2cd17ab902cd2105b444d306470b ""
-  "main.toc" 1760013654.59566 124 d10c5a88a0f55888cebf9cbfe2f6b401 "pdflatex"
+  "main.toc" 1760014314.05485 198 2ee2a583d9c507c6a18b052705441878 "pdflatex"
   "src/inputs/Personas.tex" 1760003860.73794 7534 3e1a94259c4c8cfb2e8e7572983ab673 ""
-  "src/inputs/UseCaseDiagrams.tex" 1760013652.52284 4098 426c88dcb00c2186677cf1758c247dc8 ""
+  "src/inputs/UseCaseDiagrams.tex" 1760014311.9208 4365 2c2d930adf9e8aa51212bb4b5cc1f742 ""
   "src/uninafrontespizio/logo-federico-II.pdf" 1759996957.16892 133374 80fc15669ec907fd5c7a726fc2c3d0c0 ""
   "src/uninafrontespizio/uninafrontespizio.sty" 1759996957.22192 5634 1bfa880c64007d78dab3dee241a717b2 ""
   "src/useCaseDiagrams/ArchiviareBugUseCase.png" 1760005289.49602 36856 76b2abff6e5cfea3e1f8bc17237c2c2f ""
