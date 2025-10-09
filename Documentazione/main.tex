@@ -14,6 +14,41 @@
 \usepackage{multirow}
 \usepackage{float} 
 \usepackage{tabularx}
+\usepackage{tcolorbox}
+
+% Definizione del comando \persona - versione con ambiente
+\newtcolorbox{infobox}[1][]{
+  colback=blue!5!white,
+  colframe=blue!70!black,
+  fonttitle=\bfseries,
+  title=#1,
+  left=2mm, right=2mm, top=1mm, bottom=1mm,
+  boxrule=0.6pt, arc=2pt
+}
+
+\newenvironment{personaenv}[9]{%
+  \begin{tcolorbox}[colback=white,colframe=black!40,arc=2pt,boxrule=0.8pt]
+    {\Large \textbf{#1}}\\[6pt]
+    \textbf{Age:} #2 \quad
+    \textbf{Location:} #3\\
+    \textbf{Marital status:} #4\\
+    \textbf{Job title:} #5\\
+    \textbf{Role:} #6\\
+    \textbf{Personal traits:} #7\\[6pt]
+
+    \begin{infobox}[Goals:]
+      #8
+    \end{infobox}
+    
+    \begin{infobox}[Interests:]
+      #9
+    \end{infobox}
+    
+    \begin{infobox}[Bio:]
+}{%
+    \end{infobox}
+  \end{tcolorbox}
+}
 
 
 \onehalfspacing
@@ -70,7 +105,7 @@
  \hline Trigger & \multicolumn{3}{l|}{} \\
 
   \hline \multirow{2}{*}{Description} & Step & User Action & System \\
-
+  & 1 & L'utente fa qualcosa & Il sistema risponde \\
   \cline{2-4} & & & \\
  \hline \multirow{2}{*}{Extensions} & Step &
   User Action & System \\
@@ -86,4 +121,29 @@
 \end{tabularx}
 
 \end{table}
+
+\newpage
+
+\begin{personaenv}
+{Luca Rossi}
+{24}
+{Napoli, Italia}
+{single}
+{Junior Full-Stack Developer}
+{Utente}
+{curioso, collaborativo, preciso}
+{\begin{itemize}
+  \item Segnalare bug in modo rapido e chiaro.
+  \item Tenere traccia delle proprie attività.
+  \item Ricevere notifiche sugli aggiornamenti.
+\end{itemize}}
+{\begin{itemize}
+  \item Tecnologie web moderne (React, Node.js).
+  \item Strumenti collaborativi per il lavoro in team.
+  \item Automatizzazione del workflow.
+\end{itemize}}
+Luca lavora in un piccolo team Agile. Usa BugBoard26 quotidianamente per gestire le issue. 
+Apprezza un'interfaccia intuitiva e la possibilità di allegare immagini o note tecniche.
+\end{personaenv}
+
 \end{document}
