@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1760016795.58342 "/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex" "main.pdf" "main" 1760016796.93024 0
+["pdflatex"] 1760017168.97473 "/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex" "main.pdf" "main" 1760017170.32453 0
   "/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex" 1760014979.35513 3326 a84b2cd17ab902cd2105b444d306470b ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1760016102.78949 163260 f7138aa97b0a1dcae55100dabb7d9e7d ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1751624844.90566 13247005 d7d1b7864ef92e03393d1f5ad0e19ae6 ""
@@ -188,10 +188,10 @@
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.sty" 1751622545.03617 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xpatch/xpatch.sty" 1760014984.26899 8510 9829c50ab36366d4da41fdc87e7d0699 ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xstring/xstring.sty" 1760014985.58774 123 a302f2c651a95033260db60e51527ae8 ""
-  "main.aux" 1760016796.75727 4680 f454cb34821a28f399b0cdecb39220c4 "pdflatex"
-  "main.out" 1760016796.75817 217 e030b8f4c502fa3ca6ddf3737be28410 "pdflatex"
+  "main.aux" 1760017170.15223 4680 f454cb34821a28f399b0cdecb39220c4 "pdflatex"
+  "main.out" 1760017170.15317 217 e030b8f4c502fa3ca6ddf3737be28410 "pdflatex"
   "main.tex" 1760014979.35513 3326 a84b2cd17ab902cd2105b444d306470b ""
-  "main.toc" 1760016796.75841 198 2ee2a583d9c507c6a18b052705441878 "pdflatex"
+  "main.toc" 1760017170.15341 198 2ee2a583d9c507c6a18b052705441878 "pdflatex"
   "src/inputs/Personas.tex" 1760014979.35564 7534 3e1a94259c4c8cfb2e8e7572983ab673 ""
   "src/inputs/UseCaseDiagrams.tex" 1760016793.72092 4392 e3ae7008d1cd07651efd10282c8d3c2f ""
   "src/uninafrontespizio/logo-federico-II.pdf" 1760014979.35613 133374 80fc15669ec907fd5c7a726fc2c3d0c0 ""
@@ -205,8 +205,8 @@
   "src/useCaseDiagrams/ImpostaScadenzeUseCase.png" 1760014979.35843 26629 b8421e4feb51ddd68381935dcb7514cb ""
   "src/useCaseDiagrams/InserireCommentiUseCase.png" 1760016081.30493 32911 cf57a3a9d3b03bfda0f0cae39ce05b3a ""
   "src/useCaseDiagrams/LoginUseCase.png" 1760014979.35909 76498 340fb4f8de76211619819cf885e406bb ""
-  "src/useCaseDiagrams/ModificareBugUseCase.png" 1760016110.61536 52453 7bf769ffb7d8afe8547c3f1e8f0636b2 ""
-  "src/useCaseDiagrams/ModificareStatoBugUseCase.png" 1760014979.35961 36029 8c50f298fd28e700af5d328f7f1de546 ""
+  "src/useCaseDiagrams/ModificareBugUseCase.png" 1760017148.01475 60237 70eada45a32a737548408fca9cbe0e02 ""
+  "src/useCaseDiagrams/ModificareStatoBugUseCase.png" 1760016110.61536 52453 7bf769ffb7d8afe8547c3f1e8f0636b2 ""
   "src/useCaseDiagrams/SegnalaIssueUseCase.png" 1760014979.36012 34774 dec333685bddcba35304f8611bfb6dc5 ""
   "src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png" 1760016430.41933 43439 dd2b381fff84a07137f88d82f37dfc73 ""
   "src/useCaseDiagrams/VisualizzaNotificheUseCase.png" 1760016009.49269 51899 6eb3d03a29299514c306a930ae4a2faa ""

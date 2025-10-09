@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  9 OCT 2025 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  9 OCT 2025 15:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1317,14 +1317,14 @@ l.48
       <./src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png> <./src/useCaseDiag
 rams/AssegnaBugUseCase.png> <./src/useCaseDiagrams/VisualizzaNotificheUseCase.p
 ng>]
-<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=55, 1127.21124pt x 256.9
-6pt>
+<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=55, 864.22874pt x 161.60
+374pt>
 File: src/useCaseDiagrams/ModificareStatoBugUseCase.png Graphic file (type png)
 
 <use src/useCaseDiagrams/ModificareStatoBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ModificareStatoBugUseCase.png  use
 d on input line 53.
-(pdftex.def)             Requested size: 354.86412pt x 80.89577pt.
+(pdftex.def)             Requested size: 354.86412pt x 66.3566pt.
 <src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=56, 710.655pt x 265.9
 9374pt>
 File: src/useCaseDiagrams/VisualizzareDashboardUseCase.png Graphic file (type p
@@ -1364,13 +1364,12 @@ l.72
       <./src/useCaseDiagrams/InserireCommentiUseCase.png> <./src/useCaseDiagram
 s/ModificareStatoBugUseCase.png> <./src/useCaseDiagrams/VisualizzareDashboardUs
 eCase.png>]
-<src/useCaseDiagrams/ModificareBugUseCase.png, id=68, 864.22874pt x 161.60374pt
->
+<src/useCaseDiagrams/ModificareBugUseCase.png, id=68, 815.045pt x 199.74625pt>
 File: src/useCaseDiagrams/ModificareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ModificareBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ModificareBugUseCase.png  used on 
 input line 77.
-(pdftex.def)             Requested size: 354.86412pt x 66.3566pt.
+(pdftex.def)             Requested size: 354.86412pt x 86.96815pt.
 <src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=69, 390.45876pt x 121.45
 375pt>
 File: src/useCaseDiagrams/AssociareEtichetteUseCase.png Graphic file (type png)
@@ -1618,7 +1617,7 @@ ll/fonts/type1/public/tex-gyre/qtmr.pfb></Users/carmineamato/Library/Applicatio
 n Support/MiKTeX/texmfs/install/fonts/type1/public/newtx/ztmb.pfb></Users/carmi
 neamato/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/ne
 wtx/ztmr.pfb>
-Output written on main.pdf (19 pages, 760762 bytes).
+Output written on main.pdf (19 pages, 771248 bytes).
 PDF statistics:
  188 PDF objects out of 1000 (max. 8388607)
  39 named destinations out of 1000 (max. 500000)
