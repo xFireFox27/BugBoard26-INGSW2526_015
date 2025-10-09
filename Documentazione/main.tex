@@ -1,4 +1,5 @@
-\documentclass[oneside,12pt]{book}
+\documentclass[oneside,12pt]{article}
+\usepackage{newtxtext,newtxmath}
 \usepackage[margin=3cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -10,7 +11,7 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref}
-\usepackage{uninafrontespizio}
+\usepackage{src/uninafrontespizio/uninafrontespizio}
 \usepackage{multirow}
 \usepackage{float} 
 \usepackage{tabularx}
@@ -18,8 +19,8 @@
 
 % Definizione del comando \persona - versione con ambiente
 \newtcolorbox{infobox}[1][]{
-  colback=blue!5!white,
-  colframe=blue!70!black,
+  colback=blue!5,
+  colframe=blue!60,
   fonttitle=\bfseries,
   title=#1,
   left=2mm, right=2mm, top=1mm, bottom=1mm,
@@ -27,9 +28,9 @@
 }
 
 \newenvironment{personaenv}[9]{%
-  \begin{tcolorbox}[colback=white,colframe=black!40,arc=2pt,boxrule=0.8pt]
+  \begin{tcolorbox}[colback=gray!5,colframe=black!50,arc=2pt,boxrule=0.8pt]
     {\Large \textbf{#1}}\\[6pt]
-    \textbf{Age:} #2 \quad
+    \textbf{Age:} #2 \quad\\
     \textbf{Location:} #3\\
     \textbf{Marital status:} #4\\
     \textbf{Job title:} #5\\
@@ -63,7 +64,7 @@
 \AnnoAccademico{Anno Accademico 2025--2026}
 \Titolo{Documentazione BugBoard26}
 
-\Logo{logo-federico-II.pdf}
+\Logo{src/uninafrontespizio/logo-federico-II.pdf}
 \LogoWidth{3.5cm} 
 \LogoPosition{below-uni}
 
@@ -124,26 +125,5 @@
 
 \newpage
 
-\begin{personaenv}
-{Luca Rossi}
-{24}
-{Napoli, Italia}
-{single}
-{Junior Full-Stack Developer}
-{Utente}
-{curioso, collaborativo, preciso}
-{\begin{itemize}
-  \item Segnalare bug in modo rapido e chiaro.
-  \item Tenere traccia delle proprie attività.
-  \item Ricevere notifiche sugli aggiornamenti.
-\end{itemize}}
-{\begin{itemize}
-  \item Tecnologie web moderne (React, Node.js).
-  \item Strumenti collaborativi per il lavoro in team.
-  \item Automatizzazione del workflow.
-\end{itemize}}
-Luca lavora in un piccolo team Agile. Usa BugBoard26 quotidianamente per gestire le issue. 
-Apprezza un'interfaccia intuitiva e la possibilità di allegare immagini o note tecniche.
-\end{personaenv}
-
+\input{src/inputs/Personas.tex}
 \end{document}
