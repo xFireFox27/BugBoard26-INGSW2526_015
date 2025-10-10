@@ -55,38 +55,65 @@ LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 21.
 \ntx@tmpcnta=\count197
 \ntx@cnt=\count198
 
-ntx@otftextfalse
-(/usr/share/texlive/texmf-dist/tex/latex/fontaxes/fontaxes.sty
-Package: fontaxes 2020/07/21 v1.0e Font selection axes
-LaTeX Info: Redefining \upshape on input line 29.
-LaTeX Info: Redefining \itshape on input line 31.
-LaTeX Info: Redefining \slshape on input line 33.
-LaTeX Info: Redefining \swshape on input line 35.
-LaTeX Info: Redefining \scshape on input line 37.
-LaTeX Info: Redefining \sscshape on input line 39.
-LaTeX Info: Redefining \ulcshape on input line 41.
-LaTeX Info: Redefining \textsw on input line 47.
-LaTeX Info: Redefining \textssc on input line 48.
-LaTeX Info: Redefining \textulc on input line 49.
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/binhex/binhex.tex)
+\ntx@tmpcnta=\count289
+\ntx@cnt=\count290
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/fontaxes/fontaxes.sty
+Package: fontaxes 2025-05-24 v2.0.1 Font selection axes (deprecated)
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/figureversions/figureversions.sty
+Package: figureversions 2025-04-29 v1.0.1 Figure versions
+))
+\tx@sixem=\dimen149
+\tx@y=\dimen150
+\tx@x=\dimen151
+\tx@tmpdima=\dimen152
+\tx@tmpdimb=\dimen153
+\tx@tmpdimc=\dimen154
+\tx@tmpdimd=\dimen155
+\tx@tmpdime=\dimen156
+\tx@tmpdimf=\dimen157
+\tx@dimA=\dimen158
+\tx@dimAA=\dimen159
+\tx@dimB=\dimen160
+\tx@dimBB=\dimen161
+\tx@dimC=\dimen162
+LaTeX Info: Redefining \oldstylenums on input line 902.
 )
-LaTeX Info: Redefining \oldstylenums on input line 657.
-) (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxmath.sty
-Package: newtxmath 2022/01/16 v1.71
- `newtxmath' v1.71, 2022/01/16 Math macros based originally on txfonts (msharpe) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip50
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/newtxmath.sty
+Package: newtxmath 2024/09/22 v1.754
+
+`newtxmath' v1.754, 2024/09/22 Math macros based originally on txfonts (msharpe
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/amsmath/amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
-\ex@=\dimen141
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+\@emptytoks=\toks19
+\ex@=\dimen163
+))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen142
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+\pmbraise@=\dimen164
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count199
@@ -152,104 +179,111 @@ Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 \tx@su=\read2
 
 amsthm NOT loaded
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 376.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 402.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/minntx/m/n on input line 376.
+(Font)                  OT1/cmr/m/n --> OT1/minntx/m/n on input line 402.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/m/n on input line 376.
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/m/n on input line 402.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 377.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 383.
+(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 403.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/qhv/m/n on input line 383.
+(Font)                  OT1/cmss/m/n --> OT1/qhv/m/n on input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/qhv/m/n on input line 383.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 384.
+(Font)                  OT1/cmss/bx/n --> OT1/qhv/m/n on input line 410.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/qhv/m/n --> OT1/qhv/b/n on input line 412.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 419.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/minntx/m/it on input line 384.
+(Font)                  OT1/cmr/m/it --> OT1/minntx/m/it on input line 419.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/minntx/m/it on input line 384.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 385.
+(Font)                  OT1/cmr/bx/it --> OT1/minntx/m/it on input line 419.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 420.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 385.
+(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 420.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 385.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 387.
+(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 420.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 422.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 387.
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 422.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 387.
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 422.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 388.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/qhv/m/n --> OT1/qhv/b/n on input line 389.
+(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 423.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/ntxtt/m/n --> OT1/ntxtt/b/n on input line 390.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 491.
+(Font)                  OT1/ntxtt/m/n --> OT1/ntxtt/b/n on input line 426.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 534.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 491.
+(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 534.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 491.
+(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 534.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 492.
+(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 535.
 \symlettersA=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 547.
+(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 582.
 Now handling font encoding LMS ...
 ... no UTF-8 mapping file for font encoding LMS
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 568.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 604.
 LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 568.
+(Font)              `symbols' in the math version `normal' on input line 604.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 568.
+(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 604.
 LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 568.
+(Font)              `symbols' in the math version `bold' on input line 604.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 568.
+(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 604.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 569.
+(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 605.
 \symAMSm=\mathgroup5
 LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
-(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 594.
+(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 630.
 \symsymbolsC=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 615.
+(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 651.
 Now handling font encoding LMX ...
 ... no UTF-8 mapping file for font encoding LMX
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 628.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 664.
 LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 628.
+(Font)              `largesymbols' in the math version `normal' on input line 6
+64.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 628.
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 664.
 LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 628.
+(Font)              `largesymbols' in the math version `bold' on input line 664
+.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 628.
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 664.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 629.
+(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 665.
 \symlargesymbolsTXA=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
-(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 643.
-\tx@sbptoks=\toks25
-LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 866.
-LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 867.
-LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 868.
-LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 869.
-LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 870.
-LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 871.
-LaTeX Font Info:    Redeclaring math delimiter \langle on input line 872.
-LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 874.
-LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 878.
-LaTeX Font Info:    Redeclaring math delimiter \vert on input line 879.
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 925.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 950.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 951.
-LaTeX Font Info:    Redeclaring math accent \vec on input line 2020.
-LaTeX Info: Redefining \Bbbk on input line 2810.
-LaTeX Info: Redefining \not on input line 2959.
-) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+
+(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 679.
+\tx@sbptoks=\toks26
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 902.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 903.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 904.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 905.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 910.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 911.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 913.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 915.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 919.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 920.
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 966.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 991.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 992.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 2057.
+LaTeX Info: Redefining \Bbbk on input line 2847.
+LaTeX Info: Redefining \not on input line 2995.
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count280
@@ -289,18 +323,61 @@ Language: italian 2022/03/27 v.1.4.07 Italian support for the babel system
 )) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 11.
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+\it@lettering=\count311
+\it@doublequoteactive=\count312
+\it@ISOcompliance=\count313
+))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen181
+\Gin@req@width=\dimen182
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/listings/listings.sty
+\lst@mode=\count314
+\lst@gtempboxa=\box55
+\lst@token=\toks30
+\lst@length=\count315
+\lst@currlwidth=\dimen183
+\lst@column=\count316
+\lst@pos=\count317
+\lst@lostspace=\dimen184
+\lst@width=\dimen185
+\lst@newlines=\count318
+\lst@lineno=\count319
+\lst@maxwidth=\dimen186
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count320
+\lst@skipnumbers=\count321
+\lst@framebox=\box56
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 \Gin@req@height=\dimen159
 \Gin@req@width=\dimen160
@@ -376,25 +453,25 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
- (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/hyperref/nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count298
@@ -406,10 +483,10 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count301
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
@@ -417,12 +494,12 @@ File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4060.
-Package hyperref Info: Hyper figures OFF on input line 4177.
-Package hyperref Info: Link nesting OFF on input line 4182.
-Package hyperref Info: Hyper index ON on input line 4185.
-Package hyperref Info: Plain pages OFF on input line 4192.
-Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4052.
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4425.
 \c@Hy@tempcnt=\count302
@@ -430,12 +507,17 @@ Package hyperref Info: Bookmarks ON on input line 4425.
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen172
- (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+LaTeX Info: Redefining \url on input line 4787.
+\XeTeXLinkMargin=\dimen194
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
 \Fld@menulength=\count303
 \Field@Width=\dimen173
@@ -469,43 +551,70 @@ Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
 )
-\Hy@SectionHShift=\skip56
-) (./src/uninafrontespizio/uninafrontespizio.sty
+\Hy@SectionHShift=\skip57
+)
+(src/uninafrontespizio/uninafrontespizio.sty
 
-LaTeX Warning: You have requested package `src/uninafrontespizio/uninafrontespizio',
+LaTeX Warning: You have requested package `src/uninafrontespizio/uninafrontespi
+zio',
                but the package provides `uninafrontespizio'.
 
 Package: uninafrontespizio 2018/07/24 UniNA Frontespizio Package
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks33
-\pgfutil@tempdima=\dimen175
-\pgfutil@tempdimb=\dimen176
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box57
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/frontendlayer/tikz.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/basiclayer/pgf.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/utilities/pgfrcs.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks34
+\pgfutil@tempdima=\dimen197
+\pgfutil@tempdimb=\dimen198
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box59
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/utilities/pgfrcs.code.tex
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/basiclayer/pgfcore.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/systemlayer/pgfsys.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks34
-\pgfkeys@temptoks=\toks35
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks36
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks37
 ))
-\pgf@x=\dimen177
-\pgf@y=\dimen178
-\pgf@xa=\dimen179
-\pgf@ya=\dimen180
-\pgf@xb=\dimen181
-\pgf@yb=\dimen182
-\pgf@xc=\dimen183
-\pgf@yc=\dimen184
-\pgf@xd=\dimen185
-\pgf@yd=\dimen186
+\pgf@x=\dimen199
+\pgf@y=\dimen256
+\pgf@xa=\dimen257
+\pgf@ya=\dimen258
+\pgf@xb=\dimen259
+\pgf@yb=\dimen260
+\pgf@xc=\dimen261
+\pgf@yc=\dimen262
+\pgf@xd=\dimen263
+\pgf@yd=\dimen264
 \w@pgf@writea=\write3
 \r@pgf@reada=\read4
 \c@pgf@counta=\count309
@@ -520,17 +629,25 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+)))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfsyssoftpath@smallbuffer@items=\count314
 \pgfsyssoftpath@bigbuffer@items=\count315
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen187
@@ -543,29 +660,35 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 \c@pgfmathroundto@lastzeros=\count317
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen188
-\pgf@picmaxx=\dimen189
-\pgf@picminy=\dimen190
-\pgf@picmaxy=\dimen191
-\pgf@pathminx=\dimen192
-\pgf@pathmaxx=\dimen193
-\pgf@pathminy=\dimen194
-\pgf@pathmaxy=\dimen195
-\pgf@xx=\dimen196
-\pgf@xy=\dimen197
-\pgf@yx=\dimen198
-\pgf@yy=\dimen199
-\pgf@zx=\dimen256
-\pgf@zy=\dimen257
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+\pgf@picminx=\dimen266
+\pgf@picmaxx=\dimen267
+\pgf@picminy=\dimen268
+\pgf@picmaxy=\dimen269
+\pgf@pathminx=\dimen270
+\pgf@pathmaxx=\dimen271
+\pgf@pathminy=\dimen272
+\pgf@pathmaxy=\dimen273
+\pgf@xx=\dimen274
+\pgf@xy=\dimen275
+\pgf@yx=\dimen276
+\pgf@yy=\dimen277
+\pgf@zx=\dimen278
+\pgf@zy=\dimen279
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen258
-\pgf@path@lasty=\dimen259
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+\pgf@path@lastx=\dimen280
+\pgf@path@lasty=\dimen281
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen260
-\pgf@shorten@start@additional=\dimen261
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+\pgf@shorten@end@additional=\dimen282
+\pgf@shorten@start@additional=\dimen283
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box59
 \pgf@hbox=\box60
@@ -573,59 +696,105 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picture@serial@count=\count318
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen262
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+\pgflinewidth=\dimen284
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen263
-\pgf@pt@y=\dimen264
-\pgf@pt@temp=\dimen265
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+\pgf@pt@x=\dimen285
+\pgf@pt@y=\dimen286
+\pgf@pt@temp=\dimen287
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen266
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+\pgfarrowsep=\dimen288
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen267
 \pgf@sys@shading@range@num=\count319
 \pgf@shadingcount=\count320
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box62
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+\pgfexternal@startupbox=\box64
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+)))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box63
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+\pgfnodeparttextbox=\box65
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen268
-\pgf@nodesepend=\dimen269
-) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+\pgf@nodesepstart=\dimen290
+\pgf@nodesepend=\dimen291
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/utilities/pgffor.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/utilities/pgfkeys.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/utilities/pgfkeys.code.tex))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/pgf/math/pgfmath.sty
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/math/pgfmath.code.tex))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen270
-\pgffor@skip=\dimen271
-\pgffor@stack=\toks43
-\pgffor@toks=\toks44
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+\pgffor@iter=\dimen292
+\pgffor@skip=\dimen293
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
+))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count321
 \pgfplotmarksize=\dimen272
@@ -655,7 +824,9 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count329
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+)))
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
+ric/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@layerbox@background=\box68
 \pgf@layerboxsaved@background=\box69
@@ -698,9 +869,13 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks49
 \verbatim@line=\toks50
 \verbatim@in@stream=\read5
-) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+)
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
- (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 \tcb@titlebox=\box74
@@ -714,9 +889,15 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box79
 \tcb@temp=\box80
 \tcb@temp=\box81
+\tcb@temp=\box82
+\tcb@temp=\box83
+\tcb@temp=\box84
 )
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 71.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
+ 71.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
@@ -729,8 +910,11 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 71.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 71.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
+ 71.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
 LaTeX Font Info:    ... okay on input line 71.
@@ -745,20 +929,29 @@ LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 71.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 71.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
+71.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 71.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 71.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
+ 71.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 71.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 71.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
+e 71.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
 LaTeX Font Info:    ... okay on input line 71.
@@ -828,7 +1021,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@lstlisting=\count345
 Package hyperref Info: Link coloring ON on input line 71.
- (./main.out) (./main.out)
+(main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
@@ -836,10 +1029,11 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 17.28pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 17.28pt on input line 73.
-<src/uninafrontespizio/logo-federico-II.pdf, id=15, 501.79471pt x 499.8675pt>
+<src/uninafrontespizio/logo-federico-II.pdf, id=14, 501.79471pt x 499.8675pt>
 File: src/uninafrontespizio/logo-federico-II.pdf Graphic file (type pdf)
 <use src/uninafrontespizio/logo-federico-II.pdf>
-Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on input line 73.
+Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on in
+put line 73.
 (pdftex.def)             Requested size: 99.58464pt x 99.20135pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 73.
@@ -849,7 +1043,6 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 24.88pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 24.88pt on input line 73.
- [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./src/uninafrontespizio/logo-federico-II.pdf>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
@@ -926,6 +1119,7 @@ l.53
       <./src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png> <./src/useCaseDiagrams/AssegnaBugUseCase.png> <./src/useCaseDiagrams/VisualizzaNotificheUseCase.png>]
 <src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=56, 864.22874pt x 161.60374pt>
 File: src/useCaseDiagrams/ModificareStatoBugUseCase.png Graphic file (type png)
+
 <use src/useCaseDiagrams/ModificareStatoBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ModificareStatoBugUseCase.png  used on input line 58.
 (pdftex.def)             Requested size: 399.21791pt x 74.64932pt.
@@ -962,6 +1156,7 @@ Package pdftex.def Info: src/useCaseDiagrams/ModificareBugUseCase.png  used on i
 (pdftex.def)             Requested size: 354.86412pt x 86.96815pt.
 <src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=70, 390.45876pt x 121.45375pt>
 File: src/useCaseDiagrams/AssociareEtichetteUseCase.png Graphic file (type png)
+
 <use src/useCaseDiagrams/AssociareEtichetteUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/AssociareEtichetteUseCase.png  used on input line 90.
 (pdftex.def)             Requested size: 221.78923pt x 68.98842pt.
@@ -1054,7 +1249,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) ha
 l.80     \newpage
                   <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>] (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd) (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd) (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd) (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd)
 Underfull \hbox (badness 10000) in paragraph at lines 123--123
-[]|\T1/ntxtlf/m/n/12 aaaaaaaaaa aaaaaaaaaa‡¿¡Err-fr-ghhhhhhhhHhhhhh
+[]|\T1/ntxtlf/m/n/12 aaaaaaaaaa aaaaaaaaaa^^e0^^c0^^c1Err-fr-ghhhhhhhhHhhhhh
  []
 
 [9] (./src/inputs/Personas.tex
@@ -1062,8 +1257,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 19.
-(/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
+e 19.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
