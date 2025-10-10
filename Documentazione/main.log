@@ -1,1082 +1,736 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  9 OCT 2025 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.16)  10 OCT 2025 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex
-
-(/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-06-09>
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/base/article.cls
-Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/base/size12.clo
-File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+**/home/bruno/GitKraken/BugBoard26-INGSW2526_015-/Documentazione/main.tex
+(/home/bruno/GitKraken/BugBoard26-INGSW2526_015-/Documentazione/main.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count275
-\c@section=\count276
-\c@subsection=\count277
-\c@subsubsection=\count278
-\c@paragraph=\count279
-\c@subparagraph=\count280
-\c@figure=\count281
-\c@table=\count282
-\abovecaptionskip=\skip49
-\belowcaptionskip=\skip50
-\bibindent=\dimen148
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/newtxtext.sty
-Package: newtxtext 2024/04/01 v1.744(Michael Sharpe) latex and unicode latex su
-pport for TeXGyreTermesX
-
-`newtxtext' v1.744, 2024/04/01 Text macros taking advantage of TeXGyre Termes a
-nd its extensions (msharpe)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/xpatch/xpatch.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/l3kernel/expl3.sty
-Package: expl3 2025-06-09 L3 programming layer (loader) 
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count283
-))
-Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/l3packages/xparse/xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count284
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/xcolor/xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/graphics-def/pdftex.def
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/xkeyval/xkeyval.sty
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxtext.sty
+Package: newtxtext 2022/02/28 v1.71(Michael Sharpe) latex and unicode latex support for TeXGyreTermesX
+ `newtxtext' v1.71, 2022/02/28 Text macros taking advantage of TeXGyre Termes and its extensions (msharpe) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/xkeyval/xkeyval.tex
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/xkeyval/xkvutils.tex
-\XKV@toks=\toks17
-\XKV@tempa@toks=\toks18
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/xkeyval/keyval.tex))
-\XKV@depth=\count285
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count193
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/base/textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count194
+) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count195
+\decimalpart=\count196
 )
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/xstring/xstring.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/xstring/xstring.tex
-\xs_counta=\count286
-\xs_countb=\count287
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/base/ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/carlisle/scalefnt.sty)
-LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
+Package: xstring 2023/01/14 v1.85 String manipulations (CT)
+) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 21.
+LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 21.
+LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 21.
+LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
+\ntx@tmpcnta=\count197
+\ntx@cnt=\count198
 
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/binhex/binhex.tex)
-\ntx@tmpcnta=\count288
-\ntx@cnt=\count289
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/fontaxes/fontaxes.sty
-Package: fontaxes 2025-05-24 v2.0.1 Font selection axes (deprecated)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/figureversions/figureversions.sty
-Package: figureversions 2025-04-29 v1.0.1 Figure versions
-))
-\tx@sixem=\dimen149
-\tx@y=\dimen150
-\tx@x=\dimen151
-\tx@tmpdima=\dimen152
-\tx@tmpdimb=\dimen153
-\tx@tmpdimc=\dimen154
-\tx@tmpdimd=\dimen155
-\tx@tmpdime=\dimen156
-\tx@tmpdimf=\dimen157
-\tx@dimA=\dimen158
-\tx@dimAA=\dimen159
-\tx@dimB=\dimen160
-\tx@dimBB=\dimen161
-\tx@dimC=\dimen162
-LaTeX Info: Redefining \oldstylenums on input line 902.
+ntx@otftextfalse
+(/usr/share/texlive/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
 )
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/newtxmath.sty
-Package: newtxmath 2024/09/22 v1.754
-
-`newtxmath' v1.754, 2024/09/22 Math macros based originally on txfonts (msharpe
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/amsmath/amsmath.sty
-Package: amsmath 2025/06/16 v2.17y AMS math features
-\@mathmargin=\skip51
+LaTeX Info: Redefining \oldstylenums on input line 657.
+) (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxmath.sty
+Package: newtxmath 2022/01/16 v1.71
+ `newtxmath' v1.71, 2022/01/16 Math macros based originally on txfonts (msharpe) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/amsmath/amstext.sty
-Package: amstext 2024/11/17 v2.01 AMS text
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
-\ex@=\dimen163
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/amsmath/amsbsy.sty
+\@emptytoks=\toks18
+\ex@=\dimen141
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen164
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/amsmath/amsopn.sty
+\pmbraise@=\dimen142
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count290
-LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count291
-\leftroot@=\count292
-LaTeX Info: Redefining \overline on input line 398.
-LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count293
-\DOTSCASE@=\count294
-LaTeX Info: Redefining \ldots on input line 495.
-LaTeX Info: Redefining \dots on input line 498.
-LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box53
-\strutbox@=\box54
-LaTeX Info: Redefining \big on input line 721.
-LaTeX Info: Redefining \Big on input line 722.
-LaTeX Info: Redefining \bigg on input line 723.
-LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen165
-LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count295
-LaTeX Info: Redefining \bmod on input line 904.
-LaTeX Info: Redefining \pmod on input line 909.
-LaTeX Info: Redefining \smash on input line 939.
-LaTeX Info: Redefining \relbar on input line 969.
-LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count296
-\dotsspace@=\muskip17
-\c@parentequation=\count297
-\dspbrk@lvl=\count298
-\tag@help=\toks20
-\row@=\count299
-\column@=\count300
-\maxfields@=\count301
-\andhelp@=\toks21
-\eqnshift@=\dimen166
-\alignsep@=\dimen167
-\tagshift@=\dimen168
-\tagwidth@=\dimen169
-\totwidth@=\dimen170
-\lineht@=\dimen171
-\@envbody=\toks22
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2949.
-LaTeX Info: Redefining \] on input line 2950.
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/oberdiek/centernot.sty
+\inf@bad=\count199
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count266
+\leftroot@=\count267
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count268
+\DOTSCASE@=\count269
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count270
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count271
+\dotsspace@=\muskip16
+\c@parentequation=\count272
+\dspbrk@lvl=\count273
+\tag@help=\toks19
+\row@=\count274
+\column@=\count275
+\maxfields@=\count276
+\andhelp@=\toks20
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 )
-\tx@cntz=\count302
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/binhex/binhex.tex)
-\tx@Isdigit=\count303
-\tx@IsAlNum=\count304
-\tx@tA=\toks24
-\tx@tB=\toks25
+\tx@cntz=\count277
+ (/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
+\tx@Isdigit=\count278
+\tx@IsAlNum=\count279
+\tx@tA=\toks23
+\tx@tB=\toks24
 \tx@su=\read2
 
 amsthm NOT loaded
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 402.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 376.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/minntx/m/n on input line 402.
+(Font)                  OT1/cmr/m/n --> OT1/minntx/m/n on input line 376.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/m/n on input line 402.
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/m/n on input line 376.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 403.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 410.
+(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 377.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 383.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/qhv/m/n on input line 410.
+(Font)                  OT1/cmss/m/n --> OT1/qhv/m/n on input line 383.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/qhv/m/n on input line 410.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/qhv/m/n --> OT1/qhv/b/n on input line 412.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 419.
+(Font)                  OT1/cmss/bx/n --> OT1/qhv/m/n on input line 383.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 384.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/minntx/m/it on input line 419.
+(Font)                  OT1/cmr/m/it --> OT1/minntx/m/it on input line 384.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/minntx/m/it on input line 419.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 420.
+(Font)                  OT1/cmr/bx/it --> OT1/minntx/m/it on input line 384.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 385.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 420.
+(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 385.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 420.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 422.
+(Font)                  OT1/cmtt/m/n --> OT1/ntxtt/m/n on input line 385.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 387.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 422.
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 387.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 422.
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 387.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 423.
+(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 388.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/qhv/m/n --> OT1/qhv/b/n on input line 389.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/ntxtt/m/n --> OT1/ntxtt/b/n on input line 426.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 534.
+(Font)                  OT1/ntxtt/m/n --> OT1/ntxtt/b/n on input line 390.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 491.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 534.
+(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 491.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 534.
+(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 491.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 535.
+(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 492.
 \symlettersA=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 582.
+(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 547.
 Now handling font encoding LMS ...
 ... no UTF-8 mapping file for font encoding LMS
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 604.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 568.
 LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 604.
+(Font)              `symbols' in the math version `normal' on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 604.
+(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 568.
 LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 604.
+(Font)              `symbols' in the math version `bold' on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 604.
+(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 568.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 605.
+(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 569.
 \symAMSm=\mathgroup5
 LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
-(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 630.
+(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 594.
 \symsymbolsC=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 651.
+(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 615.
 Now handling font encoding LMX ...
 ... no UTF-8 mapping file for font encoding LMX
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 664.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 628.
 LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 6
-64.
+(Font)              `largesymbols' in the math version `normal' on input line 628.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 664.
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 628.
 LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 664
-.
+(Font)              `largesymbols' in the math version `bold' on input line 628.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 664.
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 628.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 665.
+(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 629.
 \symlargesymbolsTXA=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
-
-(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 679.
-\tx@sbptoks=\toks26
-LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 902.
-LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 903.
-LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 904.
-LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 905.
-LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 910.
-LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 911.
-LaTeX Font Info:    Redeclaring math delimiter \langle on input line 913.
-LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 915.
-LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 919.
-LaTeX Font Info:    Redeclaring math delimiter \vert on input line 920.
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 966.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 991.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 992.
-LaTeX Font Info:    Redeclaring math accent \vec on input line 2057.
-LaTeX Info: Redefining \Bbbk on input line 2847.
-LaTeX Info: Redefining \not on input line 2995.
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/geometry/geometry.sty
+(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 643.
+\tx@sbptoks=\toks25
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 866.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 867.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 874.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 878.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 879.
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 925.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 950.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 951.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 2020.
+LaTeX Info: Redefining \Bbbk on input line 2810.
+LaTeX Info: Redefining \not on input line 2959.
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/iftex/ifvtex.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count305
-\Gm@cntv=\count306
-\c@Gm@tempcnt=\count307
-\Gm@bindingoffset=\dimen172
-\Gm@wd@mp=\dimen173
-\Gm@odd@mp=\dimen174
-\Gm@even@mp=\dimen175
-\Gm@layoutwidth=\dimen176
-\Gm@layoutheight=\dimen177
-\Gm@layouthoffset=\dimen178
-\Gm@layoutvoffset=\dimen179
-\Gm@dimlist=\toks27
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/geometry/geometry.cfg))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/base/inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks28
-\inpenc@posthook=\toks29
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/base/fontenc.sty
-Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+minntx on input line
- 116.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/t1minntx.fd
-File: t1minntx.fd 2023/09/09 v1.1 font definition file for T1/minntx
-)
-LaTeX Font Info:    Font shape `T1/minntx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 116.
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/babel/babel.sty
-Package: babel 2025/05/14 v25.9 The multilingual framework for pdfLaTeX, LuaLaT
-eX and XeLaTeX
-\babel@savecnt=\count308
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
-ne 2043.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
-ne 2045.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
-e 2047.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
-e 2048.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
-on input line 2049.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
-on input line 2051.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
-on input line 2076.
-\U@D=\dimen180
-\l@unhyphenated=\language79
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/babel/txtbabel.def)
+\Gm@cnth=\count280
+\Gm@cntv=\count281
+\c@Gm@tempcnt=\count282
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
+\Gm@layoutwidth=\dimen154
+\Gm@layoutheight=\dimen155
+\Gm@layouthoffset=\dimen156
+\Gm@layoutvoffset=\dimen157
+\Gm@dimlist=\toks26
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks27
+\inpenc@posthook=\toks28
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+minntx on input line 112.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1minntx.fd
+File: t1minntx.fd 2022/01/20 v1.1 font definition file for T1/minntx
+)) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2023/02/13 3.86 The Babel package
+\babel@savecnt=\count283
+\U@D=\dimen158
+\l@unhyphenated=\language86
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
-\bbl@dirlevel=\count309
-
-*************************************
-* Local config file bblopts.cfg used
-*
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/arabi/bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/babel-italian/italian.ldf
-Language: italian 2024/10/10 v.1.5.01 Italian support for the babel system
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/babel/locale/it/babel-italian.tex
+\bbl@dirlevel=\count284
+ (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2022/03/27 v.1.4.07 Italian support for the babel system
+\it@lettering=\count285
+\it@doublequoteactive=\count286
+\it@ISOcompliance=\count287
+)) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 11.
-)
-\it@lettering=\count310
-\it@doublequoteactive=\count311
-\it@ISOcompliance=\count312
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/graphics/graphicx.sty
-Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/graphics/graphics.sty
-Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/graphics/trig.sty
-Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/graphics-cfg/graphics.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 106.
-)
-\Gin@req@height=\dimen181
-\Gin@req@width=\dimen182
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/listings/listings.sty
-\lst@mode=\count313
-\lst@gtempboxa=\box55
-\lst@token=\toks30
-\lst@length=\count314
-\lst@currlwidth=\dimen183
-\lst@column=\count315
-\lst@pos=\count316
-\lst@lostspace=\dimen184
-\lst@width=\dimen185
-\lst@newlines=\count317
-\lst@lineno=\count318
-\lst@maxwidth=\dimen186
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/listings/lstpatch.sty
-File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/listings/lstmisc.sty
-File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count319
-\lst@skipnumbers=\count320
-\lst@framebox=\box56
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/listings/listings.cfg
-File: listings.cfg 2024/09/23 1.10c listings configuration
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-Package: listings 2024/09/23 1.10c (Carsten Heinz)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/setspace/setspace.sty
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count288
+\lst@gtempboxa=\box53
+\lst@token=\toks29
+\lst@length=\count289
+\lst@currlwidth=\dimen161
+\lst@column=\count290
+\lst@pos=\count291
+\lst@lostspace=\dimen162
+\lst@width=\dimen163
+\lst@newlines=\count292
+\lst@lineno=\count293
+\lst@maxwidth=\dimen164
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count294
+\lst@skipnumbers=\count295
+\lst@framebox=\box54
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/titlesec/titlesec.sty
-Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box57
-\beforetitleunit=\skip54
-\aftertitleunit=\skip55
-\ttl@plus=\dimen187
-\ttl@minus=\dimen188
-\ttl@toksa=\toks31
-\titlewidth=\dimen189
-\titlewidthlast=\dimen190
-\titlewidthfirst=\dimen191
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/enumitem/enumitem.sty
-Package: enumitem 2025/02/06 v3.11 Customized lists
-\enitkv@toks@=\toks32
-\labelindent=\skip56
-\enit@outerparindent=\dimen192
-\enit@toks=\toks33
-\enit@inbox=\box58
-\enit@count@id=\count321
-\enitdp@description=\count322
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/hyperref/hyperref.sty
-Package: hyperref 2025-06-21 v7.01n Hypertext links for LaTeX
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/infwarerr/infwarerr.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box55
+\beforetitleunit=\skip53
+\aftertitleunit=\skip54
+\ttl@plus=\dimen165
+\ttl@minus=\dimen166
+\ttl@toksa=\toks30
+\titlewidth=\dimen167
+\titlewidthlast=\dimen168
+\titlewidthfirst=\dimen169
+) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\enitkv@toks@=\toks31
+\labelindent=\skip55
+\enit@outerparindent=\dimen170
+\enit@toks=\toks32
+\enit@inbox=\box56
+\enit@count@id=\count296
+\enitdp@description=\count297
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/hycolor/hycolor.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/hyperref/nameref.sty
-Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/refcount/refcount.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/gettitlestring/gettitlestring.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/kvoptions/kvoptions.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count323
+\c@section@level=\count298
 )
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
-)
-)
-\@linkdim=\dimen193
-\Hy@linkcounter=\count324
-\Hy@pagecounter=\count325
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/hyperref/pd1enc.def
-File: pd1enc.def 2025-06-21 v7.01n Hyperref: PDFDocEncoding definition (HO)
+\@linkdim=\dimen171
+\Hy@linkcounter=\count299
+\Hy@pagecounter=\count300
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/intcalc/intcalc.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count326
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/hyperref/puenc.def
-File: puenc.def 2025-06-21 v7.01n Hyperref: PDF Unicode definition (HO)
+\Hy@SavedSpaceFactor=\count301
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4052.
-Package hyperref Info: Hyper figures OFF on input line 4181.
-Package hyperref Info: Link nesting OFF on input line 4186.
-Package hyperref Info: Hyper index ON on input line 4189.
-Package hyperref Info: Plain pages OFF on input line 4196.
-Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4060.
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4448.
-\c@Hy@tempcnt=\count327
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/url/url.sty
-\Urlmuskip=\muskip18
+Package hyperref Info: Bookmarks ON on input line 4425.
+\c@Hy@tempcnt=\count302
+ (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4787.
-\XeTeXLinkMargin=\dimen194
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/bitset/bitset.sty
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen172
+ (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+ (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count328
-\Field@Width=\dimen195
-\Fld@charsize=\dimen196
-Package hyperref Info: Hyper figures OFF on input line 6066.
-Package hyperref Info: Link nesting OFF on input line 6071.
-Package hyperref Info: Hyper index ON on input line 6074.
-Package hyperref Info: backreferencing OFF on input line 6081.
-Package hyperref Info: Link coloring ON on input line 6084.
-Package hyperref Info: Link coloring with OCG OFF on input line 6091.
-Package hyperref Info: PDF/A mode OFF on input line 6096.
-\Hy@abspage=\count329
-\c@Item=\count330
-\c@Hfootnote=\count331
+\Fld@menulength=\count303
+\Field@Width=\dimen173
+\Fld@charsize=\dimen174
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring ON on input line 6060.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count304
+\c@Item=\count305
+\c@Hfootnote=\count306
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/hyperref/hpdftex.def
-File: hpdftex.def 2025-06-21 v7.01n Hyperref driver for pdfTeX
-\Fld@listcount=\count332
-\c@bookmark@seq@number=\count333
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/uniquecounter/uniquecounter.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count307
+\c@bookmark@seq@number=\count308
+ (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-84.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip57
-)
-(src/uninafrontespizio/uninafrontespizio.sty
+\Hy@SectionHShift=\skip56
+) (./src/uninafrontespizio/uninafrontespizio.sty
 
-LaTeX Warning: You have requested package `src/uninafrontespizio/uninafrontespi
-zio',
+LaTeX Warning: You have requested package `src/uninafrontespizio/uninafrontespizio',
                but the package provides `uninafrontespizio'.
 
 Package: uninafrontespizio 2018/07/24 UniNA Frontespizio Package
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/frontendlayer/tikz.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/basiclayer/pgf.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/utilities/pgfrcs.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks34
-\pgfutil@tempdima=\dimen197
-\pgfutil@tempdimb=\dimen198
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box59
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/utilities/pgfrcs.code.tex
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/pgf.revision.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks33
+\pgfutil@tempdima=\dimen175
+\pgfutil@tempdimb=\dimen176
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box57
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/basiclayer/pgfcore.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/systemlayer/pgfsys.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/systemlayer/pgfsys.code.tex
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks35
-\pgfkeys@temptoks=\toks36
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks37
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks36
 ))
-\pgf@x=\dimen199
-\pgf@y=\dimen256
-\pgf@xa=\dimen257
-\pgf@ya=\dimen258
-\pgf@xb=\dimen259
-\pgf@yb=\dimen260
-\pgf@xc=\dimen261
-\pgf@yc=\dimen262
-\pgf@xd=\dimen263
-\pgf@yd=\dimen264
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
+\pgf@xd=\dimen185
+\pgf@yd=\dimen186
 \w@pgf@writea=\write3
 \r@pgf@reada=\read4
-\c@pgf@counta=\count334
-\c@pgf@countb=\count335
-\c@pgf@countc=\count336
-\c@pgf@countd=\count337
-\t@pgf@toka=\toks38
-\t@pgf@tokb=\toks39
-\t@pgf@tokc=\toks40
-\pgf@sys@id@count=\count338
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/systemlayer/pgf.cfg
+\c@pgf@counta=\count309
+\c@pgf@countb=\count310
+\c@pgf@countc=\count311
+\c@pgf@countd=\count312
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
+\pgf@sys@id@count=\count313
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/systemlayer/pgfsys-pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/systemlayer/pgfsys-common-pdf.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/systemlayer/pgfsyssoftpath.code.tex
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count339
-\pgfsyssoftpath@bigbuffer@items=\count340
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/systemlayer/pgfsysprotocol.code.tex
+\pgfsyssoftpath@smallbuffer@items=\count314
+\pgfsyssoftpath@bigbuffer@items=\count315
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcore.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmath.code.tex
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathutil.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen265
-\pgfmath@count=\count341
-\pgfmath@box=\box60
-\pgfmath@toks=\toks41
-\pgfmath@stack@operand=\toks42
-\pgfmath@stack@operation=\toks43
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.basic.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.trigonometric.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.random.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.comparison.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.base.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.round.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.misc.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfunctions.integerarithmetics.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathcalc.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count342
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfint.code.tex)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorepoints.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen187
+\pgfmath@count=\count316
+\pgfmath@box=\box58
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count317
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen266
-\pgf@picmaxx=\dimen267
-\pgf@picminy=\dimen268
-\pgf@picmaxy=\dimen269
-\pgf@pathminx=\dimen270
-\pgf@pathmaxx=\dimen271
-\pgf@pathminy=\dimen272
-\pgf@pathmaxy=\dimen273
-\pgf@xx=\dimen274
-\pgf@xy=\dimen275
-\pgf@yx=\dimen276
-\pgf@yy=\dimen277
-\pgf@zx=\dimen278
-\pgf@zy=\dimen279
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorepathconstruct.code.tex
+\pgf@picminx=\dimen188
+\pgf@picmaxx=\dimen189
+\pgf@picminy=\dimen190
+\pgf@picmaxy=\dimen191
+\pgf@pathminx=\dimen192
+\pgf@pathmaxx=\dimen193
+\pgf@pathminy=\dimen194
+\pgf@pathmaxy=\dimen195
+\pgf@xx=\dimen196
+\pgf@xy=\dimen197
+\pgf@yx=\dimen198
+\pgf@yy=\dimen199
+\pgf@zx=\dimen256
+\pgf@zy=\dimen257
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen280
-\pgf@path@lasty=\dimen281
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorepathusage.code.tex
+\pgf@path@lastx=\dimen258
+\pgf@path@lasty=\dimen259
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen282
-\pgf@shorten@start@additional=\dimen283
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorescopes.code.tex
+\pgf@shorten@end@additional=\dimen260
+\pgf@shorten@start@additional=\dimen261
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box61
-\pgf@hbox=\box62
-\pgf@layerbox@main=\box63
-\pgf@picture@serial@count=\count343
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcoregraphicstate.code.tex
+\pgfpic=\box59
+\pgf@hbox=\box60
+\pgf@layerbox@main=\box61
+\pgf@picture@serial@count=\count318
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen284
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcoretransformations.code.tex
+\pgflinewidth=\dimen262
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen285
-\pgf@pt@y=\dimen286
-\pgf@pt@temp=\dimen287
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorequick.code.tex
+\pgf@pt@x=\dimen263
+\pgf@pt@y=\dimen264
+\pgf@pt@temp=\dimen265
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcoreobjects.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorepathprocessing.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorearrows.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen288
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcoreshade.code.tex
+\pgfarrowsep=\dimen266
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen289
-\pgf@sys@shading@range@num=\count344
-\pgf@shadingcount=\count345
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcoreimage.code.tex
+\pgf@max=\dimen267
+\pgf@sys@shading@range@num=\count319
+\pgf@shadingcount=\count320
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcoreexternal.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box64
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorelayers.code.tex
+\pgfexternal@startupbox=\box62
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcoretransparency.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorepatterns.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/basiclayer/pgfcorerdf.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/modules/pgfmoduleshapes.code.tex
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box65
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/modules/pgfmoduleplot.code.tex
+\pgfnodeparttextbox=\box63
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/compatibility/pgfcomp-version-0-65.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen290
-\pgf@nodesepend=\dimen291
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/compatibility/pgfcomp-version-1-18.sty
+\pgf@nodesepstart=\dimen268
+\pgf@nodesepend=\dimen269
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/utilities/pgffor.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/utilities/pgfkeys.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/utilities/pgfkeys.code.tex))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/pgf/math/pgfmath.sty
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/math/pgfmath.code.tex))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/utilities/pgffor.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen292
-\pgffor@skip=\dimen293
-\pgffor@stack=\toks44
-\pgffor@toks=\toks45
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/frontendlayer/tikz/tikz.code.tex
+\pgffor@iter=\dimen270
+\pgffor@skip=\dimen271
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/libraries/pgflibraryplothandlers.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count346
-\pgfplotmarksize=\dimen294
+\pgf@plot@mark@count=\count321
+\pgfplotmarksize=\dimen272
 )
-\tikz@lastx=\dimen295
-\tikz@lasty=\dimen296
-\tikz@lastxsaved=\dimen297
-\tikz@lastysaved=\dimen298
-\tikz@lastmovetox=\dimen299
-\tikz@lastmovetoy=\dimen300
-\tikzleveldistance=\dimen301
-\tikzsiblingdistance=\dimen302
-\tikz@figbox=\box66
-\tikz@figbox@bg=\box67
-\tikz@tempbox=\box68
-\tikz@tempbox@bg=\box69
-\tikztreelevel=\count347
-\tikznumberofchildren=\count348
-\tikznumberofcurrentchild=\count349
-\tikz@fig@count=\count350
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/modules/pgfmodulematrix.code.tex
+\tikz@lastx=\dimen273
+\tikz@lasty=\dimen274
+\tikz@lastxsaved=\dimen275
+\tikz@lastysaved=\dimen276
+\tikz@lastmovetox=\dimen277
+\tikz@lastmovetoy=\dimen278
+\tikzleveldistance=\dimen279
+\tikzsiblingdistance=\dimen280
+\tikz@figbox=\box64
+\tikz@figbox@bg=\box65
+\tikz@tempbox=\box66
+\tikz@tempbox@bg=\box67
+\tikztreelevel=\count322
+\tikznumberofchildren=\count323
+\tikznumberofcurrentchild=\count324
+\tikz@fig@count=\count325
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count351
-\pgfmatrixcurrentcolumn=\count352
-\pgf@matrix@numberofcolumns=\count353
+\pgfmatrixcurrentrow=\count326
+\pgfmatrixcurrentcolumn=\count327
+\pgf@matrix@numberofcolumns=\count328
 )
-\tikz@expandcount=\count354
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+\tikz@expandcount=\count329
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/gene
-ric/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box70
-\pgf@layerboxsaved@background=\box71
-))
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/multirow/multirow.sty
-Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip58
-\multirow@cntb=\count355
-\multirow@dima=\skip59
-\bigstrutjot=\dimen303
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/float/float.sty
+\pgf@layerbox@background=\box68
+\pgf@layerboxsaved@background=\box69
+)) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip57
+\multirow@cntb=\count330
+\multirow@dima=\skip58
+\bigstrutjot=\dimen281
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count356
-\float@exts=\toks46
-\float@box=\box72
-\@float@everytoks=\toks47
-\@floatcapt=\box73
+\c@float@type=\count331
+\float@exts=\toks45
+\float@box=\box70
+\@float@everytoks=\toks46
+\@floatcapt=\box71
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen282
+\ar@mcellbox=\box72
+\extrarowheight=\dimen283
+\NC@list=\toks47
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box73
 )
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/tools/tabularx.sty
-Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/tools/array.sty
-Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
-\col@sep=\dimen304
-\ar@mcellbox=\box74
-\extrarowheight=\dimen305
-\NC@list=\toks48
-\extratabsurround=\skip60
-\backup@length=\skip61
-\ar@cellbox=\box75
-)
-\TX@col@width=\dimen306
-\TX@old@table=\dimen307
-\TX@old@col=\dimen308
-\TX@target=\dimen309
-\TX@delta=\dimen310
-\TX@cols=\count357
-\TX@ftn=\toks49
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2025/06/04 version 6.6.0 text color boxes
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/tools/verbatim.sty
-Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks50
-\verbatim@line=\toks51
+\TX@col@width=\dimen284
+\TX@old@table=\dimen285
+\TX@old@col=\dimen286
+\TX@target=\dimen287
+\TX@delta=\dimen288
+\TX@cols=\count332
+\TX@ftn=\toks48
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2023/03/17 version 6.0.3 text color boxes
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks49
+\verbatim@line=\toks50
 \verbatim@in@stream=\read5
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/environ/environ.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/trimspaces/trimspaces.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box76
-\tcb@upperbox=\box77
-\tcb@lowerbox=\box78
-\tcb@phantombox=\box79
-\c@tcbbreakpart=\count358
-\c@tcblayer=\count359
-\c@tcolorbox@number=\count360
-\l__tcobox_tmpa_box=\box80
-\l__tcobox_tmpa_dim=\dimen311
+\tcb@titlebox=\box74
+\tcb@upperbox=\box75
+\tcb@lowerbox=\box76
+\tcb@phantombox=\box77
+\c@tcbbreakpart=\count333
+\c@tcblayer=\count334
+\c@tcolorbox@number=\count335
+\tcb@temp=\box78
+\tcb@temp=\box79
+\tcb@temp=\box80
 \tcb@temp=\box81
-\tcb@temp=\box82
-\tcb@temp=\box83
-\tcb@temp=\box84
 )
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 71.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/t1ntxtlf.fd
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 71.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 71.
- (main.aux)
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count336
+\l__pdf_internal_box=\box82
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 71.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 71.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/omlntxmi.fd
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 71.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
 LaTeX Font Info:    ... okay on input line 71.
@@ -1091,29 +745,20 @@ LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 71.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-71.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/untxexa.fd
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 71.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 71.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 71.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/lmsntxsy.fd
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 71.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 71.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 71.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/lmxntxexx.fd
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 71.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
 LaTeX Font Info:    ... okay on input line 71.
@@ -1121,34 +766,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/cont
-ext/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count361
-\scratchdimen=\dimen312
-\scratchbox=\box85
-\nofMPsegments=\count362
-\nofMParguments=\count363
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count364
-\MPscratchDim=\dimen313
-\MPnumerator=\count365
-\makeMPintoPDFobject=\count366
-\everyMPtoPDFconversion=\toks53
-)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/00miktex/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
-\c@mv@tabular=\count367
-\c@mv@boldtabular=\count368
+\c@mv@tabular=\count337
+\c@mv@boldtabular=\count338
 LaTeX Info: Command `\dddot' is already robust on input line 71.
 LaTeX Info: Command `\ddddot' is already robust on input line 71.
 
@@ -1188,9 +807,28 @@ LaTeX Info: Command `\ddddot' is already robust on input line 71.
 
 LaTeX Info: Redefining \it@ocap on input line 71.
 LaTeX Info: Redefining \it@ccap on input line 71.
-\c@lstlisting=\count369
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count339
+\scratchdimen=\dimen289
+\scratchbox=\box83
+\nofMPsegments=\count340
+\nofMParguments=\count341
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count342
+\MPscratchDim=\dimen290
+\MPnumerator=\count343
+\makeMPintoPDFobject=\count344
+\everyMPtoPDFconversion=\toks52
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\c@lstlisting=\count345
 Package hyperref Info: Link coloring ON on input line 71.
-(main.out) (main.out)
+ (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
@@ -1198,11 +836,10 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 17.28pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 17.28pt on input line 73.
-<src/uninafrontespizio/logo-federico-II.pdf, id=14, 501.79471pt x 499.8675pt>
+<src/uninafrontespizio/logo-federico-II.pdf, id=15, 501.79471pt x 499.8675pt>
 File: src/uninafrontespizio/logo-federico-II.pdf Graphic file (type pdf)
 <use src/uninafrontespizio/logo-federico-II.pdf>
-Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on in
-put line 73.
+Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on input line 73.
 (pdftex.def)             Requested size: 99.58464pt x 99.20135pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 73.
@@ -1212,15 +849,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 24.88pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 24.88pt on input line 73.
+ [1
 
-
-[1
-
-{/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/map/p
-dftex/pdftex.map} <./src/uninafrontespizio/logo-federico-II.pdf>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./src/uninafrontespizio/logo-federico-II.pdf>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 17.28pt on input line 77.
- (main.toc
+ (./main.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 3.
 )
@@ -1228,308 +862,208 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 \openout5 = `main.toc'.
 
 
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.78     \newpage
-                  [1] (src/inputs/UseCaseDiagrams.tex
-<src/useCaseDiagrams/LoginUseCase.png, id=30, 1064.97874pt x 662.475pt>
+                  [1] (./src/inputs/UseCaseDiagrams.tex
+<src/useCaseDiagrams/LoginUseCase.png, id=31, 1064.97874pt x 662.475pt>
 File: src/useCaseDiagrams/LoginUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/LoginUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/LoginUseCase.png  used on input li
-ne 5.
+Package pdftex.def Info: src/useCaseDiagrams/LoginUseCase.png  used on input line 5.
 (pdftex.def)             Requested size: 354.86412pt x 220.74022pt.
-<src/useCaseDiagrams/SegnalaIssueUseCase.png, id=32, 1064.97874pt x 262.9825pt>
-
+<src/useCaseDiagrams/SegnalaIssueUseCase.png, id=33, 1064.97874pt x 262.9825pt>
 File: src/useCaseDiagrams/SegnalaIssueUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/SegnalaIssueUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/SegnalaIssueUseCase.png  used on i
-nput line 13.
+Package pdftex.def Info: src/useCaseDiagrams/SegnalaIssueUseCase.png  used on input line 13.
 (pdftex.def)             Requested size: 354.86412pt x 87.62717pt.
-<src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png, id=33, 1090.0725pt x 188.7
-05pt>
-File: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png Graphic file (type png
-)
+<src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png, id=34, 1090.0725pt x 188.705pt>
+File: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png  us
-ed on input line 21.
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png  used on input line 21.
 (pdftex.def)             Requested size: 354.86412pt x 61.42917pt.
-
-
-[2
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
+ [2
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.24 
      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
-s been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.24 
-      <./src/useCaseDiagrams/LoginUseCase.png> <./src/useCaseDiagrams/SegnalaIs
-sueUseCase.png>]
-<src/useCaseDiagrams/AssegnaBugUseCase.png, id=42, 886.31125pt x 346.29375pt>
+      <./src/useCaseDiagrams/LoginUseCase.png> <./src/useCaseDiagrams/SegnalaIssueUseCase.png>]
+<src/useCaseDiagrams/AssegnaBugUseCase.png, id=43, 886.31125pt x 346.29375pt>
 File: src/useCaseDiagrams/AssegnaBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/AssegnaBugUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/AssegnaBugUseCase.png  used on inp
-ut line 29.
+Package pdftex.def Info: src/useCaseDiagrams/AssegnaBugUseCase.png  used on input line 29.
 (pdftex.def)             Requested size: 354.86412pt x 138.65242pt.
-<src/useCaseDiagrams/VisualizzaNotificheUseCase.png, id=43, 820.06375pt x 198.7
-425pt>
-File: src/useCaseDiagrams/VisualizzaNotificheUseCase.png Graphic file (type png
-)
+<src/useCaseDiagrams/VisualizzaNotificheUseCase.png, id=44, 820.06375pt x 198.7425pt>
+File: src/useCaseDiagrams/VisualizzaNotificheUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaNotificheUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/VisualizzaNotificheUseCase.png  us
-ed on input line 37.
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaNotificheUseCase.png  used on input line 37.
 (pdftex.def)             Requested size: 354.86412pt x 86.00346pt.
-<src/useCaseDiagrams/InserireCommentiUseCase.png, id=44, 592.2125pt x 140.525pt
->
+<src/useCaseDiagrams/InserireCommentiUseCase.png, id=45, 592.2125pt x 140.525pt>
 File: src/useCaseDiagrams/InserireCommentiUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/InserireCommentiUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/InserireCommentiUseCase.png  used 
-on input line 45.
+Package pdftex.def Info: src/useCaseDiagrams/InserireCommentiUseCase.png  used on input line 45.
 (pdftex.def)             Requested size: 354.86412pt x 84.20628pt.
-
-
-[3
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
-s been already used, duplicate ignored
+ [3
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.48 
      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
-s been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.48 
      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
-s been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.48 
-      <./src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png> <./src/useCaseDiag
-rams/AssegnaBugUseCase.png> <./src/useCaseDiagrams/VisualizzaNotificheUseCase.p
-ng>]
-<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=55, 864.22874pt x 161.60
-374pt>
+      <./src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png> <./src/useCaseDiagrams/AssegnaBugUseCase.png> <./src/useCaseDiagrams/VisualizzaNotificheUseCase.png>]
+<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=56, 864.22874pt x 161.60374pt>
 File: src/useCaseDiagrams/ModificareStatoBugUseCase.png Graphic file (type png)
-
 <use src/useCaseDiagrams/ModificareStatoBugUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/ModificareStatoBugUseCase.png  use
-d on input line 53.
-(pdftex.def)             Requested size: 354.86412pt x 66.3566pt.
-<src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=56, 710.655pt x 265.9
-9374pt>
-File: src/useCaseDiagrams/VisualizzareDashboardUseCase.png Graphic file (type p
-ng)
+Package pdftex.def Info: src/useCaseDiagrams/ModificareStatoBugUseCase.png  used on input line 53.
+(pdftex.def)             Requested size: 399.21791pt x 74.64932pt.
+<src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=57, 710.655pt x 265.99374pt>
+File: src/useCaseDiagrams/VisualizzareDashboardUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzareDashboardUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/VisualizzareDashboardUseCase.png  
-used on input line 61.
-(pdftex.def)             Requested size: 354.86412pt x 132.82607pt.
-<src/useCaseDiagrams/EsportareElencoBugUseCase.png, id=57, 416.55624pt x 135.50
-626pt>
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzareDashboardUseCase.png  used on input line 61.
+(pdftex.def)             Requested size: 310.50357pt x 116.2218pt.
+<src/useCaseDiagrams/EsportareElencoBugUseCase.png, id=58, 416.55624pt x 135.50626pt>
 File: src/useCaseDiagrams/EsportareElencoBugUseCase.png Graphic file (type png)
-
 <use src/useCaseDiagrams/EsportareElencoBugUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/EsportareElencoBugUseCase.png  use
-d on input line 69.
-(pdftex.def)             Requested size: 310.50357pt x 101.01118pt.
-
-
-[4
-pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
-s been already used, duplicate ignored
+Package pdftex.def Info: src/useCaseDiagrams/EsportareElencoBugUseCase.png  used on input line 69.
+(pdftex.def)             Requested size: 266.14978pt x 86.58308pt.
+ [4
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.72 
      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
-s been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.72 
      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
-s been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.72 
-      <./src/useCaseDiagrams/InserireCommentiUseCase.png> <./src/useCaseDiagram
-s/ModificareStatoBugUseCase.png> <./src/useCaseDiagrams/VisualizzareDashboardUs
-eCase.png>]
-<src/useCaseDiagrams/ModificareBugUseCase.png, id=68, 815.045pt x 199.74625pt>
+      <./src/useCaseDiagrams/InserireCommentiUseCase.png> <./src/useCaseDiagrams/ModificareStatoBugUseCase.png> <./src/useCaseDiagrams/VisualizzareDashboardUseCase.png>]
+<src/useCaseDiagrams/ModificareBugUseCase.png, id=69, 815.045pt x 199.74625pt>
 File: src/useCaseDiagrams/ModificareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ModificareBugUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/ModificareBugUseCase.png  used on 
-input line 77.
+Package pdftex.def Info: src/useCaseDiagrams/ModificareBugUseCase.png  used on input line 77.
 (pdftex.def)             Requested size: 354.86412pt x 86.96815pt.
-<src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=69, 390.45876pt x 121.45
-375pt>
+<src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=70, 390.45876pt x 121.45375pt>
 File: src/useCaseDiagrams/AssociareEtichetteUseCase.png Graphic file (type png)
-
 <use src/useCaseDiagrams/AssociareEtichetteUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/AssociareEtichetteUseCase.png  use
-d on input line 85.
-(pdftex.def)             Requested size: 266.14978pt x 82.78944pt.
-<src/useCaseDiagrams/CercareBugUseCase.png, id=70, 610.28pt x 134.5025pt>
+Package pdftex.def Info: src/useCaseDiagrams/AssociareEtichetteUseCase.png  used on input line 85.
+(pdftex.def)             Requested size: 221.78923pt x 68.98842pt.
+<src/useCaseDiagrams/CercareBugUseCase.png, id=71, 610.28pt x 134.5025pt>
 File: src/useCaseDiagrams/CercareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/CercareBugUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/CercareBugUseCase.png  used on inp
-ut line 93.
+Package pdftex.def Info: src/useCaseDiagrams/CercareBugUseCase.png  used on input line 93.
 (pdftex.def)             Requested size: 354.86412pt x 78.21262pt.
-
-
-[5
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
-s been already used, duplicate ignored
+ [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.96 
      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
-as been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.96 
      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
-as been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.96 
-      <./src/useCaseDiagrams/EsportareElencoBugUseCase.png> <./src/useCaseDiagr
-ams/ModificareBugUseCase.png> <./src/useCaseDiagrams/AssociareEtichetteUseCase.
-png>]
-<src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png, id=81, 637.38126
-pt x 138.5175pt>
-File: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png Graphic file
- (type png)
+      <./src/useCaseDiagrams/EsportareElencoBugUseCase.png> <./src/useCaseDiagrams/ModificareBugUseCase.png> <./src/useCaseDiagrams/AssociareEtichetteUseCase.png>]
+<src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png, id=82, 637.38126pt x 138.5175pt>
+File: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCa
-se.png  used on input line 101.
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png  used on input line 101.
 (pdftex.def)             Requested size: 354.86412pt x 77.11906pt.
-<src/useCaseDiagrams/ArchiviareBugUseCase.png, id=82, 784.9325pt x 166.6225pt>
+<src/useCaseDiagrams/ArchiviareBugUseCase.png, id=83, 784.9325pt x 166.6225pt>
 File: src/useCaseDiagrams/ArchiviareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ArchiviareBugUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/ArchiviareBugUseCase.png  used on 
-input line 109.
+Package pdftex.def Info: src/useCaseDiagrams/ArchiviareBugUseCase.png  used on input line 109.
 (pdftex.def)             Requested size: 354.86412pt x 75.33028pt.
-<src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png, id=83, 759.83875pt x 1
-83.68625pt>
-File: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png Graphic file (type
- png)
+<src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png, id=84, 759.83875pt x 183.68625pt>
+File: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png
-  used on input line 117.
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png  used on input line 117.
 (pdftex.def)             Requested size: 354.86412pt x 85.78879pt.
-
-
-[6
-pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
-as been already used, duplicate ignored
+ [6
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.120 
       
-pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
-as been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.120 
       
-pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
-as been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.120 
-       <./src/useCaseDiagrams/CercareBugUseCase.png> <./src/useCaseDiagrams/Vis
-ualizzaCronologiaModificheUseCase.png> <./src/useCaseDiagrams/ArchiviareBugUseC
-ase.png>]
-<src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png, id=95, 770.88pt x 179.67
-125pt>
-File: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png Graphic file (type p
-ng)
+       <./src/useCaseDiagrams/CercareBugUseCase.png> <./src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png> <./src/useCaseDiagrams/ArchiviareBugUseCase.png>]
+<src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png, id=96, 770.88pt x 179.67125pt>
+File: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png  
-used on input line 125.
+Package pdftex.def Info: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png  used on input line 125.
 (pdftex.def)             Requested size: 354.86412pt x 82.70734pt.
-<src/useCaseDiagrams/VisualizzaReportMensileUseCase.png, id=96, 1009.7725pt x 2
-72.01625pt>
-File: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png Graphic file (type
- png)
+<src/useCaseDiagrams/VisualizzaReportMensileUseCase.png, id=97, 1009.7725pt x 272.01625pt>
+File: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaReportMensileUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png
-  used on input line 133.
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png  used on input line 133.
 (pdftex.def)             Requested size: 354.86412pt x 95.59311pt.
-<src/useCaseDiagrams/ImpostaScadenzeUseCase.png, id=97, 1009.7725pt x 272.01625
-pt>
+<src/useCaseDiagrams/ImpostaScadenzeUseCase.png, id=98, 1009.7725pt x 272.01625pt>
 File: src/useCaseDiagrams/ImpostaScadenzeUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ImpostaScadenzeUseCase.png>
-Package pdftex.def Info: src/useCaseDiagrams/ImpostaScadenzeUseCase.png  used o
-n input line 141.
-(pdftex.def)             Requested size: 354.86412pt x 95.59311pt.
-)
-
-[7
-pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
-as been already used, duplicate ignored
+Package pdftex.def Info: src/useCaseDiagrams/ImpostaScadenzeUseCase.png  used on input line 141.
+(pdftex.def)             Requested size: 399.21791pt x 107.54277pt.
+) [7
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.80     \newpage
                  
-pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
-as been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.80     \newpage
                  
-pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
-as been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.80     \newpage
-                  <./src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png> <.
-/src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png> <./src/useCaseDiagrams/V
-isualizzaReportMensileUseCase.png>]
-
-[8
-pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
-as been already used, duplicate ignored
+                  <./src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png> <./src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png> <./src/useCaseDiagrams/VisualizzaReportMensileUseCase.png>] [8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.80     \newpage
-                  <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>]
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/ot1minntx.fd)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/untxmia.fd)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/untxsym.fd)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/untxsyc.fd)
+                  <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>] (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd) (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd) (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd) (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd)
 Underfull \hbox (badness 10000) in paragraph at lines 123--123
-[]|\T1/ntxtlf/m/n/12 aaaaaaaaaa aaaaaaaaaa^^e0^^c0^^c1Err-fr-ghhhhhhhhHhhhhh
+[]|\T1/ntxtlf/m/n/12 aaaaaaaaaa aaaaaaaaaa‡¿¡Err-fr-ghhhhhhhhHhhhhh
  []
 
-
-
-[9] (src/inputs/Personas.tex
+[9] (./src/inputs/Personas.tex
 Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 19.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/ts1ntxtlf.fd
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 19.
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
@@ -1539,87 +1073,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--41
 
  []
 
-
-
-[10]
+[10{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 64--64
 
  []
-
-
 
 [11]
 Underfull \hbox (badness 10000) in paragraph at lines 87--87
 
  []
 
-
-
 [12]
 Underfull \hbox (badness 10000) in paragraph at lines 110--110
 
  []
-
-
 
 [13]
 Underfull \hbox (badness 10000) in paragraph at lines 133--133
 
  []
 
-
-
 [14]
 Underfull \hbox (badness 10000) in paragraph at lines 156--156
 
  []
-
-
 
 [15]
 Underfull \hbox (badness 10000) in paragraph at lines 179--179
 
  []
 
-
-
 [16]
 Underfull \hbox (badness 10000) in paragraph at lines 202--202
 
  []
 
-)
-
-[17]
-
-[18] (main.aux)
- ***********
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2020/03/25>
- ***********
+) [17] [18] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E030B8F4C502FA3CA6DDF3737BE28410;217.
  ) 
 Here is how much of TeX's memory you used:
- 29987 strings out of 468226
- 565281 string characters out of 5420954
- 922629 words of memory out of 5000000
- 57981 multiletter control sequences out of 15000+600000
- 665771 words of font info for 75 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,10n,101p,504b,957s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/
-enc/dvips/tex-gyre/q-ts1.enc}{/Users/carmineamato/Library/Application Support/M
-iKTeX/texmfs/install/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/Users/carmineamato/
-Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/newtx/ntx-ec-
-tlf-pc.enc}</Users/carmineamato/Library/Application Support/MiKTeX/texmfs/insta
-ll/fonts/type1/public/tex-gyre/qtmr.pfb></Users/carmineamato/Library/Applicatio
-n Support/MiKTeX/texmfs/install/fonts/type1/public/newtx/ztmb.pfb></Users/carmi
-neamato/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/ne
-wtx/ztmr.pfb>
-Output written on main.pdf (19 pages, 771248 bytes).
+ 29660 strings out of 476034
+ 543682 string characters out of 5792864
+ 1862388 words of memory out of 6000000
+ 49559 multiletter control sequences out of 15000+600000
+ 550824 words of font info for 67 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 99i,10n,94p,498b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on main.pdf (19 pages, 719746 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  39 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
