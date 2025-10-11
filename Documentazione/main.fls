@@ -174,6 +174,10 @@ INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hypcap/hypcap.sty
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hypcap/hypcap.sty
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/letltxmacro/letltxmacro.sty
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/letltxmacro/letltxmacro.sty
 INPUT ./src/uninafrontespizio/uninafrontespizio.sty
 INPUT src/uninafrontespizio/uninafrontespizio.sty
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
@@ -387,6 +391,8 @@ INPUT src/inputs/Glossario.tex
 INPUT ./src/inputs/UseCaseDiagrams.tex
 INPUT ./src/inputs/UseCaseDiagrams.tex
 INPUT src/inputs/UseCaseDiagrams.tex
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
 INPUT ./src/useCaseDiagrams/LoginUseCase.png
 INPUT ./src/useCaseDiagrams/LoginUseCase.png
 INPUT ./src/useCaseDiagrams/LoginUseCase.png
@@ -516,7 +522,6 @@ INPUT ./src/useCaseDiagrams/ImpostaScadenzeUseCase.png
 INPUT ./src/inputs/RequisitiNonFunzionali.tex
 INPUT ./src/inputs/RequisitiNonFunzionali.tex
 INPUT src/inputs/RequisitiNonFunzionali.tex
-INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd

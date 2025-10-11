@@ -2,6 +2,8 @@
 \babel@toc {italian}{}\relax 
 \contentsline {section}{\numberline {1}Glossario}{2}{section.1}%
 \contentsline {section}{\numberline {2}Use case diagrams}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Gestione delle ambiguit^^c3^^a0 e risoluzione dei problemi relativi alle funzionalit^^c3^^a0 da implementare}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}UCD}{3}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Requisiti non funzionali}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Affidabilit^^c3^^a0}{10}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Performance}{10}{subsection.3.2}%
