@@ -1,160 +1,155 @@
 \section{Use case diagrams}
-\subsection{Gestione delle ambiguità e risoluzione dei problemi relativi alle funzionalità da implementare}
-All'interno della descrizione delle funzionalità da implementare sono stati utilizzati
-i termini bug e issue spesso in maniera confunsionaria, l'ambiguità è stata risolta
-sviluppando le funzionalità per tutti i tipi di issue e non per i bug nello specifico.
-La funzionalità di notifica era citata in entrambe le funzionalità 4 e 6, è stato creato
-uno use case \sref{VisualizzaNotificheUseCase} a sè stante per questa funzionalità.
-La sezione della funzionalità 5 relativa all'invio di una notifica ad un utente quando
-gli viene assegnata una issue è stata inclusa nello use case diagram \sref{AssegnazioneBugUseCase}
-La funzionalità 14 è stata resa all'interno degli use case con un commento in figura \sref{AssegnazioneBugUseCase}
-La funzionalità 15 prevede l'esistenza di "utenti esterni", è stato quindi necessaria l'implementazione
-di una funzionalità di login per questi espressa nello use case \sref{LoginUseCase}.
-%Tutte le volte che è stato utilizzato bug l'abbiamo considerato come issue generica 
-%Le notifiche erano presenti sia in F4 che in F6 e abbiamo creato un use case a parte per la visualizzazione di queste
-%Aggiunto use case per il login di utente esterno
-%Aggiunta di commento allo use in figura 4 delle issue per indicare che queste possano essere suggerite dal sistema come da F14
-%modificare figura 5 in draw.io eliminare commento e aggiungere al commento in figura 4 il riferimento all'invio di notifica in caso di assegnazione di issue
+    \subsection{Gestione delle ambiguità e risoluzione dei problemi relativi alle funzionalità da implementare}
+        All'interno della descrizione delle funzionalità da implementare sono stati utilizzati
+        i termini bug e issue spesso in maniera confunsionaria, l'ambiguità è stata risolta
+        sviluppando le funzionalità per tutti i tipi di issue e non per i bug nello specifico.
+        La funzionalità di notifica era citata in entrambe le funzionalità 4 e 6, è stato creato
+        uno use case \sref{VisualizzaNotificheUseCase} a sè stante per questa funzionalità.
+        La sezione della funzionalità 5 relativa all'invio di una notifica ad un utente quando
+        gli viene assegnata una issue è stata inclusa nello use case diagram \sref{AssegnazioneBugUseCase}
+        La funzionalità 14 è stata resa all'interno degli use case con un commento in figura \sref{AssegnazioneBugUseCase}
+        La funzionalità 15 prevede l'esistenza di "utenti esterni", è stato quindi necessaria l'implementazione
+        di una funzionalità di login per questi espressa nello use case \sref{LoginUseCase}.
 
-\subsection{UCD}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/LoginUseCase.png}
-    \caption{Login use case diagram}\label{LoginUseCase}
-\end{figure}
+    \subsection{UCD}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/LoginUseCase.png}
+            \caption{Login use case diagram}\label{LoginUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/SegnalaIssueUseCase.png}
-    \caption{Segnalazione issue use case diagram}\label{SegnalazioneUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/SegnalaIssueUseCase.png}
+            \caption{Segnalazione issue use case diagram}\label{SegnalazioneUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png}
-    \caption{Visualizzazione riepilogo issue use case diagram}\label{RiepilogoIssueUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png}
+            \caption{Visualizzazione riepilogo issue use case diagram}\label{RiepilogoIssueUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/AssegnaBugUseCase.png}
-    \caption{Assegnazione issue use case diagram}\label{AssegnazioneBugUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/AssegnaBugUseCase.png}
+            \caption{Assegnazione issue use case diagram}\label{AssegnazioneBugUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaNotificheUseCase.png}
-    \caption{Visualizzazione notifiche use case diagram}\label{VisualizzaNotificheUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaNotificheUseCase.png}
+            \caption{Visualizzazione notifiche use case diagram}\label{VisualizzaNotificheUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/InserireCommentiUseCase.png}
-    \caption{Inserimento commenti use case diagram}\label{InserireCommentiUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/InserireCommentiUseCase.png}
+            \caption{Inserimento commenti use case diagram}\label{InserireCommentiUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{src/useCaseDiagrams/ModificareStatoBugUseCase.png}
-    \caption{Modificare stato di una issue use case diagram}\label{ModificaStatoUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{src/useCaseDiagrams/ModificareStatoBugUseCase.png}
+            \caption{Modificare stato di una issue use case diagram}\label{ModificaStatoUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{src/useCaseDiagrams/VisualizzareDashboardUseCase.png}
-    \caption{Visualizzazione dashboard use case diagram}\label{VisualizzaDashboardUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.7\linewidth]{src/useCaseDiagrams/VisualizzareDashboardUseCase.png}
+            \caption{Visualizzazione dashboard use case diagram}\label{VisualizzaDashboardUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{src/useCaseDiagrams/EsportareElencoBugUseCase.png}
-    \caption{Esportare elenco delle issue use case diagram}\label{EsportareElencoUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{src/useCaseDiagrams/EsportareElencoBugUseCase.png}
+            \caption{Esportare elenco delle issue use case diagram}\label{EsportareElencoUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/ModificareBugUseCase.png}
-    \caption{Modificare una issue use case diagram}\label{ModificaBugUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/ModificareBugUseCase.png}
+            \caption{Modificare una issue use case diagram}\label{ModificaBugUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{src/useCaseDiagrams/AssociareEtichetteUseCase.png}
-    \caption{Associare etichetta ad una issue use case diagram}\label{AssociazioneEtichettaUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{src/useCaseDiagrams/AssociareEtichetteUseCase.png}
+            \caption{Associare etichetta ad una issue use case diagram}\label{AssociazioneEtichettaUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/CercareBugUseCase.png}
-    \caption{Cercare una issue use case diagram}\label{CercaBugUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/CercareBugUseCase.png}
+            \caption{Cercare una issue use case diagram}\label{CercaBugUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png}
-    \caption{Visualizzazione cronologia modifiche issue use case diagram}\label{VisualizzaCronologiaModificheUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png}
+            \caption{Visualizzazione cronologia modifiche issue use case diagram}\label{VisualizzaCronologiaModificheUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/ArchiviareBugUseCase.png}
-    \caption{Archiviazione issue use case diagram}\label{ArchiviareBugUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/ArchiviareBugUseCase.png}
+            \caption{Archiviazione issue use case diagram}\label{ArchiviareBugUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png}
-    \caption{Visualizzazione "readonly" issue e commenti use case diagram}\label{VisualizzazioneBugCommentiUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png}
+            \caption{Visualizzazione "readonly" issue e commenti use case diagram}\label{VisualizzazioneBugCommentiUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png}
-    \caption{Contrassegna una issue come duplicato use case diagram}\label{ContrassegnaComeDuplicatoUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png}
+            \caption{Contrassegna una issue come duplicato use case diagram}\label{ContrassegnaComeDuplicatoUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaReportMensileUseCase.png}
-    \caption{Visualizzazione report mensile use case diagram}\label{VisualizzaReportMensileUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{src/useCaseDiagrams/VisualizzaReportMensileUseCase.png}
+            \caption{Visualizzazione report mensile use case diagram}\label{VisualizzaReportMensileUseCase}
+        \end{figure}
 
-\vspace{2cm}
+        \vspace{2cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{src/useCaseDiagrams/ImpostaScadenzeUseCase.png}
-    \caption{Imposta scadenze per la risoluzione di issue use case diagram}\label{ImpostaScadenzeUseCase}
-\end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{src/useCaseDiagrams/ImpostaScadenzeUseCase.png}
+            \caption{Imposta scadenze per la risoluzione di issue use case diagram}\label{ImpostaScadenzeUseCase}
+        \end{figure}
