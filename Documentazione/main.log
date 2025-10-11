@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  11 OCT 2025 17:04
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.16)  11 OCT 2025 17:23
+>>>>>>> Stashed changes
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -665,9 +669,16 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
+<<<<<<< Updated upstream
 \Hy@SectionHShift=\skip57
 )
 (src/uninafrontespizio/uninafrontespizio.sty
+=======
+\Hy@SectionHShift=\skip56
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
+Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
+) (./src/uninafrontespizio/uninafrontespizio.sty
+>>>>>>> Stashed changes
 
 LaTeX Warning: You have requested package `src/uninafrontespizio/uninafrontespi
 zio',
@@ -1059,6 +1070,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box83
 \tcb@temp=\box84
 )
+<<<<<<< Updated upstream
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
  71.
 
@@ -1151,6 +1163,63 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 \c@mv@boldtabular=\count368
 LaTeX Info: Command `\dddot' is already robust on input line 71.
 LaTeX Info: Command `\ddddot' is already robust on input line 71.
+=======
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 73.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
+File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
+)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 73.
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count336
+\l__pdf_internal_box=\box82
+) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 73.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 73.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
+File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
+)
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 73.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 73.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
+File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
+)
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 73.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 73.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
+)
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 73.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 73.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
+File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
+)
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+\c@mv@tabular=\count337
+\c@mv@boldtabular=\count338
+LaTeX Info: Command `\dddot' is already robust on input line 73.
+LaTeX Info: Command `\ddddot' is already robust on input line 73.
+>>>>>>> Stashed changes
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1186,32 +1255,72 @@ LaTeX Info: Command `\ddddot' is already robust on input line 71.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+<<<<<<< Updated upstream
 LaTeX Info: Redefining \it@ocap on input line 71.
 LaTeX Info: Redefining \it@ccap on input line 71.
 \c@lstlisting=\count369
 Package hyperref Info: Link coloring ON on input line 71.
 (main.out) (main.out)
+=======
+LaTeX Info: Redefining \it@ocap on input line 73.
+LaTeX Info: Redefining \it@ccap on input line 73.
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count339
+\scratchdimen=\dimen289
+\scratchbox=\box83
+\nofMPsegments=\count340
+\nofMParguments=\count341
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count342
+\MPscratchDim=\dimen290
+\MPnumerator=\count343
+\makeMPintoPDFobject=\count344
+\everyMPtoPDFconversion=\toks52
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\c@lstlisting=\count345
+Package hyperref Info: Link coloring ON on input line 73.
+ (./main.out) (./main.out)
+>>>>>>> Stashed changes
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 73.
+(Font)              scaled to size 17.28pt on input line 75.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
+<<<<<<< Updated upstream
 (Font)              scaled to size 17.28pt on input line 73.
 <src/uninafrontespizio/logo-federico-II.pdf, id=22, 501.79471pt x 499.8675pt>
 File: src/uninafrontespizio/logo-federico-II.pdf Graphic file (type pdf)
 <use src/uninafrontespizio/logo-federico-II.pdf>
 Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on in
 put line 73.
+=======
+(Font)              scaled to size 17.28pt on input line 75.
+<src/uninafrontespizio/logo-federico-II.pdf, id=27, 501.79471pt x 499.8675pt>
+File: src/uninafrontespizio/logo-federico-II.pdf Graphic file (type pdf)
+<use src/uninafrontespizio/logo-federico-II.pdf>
+Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on input line 75.
+>>>>>>> Stashed changes
 (pdftex.def)             Requested size: 99.58464pt x 99.20135pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 73.
+(Font)              scaled to size 14.4pt on input line 75.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 73.
+(Font)              scaled to size 14.4pt on input line 75.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 73.
+(Font)              scaled to size 24.88pt on input line 75.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
+<<<<<<< Updated upstream
 (Font)              scaled to size 24.88pt on input line 73.
+=======
+(Font)              scaled to size 24.88pt on input line 75.
+ [1
+>>>>>>> Stashed changes
 
 
 [1
@@ -1219,11 +1328,31 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 {/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/map/p
 dftex/pdftex.map} <./src/uninafrontespizio/logo-federico-II.pdf>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+<<<<<<< Updated upstream
 (Font)              scaled to size 17.28pt on input line 77.
  (main.toc
+=======
+(Font)              scaled to size 17.28pt on input line 79.
+ (./main.toc
+>>>>>>> Stashed changes
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 4.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
+File: ot1minntx.fd 2022/01/20 v1.0 font definition file for OT1/minntx
 )
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 4.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 4.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 4.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+))
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
@@ -1234,6 +1363,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
+<<<<<<< Updated upstream
 l.78     \newpage
                   [1] (src/inputs/Glossario.tex
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
@@ -1314,14 +1444,61 @@ on input line 50.
 [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
+=======
+l.80     \newpage
+                  [1] (./src/inputs/UseCaseDiagrams.tex
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 2.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 7.
+<src/useCaseDiagrams/LoginUseCase.png, id=55, 1064.97874pt x 662.475pt>
+File: src/useCaseDiagrams/LoginUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/LoginUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/LoginUseCase.png  used on input line 22.
+(pdftex.def)             Requested size: 354.86412pt x 220.74022pt.
+<src/useCaseDiagrams/SegnalaIssueUseCase.png, id=57, 1064.97874pt x 262.9825pt>
+File: src/useCaseDiagrams/SegnalaIssueUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/SegnalaIssueUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/SegnalaIssueUseCase.png  used on input line 30.
+(pdftex.def)             Requested size: 354.86412pt x 87.62717pt.
+ [2
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.53 
+l.33 
+      <./src/useCaseDiagrams/LoginUseCase.png>]
+<src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png, id=66, 1090.0725pt x 188.705pt>
+File: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png  used on input line 38.
+(pdftex.def)             Requested size: 354.86412pt x 61.42917pt.
+<src/useCaseDiagrams/AssegnaBugUseCase.png, id=67, 865.2325pt x 428.60126pt>
+File: src/useCaseDiagrams/AssegnaBugUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/AssegnaBugUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/AssegnaBugUseCase.png  used on input line 46.
+(pdftex.def)             Requested size: 354.86412pt x 175.7865pt.
+<src/useCaseDiagrams/VisualizzaNotificheUseCase.png, id=68, 589.20125pt x 145.54375pt>
+File: src/useCaseDiagrams/VisualizzaNotificheUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/VisualizzaNotificheUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaNotificheUseCase.png  used on input line 54.
+(pdftex.def)             Requested size: 354.86412pt x 87.6578pt.
+ [3
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.57 
+     
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+>>>>>>> Stashed changes
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.57 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
+<<<<<<< Updated upstream
 l.53 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
@@ -1361,14 +1538,41 @@ d on input line 74.
 [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
+=======
+l.57 
+      <./src/useCaseDiagrams/SegnalaIssueUseCase.png> <./src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png> <./src/useCaseDiagrams/AssegnaBugUseCase.png>]
+<src/useCaseDiagrams/InserireCommentiUseCase.png, id=78, 592.2125pt x 140.525pt>
+File: src/useCaseDiagrams/InserireCommentiUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/InserireCommentiUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/InserireCommentiUseCase.png  used on input line 62.
+(pdftex.def)             Requested size: 354.86412pt x 84.20628pt.
+<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=79, 864.22874pt x 161.60374pt>
+File: src/useCaseDiagrams/ModificareStatoBugUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/ModificareStatoBugUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/ModificareStatoBugUseCase.png  used on input line 70.
+(pdftex.def)             Requested size: 399.21791pt x 74.64932pt.
+<src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=80, 710.655pt x 265.99374pt>
+File: src/useCaseDiagrams/VisualizzareDashboardUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/VisualizzareDashboardUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzareDashboardUseCase.png  used on input line 78.
+(pdftex.def)             Requested size: 310.50357pt x 116.2218pt.
+ [4
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.77 
+l.81 
+     
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+>>>>>>> Stashed changes
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.81 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
+<<<<<<< Updated upstream
 l.77 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
@@ -1404,14 +1608,41 @@ ut line 98.
 [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
+=======
+l.81 
+      <./src/useCaseDiagrams/VisualizzaNotificheUseCase.png> <./src/useCaseDiagrams/InserireCommentiUseCase.png> <./src/useCaseDiagrams/ModificareStatoBugUseCase.png>]
+<src/useCaseDiagrams/EsportareElencoBugUseCase.png, id=90, 416.55624pt x 135.50626pt>
+File: src/useCaseDiagrams/EsportareElencoBugUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/EsportareElencoBugUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/EsportareElencoBugUseCase.png  used on input line 86.
+(pdftex.def)             Requested size: 221.78923pt x 72.14879pt.
+<src/useCaseDiagrams/ModificareBugUseCase.png, id=91, 815.045pt x 199.74625pt>
+File: src/useCaseDiagrams/ModificareBugUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/ModificareBugUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/ModificareBugUseCase.png  used on input line 94.
+(pdftex.def)             Requested size: 354.86412pt x 86.96815pt.
+<src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=92, 390.45876pt x 121.45375pt>
+File: src/useCaseDiagrams/AssociareEtichetteUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/AssociareEtichetteUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/AssociareEtichetteUseCase.png  used on input line 102.
+(pdftex.def)             Requested size: 221.78923pt x 68.98842pt.
+ [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.101 
+l.105 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+>>>>>>> Stashed changes
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.105 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
+<<<<<<< Updated upstream
 l.101 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
@@ -1449,14 +1680,41 @@ Package pdftex.def Info: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png
 [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
+=======
+l.105 
+       <./src/useCaseDiagrams/VisualizzareDashboardUseCase.png> <./src/useCaseDiagrams/EsportareElencoBugUseCase.png> <./src/useCaseDiagrams/ModificareBugUseCase.png>]
+<src/useCaseDiagrams/CercareBugUseCase.png, id=103, 610.28pt x 134.5025pt>
+File: src/useCaseDiagrams/CercareBugUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/CercareBugUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/CercareBugUseCase.png  used on input line 110.
+(pdftex.def)             Requested size: 354.86412pt x 78.21262pt.
+<src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png, id=104, 637.38126pt x 138.5175pt>
+File: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png  used on input line 118.
+(pdftex.def)             Requested size: 354.86412pt x 77.11906pt.
+<src/useCaseDiagrams/ArchiviareBugUseCase.png, id=105, 784.9325pt x 166.6225pt>
+File: src/useCaseDiagrams/ArchiviareBugUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/ArchiviareBugUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/ArchiviareBugUseCase.png  used on input line 126.
+(pdftex.def)             Requested size: 354.86412pt x 75.33028pt.
+ [6
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.125 
+l.129 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+>>>>>>> Stashed changes
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.129 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
+<<<<<<< Updated upstream
 l.125 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
@@ -1522,6 +1780,57 @@ as been already used, duplicate ignored
 l.82     \newpage
                   <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>]
 (src/inputs/Cockburn.tex
+=======
+l.129 
+       <./src/useCaseDiagrams/AssociareEtichetteUseCase.png> <./src/useCaseDiagrams/CercareBugUseCase.png> <./src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png>]
+<src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png, id=117, 759.83875pt x 183.68625pt>
+File: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png  used on input line 134.
+(pdftex.def)             Requested size: 354.86412pt x 85.78879pt.
+<src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png, id=118, 770.88pt x 179.67125pt>
+File: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png  used on input line 142.
+(pdftex.def)             Requested size: 354.86412pt x 82.70734pt.
+<src/useCaseDiagrams/VisualizzaReportMensileUseCase.png, id=119, 1009.7725pt x 272.01625pt>
+File: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/VisualizzaReportMensileUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png  used on input line 150.
+(pdftex.def)             Requested size: 354.86412pt x 95.59311pt.
+ [7
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.153 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.153 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.153 
+       <./src/useCaseDiagrams/ArchiviareBugUseCase.png> <./src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png> <./src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png>]
+<src/useCaseDiagrams/ImpostaScadenzeUseCase.png, id=130, 1009.7725pt x 272.01625pt>
+File: src/useCaseDiagrams/ImpostaScadenzeUseCase.png Graphic file (type png)
+<use src/useCaseDiagrams/ImpostaScadenzeUseCase.png>
+Package pdftex.def Info: src/useCaseDiagrams/ImpostaScadenzeUseCase.png  used on input line 158.
+(pdftex.def)             Requested size: 399.21791pt x 107.54277pt.
+) [8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.82     \newpage
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.82     \newpage
+                  <./src/useCaseDiagrams/VisualizzaReportMensileUseCase.png> <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>] (./src/inputs/Cockburn.tex
+>>>>>>> Stashed changes
 Underfull \hbox (badness 1264) in paragraph at lines 36--36
 []|\T1/ntxtlf/m/n/12 Clicca il bot-to-ne
  []
@@ -1590,6 +1899,7 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
+<<<<<<< Updated upstream
 (rerunfilecheck)             Checksum: FF632526FBC37DA8897F6A78DF5F602E;467.
  ) 
 Here is how much of TeX's memory you used:
@@ -1614,4 +1924,23 @@ PDF statistics:
  189 PDF objects out of 1000 (max. 8388607)
  39 named destinations out of 1000 (max. 500000)
  140 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+(rerunfilecheck)             Checksum: 18C7D945A859F23BA6427FCECA09FC18;1017.
+ ) 
+Here is how much of TeX's memory you used:
+ 29707 strings out of 476034
+ 544648 string characters out of 5792864
+ 1864388 words of memory out of 6000000
+ 49600 multiletter control sequences out of 15000+600000
+ 556434 words of font info for 69 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 99i,10n,94p,673b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on main.pdf (16 pages, 718347 bytes).
+PDF statistics:
+ 202 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
 
