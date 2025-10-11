@@ -4,6 +4,15 @@
 \contentsline {section}{\numberline {2}Use case diagrams}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Gestione delle ambiguità e risoluzione dei problemi relativi alle funzionalità da implementare}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}UCD}{5}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Fully dressed use case}{12}{section.3}%
-\contentsline {section}{\numberline {4}Use case Mock-up}{13}{section.4}%
-\contentsline {section}{\numberline {5}Personas}{14}{section.5}%
+\contentsline {section}{\numberline {3}Requisiti non funzionali}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Affidabilità}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Performance}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Manutenibilità}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Sicurezza}{12}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Requisiti di Dominio}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Tipologia di Issue}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Stati delle Issue}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Priorità delle Issue}{13}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Fully dressed use case}{14}{section.5}%
+\contentsline {section}{\numberline {6}Use case Mock-up}{15}{section.6}%
+\contentsline {section}{\numberline {7}Personas}{16}{section.7}%

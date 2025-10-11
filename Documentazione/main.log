@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.16)  11 OCT 2025 18:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.8.16)  11 OCT 2025 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -838,7 +838,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 17.28pt on input line 75.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 17.28pt on input line 75.
-<src/uninafrontespizio/logo-federico-II.pdf, id=35, 501.79471pt x 499.8675pt>
+<src/uninafrontespizio/logo-federico-II.pdf, id=71, 501.79471pt x 499.8675pt>
 File: src/uninafrontespizio/logo-federico-II.pdf Graphic file (type pdf)
 <use src/uninafrontespizio/logo-federico-II.pdf>
 Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on input line 75.
@@ -897,12 +897,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 2.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.8pt on input line 7.
-<src/useCaseDiagrams/LoginUseCase.png, id=116, 1064.97874pt x 662.475pt>
+<src/useCaseDiagrams/LoginUseCase.png, id=161, 1064.97874pt x 662.475pt>
 File: src/useCaseDiagrams/LoginUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/LoginUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/LoginUseCase.png  used on input line 17.
 (pdftex.def)             Requested size: 354.86412pt x 220.74022pt.
-<src/useCaseDiagrams/SegnalaIssueUseCase.png, id=118, 1064.97874pt x 262.9825pt>
+<src/useCaseDiagrams/SegnalaIssueUseCase.png, id=163, 1064.97874pt x 262.9825pt>
 File: src/useCaseDiagrams/SegnalaIssueUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/SegnalaIssueUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/SegnalaIssueUseCase.png  used on input line 25.
@@ -913,17 +913,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has
                                                   \__shipout_drop_firstpage_...
 l.28 
       <./src/useCaseDiagrams/LoginUseCase.png>]
-<src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png, id=124, 1090.0725pt x 188.705pt>
+<src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png, id=170, 1090.0725pt x 188.705pt>
 File: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png  used on input line 33.
 (pdftex.def)             Requested size: 354.86412pt x 61.42917pt.
-<src/useCaseDiagrams/AssegnaBugUseCase.png, id=125, 865.2325pt x 428.60126pt>
+<src/useCaseDiagrams/AssegnaBugUseCase.png, id=171, 865.2325pt x 428.60126pt>
 File: src/useCaseDiagrams/AssegnaBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/AssegnaBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/AssegnaBugUseCase.png  used on input line 41.
 (pdftex.def)             Requested size: 354.86412pt x 175.7865pt.
-<src/useCaseDiagrams/VisualizzaNotificheUseCase.png, id=126, 589.20125pt x 145.54375pt>
+<src/useCaseDiagrams/VisualizzaNotificheUseCase.png, id=172, 589.20125pt x 145.54375pt>
 File: src/useCaseDiagrams/VisualizzaNotificheUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaNotificheUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzaNotificheUseCase.png  used on input line 49.
@@ -944,17 +944,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has
                                                   \__shipout_drop_firstpage_...
 l.52 
       <./src/useCaseDiagrams/SegnalaIssueUseCase.png> <./src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png> <./src/useCaseDiagrams/AssegnaBugUseCase.png>]
-<src/useCaseDiagrams/InserireCommentiUseCase.png, id=135, 592.2125pt x 140.525pt>
+<src/useCaseDiagrams/InserireCommentiUseCase.png, id=181, 592.2125pt x 140.525pt>
 File: src/useCaseDiagrams/InserireCommentiUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/InserireCommentiUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/InserireCommentiUseCase.png  used on input line 57.
 (pdftex.def)             Requested size: 354.86412pt x 84.20628pt.
-<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=136, 864.22874pt x 161.60374pt>
+<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=182, 864.22874pt x 161.60374pt>
 File: src/useCaseDiagrams/ModificareStatoBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ModificareStatoBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ModificareStatoBugUseCase.png  used on input line 65.
 (pdftex.def)             Requested size: 399.21791pt x 74.64932pt.
-<src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=137, 710.655pt x 265.99374pt>
+<src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=183, 710.655pt x 265.99374pt>
 File: src/useCaseDiagrams/VisualizzareDashboardUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzareDashboardUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzareDashboardUseCase.png  used on input line 73.
@@ -975,17 +975,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has
                                                   \__shipout_drop_firstpage_...
 l.76 
       <./src/useCaseDiagrams/VisualizzaNotificheUseCase.png> <./src/useCaseDiagrams/InserireCommentiUseCase.png> <./src/useCaseDiagrams/ModificareStatoBugUseCase.png>]
-<src/useCaseDiagrams/EsportareElencoBugUseCase.png, id=145, 416.55624pt x 135.50626pt>
+<src/useCaseDiagrams/EsportareElencoBugUseCase.png, id=191, 416.55624pt x 135.50626pt>
 File: src/useCaseDiagrams/EsportareElencoBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/EsportareElencoBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/EsportareElencoBugUseCase.png  used on input line 81.
 (pdftex.def)             Requested size: 221.78923pt x 72.14879pt.
-<src/useCaseDiagrams/ModificareBugUseCase.png, id=146, 815.045pt x 199.74625pt>
+<src/useCaseDiagrams/ModificareBugUseCase.png, id=192, 815.045pt x 199.74625pt>
 File: src/useCaseDiagrams/ModificareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ModificareBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ModificareBugUseCase.png  used on input line 89.
 (pdftex.def)             Requested size: 354.86412pt x 86.96815pt.
-<src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=147, 390.45876pt x 121.45375pt>
+<src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=193, 390.45876pt x 121.45375pt>
 File: src/useCaseDiagrams/AssociareEtichetteUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/AssociareEtichetteUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/AssociareEtichetteUseCase.png  used on input line 97.
@@ -1006,17 +1006,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) ha
                                                   \__shipout_drop_firstpage_...
 l.100 
        <./src/useCaseDiagrams/VisualizzareDashboardUseCase.png> <./src/useCaseDiagrams/EsportareElencoBugUseCase.png> <./src/useCaseDiagrams/ModificareBugUseCase.png>]
-<src/useCaseDiagrams/CercareBugUseCase.png, id=155, 610.28pt x 134.5025pt>
+<src/useCaseDiagrams/CercareBugUseCase.png, id=201, 610.28pt x 134.5025pt>
 File: src/useCaseDiagrams/CercareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/CercareBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/CercareBugUseCase.png  used on input line 105.
 (pdftex.def)             Requested size: 354.86412pt x 78.21262pt.
-<src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png, id=156, 637.38126pt x 138.5175pt>
+<src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png, id=202, 637.38126pt x 138.5175pt>
 File: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png  used on input line 113.
 (pdftex.def)             Requested size: 354.86412pt x 77.11906pt.
-<src/useCaseDiagrams/ArchiviareBugUseCase.png, id=157, 784.9325pt x 166.6225pt>
+<src/useCaseDiagrams/ArchiviareBugUseCase.png, id=203, 784.9325pt x 166.6225pt>
 File: src/useCaseDiagrams/ArchiviareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ArchiviareBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ArchiviareBugUseCase.png  used on input line 121.
@@ -1037,17 +1037,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) ha
                                                   \__shipout_drop_firstpage_...
 l.124 
        <./src/useCaseDiagrams/AssociareEtichetteUseCase.png> <./src/useCaseDiagrams/CercareBugUseCase.png> <./src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png>]
-<src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png, id=166, 759.83875pt x 183.68625pt>
+<src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png, id=211, 759.83875pt x 183.68625pt>
 File: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png  used on input line 129.
 (pdftex.def)             Requested size: 354.86412pt x 85.78879pt.
-<src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png, id=167, 770.88pt x 179.67125pt>
+<src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png, id=212, 770.88pt x 179.67125pt>
 File: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png  used on input line 137.
 (pdftex.def)             Requested size: 354.86412pt x 82.70734pt.
-<src/useCaseDiagrams/VisualizzaReportMensileUseCase.png, id=168, 1009.7725pt x 272.01625pt>
+<src/useCaseDiagrams/VisualizzaReportMensileUseCase.png, id=213, 1009.7725pt x 272.01625pt>
 File: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/VisualizzaReportMensileUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png  used on input line 145.
@@ -1068,7 +1068,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) ha
                                                   \__shipout_drop_firstpage_...
 l.148 
        <./src/useCaseDiagrams/ArchiviareBugUseCase.png> <./src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png> <./src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png>]
-<src/useCaseDiagrams/ImpostaScadenzeUseCase.png, id=176, 1009.7725pt x 272.01625pt>
+<src/useCaseDiagrams/ImpostaScadenzeUseCase.png, id=221, 1009.7725pt x 272.01625pt>
 File: src/useCaseDiagrams/ImpostaScadenzeUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ImpostaScadenzeUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ImpostaScadenzeUseCase.png  used on input line 153.
@@ -1083,7 +1083,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.86   \newpage
-                <./src/useCaseDiagrams/VisualizzaReportMensileUseCase.png> <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>] (./src/inputs/Cockburn.tex
+                <./src/useCaseDiagrams/VisualizzaReportMensileUseCase.png> <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>] (./src/inputs/RequisitiNonFunzionali.tex
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 7.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 7.
+ [12{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]) [13] (./src/inputs/Cockburn.tex
 Underfull \hbox (badness 1264) in paragraph at lines 36--36
 []|\T1/ntxtlf/m/n/12 Clicca il bot-to-ne
  []
@@ -1093,70 +1100,64 @@ Underfull \hbox (badness 7963) in paragraph at lines 36--36
 []|\T1/ntxtlf/m/n/12 3a<Non com-pi-la
  []
 
-) [12] (./src/inputs/Mockup.tex
-<src/Mock-up/Mock-up.png, id=197, 1291.82625pt x 483.8075pt>
+) [14] (./src/inputs/Mockup.tex
+<src/Mock-up/Mock-up.png, id=251, 1291.82625pt x 483.8075pt>
 File: src/Mock-up/Mock-up.png Graphic file (type png)
 <use src/Mock-up/Mock-up.png>
 Package pdftex.def Info: src/Mock-up/Mock-up.png  used on input line 4.
 (pdftex.def)             Requested size: 443.57848pt x 166.12386pt.
-) [13
+) [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.90   \newpage
+l.92   \newpage
                 <./src/Mock-up/Mock-up.png>] (./src/inputs/Personas.tex
 Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 19.
-(/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 19.
 
 Underfull \hbox (badness 10000) in paragraph at lines 43--43
 
  []
 
-[14{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 66--66
 
  []
 
-[15]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 89--89
 
  []
 
-[16]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 112--112
 
  []
 
-[17]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 135--135
 
  []
 
-) [18] [19] (./main.aux)
+) [20] [21] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A62631EBB7EDEA9D29C1C91678A7C450;1234.
+(rerunfilecheck)             Checksum: 198BA98920349D4C87F064BC3A202ABE;2490.
  ) 
 Here is how much of TeX's memory you used:
- 29741 strings out of 476034
- 545205 string characters out of 5792864
+ 29766 strings out of 476034
+ 545653 string characters out of 5792864
  1864388 words of memory out of 6000000
- 49616 multiletter control sequences out of 15000+600000
+ 49627 multiletter control sequences out of 15000+600000
  556434 words of font info for 69 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  99i,10n,94p,673b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (20 pages, 768014 bytes).
+Output written on main.pdf (22 pages, 772547 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 319 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 
