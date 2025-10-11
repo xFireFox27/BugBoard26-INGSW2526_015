@@ -344,10 +344,6 @@ INPUT ./main.toc
 INPUT ./main.toc
 INPUT main.toc
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
-OUTPUT main.toc
-INPUT ./src/inputs/Glossario.tex
-INPUT ./src/inputs/Glossario.tex
-INPUT src/inputs/Glossario.tex
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ot1minntx.fd
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ot1minntx.fd
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ot1minntx.fd
@@ -384,6 +380,10 @@ INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/font
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntxexa.tfm
+OUTPUT main.toc
+INPUT ./src/inputs/Glossario.tex
+INPUT ./src/inputs/Glossario.tex
+INPUT src/inputs/Glossario.tex
 INPUT ./src/inputs/UseCaseDiagrams.tex
 INPUT ./src/inputs/UseCaseDiagrams.tex
 INPUT src/inputs/UseCaseDiagrams.tex
@@ -513,16 +513,20 @@ INPUT ./src/useCaseDiagrams/ImpostaScadenzeUseCase.png
 INPUT ./src/useCaseDiagrams/ImpostaScadenzeUseCase.png
 INPUT ./src/useCaseDiagrams/ImpostaScadenzeUseCase.png
 INPUT ./src/useCaseDiagrams/ImpostaScadenzeUseCase.png
+INPUT ./src/inputs/RequisitiNonFunzionali.tex
+INPUT ./src/inputs/RequisitiNonFunzionali.tex
+INPUT src/inputs/RequisitiNonFunzionali.tex
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
+INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 INPUT ./src/inputs/Cockburn.tex
 INPUT ./src/inputs/Cockburn.tex
 INPUT src/inputs/Cockburn.tex
 INPUT ./src/inputs/Personas.tex
 INPUT ./src/inputs/Personas.tex
 INPUT src/inputs/Personas.tex
-INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
-INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
-INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/newtx/ts1ntxtlf.fd
-INPUT /Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

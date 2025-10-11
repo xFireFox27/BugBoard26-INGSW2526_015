@@ -1,0 +1,51 @@
+\section{Requisiti non funzionali}
+In questà sezione sono elencati i requisiti non funzionali del sistema BugBoard26, 
+ovvero le caratteristiche e le qualità che il sistema deve possedere per garantire un'esperienza utente ottimale e un funzionamento efficiente.
+
+\subsection{Affidabilità}
+\begin{itemize}
+    \item \textbf{Disponibilità:} Il sistema deve essere disponibile il 99.9\% del tempo, con tempi di inattività minimi per manutenzione e aggiornamenti.
+    \item \textbf{Recupero da guasti:} In caso di guasto, il sistema deve essere in grado di recuperare rapidamente e ripristinare i dati senza perdita significativa.
+    \item \textbf{Gestione dei dati:} Tutti i dati (bug, commenti, cronologie) devono essere salvati in modo persistente lato back-end.
+\end{itemize}
+
+\subsection{Performance}
+\begin{itemize}
+    \item \textbf{Tempo di risposta:} Le operazioni principali (come il caricamento della dashboard, la segnalazione di un bug, l'assegnazione di un bug) devono avere un tempo di risposta inferiore a 2 secondi.
+    \item \textbf{Scalabilità:} Il sistema deve essere in grado di gestire un aumento del numero di utenti e dati senza degradare le prestazioni.
+\end{itemize}
+
+\subsection{Manutenibilità}
+\begin{itemize}
+    \item \textbf{Linguaggio usato:} Il codice deve essere strutturato secondo principi di programmazione Object-Oriented (OOP).
+    \item \textbf{Modularità:} Il sistema deve essere modulare e separato tra front-end e back-end (architettura distribuita).
+\end{itemize}
+
+\subsection{Sicurezza}
+\begin{itemize}
+    \item \textbf{Autenticazione:} Il sistema deve garantire un meccanismo di autenticazione sicuro basato su email e password. Le password devono essere salvate in forma cifrata.
+\end{itemize}
+
+
+
+
+
+
+\newpage
+
+\section{Requisiti di Dominio}
+In questa sezione sono elencati i requisiti di dominio del sistema BugBoard26, ovvero le specifiche e le caratteristiche che il sistema deve soddisfare in relazione al contesto in cui opera.
+\subsection{Tipologia di Issue}
+\begin{itemize}
+    \item Ogni issue appartiene a una categoria: bug, feature, question, documentation.
+\end{itemize}
+
+\subsection{Stati delle Issue}
+\begin{itemize}
+    \item Tutte le issue hanno uno stato che può assumere valori come: todo, in progress, done, archived.
+\end{itemize}
+
+\subsection{Priorità delle Issue}
+\begin{itemize}
+    \item Ogni issue ha una priorità che può essere: alta, media, bassa.
+\end{itemize}

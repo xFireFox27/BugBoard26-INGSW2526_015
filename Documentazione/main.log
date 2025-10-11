@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  11 OCT 2025 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  11 OCT 2025 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1198,7 +1198,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 17.28pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 17.28pt on input line 73.
-<src/uninafrontespizio/logo-federico-II.pdf, id=22, 501.79471pt x 499.8675pt>
+<src/uninafrontespizio/logo-federico-II.pdf, id=58, 501.79471pt x 499.8675pt>
 File: src/uninafrontespizio/logo-federico-II.pdf Graphic file (type pdf)
 <use src/uninafrontespizio/logo-federico-II.pdf>
 Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on in
@@ -1223,6 +1223,82 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
  (main.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
+e 6.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/ot1minntx.fd
+File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+)
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 6.6pt on input line 6.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 6.6pt on input line 6.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.6pt on input line 6.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.6pt on input line 6.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
+6.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/untxmia.fd
+File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 6.6pt on input line 6.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
+6.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.6pt on input line 6.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
+6.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+)
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.6pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 12.0pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.8pt on input line 6.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.6pt on input line 6.
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -1235,15 +1311,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.78     \newpage
-                  [1] (src/inputs/Glossario.tex
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/ot1minntx.fd)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/untxmia.fd)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/untxsym.fd)
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/untxsyc.fd))
+                  [1] (src/inputs/Glossario.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 35--80
 
  []
@@ -1251,20 +1319,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--80
 
 
 [2] (src/inputs/UseCaseDiagrams.tex
-<src/useCaseDiagrams/LoginUseCase.png, id=44, 1064.97874pt x 662.475pt>
+<src/useCaseDiagrams/LoginUseCase.png, id=89, 1064.97874pt x 662.475pt>
 File: src/useCaseDiagrams/LoginUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/LoginUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/LoginUseCase.png  used on input li
 ne 10.
 (pdftex.def)             Requested size: 354.86412pt x 220.74022pt.
-<src/useCaseDiagrams/SegnalaIssueUseCase.png, id=46, 1064.97874pt x 262.9825pt>
+<src/useCaseDiagrams/SegnalaIssueUseCase.png, id=91, 1064.97874pt x 262.9825pt>
 
 File: src/useCaseDiagrams/SegnalaIssueUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/SegnalaIssueUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/SegnalaIssueUseCase.png  used on i
 nput line 18.
 (pdftex.def)             Requested size: 354.86412pt x 87.62717pt.
-<src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png, id=47, 1090.0725pt x 188.7
+<src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png, id=92, 1090.0725pt x 188.7
 05pt>
 File: src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png Graphic file (type png
 )
@@ -1288,22 +1356,22 @@ s been already used, duplicate ignored
 l.29 
       <./src/useCaseDiagrams/LoginUseCase.png> <./src/useCaseDiagrams/SegnalaIs
 sueUseCase.png>]
-<src/useCaseDiagrams/AssegnaBugUseCase.png, id=56, 865.2325pt x 428.60126pt>
+<src/useCaseDiagrams/AssegnaBugUseCase.png, id=101, 865.2325pt x 428.60126pt>
 File: src/useCaseDiagrams/AssegnaBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/AssegnaBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/AssegnaBugUseCase.png  used on inp
 ut line 34.
 (pdftex.def)             Requested size: 354.86412pt x 175.7865pt.
-<src/useCaseDiagrams/VisualizzaNotificheUseCase.png, id=57, 589.20125pt x 145.5
-4375pt>
+<src/useCaseDiagrams/VisualizzaNotificheUseCase.png, id=102, 589.20125pt x 145.
+54375pt>
 File: src/useCaseDiagrams/VisualizzaNotificheUseCase.png Graphic file (type png
 )
 <use src/useCaseDiagrams/VisualizzaNotificheUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzaNotificheUseCase.png  us
 ed on input line 42.
 (pdftex.def)             Requested size: 354.86412pt x 87.6578pt.
-<src/useCaseDiagrams/InserireCommentiUseCase.png, id=58, 592.2125pt x 140.525pt
->
+<src/useCaseDiagrams/InserireCommentiUseCase.png, id=103, 592.2125pt x 140.525p
+t>
 File: src/useCaseDiagrams/InserireCommentiUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/InserireCommentiUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/InserireCommentiUseCase.png  used 
@@ -1332,24 +1400,24 @@ l.53
       <./src/useCaseDiagrams/VisualizzaRiepilogoUseCase.png> <./src/useCaseDiag
 rams/AssegnaBugUseCase.png> <./src/useCaseDiagrams/VisualizzaNotificheUseCase.p
 ng>]
-<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=69, 864.22874pt x 161.60
-374pt>
+<src/useCaseDiagrams/ModificareStatoBugUseCase.png, id=114, 864.22874pt x 161.6
+0374pt>
 File: src/useCaseDiagrams/ModificareStatoBugUseCase.png Graphic file (type png)
 
 <use src/useCaseDiagrams/ModificareStatoBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ModificareStatoBugUseCase.png  use
 d on input line 58.
 (pdftex.def)             Requested size: 399.21791pt x 74.64932pt.
-<src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=70, 710.655pt x 265.9
-9374pt>
+<src/useCaseDiagrams/VisualizzareDashboardUseCase.png, id=115, 710.655pt x 265.
+99374pt>
 File: src/useCaseDiagrams/VisualizzareDashboardUseCase.png Graphic file (type p
 ng)
 <use src/useCaseDiagrams/VisualizzareDashboardUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzareDashboardUseCase.png  
 used on input line 66.
 (pdftex.def)             Requested size: 310.50357pt x 116.2218pt.
-<src/useCaseDiagrams/EsportareElencoBugUseCase.png, id=71, 416.55624pt x 135.50
-626pt>
+<src/useCaseDiagrams/EsportareElencoBugUseCase.png, id=116, 416.55624pt x 135.5
+0626pt>
 File: src/useCaseDiagrams/EsportareElencoBugUseCase.png Graphic file (type png)
 
 <use src/useCaseDiagrams/EsportareElencoBugUseCase.png>
@@ -1379,21 +1447,22 @@ l.77
       <./src/useCaseDiagrams/InserireCommentiUseCase.png> <./src/useCaseDiagram
 s/ModificareStatoBugUseCase.png> <./src/useCaseDiagrams/VisualizzareDashboardUs
 eCase.png>]
-<src/useCaseDiagrams/ModificareBugUseCase.png, id=82, 815.045pt x 199.74625pt>
+<src/useCaseDiagrams/ModificareBugUseCase.png, id=127, 815.045pt x 199.74625pt>
+
 File: src/useCaseDiagrams/ModificareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ModificareBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ModificareBugUseCase.png  used on 
 input line 82.
 (pdftex.def)             Requested size: 354.86412pt x 86.96815pt.
-<src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=83, 390.45876pt x 121.45
-375pt>
+<src/useCaseDiagrams/AssociareEtichetteUseCase.png, id=128, 390.45876pt x 121.4
+5375pt>
 File: src/useCaseDiagrams/AssociareEtichetteUseCase.png Graphic file (type png)
 
 <use src/useCaseDiagrams/AssociareEtichetteUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/AssociareEtichetteUseCase.png  use
 d on input line 90.
 (pdftex.def)             Requested size: 221.78923pt x 68.98842pt.
-<src/useCaseDiagrams/CercareBugUseCase.png, id=84, 610.28pt x 134.5025pt>
+<src/useCaseDiagrams/CercareBugUseCase.png, id=129, 610.28pt x 134.5025pt>
 File: src/useCaseDiagrams/CercareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/CercareBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/CercareBugUseCase.png  used on inp
@@ -1422,22 +1491,23 @@ l.101
        <./src/useCaseDiagrams/EsportareElencoBugUseCase.png> <./src/useCaseDiag
 rams/ModificareBugUseCase.png> <./src/useCaseDiagrams/AssociareEtichetteUseCase
 .png>]
-<src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png, id=96, 637.38126
-pt x 138.5175pt>
+<src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png, id=141, 637.3812
+6pt x 138.5175pt>
 File: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png Graphic file
  (type png)
 <use src/useCaseDiagrams/VisualizzaCronologiaModificheUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzaCronologiaModificheUseCa
 se.png  used on input line 106.
 (pdftex.def)             Requested size: 354.86412pt x 77.11906pt.
-<src/useCaseDiagrams/ArchiviareBugUseCase.png, id=97, 784.9325pt x 166.6225pt>
+<src/useCaseDiagrams/ArchiviareBugUseCase.png, id=142, 784.9325pt x 166.6225pt>
+
 File: src/useCaseDiagrams/ArchiviareBugUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ArchiviareBugUseCase.png>
 Package pdftex.def Info: src/useCaseDiagrams/ArchiviareBugUseCase.png  used on 
 input line 114.
 (pdftex.def)             Requested size: 354.86412pt x 75.33028pt.
-<src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png, id=98, 759.83875pt x 1
-83.68625pt>
+<src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png, id=143, 759.83875pt x 
+183.68625pt>
 File: src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png Graphic file (type
  png)
 <use src/useCaseDiagrams/VisualizzareBugCommentiUseCase.png>
@@ -1467,7 +1537,7 @@ l.125
        <./src/useCaseDiagrams/CercareBugUseCase.png> <./src/useCaseDiagrams/Vis
 ualizzaCronologiaModificheUseCase.png> <./src/useCaseDiagrams/ArchiviareBugUseC
 ase.png>]
-<src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png, id=109, 770.88pt x 179.6
+<src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png, id=154, 770.88pt x 179.6
 7125pt>
 File: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png Graphic file (type p
 ng)
@@ -1475,7 +1545,7 @@ ng)
 Package pdftex.def Info: src/useCaseDiagrams/ContrassegnaDuplicatiUseCase.png  
 used on input line 130.
 (pdftex.def)             Requested size: 354.86412pt x 82.70734pt.
-<src/useCaseDiagrams/VisualizzaReportMensileUseCase.png, id=110, 1009.7725pt x 
+<src/useCaseDiagrams/VisualizzaReportMensileUseCase.png, id=155, 1009.7725pt x 
 272.01625pt>
 File: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png Graphic file (type
  png)
@@ -1483,7 +1553,7 @@ File: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png Graphic file (type
 Package pdftex.def Info: src/useCaseDiagrams/VisualizzaReportMensileUseCase.png
   used on input line 138.
 (pdftex.def)             Requested size: 354.86412pt x 95.59311pt.
-<src/useCaseDiagrams/ImpostaScadenzeUseCase.png, id=111, 1009.7725pt x 272.0162
+<src/useCaseDiagrams/ImpostaScadenzeUseCase.png, id=156, 1009.7725pt x 272.0162
 5pt>
 File: src/useCaseDiagrams/ImpostaScadenzeUseCase.png Graphic file (type png)
 <use src/useCaseDiagrams/ImpostaScadenzeUseCase.png>
@@ -1521,7 +1591,23 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.82     \newpage
                   <./src/useCaseDiagrams/ImpostaScadenzeUseCase.png>]
-(src/inputs/Cockburn.tex
+(src/inputs/RequisitiNonFunzionali.tex
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 5.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
+e 7.
+
+(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
+x/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 7.
+
+
+[10])
+
+[11] (src/inputs/Cockburn.tex
 Underfull \hbox (badness 1264) in paragraph at lines 36--36
 []|\T1/ntxtlf/m/n/12 Clicca il bot-to-ne
  []
@@ -1533,20 +1619,11 @@ Underfull \hbox (badness 7963) in paragraph at lines 36--36
 
 )
 
-[10] (src/inputs/Personas.tex
+[12] (src/inputs/Personas.tex
 Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 19.
-
-(/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 19.
 
 Underfull \hbox (badness 10000) in paragraph at lines 43--43
 
@@ -1554,50 +1631,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--43
 
 
 
-[11]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 66--66
 
  []
 
 
 
-[12]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 89--89
 
  []
 
 
 
-[13]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 112--112
 
  []
 
 
 
-[14]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 135--135
 
  []
 
 )
 
-[15]
+[17]
 
-[16] (main.aux)
+[18] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FF632526FBC37DA8897F6A78DF5F602E;467.
+(rerunfilecheck)             Checksum: 10C15ACEC60526700795E60A6E46C57D;1720.
  ) 
 Here is how much of TeX's memory you used:
- 29992 strings out of 468226
- 565607 string characters out of 5420954
- 924719 words of memory out of 5000000
- 57980 multiletter control sequences out of 15000+600000
- 665771 words of font info for 75 fonts, out of 8000000 for 9000
+ 30022 strings out of 468226
+ 566243 string characters out of 5420954
+ 924726 words of memory out of 5000000
+ 57996 multiletter control sequences out of 15000+600000
+ 668638 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,10n,101p,504b,957s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/
@@ -1609,9 +1686,9 @@ ll/fonts/type1/public/tex-gyre/qtmr.pfb></Users/carmineamato/Library/Applicatio
 n Support/MiKTeX/texmfs/install/fonts/type1/public/newtx/ztmb.pfb></Users/carmi
 neamato/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/ne
 wtx/ztmr.pfb>
-Output written on main.pdf (17 pages, 773784 bytes).
+Output written on main.pdf (19 pages, 784345 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 140 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 212 words of extra memory for PDF output out of 10000 (max. 10000000)
 

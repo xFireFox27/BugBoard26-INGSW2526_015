@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760195065.17011 "/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex" "main.pdf" "main" 1760195066.57223 0
-  "/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex" 1760194462.65867 2194 b28e83929204652af314ed4a1ce049cb ""
+["pdflatex"] 1760198101.42018 "/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex" "main.pdf" "main" 1760198102.7513 0
+  "/Users/carmineamato/Desktop/BugBoard26-INGSW2526_015-/Documentazione/main.tex" 1760196407.73158 2257 0d551209f5fb92edee76dd0a1c26b0f7 ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1760016102.78949 163260 f7138aa97b0a1dcae55100dabb7d9e7d ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1751624844.90566 13247005 d7d1b7864ef92e03393d1f5ad0e19ae6 ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1760014982.46338 3136 bbe665bd0bb471a2da1e8fd326cff9fa ""
@@ -188,13 +188,14 @@
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.sty" 1751622545.03617 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xpatch/xpatch.sty" 1760014984.26899 8510 9829c50ab36366d4da41fdc87e7d0699 ""
   "/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xstring/xstring.sty" 1760014985.58774 123 a302f2c651a95033260db60e51527ae8 ""
-  "main.aux" 1760195066.38959 4906 0fdceea5d2c29f9f4a8e924ca2cd809f "pdflatex"
-  "main.out" 1760195066.39045 467 ff632526fbc37da8897f6a78df5f602e "pdflatex"
-  "main.tex" 1760194462.65867 2194 b28e83929204652af314ed4a1ce049cb ""
-  "main.toc" 1760195066.39072 342 24743d0e5915848d1ea3f1babf4430b1 "pdflatex"
+  "main.aux" 1760198102.57533 6024 31dab1e687f206795f39c09dedcc1e1e "pdflatex"
+  "main.out" 1760198102.57645 1720 10c15acec60526700795e60a6e46c57d "pdflatex"
+  "main.tex" 1760196407.73158 2257 0d551209f5fb92edee76dd0a1c26b0f7 ""
+  "main.toc" 1760198102.57672 1091 71597270b6ab98c37b8bca992516e187 "pdflatex"
   "src/inputs/Cockburn.tex" 1760194422.20061 1921 63963517c4e9ad14c7d335048a398c6a ""
   "src/inputs/Glossario.tex" 1760195064.51251 1924 285c309b795b92e9c5541311766c375f ""
   "src/inputs/Personas.tex" 1760194422.20079 4747 3ff6a5360c3734badb189173d2cf6c3b ""
+  "src/inputs/RequisitiNonFunzionali.tex" 1760198099.49535 2445 90767dc4bf861ef29da303b1ab084342 ""
   "src/inputs/UseCaseDiagrams.tex" 1760194422.20096 4934 1d20e54ba15a9b6cf42329af893436ca ""
   "src/uninafrontespizio/logo-federico-II.pdf" 1760014979.35613 133374 80fc15669ec907fd5c7a726fc2c3d0c0 ""
   "src/uninafrontespizio/uninafrontespizio.sty" 1760014979.35626 5634 1bfa880c64007d78dab3dee241a717b2 ""
