@@ -1,1 +1,38 @@
 .DS_Store
+# macOS
+.DS_Store
+**/.DS_Store
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.nlo
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdy
+
+# LaTeX temporary files
+*~
+*.tmp
+*.backup
+*.swp
+*.swo
+
+# Bibliography files (if using external tools)
+*.bib.bak
