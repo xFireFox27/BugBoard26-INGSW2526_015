@@ -1,36 +1,36 @@
 \section{Fully dressed use case}
 
 \begin{table}[H]    
-
-\def\arraystretch{1.5}
-
+\small  
+\def\arraystretch{1.3}
 
 \begin{tabularx}{\linewidth}{|l|X|X|X|}
 
     \hline \textbf{Use Case} \#\ref{SegnalazioneUseCase} & 
     \multicolumn{3}{l|}{Creazione Issue} \\ 
     \hline \textbf{Goal In Context} & 
-    \multicolumn{3}{>{\hsize=\dimexpr 3\hsize+4\tabcolsep+2\arrayrulewidth\relax}X|}{L'utente vuole creare una nuova issue} \\
+    \multicolumn{3}{p{10cm}|}{L'utente vuole creare una nuova issue} \\
     \hline \textbf{Preconditions} &
-    \multicolumn{3}{>{\hsize=\dimexpr 3\hsize+4\tabcolsep+2\arrayrulewidth\relax}X|}{Avere ruolo di amministratore o utente} \\
+    \multicolumn{3}{p{10cm}|}{Avere ruolo di amministratore o utente} \\
     \hline \textbf{Success End Conditions} &
-    \multicolumn{3}{>{\hsize=\dimexpr 3\hsize+4\tabcolsep+2\arrayrulewidth\relax}X|}{L'issue viene salvata e aggiunta alla lista delle issue} \\
+    \multicolumn{3}{p{10cm}|}{L'issue viene salvata e aggiunta alla lista delle issue} \\
     \hline \textbf{Failed End Conditions} &
-    \multicolumn{3}{>{\hsize=\dimexpr 3\hsize+4\tabcolsep+2\arrayrulewidth\relax}X|}{L'issue non viene salvata} \\
+    \multicolumn{3}{p{10cm}|}{L'issue non viene salvata} \\
     \hline \textbf{Primary Actor} &
-    \multicolumn{3}{>{\hsize=\dimexpr 3\hsize+4\tabcolsep+2\arrayrulewidth\relax}X|}{Amministratore/utente} \\
-    \hline \textbf{Trigger} & \multicolumn{3}{>{\hsize=\dimexpr 3\hsize+4\tabcolsep+2\arrayrulewidth\relax}X|}{L'utente si autentica e clicca il pulsante "Crea issue"} \\
-    \hline \multirow{2}{*}{\textbf{Main Scenario}} & \textbf{Step} & \textbf{User Action} & \textbf{System} \\
+    \multicolumn{3}{p{10cm}|}{Amministratore/utente} \\
+    \hline \textbf{Trigger} & 
+    \multicolumn{3}{p{10cm}|}{L'utente si autentica e clicca il pulsante "Crea issue"} \\
+    \hline \multirow{5}{*}{\textbf{Main Scenario}} & \textbf{Step} & \textbf{User Action} & \textbf{System} \\
     \cline{2-4} & 1 & Clicca il bottone "Crea issue" & \\
     \cline{2-4} & 2 & & Mostra "Creazione issue"\\
     \cline{2-4} & 3 & Compila i campi & \\
     \cline{2-4} & 4 &  & Mostra "Successo"\\
-    \hline \multirow{2}{*}{\textbf{Extension}} & \textbf{Step} & \textbf{User Action} & \textbf{System} \\
+    \hline \multirow{5}{*}{\textbf{Extension}} & \textbf{Step} & \textbf{User Action} & \textbf{System} \\
     \cline{2-4} & 3a<Non compila tutti i campi> & Compila i campi & \\
     \cline{2-4} & 4a & & Mostra "Errore" \\
     \cline{2-4} & 5a & Clicca "OK" & \\
     \cline{2-4} & 6a & & Mostra "Creazione Issue" \\
-    \hline \textbf{Open Issues} & \multicolumn{3}{l|}{} \\
+    \hline \textbf{Open Issues} & \multicolumn{3}{l|}{Nessuna} \\
     \hline
 
 \end{tabularx}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  11 OCT 2025 18:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.7.4)  13 OCT 2025 11:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1067,67 +1067,67 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box84
 )
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 73.
+ 74.
 
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
 x/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 73.
+(Font)              scaled to size 12.0pt on input line 74.
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 73.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 74.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 73.
+ 74.
 
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
 x/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 74.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-73.
+74.
 
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
 x/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 74.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 73.
+ 74.
 
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
 x/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 74.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 73.
+e 74.
 
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/late
 x/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
 
 (/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/tex/cont
 ext/base/mkii/supp-pdf.mkii
@@ -1156,8 +1156,8 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@mv@tabular=\count367
 \c@mv@boldtabular=\count368
-LaTeX Info: Command `\dddot' is already robust on input line 73.
-LaTeX Info: Command `\ddddot' is already robust on input line 73.
+LaTeX Info: Command `\dddot' is already robust on input line 74.
+LaTeX Info: Command `\ddddot' is already robust on input line 74.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1193,32 +1193,32 @@ LaTeX Info: Command `\ddddot' is already robust on input line 73.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 73.
-LaTeX Info: Redefining \it@ccap on input line 73.
+LaTeX Info: Redefining \it@ocap on input line 74.
+LaTeX Info: Redefining \it@ccap on input line 74.
 \c@lstlisting=\count369
-Package hyperref Info: Link coloring ON on input line 73.
+Package hyperref Info: Link coloring ON on input line 74.
 (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 75.
+(Font)              scaled to size 17.28pt on input line 76.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 75.
+(Font)              scaled to size 17.28pt on input line 76.
 <src/uninafrontespizio/logo-federico-II.pdf, id=70, 501.79471pt x 499.8675pt>
 File: src/uninafrontespizio/logo-federico-II.pdf Graphic file (type pdf)
 <use src/uninafrontespizio/logo-federico-II.pdf>
 Package pdftex.def Info: src/uninafrontespizio/logo-federico-II.pdf  used on in
-put line 75.
+put line 76.
 (pdftex.def)             Requested size: 99.58464pt x 99.20135pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 75.
+(Font)              scaled to size 14.4pt on input line 76.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 75.
+(Font)              scaled to size 14.4pt on input line 76.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 75.
+(Font)              scaled to size 24.88pt on input line 76.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 24.88pt on input line 75.
+(Font)              scaled to size 24.88pt on input line 76.
 
 
 [1
@@ -1226,7 +1226,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 {/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/data/fonts/map/p
 dftex/pdftex.map} <./src/uninafrontespizio/logo-federico-II.pdf>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 79.
+(Font)              scaled to size 17.28pt on input line 80.
  (main.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 3.
@@ -1317,7 +1317,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.80   \newpage
+l.81   \newpage
                 [1] (main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
@@ -1602,13 +1602,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.86   \newpage
+l.87   \newpage
                
 pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.86   \newpage
+l.87   \newpage
                 <./src/useCaseDiagrams/VisualizzaReportMensileUseCase.png> <./s
 rc/useCaseDiagrams/ImpostaScadenzeUseCase.png>]
 (src/inputs/RequisitiNonFunzionali.tex
@@ -1626,19 +1626,22 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 [12])
 
 [13] (src/inputs/Cockburn.tex
-Underfull \hbox (badness 1264) in paragraph at lines 36--36
-[]|\T1/ntxtlf/m/n/12 Clicca il bot-to-ne
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]|\T1/ntxtlf/m/n/10.95 Clicca il bot-to-ne
  []
 
 
-Underfull \hbox (badness 7963) in paragraph at lines 36--36
-[]|\T1/ntxtlf/m/n/12 3a<Non com-pi-la
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+[]|\T1/ntxtlf/m/n/10.95 Mostra "Crea-zio-ne
  []
 
 )
 
 [14] (src/inputs/Mockup.tex
-<src/Mock-up/Mock-up.png, id=249, 1291.82625pt x 483.8075pt>
+<src/Mock-up/Mock-up.png, id=243, 1291.82625pt x 483.8075pt>
 File: src/Mock-up/Mock-up.png Graphic file (type png)
 <use src/Mock-up/Mock-up.png>
 Package pdftex.def Info: src/Mock-up/Mock-up.png  used on input line 4.
@@ -1650,7 +1653,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.92   \newpage
+l.93   \newpage
                 <./src/Mock-up/Mock-up.png>] (src/inputs/Personas.tex
 Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
@@ -1702,11 +1705,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 198BA98920349D4C87F064BC3A202ABE;2490.
  ) 
 Here is how much of TeX's memory you used:
- 30129 strings out of 468226
- 568757 string characters out of 5420954
+ 30157 strings out of 468226
+ 569215 string characters out of 5420954
  926555 words of memory out of 5000000
- 58082 multiletter control sequences out of 15000+600000
- 671509 words of font info for 77 fonts, out of 8000000 for 9000
+ 58108 multiletter control sequences out of 15000+600000
+ 688952 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,10n,101p,679b,957s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/carmineamato/Library/Application Support/MiKTeX/texmfs/install/fonts/
@@ -1718,9 +1721,9 @@ ll/fonts/type1/public/tex-gyre/qtmr.pfb></Users/carmineamato/Library/Applicatio
 n Support/MiKTeX/texmfs/install/fonts/type1/public/newtx/ztmb.pfb></Users/carmi
 neamato/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/ne
 wtx/ztmr.pfb>
-Output written on main.pdf (22 pages, 837695 bytes).
+Output written on main.pdf (22 pages, 837608 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
+ 309 PDF objects out of 1000 (max. 8388607)
  57 named destinations out of 1000 (max. 500000)
  241 words of extra memory for PDF output out of 10000 (max. 10000000)
 
