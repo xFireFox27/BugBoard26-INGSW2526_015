@@ -20,10 +20,12 @@
 \usepackage{tcolorbox}
 \usepackage{array}
 
+\definecolor{niceblue}{RGB}{30,144,255} % Dodger Blue from mockup
+
 % Definizione del comando \persona - versione con ambiente
 \newtcolorbox{infobox}[1][]{
-  colback=green!2,
-  colframe=green!90!yellow!40!black,
+  colback=niceblue!5,
+  colframe=niceblue!90!black,
   fonttitle=\bfseries,
   title=#1,
   left=2mm, right=2mm, top=1mm, bottom=1mm,
