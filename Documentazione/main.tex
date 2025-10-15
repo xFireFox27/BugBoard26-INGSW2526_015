@@ -12,7 +12,6 @@
 \usepackage{enumitem}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref}
 \usepackage[figure]{hypcap}
-\newcommand{\sref}[1]{\nobreak\textsuperscript{\hyperref[#1]{\ref{#1}}}} %comando per avere collegamenti ad apice
 \usepackage{src/uninafrontespizio/uninafrontespizio}
 \usepackage{multirow}
 \usepackage{float} 
@@ -20,9 +19,10 @@
 \usepackage{tcolorbox}
 \usepackage{array}
 
-\definecolor{niceblue}{RGB}{30,144,255} % Dodger Blue from mockup
+\newcommand{\sref}[1]{\nobreak\textsuperscript{\hyperref[#1]{\ref{#1}}}}
 
-% Definizione del comando \persona - versione con ambiente
+\definecolor{niceblue}{RGB}{30,144,255}
+
 \newtcolorbox{infobox}[1][]{
   colback=niceblue!5,
   colframe=niceblue!90!black,
@@ -55,7 +55,6 @@
     \end{infobox}
   \end{tcolorbox}
 }
-
 
 \onehalfspacing
 
