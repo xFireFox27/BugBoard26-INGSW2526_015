@@ -36,3 +36,8 @@
 
 # Bibliography files (if using external tools)
 *.bib.bak
+
+#env files for tokens and keys
+*.env
+*.env.local
+*.env.*.local
