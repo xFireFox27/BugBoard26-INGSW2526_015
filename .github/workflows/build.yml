@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: 17
-          distribution: 'zulu' # Alternative distribution options are available.
+          distribution: 'zulu'
       - name: Cache SonarQube packages
         uses: actions/cache@v4
         with:
@@ -30,8 +30,25 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+      - name: Locate pom files (debug)
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 6 -name pom.xml -print || true
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          working-directory: ${{ github.workspace }}/backend
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=xFireFox27_BugBoard26-INGSW2526_015
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        run: |
+          set -euo pipefail
+          POM=$(find . -maxdepth 6 -name pom.xml | head -n1 || true)
+          if [ -z "$POM" ]; then
+            echo "ERROR: no pom.xml found in repository. Aborting."
+            exit 1
+          fi
+          echo "Found POM: $POM"
+          mvn -B -U -V -f "$POM" clean verify
+          mvn -B -f "$POM" org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+            -Dsonar.projectKey=xFireFox27_BugBoard26-INGSW2526_015 \
+            -Dsonar.login=${SONAR_TOKEN} \
+            -Dsonar.host.url=${SONAR_HOST_URL}
