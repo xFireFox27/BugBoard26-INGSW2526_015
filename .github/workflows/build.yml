@@ -38,7 +38,6 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
           set -euo pipefail
           POM=$(find . -maxdepth 6 -name pom.xml | head -n1 || true)
@@ -49,6 +48,4 @@ jobs:
           echo "Found POM: $POM"
           mvn -B -U -V -f "$POM" clean verify
           mvn -B -f "$POM" org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-            -Dsonar.projectKey=xFireFox27_BugBoard26-INGSW2526_015 \
-            -Dsonar.login=${SONAR_TOKEN} \
-            -Dsonar.host.url=${SONAR_HOST_URL}
+            -Dsonar.projectKey=xFireFox27_BugBoard26-INGSW2526_015 
