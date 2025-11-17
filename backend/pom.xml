@@ -97,6 +97,7 @@
     </build>
 
     <properties>
+        <sonar.organization>xfirefox27</sonar.organization>
         <jersey.version>4.0.0-M4</jersey.version>
         <junit5.version>5.12.2</junit5.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
