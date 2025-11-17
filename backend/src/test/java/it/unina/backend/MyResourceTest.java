@@ -1,4 +1,4 @@
-package it.unina.backend.test;
+package it.unina.backend;
 
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
