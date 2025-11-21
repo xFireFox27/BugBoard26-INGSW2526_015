@@ -21,9 +21,6 @@
         </dependencies>
     </dependencyManagement>
 
-
-
-
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
@@ -40,7 +37,6 @@
             <version>42.6.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
         <dependency>
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
@@ -93,7 +89,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <!-- Surefire support for JUnit-5 -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.3</version>
