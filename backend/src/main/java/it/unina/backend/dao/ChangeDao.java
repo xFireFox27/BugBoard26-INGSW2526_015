@@ -16,15 +16,13 @@ import java.util.List;
 
 public class ChangeDao implements ChangeDaoInterface {
 
-    UserDao userDao = UserDao.getInstance();
-
     public List<Change> findChangesByIssue(Issue issue) throws SQLException{
         String sql = "SELECT * FROM change JOIN \"User\" AS u ON u.username = change.created_by WHERE related_to = ?";
         List<Change> changes = new ArrayList<Change>();
 
         try (Connection connection = DatabaseConnection.getInstance().getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql);
-            st.setString(1, issue.id);
+            st.setInt(1, issue.getId());
 
             ResultSet rs = st.executeQuery();
 
@@ -66,7 +64,7 @@ public class ChangeDao implements ChangeDaoInterface {
             st.setString(1, action);
             st.setString(2, details);
             st.setString(3, user.getUsername());
-            st.setString(4, issue.getId());
+            st.setInt(4, issue.getId());
             st.executeUpdate();
         }
     }
