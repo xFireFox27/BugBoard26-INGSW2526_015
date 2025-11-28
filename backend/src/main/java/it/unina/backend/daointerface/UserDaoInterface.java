@@ -3,7 +3,6 @@ package it.unina.backend.daointerface;
 import it.unina.backend.entity.User;
 
 import java.sql.SQLException;
-import java.time.OffsetDateTime;
 
 public interface UserDaoInterface{
 

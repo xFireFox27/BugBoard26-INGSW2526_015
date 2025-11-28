@@ -37,7 +37,8 @@ public class LoginController {
             String token = JwtUtil.generateToken(user.getEmail(), user.getUsername());
 
             return Response.ok()
-                    .entity("{\"token\": \"" + token + "\", \"user\": {\"username\": \"" + user.getUsername() + "\", \"email\": \"" + user.getEmail() + "\"}}")
+                    .entity("{\"token\": \"" + token + "\", \"user\": {\"username\": \"" + user.getUsername() +
+                            "\", \"email\": \"" + user.getEmail() + "\", \"role\": \"" + user.getRole() + "\"}}")
                     .build();
 
 
