@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>it.unina.backend</groupId>
-    <artifactId>backend-test</artifactId>
+    <artifactId>backend</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>backend-test</name>
+    <name>backend</name>
 
     <dependencyManagement>
         <dependencies>

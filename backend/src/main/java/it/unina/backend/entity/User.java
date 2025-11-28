@@ -20,7 +20,7 @@ public class User{
     private OffsetDateTime createdOn;
 
     public User(String email, String username, String passwordHash, String name, String surname, String role, OffsetDateTime createdOn)  {
-        if(role.equals("admin") || role.equals("normal") || role.equals("external")){
+        if(role.equals("Admin") || role.equals("Normal") || role.equals("External")){
             this.role = role;
         }
         else throw new IllegalArgumentException("tentativo di creazione di un utente con ruolo: " + role + " ruolo deve assumere un valore tra: admin, normal o external.");

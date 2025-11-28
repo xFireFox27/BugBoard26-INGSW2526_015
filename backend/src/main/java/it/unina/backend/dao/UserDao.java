@@ -1,6 +1,5 @@
 package it.unina.backend.dao;
 
-import it.unina.backend.util.*;
 import it.unina.backend.entity.User;
 import it.unina.backend.daointerface.UserDaoInterface;
 import java.time.OffsetDateTime;
@@ -36,33 +35,42 @@ public class UserDao implements UserDaoInterface {
     }
 
     public User findByEmailAndPassword(String email, String plainPassword) throws SQLException {
-        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        String sql = "SELECT username, email, password_hash, name, surname, " +
+                "role, created_on FROM \"user\" WHERE email = ?";
 
-        try (Connection connection = DatabaseConnection.getInstance().getConnection()) {
-            var preparedStatement = connection.prepareStatement(sql);
+        try (Connection connection = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
             preparedStatement.setString(1, email);
-            preparedStatement.setString(2, plainPassword);
 
-            var resultSet = preparedStatement.executeQuery();
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    String hashedPassword = resultSet.getString("password_hash");
 
-            if (resultSet.next()) {
-                OffsetDateTime createdOn = resultSet.getTimestamp("created_on")
-                        .toLocalDateTime()
-                        .atOffset(java.time.ZoneOffset.UTC);
+                    if (!org.mindrot.jbcrypt.BCrypt.checkpw(plainPassword, hashedPassword)) {
+                        return null;
+                    }
 
-                return new User(
-                        resultSet.getString("email"),
-                        resultSet.getString("username"),
-                        resultSet.getString("password"),
-                        resultSet.getString("name"),
-                        resultSet.getString("surname"),
-                        resultSet.getString("role"),
-                        createdOn
-                );
-            } else {
-                return null;
+                    OffsetDateTime createdOn = resultSet.getTimestamp("created_on")
+                            .toLocalDateTime()
+                            .atOffset(java.time.ZoneOffset.UTC);
+
+                    return new User(
+                            resultSet.getString("email"),
+                            resultSet.getString("username"),
+                            hashedPassword,
+                            resultSet.getString("name"),
+                            resultSet.getString("surname"),
+                            resultSet.getString("role"),
+                            createdOn
+                    );
+                } else {
+                    return null;
+                }
             }
         }
     }
+
+
 
 }
