@@ -18,7 +18,6 @@ public class LoginController {
     private final UserDao userDao = UserDao.getInstance();
 
     @POST
-    @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(LoginRequest request) {
