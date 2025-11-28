@@ -18,7 +18,11 @@ public class UserDao implements UserDaoInterface {
         PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, email);
             st.setString(2, username);
-
+            st.setString(3, passwordHash);
+            st.setString(4, name);
+            st.setString(5, surname);
+            st.setString(6, role);
+            st.execute();
         }
     }
 }
