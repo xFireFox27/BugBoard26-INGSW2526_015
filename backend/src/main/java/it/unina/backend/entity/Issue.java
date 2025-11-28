@@ -32,7 +32,13 @@ public class Issue {
     @NotNull
     private final OffsetDateTime createdOn;
 
-    public Issue(Integer id, String title, String description, String type, String status, String createdBy, OffsetDateTime createdOn) {
+    public Issue(Integer id,
+                 String title,
+                 String description,
+                 String type, String status,
+                 String createdBy,
+                 OffsetDateTime createdOn) {
+
         if (!type.equals("Bug") &&
             !type.equals("Documentation") &&
             !type.equals("Question") &&
