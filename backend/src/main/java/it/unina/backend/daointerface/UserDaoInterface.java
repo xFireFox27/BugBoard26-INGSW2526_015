@@ -2,7 +2,9 @@ package it.unina.backend.daointerface;
 
 import it.unina.backend.entity.User;
 
+import java.time.OffsetDateTime;
+
 public interface UserDaoInterface{
 
-    public User getUsers();
+    public void creaUser(String email, String username, String passwordHash, String name, String surname, String role);
 }
