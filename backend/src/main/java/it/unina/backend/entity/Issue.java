@@ -43,7 +43,7 @@ public class Issue {
             !status.equals("In Progress") &&
             !status.equals("Done") &&
             !status.equals("Archived")) {
-            throw new IllegalArgumentException("Lo stato deve essere 'Bug', 'Documentation', 'Question' o 'Feature'");
+            throw new IllegalArgumentException("Lo stato deve essere 'Done', 'In Progress', 'Done' o 'Archived'");
         }
         this.id = id;
         this.title = title;
