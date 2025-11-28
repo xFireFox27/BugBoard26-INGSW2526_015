@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
+import java.time.ZoneOffset;
 
 public class UserDao implements UserDaoInterface {
 
@@ -23,7 +24,7 @@ public class UserDao implements UserDaoInterface {
         return instance;
     }
 
-    public void creaUser(String email, String username, String passwordHash, String name, String surname, String role) throws SQLException {
+    public void insertUser(String email, String username, String passwordHash, String name, String surname, String role) throws SQLException {
 
         String sql = "INSERT INTO \"User\" (email, username, password_hash, name, surname, role) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -38,6 +39,32 @@ public class UserDao implements UserDaoInterface {
             st.executeUpdate();
         }
     }
+
+    /*public User findUserByUsername(String username) throws SQLException {
+        String sql = "SELECT * FROM User WHERE username = ?";
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();){
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, username);
+            ResultSet rs = st.executeQuery();
+            if(rs.next()){
+                OffsetDateTime createdOn = rs.getTimestamp("created_on")
+                        .toLocalDateTime()
+                        .atOffset(ZoneOffset.UTC);
+
+                return new User(
+                        rs.getString("email"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("name"),
+                        rs.getString("surname"),
+                        rs.getString("role"),
+                        createdOn
+                );
+            } else {
+                return null;
+            }
+        }
+    } */
 
     public User findByEmailAndPassword(String email, String plainPassword) throws SQLException {
         String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
