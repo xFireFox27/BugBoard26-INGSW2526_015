@@ -52,6 +52,14 @@ public class User{
         return createdOn;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
