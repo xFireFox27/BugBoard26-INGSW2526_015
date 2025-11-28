@@ -45,12 +45,14 @@ public class Issue {
             !type.equals("Feature")) {
             throw new IllegalArgumentException("Il tipo deve essere 'Bug', 'Documentation', 'Question' o 'Feature'");
         }
+
         if (!status.equals("To Do") &&
             !status.equals("In Progress") &&
             !status.equals("Done") &&
             !status.equals("Archived")) {
             throw new IllegalArgumentException("Lo stato deve essere 'Done', 'In Progress', 'Done' o 'Archived'");
         }
+
         this.id = id;
         this.title = title;
         this.description = description;
