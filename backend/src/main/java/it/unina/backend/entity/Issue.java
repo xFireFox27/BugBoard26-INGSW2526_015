@@ -35,7 +35,8 @@ public class Issue {
     public Issue(Integer id,
                  String title,
                  String description,
-                 String type, String status,
+                 String type,
+                 String status,
                  String createdBy,
                  OffsetDateTime createdOn) {
 
