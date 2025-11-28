@@ -1,9 +1,7 @@
+### macOS ###
 .DS_Store
-# macOS
-.DS_Store
-**/.DS_Store
 
-# LaTeX auxiliary files
+### LaTeX auxiliary files ###
 *.aux
 *.bbl
 *.bcf
@@ -27,17 +25,46 @@
 *.vrb
 *.xdy
 
-# LaTeX temporary files
+### LaTeX temporary files ###
 *~
 *.tmp
 *.backup
 *.swp
 *.swo
 
-# Bibliography files (if using external tools)
+### Bibliography files (if using external tools) ###
 *.bib.bak
 
-#env files for tokens and keys
+### env files for tokens and keys ###
 *.env
 *.env.local
 *.env.*.local
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+.idea
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### VS Code ###
+.vscode/
