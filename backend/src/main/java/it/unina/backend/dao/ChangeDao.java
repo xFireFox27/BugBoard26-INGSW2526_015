@@ -16,6 +16,17 @@ import java.util.List;
 
 public class ChangeDao implements ChangeDaoInterface {
 
+    private static ChangeDao instance;
+
+    private ChangeDao() {}
+
+    public static ChangeDao getInstance() {
+        if (instance == null) {
+            instance = new ChangeDao();
+        }
+        return instance;
+    }
+
     public List<Change> findChangesByIssue(Issue issue) throws SQLException{
         String sql = "SELECT * FROM change JOIN \"User\" AS u ON u.username = change.created_by WHERE related_to = ?";
         List<Change> changes = new ArrayList<Change>();
