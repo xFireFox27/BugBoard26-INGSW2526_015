@@ -27,44 +27,52 @@ public class ChangeDao implements ChangeDaoInterface {
         return instance;
     }
 
-    public List<Change> findChangesByIssue(Issue issue) throws SQLException{
-        String sql = "SELECT * FROM change JOIN \"User\" AS u ON u.username = change.created_by WHERE related_to = ?";
-        List<Change> changes = new ArrayList<Change>();
+    public List<Change> findChangesByIssue(Issue issue) throws SQLException {
+        String sql = "SELECT c.change_id, c.action, c.details, c.made_on, " +
+                "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
+                "FROM change c " +
+                "JOIN \"user\" u ON u.username = c.created_by " +
+                "WHERE c.related_to = ?";
+        List<Change> changes = new ArrayList<>();
 
-        try (Connection connection = DatabaseConnection.getInstance().getConnection()) {
-            PreparedStatement st = connection.prepareStatement(sql);
+        try (Connection connection = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement st = connection.prepareStatement(sql)) {
+
             st.setInt(1, issue.getId());
 
-            ResultSet rs = st.executeQuery();
+            try (ResultSet rs = st.executeQuery()) {
+                while (rs.next()) {
+                    OffsetDateTime madeOn = rs.getTimestamp("made_on")
+                            .toLocalDateTime()
+                            .atOffset(java.time.ZoneOffset.UTC);
 
-            while(rs.next()) {
-                OffsetDateTime madeOn = rs.getTimestamp("made_on")
-                        .toLocalDateTime()
-                        .atOffset(java.time.ZoneOffset.UTC);
+                    OffsetDateTime createdOn = rs.getTimestamp("created_on")
+                            .toLocalDateTime()
+                            .atOffset(java.time.ZoneOffset.UTC);
 
-                OffsetDateTime createdOn = rs.getTimestamp("created_on")
-                        .toLocalDateTime()
-                        .atOffset(java.time.ZoneOffset.UTC);
-
-                changes.add(new Change(
-                        rs.getInt("change_id"),
-                        rs.getString("action"),
-                        rs.getString("details"),
-                        madeOn,
-                        new User(rs.getString(
-                                "email"),
-                                rs.getString("username"),
-                                rs.getString("passwordHash"),
-                                rs.getString("name"),
-                                rs.getString("surname"),
-                                rs.getString("role"),
-                                createdOn),
-                        issue
-                ));
+                    changes.add(new Change(
+                            rs.getInt("change_id"),
+                            rs.getString("action"),
+                            rs.getString("details"),
+                            madeOn,
+                            new User(
+                                    rs.getString("email"),
+                                    rs.getString("username"),
+                                    rs.getString("password_hash"),
+                                    rs.getString("name"),
+                                    rs.getString("surname"),
+                                    rs.getString("role"),
+                                    createdOn
+                            ),
+                            issue
+                    ));
+                }
             }
             return changes;
         }
     }
+
+
 
     public void insertChange(String action, String details, User user, Issue issue) throws SQLException{
 
