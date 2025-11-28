@@ -25,7 +25,7 @@ public class UserDao implements UserDaoInterface {
 
     public void creaUser(String email, String username, String passwordHash, String name, String surname, String role) throws SQLException {
 
-        String sql = "INSERT INTO User (email, username, password_hash, name, surname, role) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO \"User\" (email, username, password_hash, name, surname, role) VALUES (?, ?, ?, ?, ?, ?)";
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
         PreparedStatement st = connection.prepareStatement(sql)){
@@ -35,7 +35,7 @@ public class UserDao implements UserDaoInterface {
             st.setString(4, name);
             st.setString(5, surname);
             st.setString(6, role);
-            st.execute();
+            st.executeUpdate();
         }
     }
 

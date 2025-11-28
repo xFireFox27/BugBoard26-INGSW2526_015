@@ -59,32 +59,4 @@ public class User{
     public String getUsername() {
         return username;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public void setCreatedOn(OffsetDateTime createdOn) {
-        this.createdOn = createdOn;
-    }
 }
