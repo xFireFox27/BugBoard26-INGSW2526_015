@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 
 public class IssueDao implements IssueDaoInterface {
     private static IssueDao instance;
@@ -23,7 +22,7 @@ public class IssueDao implements IssueDaoInterface {
     }
 
     @Override
-    public boolean createIssue(Issue issue) {
+    public boolean insertIssue(Issue issue) {
         String sql = "INSERT INTO issue (issue_id, title, description, type, created_by) values (?, ?, ?, ?, ?)";
 
         try(

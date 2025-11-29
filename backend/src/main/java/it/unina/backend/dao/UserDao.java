@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
-import java.time.ZoneOffset;
 
 public class UserDao implements UserDaoInterface {
 
@@ -23,23 +22,29 @@ public class UserDao implements UserDaoInterface {
         return instance;
     }
 
-    public void insertUser(String email, String username, String passwordHash, String name, String surname, String role) throws SQLException {
+    @Override
+    public void insertUser(User user) throws SQLException {
 
-        String sql = "INSERT INTO \"User\" (email, username, password_hash, name, surname, role) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO \"user\" (email, username, password_hash, name, surname, role) " +
+                     "VALUES (?, ?, ?, ?, ?, ?)"
+        ;
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
-        PreparedStatement st = connection.prepareStatement(sql)){
-            st.setString(1, email);
-            st.setString(2, username);
-            st.setString(3, passwordHash);
-            st.setString(4, name);
-            st.setString(5, surname);
-            st.setString(6, role);
+            PreparedStatement st = connection.prepareStatement(sql)
+        ) {
+            st.setString(1, user.getEmail());
+            st.setString(2, user.getUsername());
+            st.setString(3, user.getPasswordHash());
+            st.setString(4, user.getName());
+            st.setString(5, user.getSurname());
+            st.setString(6, user.getRole());
             st.executeUpdate();
         }
     }
 
-    /*public User findUserByUsername(String username) throws SQLException {
+    /*
+    @Override
+    public User findUserByUsername(String username) throws SQLException {
         String sql = "SELECT * FROM User WHERE username = ?";
         try(Connection connection = DatabaseConnection.getInstance().getConnection();){
             PreparedStatement st = connection.prepareStatement(sql);
@@ -63,9 +68,11 @@ public class UserDao implements UserDaoInterface {
                 return null;
             }
         }
-    } */
+    }
+    */
 
-    public User findByEmailAndPassword(String email, String plainPassword) throws SQLException {
+    @Override
+    public User findUserByEmail(String email) throws SQLException {
         String sql = "SELECT username, email, password_hash, name, surname, " +
                 "role, created_on FROM \"user\" WHERE email = ?";
 
@@ -76,12 +83,6 @@ public class UserDao implements UserDaoInterface {
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    String hashedPassword = resultSet.getString("password_hash");
-
-                    if (!org.mindrot.jbcrypt.BCrypt.checkpw(plainPassword, hashedPassword)) {
-                        return null;
-                    }
-
                     OffsetDateTime createdOn = resultSet.getTimestamp("created_on")
                             .toLocalDateTime()
                             .atOffset(java.time.ZoneOffset.UTC);
@@ -89,19 +90,17 @@ public class UserDao implements UserDaoInterface {
                     return new User(
                             resultSet.getString("email"),
                             resultSet.getString("username"),
-                            hashedPassword,
+                            resultSet.getString("password_hash"),
                             resultSet.getString("name"),
                             resultSet.getString("surname"),
                             resultSet.getString("role"),
                             createdOn
                     );
-                } else {
-                    return null;
                 }
+                return null;
             }
         }
     }
-
 
 
 }

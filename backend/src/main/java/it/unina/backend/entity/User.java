@@ -3,41 +3,41 @@ package it.unina.backend.entity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.OffsetDateTime;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
 public class User{
-    @NotNull
-    @Size(max = 100)
-    private String email;
-    @NotNull
-    @Size(max = 100)
-    private String username;
-    @NotNull
-    @Size(max = 100)
-    private String passwordHash;
-    @NotNull
-    @Size(max = 100)
-    private String name;
-    @NotNull
-    @Size(max = 100)
-    private String surname;
-    @NotNull
-    @Size(max = 100)
-    private String role;
-    @NotNull
-    private OffsetDateTime createdOn;
+    private final String email;
+    private final String username;
+    private final String passwordHash;
+    private final String name;
+    private final String surname;
+    private final String role;
+    private final OffsetDateTime createdOn;
 
-    public User(String email, String username, String passwordHash, String name, String surname, String role, OffsetDateTime createdOn)  {
-        if(role.equals("Admin") || role.equals("Normal") || role.equals("External")){
-            this.role = role;
+    public User(String email,
+                String username,
+                String passwordHash,
+                String name,
+                String surname,
+                String role,
+                OffsetDateTime createdOn)  {
+
+        if (!role.equals("Admin") &&
+            !role.equals("Normal") &&
+            !role.equals("External")) {
+
+            throw new IllegalArgumentException(
+                "Attempt to insert an invalid role: " +
+                role +
+                ".\nRole must be: Admin, Normal or External."
+            );
         }
-        else throw new IllegalArgumentException("attempt to insert an invalid role: " + role + " role must be: admin, normal or external.");
+
         this.email = email;
         this.username = username;
         this.passwordHash = passwordHash;
         this.name = name;
         this.surname = surname;
+        this.role = role;
         this.createdOn = createdOn;
     }
 
