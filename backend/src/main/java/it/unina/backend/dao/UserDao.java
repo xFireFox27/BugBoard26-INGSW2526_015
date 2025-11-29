@@ -22,23 +22,29 @@ public class UserDao implements UserDaoInterface {
         return instance;
     }
 
-    public void insertUser(String email, String username, String passwordHash, String name, String surname, String role) throws SQLException {
+    @Override
+    public void insertUser(User user) throws SQLException {
 
-        String sql = "INSERT INTO \"User\" (email, username, password_hash, name, surname, role) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO \"user\" (email, username, password_hash, name, surname, role) " +
+                     "VALUES (?, ?, ?, ?, ?, ?)"
+        ;
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
-        PreparedStatement st = connection.prepareStatement(sql)){
-            st.setString(1, email);
-            st.setString(2, username);
-            st.setString(3, passwordHash);
-            st.setString(4, name);
-            st.setString(5, surname);
-            st.setString(6, role);
+            PreparedStatement st = connection.prepareStatement(sql)
+        ) {
+            st.setString(1, user.getEmail());
+            st.setString(2, user.getUsername());
+            st.setString(3, user.getPasswordHash());
+            st.setString(4, user.getName());
+            st.setString(5, user.getSurname());
+            st.setString(6, user.getRole());
             st.executeUpdate();
         }
     }
 
-    /*public User findUserByUsername(String username) throws SQLException {
+    /*
+    @Override
+    public User findUserByUsername(String username) throws SQLException {
         String sql = "SELECT * FROM User WHERE username = ?";
         try(Connection connection = DatabaseConnection.getInstance().getConnection();){
             PreparedStatement st = connection.prepareStatement(sql);
@@ -62,8 +68,10 @@ public class UserDao implements UserDaoInterface {
                 return null;
             }
         }
-    } */
+    }
+    */
 
+    @Override
     public User findUserByEmailAndPassword(String email, String plainPassword) throws SQLException {
         String sql = "SELECT username, email, password_hash, name, surname, " +
                 "role, created_on FROM \"user\" WHERE email = ?";
