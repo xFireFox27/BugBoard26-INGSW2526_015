@@ -4,7 +4,7 @@ public class LoginRequest {
     private String email;
     private String password;
 
-    // Costruttore vuoto (obbligatorio per la deserializzazione JSON)
+    // Empty constructor (necessary for JSON deserialization)
     public LoginRequest() {}
 
     public LoginRequest(String email, String password) {
