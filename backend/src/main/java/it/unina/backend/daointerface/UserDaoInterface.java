@@ -14,7 +14,5 @@ public interface UserDaoInterface{
 
     // public User findUserByUsername(String username) throws SQLException;
 
-    public User findUserByEmailAndPassword(String email,
-                                           String plainPassword
-    ) throws SQLException;
+    public User findUserByEmail(String email) throws SQLException;
 }

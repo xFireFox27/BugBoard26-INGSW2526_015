@@ -64,7 +64,7 @@ public class UserDao implements UserDaoInterface {
         }
     } */
 
-    public User findUserByEmailAndPassword(String email, String plainPassword) throws SQLException {
+    public User findUserByEmail(String email) throws SQLException {
         String sql = "SELECT username, email, password_hash, name, surname, " +
                 "role, created_on FROM \"user\" WHERE email = ?";
 
@@ -75,12 +75,6 @@ public class UserDao implements UserDaoInterface {
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    String hashedPassword = resultSet.getString("password_hash");
-
-                    if (!org.mindrot.jbcrypt.BCrypt.checkpw(plainPassword, hashedPassword)) {
-                        return null;
-                    }
-
                     OffsetDateTime createdOn = resultSet.getTimestamp("created_on")
                             .toLocalDateTime()
                             .atOffset(java.time.ZoneOffset.UTC);
@@ -88,16 +82,17 @@ public class UserDao implements UserDaoInterface {
                     return new User(
                             resultSet.getString("email"),
                             resultSet.getString("username"),
-                            hashedPassword,
+                            resultSet.getString("password_hash"),
                             resultSet.getString("name"),
                             resultSet.getString("surname"),
                             resultSet.getString("role"),
                             createdOn
                     );
-                } else {
-                    return null;
                 }
+                return null;
             }
         }
     }
+
+
 }

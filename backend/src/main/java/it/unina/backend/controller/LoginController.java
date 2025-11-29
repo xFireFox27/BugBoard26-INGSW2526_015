@@ -1,8 +1,8 @@
 package it.unina.backend.controller;
 
-import it.unina.backend.dao.UserDao;
-import it.unina.backend.entity.User;
 import it.unina.backend.dto.LoginRequest;
+import it.unina.backend.entity.User;
+import it.unina.backend.service.UserService;
 import it.unina.backend.util.JwtUtil;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 @Path("/login")
 public class LoginController {
 
-    private final UserDao userDao = UserDao.getInstance();
+    private final UserService userService = UserService.getInstance();
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -24,38 +24,34 @@ public class LoginController {
     public Response login(LoginRequest request) {
         if (request.getEmail() == null || request.getPassword() == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                           .entity("{\"error\": \"Email e password obbligatori\"}")
-                           .build()
-            ;
+                    .entity("{\"error\": \"Email e password obbligatori\"}")
+                    .build();
         }
 
         try {
-            User user = userDao.findUserByEmailAndPassword(request.getEmail(), request.getPassword());
-            if (user == null) {
-                return Response.status(Response.Status.UNAUTHORIZED)
-                               .entity("{\"error\": \"Credenziali non valide\"}")
-                               .build()
-                ;
-            }
+            User user = userService.authenticateUser(request.getEmail(), request.getPassword());
+
             String token = JwtUtil.generateToken(user.getEmail(), user.getUsername());
             return Response.ok()
-                           .entity("{\"token\": \"" +
-                                      token +
-                                      "\", \"user\": {\"username\": \"" +
-                                      user.getUsername() +
-                                      "\", \"email\": \"" +
-                                      user.getEmail() +
-                                      "\", \"role\": \"" +
-                                      user.getRole() +
-                                      "\"}}")
-                           .build()
-            ;
+                    .entity("{\"token\": \"" +
+                            token +
+                            "\", \"user\": {\"username\": \"" +
+                            user.getUsername() +
+                            "\", \"email\": \"" +
+                            user.getEmail() +
+                            "\", \"role\": \"" +
+                            user.getRole() +
+                            "\"}}")
+                    .build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.UNAUTHORIZED)
+                    .entity("{\"error\": \"" + e.getMessage() + "\"}")
+                    .build();
         } catch (SQLException e) {
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                           .entity("{\"error\": \"Errore durante il login\"}")
-                           .build()
-            ;
+                    .entity("{\"error\": \"Errore durante il login\"}")
+                    .build();
         }
     }
 }
