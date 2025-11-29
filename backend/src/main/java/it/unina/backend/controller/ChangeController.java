@@ -25,7 +25,6 @@ public class ChangeController {
         }
 
         try {
-            // Qui avviene l'auto-unboxing da Integer a int se il DAO vuole int
             List<Change> changes = changeDao.findChangesByIssueId(issueId);
             return Response.ok(changes).build();
 
