@@ -6,13 +6,13 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class User{
-    private String email;
-    private String username;
-    private String passwordHash;
-    private String name;
-    private String surname;
-    private String role;
-    private OffsetDateTime createdOn;
+    private final String email;
+    private final String username;
+    private final String passwordHash;
+    private final String name;
+    private final String surname;
+    private final String role;
+    private final OffsetDateTime createdOn;
 
     public User(String email,
                 String username,
