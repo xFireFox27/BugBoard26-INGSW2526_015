@@ -41,11 +41,15 @@ public class User{
                 String role,
                 OffsetDateTime createdOn)  {
 
-        if(!role.equals("Admin") && !role.equals("Normal") && !role.equals("External")) {
-            throw new IllegalArgumentException("Attempt to insert an invalid role: " +
-                                               role +
-                                               ".\nRole must be: Admin, Normal or External.")
-            ;
+        if (!role.equals("Admin") &&
+            !role.equals("Normal") &&
+            !role.equals("External")) {
+
+            throw new IllegalArgumentException(
+                "Attempt to insert an invalid role: " +
+                role +
+                ".\nRole must be: Admin, Normal or External."
+            );
         }
 
         this.email = email;

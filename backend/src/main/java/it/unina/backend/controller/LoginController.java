@@ -1,4 +1,5 @@
 package it.unina.backend.controller;
+
 import it.unina.backend.dao.UserDao;
 import it.unina.backend.entity.User;
 import it.unina.backend.dto.LoginRequest;

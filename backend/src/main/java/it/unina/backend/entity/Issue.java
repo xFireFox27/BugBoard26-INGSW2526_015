@@ -44,6 +44,7 @@ public class Issue {
             !type.equals("Documentation") &&
             !type.equals("Question") &&
             !type.equals("Feature")) {
+
             throw new IllegalArgumentException(
                 "Attempt to insert an invalid type: " +
                 type +
@@ -55,6 +56,7 @@ public class Issue {
             !status.equals("In Progress") &&
             !status.equals("Done") &&
             !status.equals("Archived")) {
+
             throw new IllegalArgumentException(
                 "Attempt to insert an invalid status: " +
                 status +
