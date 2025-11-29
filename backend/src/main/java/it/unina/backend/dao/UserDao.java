@@ -3,7 +3,7 @@ package it.unina.backend.dao;
 import it.unina.backend.entity.User;
 import it.unina.backend.daointerface.UserDaoInterface;
 import java.time.OffsetDateTime;
-import it.unina.backend.util.DatabaseConnection;
+import it.unina.backend.connection.DatabaseConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

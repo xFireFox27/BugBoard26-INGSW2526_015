@@ -1,4 +1,4 @@
-package it.unina.backend.util;
+package it.unina.backend.security;
 
 import jakarta.ws.rs.NameBinding;
 

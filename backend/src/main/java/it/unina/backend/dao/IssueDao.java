@@ -2,7 +2,7 @@ package it.unina.backend.dao;
 
 import it.unina.backend.daointerface.IssueDaoInterface;
 import it.unina.backend.entity.Issue;
-import it.unina.backend.util.DatabaseConnection;
+import it.unina.backend.connection.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

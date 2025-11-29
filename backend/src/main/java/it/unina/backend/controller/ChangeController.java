@@ -2,7 +2,7 @@ package it.unina.backend.controller;
 
 import it.unina.backend.dao.ChangeDao;
 import it.unina.backend.entity.Change;
-import it.unina.backend.util.RequireJWTAuthentication;
+import it.unina.backend.security.RequireJWTAuthentication;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;

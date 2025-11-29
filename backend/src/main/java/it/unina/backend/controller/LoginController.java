@@ -5,7 +5,7 @@ import it.unina.backend.dto.LoginResponse;
 import it.unina.backend.dto.UserDto;
 import it.unina.backend.entity.User;
 import it.unina.backend.service.UserService;
-import it.unina.backend.util.JwtUtil;
+import it.unina.backend.security.JwtAuth;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -33,7 +33,7 @@ public class LoginController {
         try {
             User user = userService.authenticateUser(request.getEmail(), request.getPassword());
 
-            String token = JwtUtil.generateToken(user.getEmail(), user.getUsername(), user.getRole());
+            String token = JwtAuth.generateToken(user.getEmail(), user.getUsername(), user.getRole());
 
             UserDto userDto = new UserDto(user.getUsername(), user.getEmail(), user.getRole());
             LoginResponse responseBody = new LoginResponse(token, userDto);

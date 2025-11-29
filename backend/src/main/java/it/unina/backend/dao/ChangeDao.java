@@ -3,8 +3,7 @@ package it.unina.backend.dao;
 import it.unina.backend.daointerface.ChangeDaoInterface;
 import it.unina.backend.entity.Change;
 import it.unina.backend.entity.User;
-import it.unina.backend.entity.Issue;
-import it.unina.backend.util.DatabaseConnection;
+import it.unina.backend.connection.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

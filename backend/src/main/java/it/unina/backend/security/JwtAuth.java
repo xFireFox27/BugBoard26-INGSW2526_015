@@ -1,4 +1,4 @@
-package it.unina.backend.util;
+package it.unina.backend.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -9,11 +9,11 @@ import io.github.cdimascio.dotenv.Dotenv;
 import java.security.Key;
 import java.util.Date;
 
-public class JwtUtil {
+public class JwtAuth {
     private static final Key SECRET_KEY;
     private static final long EXPIRATION_TIME = 86400000; // 24 hours
 
-    private JwtUtil() {}
+    private JwtAuth() {}
 
     static {
         // 1. Carica il file .env
