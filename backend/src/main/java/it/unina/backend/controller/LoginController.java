@@ -30,7 +30,7 @@ public class LoginController {
         }
 
         try {
-            User user = userDao.findByEmailAndPassword(request.getEmail(), request.getPassword());
+            User user = userDao.findUserByEmailAndPassword(request.getEmail(), request.getPassword());
             if (user == null) {
                 return Response.status(Response.Status.UNAUTHORIZED)
                                .entity("{\"error\": \"Credenziali non valide\"}")

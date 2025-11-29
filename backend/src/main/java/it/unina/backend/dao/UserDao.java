@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
-import java.time.ZoneOffset;
 
 public class UserDao implements UserDaoInterface {
 
@@ -65,7 +64,7 @@ public class UserDao implements UserDaoInterface {
         }
     } */
 
-    public User findByEmailAndPassword(String email, String plainPassword) throws SQLException {
+    public User findUserByEmailAndPassword(String email, String plainPassword) throws SQLException {
         String sql = "SELECT username, email, password_hash, name, surname, " +
                 "role, created_on FROM \"user\" WHERE email = ?";
 
@@ -101,7 +100,4 @@ public class UserDao implements UserDaoInterface {
             }
         }
     }
-
-
-
 }
