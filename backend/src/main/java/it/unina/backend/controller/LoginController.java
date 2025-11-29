@@ -23,34 +23,39 @@ public class LoginController {
     public Response login(LoginRequest request) {
         if (request.getEmail() == null || request.getPassword() == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{\"error\": \"Email e password obbligatori\"}")
-                    .build();
+                           .entity("{\"error\": \"Email e password obbligatori\"}")
+                           .build()
+            ;
         }
         try {
             User user = userDao.findByEmailAndPassword(request.getEmail(), request.getPassword());
             if (user == null) {
                 return Response.status(Response.Status.UNAUTHORIZED)
-                        .entity("{\"error\": \"Credenziali non valide\"}")
-                        .build();
+                               .entity("{\"error\": \"Credenziali non valide\"}")
+                               .build()
+                ;
             }
 
             String token = JwtUtil.generateToken(user.getEmail(), user.getUsername());
 
             return Response.ok()
-                    .entity("{\"token\": \"" + token + "\", \"user\": {\"username\": \"" + user.getUsername() +
-                            "\", \"email\": \"" + user.getEmail() + "\", \"role\": \"" + user.getRole() + "\"}}")
-                    .build();
-
-
+                           .entity("{\"token\": \"" +
+                                      token +
+                                      "\", \"user\": {\"username\": \"" +
+                                      user.getUsername() +
+                                      "\", \"email\": \"" +
+                                      user.getEmail() +
+                                      "\", \"role\": \"" +
+                                      user.getRole() +
+                                      "\"}}")
+                           .build()
+            ;
         } catch (SQLException e) {
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("{\"error\": \"Errore durante il login\"}")
-                    .build();
+                           .entity("{\"error\": \"Errore durante il login\"}")
+                           .build()
+            ;
         }
     }
-
-
-
-
 }
