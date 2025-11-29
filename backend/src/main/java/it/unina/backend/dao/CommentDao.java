@@ -20,7 +20,7 @@ public class CommentDao implements CommentDaoInterface {
 
     private CommentDao(){}
 
-    public CommentDao getInstance(){
+    public static CommentDao getInstance(){
 
         if(instance == null){
             instance = new CommentDao();

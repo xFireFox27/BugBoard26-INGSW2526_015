@@ -20,8 +20,7 @@ public class ChangeController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getChanges(@Context SecurityContext securityContext,
-                               @QueryParam("issue_id") Integer issueId) {
+    public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue_id") Integer issueId) {
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity("{\"error\": \"'issue_id' must be provided\"}")
