@@ -6,30 +6,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public class Issue {
-    @NotNull
     private final Integer id;
-
-    @NotBlank
-    @Size(max=100)
     private final String title;
-
-    @NotBlank
-    @Size(max=1000)
     private final String description;
-
-    @NotBlank
-    @Size(max=100)
     private final String type;
-
-    @NotBlank
-    @Size(max=100)
     private final String status;
-
-    @NotBlank
-    @Size(max=100)
     private final String createdBy;
-
-    @NotNull
     private final OffsetDateTime createdOn;
 
     public Issue(Integer id,
