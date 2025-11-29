@@ -44,14 +44,22 @@ public class Issue {
             !type.equals("Documentation") &&
             !type.equals("Question") &&
             !type.equals("Feature")) {
-            throw new IllegalArgumentException("Il tipo deve essere 'Bug', 'Documentation', 'Question' o 'Feature'");
+            throw new IllegalArgumentException(
+                "Attempt to insert an invalid type: " +
+                type +
+                ".\nType must be: Bug, Documentation, Question or Feature."
+            );
         }
 
         if (!status.equals("To Do") &&
             !status.equals("In Progress") &&
             !status.equals("Done") &&
             !status.equals("Archived")) {
-            throw new IllegalArgumentException("Lo stato deve essere 'Done', 'In Progress', 'Done' o 'Archived'");
+            throw new IllegalArgumentException(
+                "Attempt to insert an invalid status: " +
+                status +
+                ".\nStatus must be: To Do, In Progress, Done or Archived."
+            );
         }
 
         this.id = id;
