@@ -82,8 +82,8 @@ public class ChangeDao implements ChangeDaoInterface {
         }
     }
 
-    private OffsetDateTime getTimestamp(ResultSet SQL_row, String SQL_column) throws SQLException {
-        return SQL_row.getTimestamp(SQL_column)
+    private OffsetDateTime getTimestamp(ResultSet row, String column) throws SQLException {
+        return row.getTimestamp(column)
                 .toLocalDateTime()
                 .atOffset(java.time.ZoneOffset.UTC);
     }
