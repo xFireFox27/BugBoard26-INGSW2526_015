@@ -16,7 +16,6 @@ public class ChangeController {
     private final ChangeDao changeDao = ChangeDao.getInstance();
 
     @GET
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response getChanges(@QueryParam("issue_id") Integer issueId) {
         if (issueId == null) {
