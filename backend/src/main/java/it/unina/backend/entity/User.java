@@ -1,9 +1,6 @@
 package it.unina.backend.entity;
 
 import java.time.OffsetDateTime;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
 public class User{
     private final String email;

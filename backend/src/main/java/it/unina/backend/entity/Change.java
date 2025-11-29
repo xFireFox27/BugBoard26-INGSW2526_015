@@ -1,6 +1,5 @@
 package it.unina.backend.entity;
 
-
 import java.time.OffsetDateTime;
 import it.unina.backend.entity.User;
 import it.unina.backend.entity.Issue;
