@@ -1,37 +1,15 @@
 package it.unina.backend.entity;
 
 import java.time.OffsetDateTime;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
 public class User{
-    @NotBlank
-    @Size(max = 100)
-    private String email;
-
-    @NotBlank
-    @Size(max = 100)
-    private String username;
-
-    @NotBlank
-    @Size(max = 100)
-    private String passwordHash;
-
-    @NotBlank
-    @Size(max = 100)
-    private String name;
-
-    @NotBlank
-    @Size(max = 100)
-    private String surname;
-
-    @NotBlank
-    @Size(max = 100)
-    private String role;
-
-    @NotNull
-    private OffsetDateTime createdOn;
+    private final String email;
+    private final String username;
+    private final String passwordHash;
+    private final String name;
+    private final String surname;
+    private final String role;
+    private final OffsetDateTime createdOn;
 
     public User(String email,
                 String username,
