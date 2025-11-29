@@ -8,10 +8,8 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 import java.security.Key;
 import java.util.Date;
-import java.util.Base64;
 
 public class JwtUtil {
-    // Chiave fissa (in produzione, usa variabile d'ambiente o file di configurazione)
     private static final Key SECRET_KEY;
     private static final long EXPIRATION_TIME = 86400000; // 24 hours
 
@@ -19,13 +17,12 @@ public class JwtUtil {
 
     static {
         // 1. Carica il file .env
-        // ignoreIfMissing() è utile in produzione se usi variabili d'ambiente di sistema
         Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 
         // 2. Cerca la chiave nel file .env O nelle variabili di sistema
         String secret = dotenv.get("JWT_SECRET");
 
-        // 3. Se dotenv non trova nulla, prova il fallback diretto al sistema (opzionale ma sicuro)
+        // 3. Se dotenv non trova nulla, prova il fallback diretto al sistema
         if (secret == null) {
             secret = System.getenv("JWT_SECRET");
         }

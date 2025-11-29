@@ -29,10 +29,11 @@ public class ChangeDao implements ChangeDaoInterface {
 
     public List<Change> findChangesByIssueId(int issueId) throws SQLException {
         String sql = "SELECT c.change_id, c.action, c.details, c.made_on, " +
-                "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
+                "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
                 "FROM change c " +
                 "JOIN \"user\" u ON u.username = c.created_by " +
                 "WHERE c.related_to = ?";
+
         List<Change> changes = new ArrayList<>();
 
         try (Connection connection = DatabaseConnection.getInstance().getConnection();
@@ -43,7 +44,6 @@ public class ChangeDao implements ChangeDaoInterface {
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
                     OffsetDateTime madeOn = getTimestamp(rs, "made_on");
-
                     OffsetDateTime createdOn = getTimestamp(rs, "created_on");
 
                     changes.add(new Change(
@@ -54,7 +54,7 @@ public class ChangeDao implements ChangeDaoInterface {
                             new User(
                                     rs.getString("email"),
                                     rs.getString("username"),
-                                    rs.getString("password_hash"),
+                                    null,
                                     rs.getString("name"),
                                     rs.getString("surname"),
                                     rs.getString("role"),

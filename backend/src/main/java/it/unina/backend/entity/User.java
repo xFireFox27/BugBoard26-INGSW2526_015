@@ -1,12 +1,15 @@
 package it.unina.backend.entity;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.OffsetDateTime;
+
+
 
 public class User{
     private final String email;
     private final String username;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private final String passwordHash;
     private final String name;
     private final String surname;

@@ -2,14 +2,16 @@ package it.unina.backend.entity;
 
 
 import java.time.OffsetDateTime;
-import it.unina.backend.entity.User;
-import it.unina.backend.entity.Issue;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 public class Change {
     private int id;
     private String action;
     private String details;
     private OffsetDateTime createdOn;
+    @JsonProperty("createdBy")
     private User createdBy;
     private int issueId;
 
