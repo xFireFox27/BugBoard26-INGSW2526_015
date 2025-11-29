@@ -9,6 +9,6 @@ import it.unina.backend.entity.Issue;
 
 public interface ChangeDaoInterface {
 
-    public List<Change> findChangesByIssue(Issue issue) throws SQLException;
-    public void insertChange(String action, String details, User user, Issue issue) throws SQLException;
+    public List<Change> findChangesByIssueId(int issueId) throws SQLException;
+    //public void insertChange(String action, String details, User user, Issue issue) throws SQLException;
 }

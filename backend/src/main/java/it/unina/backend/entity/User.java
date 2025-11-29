@@ -1,5 +1,7 @@
 package it.unina.backend.entity;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.OffsetDateTime;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

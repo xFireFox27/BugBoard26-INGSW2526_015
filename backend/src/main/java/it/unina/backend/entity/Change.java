@@ -11,16 +11,16 @@ public class Change {
     private String details;
     private OffsetDateTime createdOn;
     private User createdBy;
-    private Issue relatedTo;
+    private int issueId;
 
-    public Change(int id, String action, String details, OffsetDateTime createdOn, User createdBy, Issue relatedTo){
+    public Change(int id, String action, String details, OffsetDateTime createdOn, User createdBy, int issueId){
 
         this.id = id;
         this.action = action;
         this.details = details;
         this.createdOn = createdOn;
         this.createdBy = createdBy;
-        this.relatedTo = relatedTo;
+        this.issueId = issueId;
     }
 
     public int getId() {
@@ -43,7 +43,11 @@ public class Change {
         return createdBy;
     }
 
-    public Issue getRelatedTo() {
-        return relatedTo;
+    public int getIssueId() {
+        return issueId;
+    }
+
+    public String getUserUsername() {
+        return createdBy.getUsername();
     }
 }

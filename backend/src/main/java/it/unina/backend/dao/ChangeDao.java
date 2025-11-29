@@ -27,7 +27,7 @@ public class ChangeDao implements ChangeDaoInterface {
         return instance;
     }
 
-    public List<Change> findChangesByIssue(Issue issue) throws SQLException {
+    public List<Change> findChangesByIssueId(int issueId) throws SQLException {
         String sql = "SELECT c.change_id, c.action, c.details, c.made_on, " +
                 "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
                 "FROM change c " +
@@ -38,17 +38,13 @@ public class ChangeDao implements ChangeDaoInterface {
         try (Connection connection = DatabaseConnection.getInstance().getConnection();
              PreparedStatement st = connection.prepareStatement(sql)) {
 
-            st.setInt(1, issue.getId());
+            st.setInt(1, issueId);
 
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
-                    OffsetDateTime madeOn = rs.getTimestamp("made_on")
-                            .toLocalDateTime()
-                            .atOffset(java.time.ZoneOffset.UTC);
+                    OffsetDateTime madeOn = getTimestamp(rs, "made_on");
 
-                    OffsetDateTime createdOn = rs.getTimestamp("created_on")
-                            .toLocalDateTime()
-                            .atOffset(java.time.ZoneOffset.UTC);
+                    OffsetDateTime createdOn = getTimestamp(rs, "created_on");
 
                     changes.add(new Change(
                             rs.getInt("change_id"),
@@ -64,7 +60,7 @@ public class ChangeDao implements ChangeDaoInterface {
                                     rs.getString("role"),
                                     createdOn
                             ),
-                            issue
+                            issueId
                     ));
                 }
             }
@@ -72,19 +68,23 @@ public class ChangeDao implements ChangeDaoInterface {
         }
     }
 
-
-
-    public void insertChange(String action, String details, User user, Issue issue) throws SQLException{
+    public void insertChange(Change c) throws SQLException{
 
         String sql = "INSERT INTO Change (action, details, created_by, related_to) VALUES (?, ?, ?, ?)";
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)){
-            st.setString(1, action);
-            st.setString(2, details);
-            st.setString(3, user.getUsername());
-            st.setInt(4, issue.getId());
+            st.setString(1, c.getAction());
+            st.setString(2, c.getDetails());
+            st.setString(3, c.getUserUsername());
+            st.setInt(4, c.getIssueId());
             st.executeUpdate();
         }
+    }
+
+    private OffsetDateTime getTimestamp(ResultSet SQL_row, String SQL_column) throws SQLException {
+        return SQL_row.getTimestamp(SQL_column)
+                .toLocalDateTime()
+                .atOffset(java.time.ZoneOffset.UTC);
     }
 }
