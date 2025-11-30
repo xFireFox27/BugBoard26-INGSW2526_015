@@ -8,7 +8,7 @@ public class Issue {
     private final String description;
     private final String type;
     private final String status;
-    private final String createdBy;
+    private final User createdBy;
     private final OffsetDateTime createdOn;
 
     public Issue(Integer id,
@@ -16,7 +16,7 @@ public class Issue {
                  String description,
                  String type,
                  String status,
-                 String createdBy,
+                 User createdBy,
                  OffsetDateTime createdOn) {
 
         if (!type.equals("Bug") &&
@@ -72,8 +72,12 @@ public class Issue {
         return status;
     }
 
-    public String getCreatedBy() {
+    public User getCreatedBy() {
         return createdBy;
+    }
+
+    public String getUserUsername(){
+        return createdBy.getUsername();
     }
 
     public OffsetDateTime getCreatedOn() {

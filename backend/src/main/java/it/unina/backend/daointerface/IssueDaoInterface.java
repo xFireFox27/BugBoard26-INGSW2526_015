@@ -2,8 +2,10 @@ package it.unina.backend.daointerface;
 
 import it.unina.backend.entity.Issue;
 
-public interface IssueDaoInterface {
-    public boolean insertIssue(Issue issue);
+import java.sql.SQLException;
 
-    public Issue findIssueById(Integer id);
+public interface IssueDaoInterface {
+    public boolean insertIssue(Issue issue) throws SQLException;
+
+    public Issue findIssueById(Integer id) throws SQLException;
 }

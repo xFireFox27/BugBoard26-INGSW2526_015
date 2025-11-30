@@ -1,26 +1,28 @@
 package it.unina.backend.controller;
 
-import it.unina.backend.dao.ChangeDao;
-import it.unina.backend.entity.Change;
+import it.unina.backend.dao.IssueDao;
+import it.unina.backend.entity.Issue;
 import it.unina.backend.security.RequireJWTAuthentication;
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 
-import java.util.List;
 import java.sql.SQLException;
 
-@Path("/changes")
+@Path("/issue")
 @RequireJWTAuthentication
-public class ChangeController {
+public class IssueController {
 
-    private final ChangeDao changeDao = ChangeDao.getInstance();
+    IssueDao issueDao = IssueDao.getInstance();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue_id") Integer issueId) {
+    public Response getIssueByIssueId(@Context SecurityContext securityContext, @QueryParam("issue_id") Integer issueId){
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity("{error: \"'issue_id' must be provided\"}")
@@ -28,11 +30,12 @@ public class ChangeController {
         }
 
         try {
-            List<Change> changes = changeDao.findChangesByIssueId(issueId);
-            return Response.ok(changes).build();
+            Issue issue = issueDao.findIssueById(issueId);
+            return Response.ok(issue).build();
         } catch (SQLException e) {
             e.printStackTrace();
             return Response.serverError().entity("{error: \"Database error\"}").build();
         }
     }
+
 }

@@ -2,8 +2,9 @@ package it.unina.backend.dao;
 
 import it.unina.backend.entity.User;
 import it.unina.backend.daointerface.UserDaoInterface;
-import java.time.OffsetDateTime;
 import it.unina.backend.connection.DatabaseConnection;
+import static it.unina.backend.util.DaoUtil.*;
+import java.time.OffsetDateTime;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,34 +43,19 @@ public class UserDao implements UserDaoInterface {
         }
     }
 
-    /*
-    @Override
     public User findUserByUsername(String username) throws SQLException {
-        String sql = "SELECT * FROM User WHERE username = ?";
-        try(Connection connection = DatabaseConnection.getInstance().getConnection();){
-            PreparedStatement st = connection.prepareStatement(sql);
+        String sql = "SELECT username, email, name, surname, role, created_on" +
+                        "FROM User WHERE username = ?";
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();
+            PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
             if(rs.next()){
-                OffsetDateTime createdOn = rs.getTimestamp("created_on")
-                        .toLocalDateTime()
-                        .atOffset(ZoneOffset.UTC);
-
-                return new User(
-                        rs.getString("email"),
-                        rs.getString("username"),
-                        rs.getString("password"),
-                        rs.getString("name"),
-                        rs.getString("surname"),
-                        rs.getString("role"),
-                        createdOn
-                );
-            } else {
-                return null;
+                return createUserFromResultSet(rs);
             }
+            return null;
         }
     }
-    */
 
     @Override
     public User findUserByEmail(String email) throws SQLException {

@@ -2,7 +2,6 @@ package it.unina.backend.dao;
 
 import it.unina.backend.daointerface.CommentDaoInterface;
 import it.unina.backend.entity.Comment;
-import it.unina.backend.entity.User;
 import it.unina.backend.connection.DatabaseConnection;
 
 import java.sql.Connection;
@@ -40,15 +39,13 @@ public class CommentDao implements CommentDaoInterface {
         List<Comment> comments = new ArrayList<>();
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
-            PreparedStatement st = connection.prepareStatement(sql);){
+            PreparedStatement st = connection.prepareStatement(sql)){
 
             st.setInt(1, issueId);
 
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
                     OffsetDateTime writtenOn = getTimestamp(rs, "created_on");
-
-                    OffsetDateTime createdOn = getTimestamp(rs, "created_on");
 
                     comments.add(new Comment(
                             rs.getInt("comment_id"),
