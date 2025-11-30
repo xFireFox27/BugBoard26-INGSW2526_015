@@ -26,21 +26,21 @@ public class IssueService {
             return issueDao.findAllIssues();
     }
 
-    public List<Issue> getIssuesFilteredAndSorted(String filter, String sortBy) throws SQLException{
+    public List<Issue> getIssuesFilteredAndSorted(String status,
+                                                  String type,
+                                                  String sortBy) throws SQLException{
         List<Issue> issues = getIssues();
-        issues = applyFiltering(issues, filter);
+        issues = applyFiltering(issues, status, type);
         issues = applySorting(issues, sortBy);
         return issues;
     }
 
-    public List<Issue> applyFiltering(List<Issue> issues, String filter) {
-        if (filter != null && !filter.isEmpty()) {
-            issues = issues.stream()
-                     .filter(i -> i.getStatus().equalsIgnoreCase(filter))
-                    .collect(Collectors.toCollection(java.util.ArrayList::new))
-            ;
-        }
-        return issues;
+    public List<Issue> applyFiltering(List<Issue> issues, String status, String type) {
+        return issues.stream()
+            .filter(i -> (status == null || status.isBlank()) || i.getStatus().equalsIgnoreCase(status))
+            .filter(i -> (type == null || type.isBlank()) || i.getType().equalsIgnoreCase(type))
+            .collect(Collectors.toCollection(java.util.ArrayList::new))
+        ;
     }
 
     public List<Issue> applySorting(List<Issue> issues, String sortBy) {

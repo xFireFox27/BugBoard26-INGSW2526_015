@@ -11,6 +11,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,9 +46,10 @@ public class IssueController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIssues(@QueryParam("status") String status,
+                              @QueryParam("type") String type,
                               @QueryParam("sortBy") String sortBy) {
         try {
-            List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, sortBy);
+            List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, type, sortBy);
             return Response.ok(issues).build();
         }
         catch (SQLException e) {
