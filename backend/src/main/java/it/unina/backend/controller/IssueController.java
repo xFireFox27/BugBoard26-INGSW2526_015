@@ -44,7 +44,6 @@ public class IssueController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIssues(@QueryParam("status") String status,
                               @QueryParam("sortBy") String sortBy) {
-
         List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, sortBy);
         return Response.ok(issues).build();
     }

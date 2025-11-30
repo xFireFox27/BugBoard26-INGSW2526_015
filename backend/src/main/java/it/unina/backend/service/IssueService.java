@@ -32,14 +32,16 @@ public class IssueService {
         }
     }
 
-    public List<Issue> getIssuesFilteredAndSorted(String filter, String sortBy) {
+    public List<Issue> getIssuesFilteredAndSorted(String filter,
+                                                  String sortBy) {
         List<Issue> issues = getIssues();
         issues = applyFiltering(issues, filter);
         issues = applySorting(issues, sortBy);
         return issues;
     }
 
-    public List<Issue> applyFiltering(List<Issue> issues, String filter) {
+    public List<Issue> applyFiltering(List<Issue> issues,
+                                      String filter) {
         if (filter != null && !filter.isEmpty()) {
             issues = issues.stream()
                      .filter(i -> i.getStatus().equalsIgnoreCase(filter))
@@ -49,7 +51,8 @@ public class IssueService {
         return issues;
     }
 
-    public List<Issue> applySorting(List<Issue> issues, String sortBy) {
+    public List<Issue> applySorting(List<Issue> issues,
+                                    String sortBy) {
         String sortKey = (sortBy != null && !sortBy.isBlank()) ? sortBy.toLowerCase() : "id";
         Comparator<Issue> comparator = switch (sortKey) {
             case "title" -> Comparator.comparing(Issue::getTitle);
