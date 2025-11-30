@@ -22,17 +22,11 @@ public class IssueService {
         return instance;
     }
 
-    public List<Issue> getIssues() {
-        try {
+    public List<Issue> getIssues() throws SQLException {
             return issueDao.findAllIssues();
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-            return null;
-        }
     }
 
-    public List<Issue> getIssuesFilteredAndSorted(String filter, String sortBy) {
+    public List<Issue> getIssuesFilteredAndSorted(String filter, String sortBy) throws SQLException{
         List<Issue> issues = getIssues();
         issues = applyFiltering(issues, filter);
         issues = applySorting(issues, sortBy);

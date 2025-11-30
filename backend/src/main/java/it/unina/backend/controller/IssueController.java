@@ -12,12 +12,14 @@ import jakarta.ws.rs.core.Response;
 
 import java.sql.SQLException;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Path("/issues")
 @RequireJWTAuthentication
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
-
+    private static final Logger logger = LoggerFactory.getLogger(IssueController.class);
     /*
     private IssueDao issueDao = IssueDao.getInstance();
 
@@ -44,8 +46,13 @@ public class IssueController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIssues(@QueryParam("status") String status,
                               @QueryParam("sortBy") String sortBy) {
-
-        List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, sortBy);
-        return Response.ok(issues).build();
+        try {
+            List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, sortBy);
+            return Response.ok(issues).build();
+        }
+        catch (SQLException e) {
+            logger.error("error: impossible to retrieve comments for the specified issues ", e);
+            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+        }
     }
 }

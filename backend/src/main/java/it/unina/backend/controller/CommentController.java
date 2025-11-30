@@ -12,12 +12,15 @@ import jakarta.ws.rs.core.Response;
 
 import java.sql.SQLException;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Path("/comments")
 @RequireJWTAuthentication
 public class CommentController{
 
-    CommentDao commentDao = CommentDao.getInstance();
+    private final CommentDao commentDao = CommentDao.getInstance();
+    private static final Logger logger = LoggerFactory.getLogger(CommentController.class);
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -34,7 +37,7 @@ public class CommentController{
             return Response.ok(comments).build();
         }
         catch(SQLException e){
-            e.printStackTrace();
+            logger.error("error: impossible to retrieve comments for the specified issues ", e);
             return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
         }
 
