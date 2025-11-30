@@ -1,0 +1,45 @@
+package it.unina.backend.entity;
+
+import java.time.OffsetDateTime;
+
+public class Attachment {
+    private int id;
+    private String fileName;
+    private String url;
+    private OffsetDateTime uploadedOn;
+    private String createdBy;
+    private String relatedTo;
+
+    public Attachment(int id, String fileName, String url, OffsetDateTime uploadedOn, String createdBy, String relatedTo) {
+        this.id = id;
+        this.fileName = fileName;
+        this.url = url;
+        this.uploadedOn = uploadedOn;
+        this.createdBy = createdBy;
+        this.relatedTo = relatedTo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public OffsetDateTime getUploadedOn() {
+        return uploadedOn;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public String getRelatedTo() {
+        return relatedTo;
+    }
+}
