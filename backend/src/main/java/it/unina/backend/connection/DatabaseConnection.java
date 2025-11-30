@@ -1,4 +1,4 @@
-package it.unina.backend.util;
+package it.unina.backend.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

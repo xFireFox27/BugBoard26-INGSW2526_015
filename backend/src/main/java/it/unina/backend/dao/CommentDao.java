@@ -3,7 +3,7 @@ package it.unina.backend.dao;
 import it.unina.backend.daointerface.CommentDaoInterface;
 import it.unina.backend.entity.Comment;
 import it.unina.backend.entity.User;
-import it.unina.backend.util.DatabaseConnection;
+import it.unina.backend.connection.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

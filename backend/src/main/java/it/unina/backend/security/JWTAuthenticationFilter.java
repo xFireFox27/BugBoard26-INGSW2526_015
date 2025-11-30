@@ -1,4 +1,4 @@
-package it.unina.backend.util;
+package it.unina.backend.security;
 
 import jakarta.annotation.Priority;
 import jakarta.ws.rs.Priorities;
@@ -32,10 +32,10 @@ public class JWTAuthenticationFilter implements ContainerRequestFilter {
 
         try {
             // Validazione
-            if (JwtUtil.validateToken(token)) {
+            if (JwtAuth.validateToken(token)) {
                 // Estrazione dati per il SecurityContext
-                String username = JwtUtil.getUsernameFromToken(token);
-                String role = JwtUtil.getRoleFromToken(token);
+                String username = JwtAuth.getUsernameFromToken(token);
+                String role = JwtAuth.getRoleFromToken(token);
                 boolean isSecure = requestContext.getSecurityContext().isSecure();
 
                 // SOVRASCRIVIAMO IL SECURITY CONTEXT
