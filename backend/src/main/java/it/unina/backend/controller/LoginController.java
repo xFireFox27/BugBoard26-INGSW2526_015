@@ -9,7 +9,8 @@ import it.unina.backend.security.JwtAuth;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.sql.SQLException;
 import java.util.Map;
 
@@ -17,6 +18,7 @@ import java.util.Map;
 public class LoginController {
 
     private final UserService userService = UserService.getInstance();
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     private static final String ERROR_KEY = "error";
 
@@ -26,7 +28,7 @@ public class LoginController {
     public Response login(LoginRequest request) {
         if (request == null || request.getEmail() == null || request.getPassword() == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "Email e password obbligatori"))
+                    .entity(Map.of(ERROR_KEY, "email and password required"))
                     .build();
         }
 
@@ -45,7 +47,7 @@ public class LoginController {
                     .entity(Map.of(ERROR_KEY, e.getMessage()))
                     .build();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("error: Login error ", e);
             return Response.serverError()
                     .entity(Map.of(ERROR_KEY, "Errore server durante il login"))
                     .build();

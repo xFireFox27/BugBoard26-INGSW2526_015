@@ -51,7 +51,7 @@ public class IssueController {
             return Response.ok(issues).build();
         }
         catch (SQLException e) {
-            logger.error("error: impossible to retrieve comments for the specified issues ", e);
+            logger.error("error: impossible to retrieve issues with the specified filters ", e);
             return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
         }
     }
