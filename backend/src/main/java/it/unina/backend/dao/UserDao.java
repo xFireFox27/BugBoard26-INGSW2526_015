@@ -25,23 +25,30 @@ public class UserDao implements UserDaoInterface {
 
     @Override
     public boolean insertUser(User user) throws SQLException {
-
         String sql = "INSERT INTO \"user\" (email, username, password_hash, name, surname, role) " +
-                     "VALUES (?, ?, ?, ?, ?, ?)"
-        ;
+                "VALUES (?, ?, ?, ?, ?, ?) RETURNING created_on";
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
-            PreparedStatement st = connection.prepareStatement(sql)
-        ) {
+            PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, user.getEmail());
             st.setString(2, user.getUsername());
             st.setString(3, user.getPasswordHash());
             st.setString(4, user.getName());
             st.setString(5, user.getSurname());
             st.setString(6, user.getRole());
-            return st.executeUpdate() == 1;
+
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                OffsetDateTime createdOn = rs.getTimestamp("created_on")
+                        .toLocalDateTime()
+                        .atOffset(java.time.ZoneOffset.UTC);
+                user.setCreatedOn(createdOn);
+                return true;
+            }
+            return false;
         }
     }
+
 
     @Override
     public User findUserByUsername(String username) throws SQLException {

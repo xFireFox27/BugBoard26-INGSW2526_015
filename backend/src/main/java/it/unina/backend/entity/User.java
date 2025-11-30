@@ -14,7 +14,7 @@ public class User{
     private final String name;
     private final String surname;
     private final String role;
-    private final OffsetDateTime createdOn;
+    private  OffsetDateTime createdOn;
 
     public User(String email,
                 String username,
@@ -44,6 +44,34 @@ public class User{
         this.createdOn = createdOn;
     }
 
+    //Costruttore senza createdOn per facilitare la registrazione degli utenti
+    public User(String email,
+                String username,
+                String passwordHash,
+                String name,
+                String surname,
+                String role)  {
+
+        if (!role.equals("Admin") &&
+            !role.equals("Normal") &&
+            !role.equals("External")) {
+
+            throw new IllegalArgumentException(
+                "Attempt to insert an invalid role: " +
+                role +
+                ".\nRole must be: Admin, Normal or External."
+            );
+        }
+
+        this.email = email;
+        this.username = username;
+        this.passwordHash = passwordHash;
+        this.name = name;
+        this.surname = surname;
+        this.role = role;
+        this.createdOn = null;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -70,5 +98,9 @@ public class User{
 
     public String getUsername() {
         return username;
+    }
+
+    public void setCreatedOn(OffsetDateTime createdOn) {
+        this.createdOn = createdOn;
     }
 }
