@@ -49,7 +49,7 @@ public class LoginController {
         } catch (SQLException e) {
             logger.error("error: Login error ", e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "Errore server durante il login"))
+                    .entity(Map.of(ERROR_KEY, "Server error during login"))
                     .build();
         }
     }

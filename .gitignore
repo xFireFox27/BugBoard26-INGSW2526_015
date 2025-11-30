@@ -40,7 +40,7 @@
 *.env.local
 *.env.*.local
 
-### properties file for database access
+### properties file for database access ###
 config.properties
 
 ### Maven ###
