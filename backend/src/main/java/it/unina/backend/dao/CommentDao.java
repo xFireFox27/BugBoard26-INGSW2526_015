@@ -13,6 +13,8 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static it.unina.backend.util.DaoUtil.*;
+
 
 public class CommentDao implements CommentDaoInterface {
 
@@ -53,25 +55,11 @@ public class CommentDao implements CommentDaoInterface {
                             rs.getString("text"),
                             writtenOn,
                             issueId,
-                            new User(
-                                    rs.getString("email"),
-                                    rs.getString("username"),
-                                    rs.getString("password_hash"),
-                                    rs.getString("name"),
-                                    rs.getString("surname"),
-                                    rs.getString("role"),
-                                    createdOn
-                            )
+                            createUserFromResultSet(rs)
                     ));
                 }
             }
             return comments;
         }
-    }
-
-    private OffsetDateTime getTimestamp(ResultSet row, String column) throws SQLException {
-        return row.getTimestamp(column)
-                .toLocalDateTime()
-                .atOffset(java.time.ZoneOffset.UTC);
     }
 }

@@ -5,6 +5,7 @@ import it.unina.backend.entity.Change;
 import it.unina.backend.entity.User;
 import it.unina.backend.entity.Issue;
 import it.unina.backend.util.DatabaseConnection;
+import static it.unina.backend.util.DaoUtil.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,15 +52,7 @@ public class ChangeDao implements ChangeDaoInterface {
                             rs.getString("action"),
                             rs.getString("details"),
                             madeOn,
-                            new User(
-                                    rs.getString("email"),
-                                    rs.getString("username"),
-                                    rs.getString("password_hash"),
-                                    rs.getString("name"),
-                                    rs.getString("surname"),
-                                    rs.getString("role"),
-                                    createdOn
-                            ),
+                            createUserFromResultSet(rs),
                             issueId
                     ));
                 }
@@ -80,11 +73,5 @@ public class ChangeDao implements ChangeDaoInterface {
             st.setInt(4, c.getIssueId());
             st.executeUpdate();
         }
-    }
-
-    private OffsetDateTime getTimestamp(ResultSet row, String column) throws SQLException {
-        return row.getTimestamp(column)
-                .toLocalDateTime()
-                .atOffset(java.time.ZoneOffset.UTC);
     }
 }
