@@ -15,8 +15,7 @@ import java.util.List;
 public class IssueDao implements IssueDaoInterface {
     private static IssueDao instance;
 
-    private IssueDao() {
-    }
+    private IssueDao() {}
 
     public static IssueDao getInstance() {
         if (instance == null) {
@@ -29,10 +28,8 @@ public class IssueDao implements IssueDaoInterface {
     public boolean insertIssue(Issue issue) throws SQLException {
         String sql = "INSERT INTO issue (issue_id, title, description, type, created_by) values (?, ?, ?, ?, ?)";
 
-        try (
-                Connection connection = DatabaseConnection.getInstance().getConnection();
-                PreparedStatement st = connection.prepareStatement(sql)
-        ) {
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();
+            PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, issue.getId());
             st.setString(2, issue.getTitle());
             st.setString(3, issue.getDescription());
@@ -45,14 +42,13 @@ public class IssueDao implements IssueDaoInterface {
     @Override
     public Issue findIssueById(Integer id) throws SQLException{
         String sql = "SELECT i.id, i.title, i.description, i.type, i.status, i.created_on, " +
-                        "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
-                        "FROM issue AS i JOIN \"User\" AS u ON i.created_by = u.username " +
-                        "WHERE issue_id = ?";
+                     "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
+                     "FROM issue AS i JOIN \"User\" AS u ON i.created_by = u.username " +
+                     "WHERE issue_id = ?"
+        ;
 
-        try (
-                Connection connection = DatabaseConnection.getInstance().getConnection();
-                PreparedStatement st = connection.prepareStatement(sql)
-        ) {
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();
+            PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
@@ -73,16 +69,15 @@ public class IssueDao implements IssueDaoInterface {
     @Override
     public List<Issue> findAllIssues() throws SQLException{
         String sql = "SELECT i.id, i.title, i.description, i.type, i.status, i.created_on, " +
-                "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
-                "FROM issue AS i JOIN \"User\" AS u ON i.created_by = u.username " +
-                "WHERE issue_id = ?";
+                     "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
+                     "FROM issue AS i JOIN \"User\" AS u ON i.created_by = u.username " +
+                     "WHERE issue_id = ?"
+        ;
 
         List<Issue> issues = new ArrayList<>();
 
-        try(
-                Connection connection = DatabaseConnection.getInstance().getConnection();
-                PreparedStatement st = connection.prepareStatement(sql)
-        ) {
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();
+            PreparedStatement st = connection.prepareStatement(sql)) {
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 issues.add(new Issue(
