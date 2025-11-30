@@ -3,6 +3,7 @@ package it.unina.backend.dao;
 import it.unina.backend.daointerface.IssueDaoInterface;
 import it.unina.backend.entity.Issue;
 import it.unina.backend.connection.DatabaseConnection;
+import static it.unina.backend.util.DaoUtil.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +26,7 @@ public class IssueDao implements IssueDaoInterface {
     }
 
     @Override
-    public boolean insertIssue(Issue issue) {
+    public boolean insertIssue(Issue issue) throws SQLException {
         String sql = "INSERT INTO issue (issue_id, title, description, type, created_by) values (?, ?, ?, ?, ?)";
 
         try (
@@ -36,19 +37,17 @@ public class IssueDao implements IssueDaoInterface {
             st.setString(2, issue.getTitle());
             st.setString(3, issue.getDescription());
             st.setString(4, issue.getType());
-            st.setString(5, issue.getCreatedBy());
-            st.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+            st.setString(5, issue.getUserUsername());
+            return st.executeUpdate() == 1;
         }
-
-        return true;
     }
 
     @Override
-    public Issue findIssueById(Integer id) {
-        String sql = "SELECT * FROM issue WHERE issue_id = ?";
+    public Issue findIssueById(Integer id) throws SQLException{
+        String sql = "SELECT i.id, i.title, i.description, i.type, i.status, i.created_on, " +
+                        "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
+                        "FROM issue AS i JOIN \"User\" AS u ON i.created_by = u.username " +
+                        "WHERE issue_id = ?";
 
         try (
                 Connection connection = DatabaseConnection.getInstance().getConnection();
@@ -58,24 +57,26 @@ public class IssueDao implements IssueDaoInterface {
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 return new Issue(
-                    rs.getInt("issue_id"),
-                    rs.getString("title"),
-                    rs.getString("description"),
-                    rs.getString("type"),
-                    rs.getString("status"),
-                    rs.getString("created_by"),
-                    rs.getObject("created_on", OffsetDateTime.class)
+                        rs.getInt("issue_id"),
+                        rs.getString("title"),
+                        rs.getString("description"),
+                        rs.getString("type"),
+                        rs.getString("status"),
+                        createUserFromResultSet(rs),
+                        rs.getObject("created_on", OffsetDateTime.class)
                 );
-            } else return null;
-        } catch (SQLException e) {
-            e.printStackTrace();
+            }
             return null;
         }
     }
 
     @Override
-    public List<Issue> findAllIssues() {
-        String sql = "SELECT * from issue";
+    public List<Issue> findAllIssues() throws SQLException{
+        String sql = "SELECT i.id, i.title, i.description, i.type, i.status, i.created_on, " +
+                "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
+                "FROM issue AS i JOIN \"User\" AS u ON i.created_by = u.username " +
+                "WHERE issue_id = ?";
+
         List<Issue> issues = new ArrayList<>();
 
         try(
@@ -90,14 +91,11 @@ public class IssueDao implements IssueDaoInterface {
                     rs.getString("description"),
                     rs.getString("type"),
                     rs.getString("status"),
-                    rs.getString("created_by"),
+                    createUserFromResultSet(rs),
                     rs.getObject("created_on", OffsetDateTime.class)
                 ));
             }
-        } catch(SQLException e) {
-            e.printStackTrace();
         }
-
         return issues;
     }
 }

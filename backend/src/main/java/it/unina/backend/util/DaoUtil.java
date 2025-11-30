@@ -8,7 +8,7 @@ import java.time.OffsetDateTime;
 
 public class DaoUtil {
 
-    private DaoUtil(){};
+    private DaoUtil(){}
 
     public static OffsetDateTime getTimestamp(ResultSet row, String column) throws SQLException {
         return row.getTimestamp(column)

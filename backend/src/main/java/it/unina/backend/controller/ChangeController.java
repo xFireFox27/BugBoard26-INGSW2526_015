@@ -23,17 +23,16 @@ public class ChangeController {
     public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue_id") Integer issueId) {
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{\"error\": \"'issue_id' must be provided\"}")
+                    .entity("{error: \"'issue_id' must be provided\"}")
                     .build();
         }
 
         try {
             List<Change> changes = changeDao.findChangesByIssueId(issueId);
             return Response.ok(changes).build();
-
         } catch (SQLException e) {
             e.printStackTrace();
-            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+            return Response.serverError().entity("{error: \"Database error\"}").build();
         }
     }
 }

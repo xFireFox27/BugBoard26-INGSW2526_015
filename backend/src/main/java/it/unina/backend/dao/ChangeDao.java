@@ -2,8 +2,6 @@ package it.unina.backend.dao;
 
 import it.unina.backend.daointerface.ChangeDaoInterface;
 import it.unina.backend.entity.Change;
-import it.unina.backend.entity.User;
-import it.unina.backend.entity.Issue;
 import static it.unina.backend.util.DaoUtil.*;
 import it.unina.backend.connection.DatabaseConnection;
 
@@ -60,7 +58,7 @@ public class ChangeDao implements ChangeDaoInterface {
         }
     }
 
-    public void insertChange(Change c) throws SQLException{
+    public boolean insertChange(Change c) throws SQLException{
 
         String sql = "INSERT INTO Change (action, details, created_by, related_to) VALUES (?, ?, ?, ?)";
 
@@ -70,7 +68,8 @@ public class ChangeDao implements ChangeDaoInterface {
             st.setString(2, c.getDetails());
             st.setString(3, c.getUserUsername());
             st.setInt(4, c.getIssueId());
-            st.executeUpdate();
+            return st.executeUpdate() == 1;
+
         }
     }
 }
