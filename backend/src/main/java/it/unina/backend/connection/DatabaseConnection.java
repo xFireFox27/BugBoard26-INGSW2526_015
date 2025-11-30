@@ -1,12 +1,10 @@
 package it.unina.backend.connection;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UncheckedIOException;
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class DatabaseConnection {
     private static DatabaseConnection instance;
@@ -15,25 +13,17 @@ public class DatabaseConnection {
     private String password;
 
     private DatabaseConnection() {
-        Properties props = new Properties();
+        Dotenv dotenv = Dotenv.configure()
+                .directory("./")
+                .ignoreIfMissing()
+                .load();
 
-        // Carica il file una volta sola alla creazione del Singleton
-        try (InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties")) {
+        this.url = dotenv.get("DB_URL");
+        this.username = dotenv.get("DB_USER");
+        this.password = dotenv.get("DB_PASSWORD");
 
-            if (input == null) {
-                // Se manca il file, è un errore grave: meglio lanciare un'eccezione che stampare solo testo
-                throw new IllegalStateException("Impossibile trovare il file config.properties");
-            }
-
-            props.load(input);
-
-            this.url = props.getProperty("db.url");
-            this.username = props.getProperty("db.user");
-            this.password = props.getProperty("db.password");
-
-        } catch (IOException ex) {
-            // Se non riesco a leggere la config, l'app non deve partire
-            throw new UncheckedIOException("Errore nella lettura della configurazione DB", ex);
+        if (this.url == null || this.username == null || this.password == null) {
+            throw new IllegalStateException("Configurazione DB mancante nel file .env");
         }
     }
 
