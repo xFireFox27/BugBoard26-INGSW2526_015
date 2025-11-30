@@ -24,7 +24,7 @@ public class UserDao implements UserDaoInterface {
     }
 
     @Override
-    public void insertUser(User user) throws SQLException {
+    public boolean insertUser(User user) throws SQLException {
 
         String sql = "INSERT INTO \"user\" (email, username, password_hash, name, surname, role) " +
                      "VALUES (?, ?, ?, ?, ?, ?)"
@@ -39,10 +39,11 @@ public class UserDao implements UserDaoInterface {
             st.setString(4, user.getName());
             st.setString(5, user.getSurname());
             st.setString(6, user.getRole());
-            st.executeUpdate();
+            return st.executeUpdate() == 1;
         }
     }
 
+    @Override
     public User findUserByUsername(String username) throws SQLException {
         String sql = "SELECT username, email, name, surname, role, created_on" +
                         "FROM User WHERE username = ?";
@@ -87,6 +88,4 @@ public class UserDao implements UserDaoInterface {
             }
         }
     }
-
-
 }

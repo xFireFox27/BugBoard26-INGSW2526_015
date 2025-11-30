@@ -4,7 +4,7 @@ import it.unina.backend.entity.User;
 import java.sql.SQLException;
 
 public interface UserDaoInterface{
-    void insertUser(User user) throws SQLException;
+    boolean insertUser(User user) throws SQLException;
 
     User findUserByUsername(String username) throws SQLException;
 

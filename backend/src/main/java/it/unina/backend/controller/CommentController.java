@@ -3,15 +3,17 @@ package it.unina.backend.controller;
 import it.unina.backend.entity.Comment;
 import it.unina.backend.dao.CommentDao;
 import it.unina.backend.security.RequireJWTAuthentication;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import it.unina.backend.dto.CommentDto;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
+
+import jakarta.ws.rs.core.SecurityContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,4 +45,26 @@ public class CommentController{
 
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addComment(@Context SecurityContext securityContext, CommentDto commentDto){
+        if(commentDto == null || commentDto.getText() == null || commentDto.getText().isEmpty()
+                || commentDto.getIssueId() == null){
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("all fields required")
+                    .build();
+        }
+
+        try{
+            String username = securityContext.getUserPrincipal().getName();
+            Comment comment = new Comment(commentDto);
+            commentDao.insertComment(comment, username);
+            return  Response.status(Response.Status.CREATED).entity(comment).build();
+        }
+        catch(SQLException e){
+            logger.error("error: impossible to insert the comment ", e);
+            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+        }
+    }
 }

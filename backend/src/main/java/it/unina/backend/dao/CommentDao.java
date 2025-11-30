@@ -11,13 +11,12 @@ import java.sql.SQLException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import static it.unina.backend.util.DaoUtil.*;
-
 
 public class CommentDao implements CommentDaoInterface {
 
     private static CommentDao instance;
+    private static UserDao userDao = UserDao.getInstance();
 
     private CommentDao(){}
 
@@ -29,6 +28,7 @@ public class CommentDao implements CommentDaoInterface {
         return instance;
     }
 
+    @Override
     public List<Comment> findCommentsByIssueId(int issueId) throws SQLException {
 
         String sql = "select c.id, c.text, c.created_on," +
@@ -58,5 +58,28 @@ public class CommentDao implements CommentDaoInterface {
             }
             return comments;
         }
+    }
+
+    @Override
+    public boolean insertComment(Comment comment, String username) throws SQLException {
+        String sql = "INSERT INTO Comment(text, related_to, written_by) VALUES (?, ?, ?) " +
+                        "RETURNING comment_id, created_on";
+
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();
+            PreparedStatement st = connection.prepareStatement(sql)){
+            st.setString(1, comment.getText());
+            st.setInt(2, comment.getIssueId());
+            st.setString(3, username);
+
+            try(ResultSet rs = st.executeQuery()){
+                if(rs.next()){
+                    comment.setUser(userDao.findUserByUsername(username));
+                    comment.setId(rs.getInt("comment_id"));
+                    comment.setCreatedOn(getTimestamp(rs, "created_on"));
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

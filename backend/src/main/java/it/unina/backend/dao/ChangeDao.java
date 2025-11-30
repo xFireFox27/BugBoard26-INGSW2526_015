@@ -26,6 +26,7 @@ public class ChangeDao implements ChangeDaoInterface {
         return instance;
     }
 
+    @Override
     public List<Change> findChangesByIssueId(int issueId) throws SQLException {
         String sql = "SELECT c.change_id, c.action, c.details, c.made_on, " +
                 "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
@@ -58,6 +59,7 @@ public class ChangeDao implements ChangeDaoInterface {
         }
     }
 
+    @Override
     public boolean insertChange(Change c) throws SQLException{
 
         String sql = "INSERT INTO Change (action, details, created_by, related_to) VALUES (?, ?, ?, ?)";
