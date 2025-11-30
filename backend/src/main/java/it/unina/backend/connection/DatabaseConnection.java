@@ -2,6 +2,7 @@ package it.unina.backend.connection;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UncheckedIOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -21,7 +22,7 @@ public class DatabaseConnection {
 
             if (input == null) {
                 // Se manca il file, è un errore grave: meglio lanciare un'eccezione che stampare solo testo
-                throw new RuntimeException("Impossibile trovare il file config.properties");
+                throw new IllegalStateException("Impossibile trovare il file config.properties");
             }
 
             props.load(input);
@@ -32,7 +33,7 @@ public class DatabaseConnection {
 
         } catch (IOException ex) {
             // Se non riesco a leggere la config, l'app non deve partire
-            throw new RuntimeException("Errore nella lettura della configurazione DB", ex);
+            throw new UncheckedIOException("Errore nella lettura della configurazione DB", ex);
         }
     }
 
