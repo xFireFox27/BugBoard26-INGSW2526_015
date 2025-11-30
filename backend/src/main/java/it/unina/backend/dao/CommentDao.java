@@ -31,9 +31,9 @@ public class CommentDao implements CommentDaoInterface {
     @Override
     public List<Comment> findCommentsByIssueId(int issueId) throws SQLException {
 
-        String sql = "select c.id, c.text, c.created_on," +
+        String sql = "select c.comment_id, c.text, c.created_on," +
                 "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
-                "FROM Comment AS c JOIN \"User\" AS u ON c.writtenBy = u.username " +
+                "FROM Comment AS c JOIN \"user\" AS u ON c.written_by = u.username " +
                 "WHERE c.related_to = ?";
 
         List<Comment> comments = new ArrayList<>();

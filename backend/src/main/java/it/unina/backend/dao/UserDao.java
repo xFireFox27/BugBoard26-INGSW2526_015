@@ -45,8 +45,8 @@ public class UserDao implements UserDaoInterface {
 
     @Override
     public User findUserByUsername(String username) throws SQLException {
-        String sql = "SELECT username, email, name, surname, role, created_on" +
-                        "FROM User WHERE username = ?";
+        String sql = "SELECT username, email, name, surname, role, " +
+                        "created_on FROM \"user\" WHERE username = ?";
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, username);
