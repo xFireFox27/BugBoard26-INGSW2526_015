@@ -3,6 +3,7 @@ package it.unina.backend.service;
 import it.unina.backend.dao.IssueDao;
 import it.unina.backend.entity.Issue;
 
+import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
 
@@ -22,7 +23,13 @@ public class IssueService {
     }
 
     public List<Issue> getIssues() {
-        return issueDao.findAllIssues();
+        try {
+            return issueDao.findAllIssues();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public List<Issue> getIssuesFilteredAndSorted(String filter, String sortBy) {
