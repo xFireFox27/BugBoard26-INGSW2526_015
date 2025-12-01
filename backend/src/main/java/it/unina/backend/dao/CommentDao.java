@@ -59,7 +59,7 @@ public class CommentDao implements CommentDaoInterface {
     }
 
     @Override
-    public boolean insertComment(Comment comment, String username) throws SQLException {
+    public boolean insertComment(Comment comment) throws SQLException {
         String sql = "INSERT INTO Comment(text, related_to, written_by) VALUES (?, ?, ?) " +
                         "RETURNING comment_id, created_on";
 
@@ -67,11 +67,10 @@ public class CommentDao implements CommentDaoInterface {
             PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, comment.getText());
             st.setInt(2, comment.getIssueId());
-            st.setString(3, username);
+            st.setString(3, comment.getUserUsername());
 
             try(ResultSet rs = st.executeQuery()){
                 if(rs.next()){
-                    comment.setUser(userDao.findUserByUsername(username));
                     comment.setId(rs.getInt("comment_id"));
                     comment.setCreatedOn(rs.getObject("created_on", OffsetDateTime.class));
                     return true;
