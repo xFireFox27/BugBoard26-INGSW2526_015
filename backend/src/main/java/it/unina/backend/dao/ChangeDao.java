@@ -43,13 +43,11 @@ public class ChangeDao implements ChangeDaoInterface {
 
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
-                    OffsetDateTime madeOn = getTimestamp(rs, "made_on");
-
                     changes.add(new Change(
                             rs.getInt("change_id"),
                             rs.getString("action"),
                             rs.getString("details"),
-                            madeOn,
+                            rs.getObject("made_on", OffsetDateTime.class),
                             createUserFromResultSet(rs),
                             issueId
                     ));

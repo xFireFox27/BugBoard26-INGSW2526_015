@@ -1,13 +1,13 @@
 package it.unina.backend.controller;
 
+import it.unina.backend.dao.IssueDao;
+import it.unina.backend.dto.IssueDto;
 import it.unina.backend.dto.IssueResponseDto;
 import it.unina.backend.entity.Issue;
 import it.unina.backend.security.RequireJWTAuthentication;
 import it.unina.backend.service.IssueService;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import jakarta.ws.rs.core.SecurityContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +24,7 @@ import org.slf4j.LoggerFactory;
 @RequireJWTAuthentication
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
+    private final IssueDao issueDao = IssueDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(IssueController.class);
     /*
     private IssueDao issueDao = IssueDao.getInstance();
@@ -66,4 +68,26 @@ public class IssueController {
             return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
         }
     }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addIssue(@Context SecurityContext securityContext, IssueDto issueDto) {
+        if(issueDto == null || issueDto.getDescription() == null || issueDto.getTitle() == null ||
+            issueDto.getType() == null || issueDto.getStatus() == null) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        try {
+            Issue issue = new Issue(issueDto);
+            issueDao.insertIssue(issue);
+
+            IssueResponseDto responseDto = new IssueResponseDto(issue);
+            return Response.status(Response.Status.CREATED).entity(responseDto).build();
+        }
+        catch (SQLException e) {
+            logger.error("error: impossible to add issue with the specified filters ", e);
+            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+        }
+    }
+
 }

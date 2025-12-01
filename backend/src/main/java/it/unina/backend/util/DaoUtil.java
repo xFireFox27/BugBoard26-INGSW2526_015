@@ -10,15 +10,7 @@ public class DaoUtil {
 
     private DaoUtil(){}
 
-    public static OffsetDateTime getTimestamp(ResultSet row, String column) throws SQLException {
-        return row.getTimestamp(column)
-                .toLocalDateTime()
-                .atOffset(java.time.ZoneOffset.UTC);
-    }
-
     public static User createUserFromResultSet(ResultSet rs) throws SQLException{
-
-        OffsetDateTime createdOn = getTimestamp(rs, "created_on");
 
         return new User(
                 rs.getString("email"),
@@ -27,7 +19,7 @@ public class DaoUtil {
                 rs.getString("name"),
                 rs.getString("surname"),
                 rs.getString("role"),
-                createdOn
+                rs.getObject("created_on", OffsetDateTime.class)
         );
     }
 }

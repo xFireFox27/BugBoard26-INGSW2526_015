@@ -45,12 +45,10 @@ public class CommentDao implements CommentDaoInterface {
 
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
-                    OffsetDateTime writtenOn = getTimestamp(rs, "created_on");
-
                     comments.add(new Comment(
                             rs.getInt("comment_id"),
                             rs.getString("text"),
-                            writtenOn,
+                            rs.getObject("created_on", OffsetDateTime.class),
                             issueId,
                             createUserFromResultSet(rs)
                     ));
@@ -75,7 +73,7 @@ public class CommentDao implements CommentDaoInterface {
                 if(rs.next()){
                     comment.setUser(userDao.findUserByUsername(username));
                     comment.setId(rs.getInt("comment_id"));
-                    comment.setCreatedOn(getTimestamp(rs, "created_on"));
+                    comment.setCreatedOn(rs.getObject("created_on", OffsetDateTime.class));
                     return true;
                 }
             }

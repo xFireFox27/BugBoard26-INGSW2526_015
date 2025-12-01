@@ -39,10 +39,7 @@ public class UserDao implements UserDaoInterface {
 
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                OffsetDateTime createdOn = rs.getTimestamp("created_on")
-                        .toLocalDateTime()
-                        .atOffset(java.time.ZoneOffset.UTC);
-                user.setCreatedOn(createdOn);
+                user.setCreatedOn(rs.getObject("created_on", OffsetDateTime.class));
                 return true;
             }
             return false;

@@ -26,22 +26,28 @@ public class IssueDao implements IssueDaoInterface {
 
     @Override
     public boolean insertIssue(Issue issue) throws SQLException {
-        String sql = "INSERT INTO issue (issue_id, title, description, type, created_by) values (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO issue (title, description, type, priority, created_by) " +
+                    "values (?, ?, ?, ?, ?) RETURNING issue_id";
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, issue.getId());
-            st.setString(2, issue.getTitle());
-            st.setString(3, issue.getDescription());
-            st.setString(4, issue.getType());
-            st.setString(5, issue.getUserUsername());
-            return st.executeUpdate() == 1;
+            st.setString(1, issue.getTitle());
+            st.setString(2, issue.getDescription());
+            st.setString(3, issue.getType());
+            st.setString(4, issue.getUserUsername());
+            try(ResultSet rs = st.executeQuery()){
+                if(rs.next()){
+                    issue.setId(rs.getInt("issue_id"));
+                    return true;
+                }
+            }
+            return false;
         }
     }
 
     @Override
     public Issue findIssueById(Integer id) throws SQLException{
-        String sql = "SELECT i.issue_id, i.title, i.description, i.type, i.status, i.created_on, " +
+        String sql = "SELECT i.issue_id, i.title, i.description, i.type, i.priority, i.status, i.created_on, " +
                 "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
                 "FROM issue AS i JOIN \"user\" AS u ON i.created_by = u.username " +
                 "WHERE i.issue_id = ?";
@@ -56,6 +62,7 @@ public class IssueDao implements IssueDaoInterface {
                         rs.getString("title"),
                         rs.getString("description"),
                         rs.getString("type"),
+                        rs.getString("priority"),
                         rs.getString("status"),
                         createUserFromResultSet(rs),
                         rs.getObject("created_on", OffsetDateTime.class)
@@ -67,7 +74,7 @@ public class IssueDao implements IssueDaoInterface {
 
     @Override
     public List<Issue> findAllIssues() throws SQLException{
-        String sql = "SELECT i.issue_id, i.title, i.description, i.type, i.status, i.created_on, " +
+        String sql = "SELECT i.issue_id, i.title, i.description, i.type, i.priority, i.status, i.created_on, " +
                 "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
                 "FROM issue AS i JOIN \"user\" AS u ON i.created_by = u.username";
 
@@ -82,6 +89,7 @@ public class IssueDao implements IssueDaoInterface {
                     rs.getString("title"),
                     rs.getString("description"),
                     rs.getString("type"),
+                    rs.getString("priority"),
                     rs.getString("status"),
                     createUserFromResultSet(rs),
                     rs.getObject("created_on", OffsetDateTime.class)
