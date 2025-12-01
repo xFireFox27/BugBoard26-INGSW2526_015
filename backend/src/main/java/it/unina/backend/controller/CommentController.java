@@ -5,7 +5,7 @@ import it.unina.backend.entity.Comment;
 import it.unina.backend.dao.CommentDao;
 import it.unina.backend.security.RequireJWTAuthentication;
 import it.unina.backend.dto.CommentDto;
-import it.unina.backend.dto.CommentResponseDto; // <--- Importa il nuovo DTO
+import it.unina.backend.dto.CommentResponseDto;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
@@ -13,10 +13,9 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors; // <--- Serve per le liste
+import java.util.stream.Collectors;
 
 @Path("/comments")
 @RequireJWTAuthentication
@@ -28,11 +27,11 @@ public class CommentController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getComments(@QueryParam("issueId") Integer issueId) {
+    public Response getComments(@QueryParam("issue-id") Integer issueId) {
 
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{\"error\": \"'issueId' must be provided\"}")
+                    .entity("{\"error\": \"'issue-id' must be provided\"}")
                     .build();
         }
 
@@ -46,7 +45,7 @@ public class CommentController {
             return Response.ok(responseDtos).build();
         } catch (SQLException e) {
             logger.error("error: impossible to retrieve comments for the specified issues ", e);
-            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+            return Response.serverError().entity("{\"error\": \"Database error\"}").build();
         }
     }
 
@@ -57,7 +56,7 @@ public class CommentController {
         if (commentDto == null || commentDto.getText() == null || commentDto.getText().isEmpty()
                 || commentDto.getIssueId() == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("all fields required")
+                    .entity("{all fields required}")
                     .build();
         }
 
@@ -80,7 +79,7 @@ public class CommentController {
             return Response.status(Response.Status.CREATED).entity(responseDto).build();
         } catch (SQLException e) {
             logger.error("error: impossible to insert the comment ", e);
-            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+            return Response.serverError().entity("{\"error\": \"Database error\"}").build();
         }
     }
 }

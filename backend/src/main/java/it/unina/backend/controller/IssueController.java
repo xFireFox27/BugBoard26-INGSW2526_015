@@ -67,7 +67,7 @@ public class IssueController {
         }
         catch (SQLException e) {
             logger.error("error: impossible to retrieve issues with the specified filters ", e);
-            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+            return Response.serverError().entity("{\"error\": \"Database error\"}").build();
         }
     }
 
@@ -96,8 +96,7 @@ public class IssueController {
         }
         catch (SQLException e) {
             logger.error("error: impossible to add issue with the specified filters ", e);
-            return Response.serverError().entity("{\"error\": \"Errore Database\"}").build();
+            return Response.serverError().entity("{\"error\": \"Database error\"}").build();
         }
     }
-
 }
