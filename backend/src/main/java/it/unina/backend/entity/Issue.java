@@ -103,7 +103,7 @@ public class Issue {
     }
 
     private boolean checkStatus(String status){
-        return (status.equals("To Do") || status.equals("In Progress") || status.equals("Done"));
+        return (status.equals("To Do") || status.equals("In Progress") || status.equals("Done")) || status.equals("Archived");
     }
 
     private boolean checkPriority(String priority){

@@ -9,9 +9,9 @@ public class IssueDto {
     String priority = "Low";
     String status = "To Do";
 
-    IssueDto(){}
+    public IssueDto(){}
 
-    IssueDto(String title, String description, String type, String priority, String status, User user) {
+    public IssueDto(String title, String description, String type, String priority, String status) {
         if (!checkType(type)) {
             throw new IllegalArgumentException(
                     "Attempt to insert an invalid type: " + type +
@@ -72,7 +72,7 @@ public class IssueDto {
     }
 
     private boolean checkStatus(String status){
-        return (status.equals("To Do") || status.equals("In Progress") || status.equals("Done"));
+        return (status.equals("To Do") || status.equals("In Progress") || status.equals("Done")) || status.equals("Archived");
     }
 
     private boolean checkPriority(String priority){
