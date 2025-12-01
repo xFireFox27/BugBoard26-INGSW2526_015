@@ -11,7 +11,6 @@ import jakarta.ws.rs.core.SecurityContext;
 import java.util.List;
 import java.sql.SQLException;
 import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +28,8 @@ public class ChangeController {
     public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue-id") Integer issueId) {
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                           .entity(Map.of(ERROR_KEY, "Parameter 'issue-id' must be provided"))
+                           .entity(Map.of(ERROR_KEY, "missing_parameter",
+                                          MESSAGE_KEY, "Parameter 'issue-id' must be provided"))
                            .build();
         }
 
