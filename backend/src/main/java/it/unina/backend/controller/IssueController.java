@@ -1,6 +1,7 @@
 package it.unina.backend.controller;
 
 import it.unina.backend.dao.IssueDao;
+import it.unina.backend.dao.UserDao;
 import it.unina.backend.dto.IssueDto;
 import it.unina.backend.dto.IssueResponseDto;
 import it.unina.backend.entity.Issue;
@@ -25,6 +26,7 @@ import org.slf4j.LoggerFactory;
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
     private final IssueDao issueDao = IssueDao.getInstance();
+    private final UserDao userDao = UserDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(IssueController.class);
     /*
     private IssueDao issueDao = IssueDao.getInstance();
@@ -79,6 +81,14 @@ public class IssueController {
         }
         try {
             Issue issue = new Issue(issueDto);
+            String username = securityContext.getUserPrincipal().getName();
+            if(!(securityContext.isUserInRole("Admin") || securityContext.isUserInRole("Normal"))) {
+                logger.warn("forbidden: user {} not allowed to insert comments", username);
+                return Response.status(Response.Status.FORBIDDEN)
+                        .entity("{\"error\": \"Only Admin and User roles can submit issues\"}")
+                        .build();
+            }
+            issue.setCreatedBy(userDao.findUserByUsername(username));
             issueDao.insertIssue(issue);
 
             IssueResponseDto responseDto = new IssueResponseDto(issue);

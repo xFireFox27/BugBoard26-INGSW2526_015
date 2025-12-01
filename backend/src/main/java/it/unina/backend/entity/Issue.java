@@ -58,7 +58,6 @@ public class Issue {
         this.type = issueDto.getType();
         this.priority = issueDto.getPriority();
         this.status = issueDto.getStatus();
-        this.createdBy = issueDto.getUser();
     }
 
     public Integer getId() {
@@ -96,6 +95,8 @@ public class Issue {
     }
 
     public void setId(Integer id) { this.id = id;}
+
+    public void setCreatedBy(User createdBy) { this.createdBy = createdBy; }
 
     private boolean checkType(String type){
         return(type.equals("Bug") || type.equals("Documentation") || type.equals("Question") || type.equals("Feature"));

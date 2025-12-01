@@ -8,7 +8,6 @@ public class IssueDto {
     String type;
     String priority = "Low";
     String status = "To Do";
-    User user;
 
     IssueDto(){}
 
@@ -36,7 +35,6 @@ public class IssueDto {
         this.type = type;
         this.priority = priority;
         this.status = status;
-        this.user = user;
     }
 
     public String getTitle() { return title;}
@@ -48,8 +46,6 @@ public class IssueDto {
     public String getPriority() { return priority;}
 
     public String getStatus() { return status;}
-
-    public User getUser() { return user;}
 
     public void setTitle(String title) {
         this.title = title;
@@ -70,8 +66,6 @@ public class IssueDto {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public void setUser(User user) { this.user = user; }
 
     private boolean checkType(String type){
         return(type.equals("Bug") || type.equals("Documentation") || type.equals("Question") || type.equals("Feature"));
