@@ -81,15 +81,7 @@ public class UserDao implements UserDaoInterface {
                             .toLocalDateTime()
                             .atOffset(java.time.ZoneOffset.UTC);
 
-                    return new User(
-                            resultSet.getString("email"),
-                            resultSet.getString("username"),
-                            resultSet.getString("password_hash"),
-                            resultSet.getString("name"),
-                            resultSet.getString("surname"),
-                            resultSet.getString("role"),
-                            createdOn
-                    );
+                    return createUserFromResultSet(resultSet);
                 }
                 return null;
             }
