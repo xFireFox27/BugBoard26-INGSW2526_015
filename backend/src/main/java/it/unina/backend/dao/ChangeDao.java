@@ -29,7 +29,7 @@ public class ChangeDao implements ChangeDaoInterface {
     @Override
     public List<Change> findChangesByIssueId(int issueId) throws SQLException {
         String sql = "SELECT c.change_id, c.action, c.details, c.made_on, " +
-                "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
+                "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
                 "FROM change c " +
                 "JOIN \"user\" u ON u.username = c.created_by " +
                 "WHERE c.related_to = ?";

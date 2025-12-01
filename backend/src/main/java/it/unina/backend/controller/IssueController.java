@@ -1,5 +1,6 @@
 package it.unina.backend.controller;
 
+import it.unina.backend.dto.IssueResponseDto;
 import it.unina.backend.entity.Issue;
 import it.unina.backend.security.RequireJWTAuthentication;
 import it.unina.backend.service.IssueService;
@@ -13,6 +14,8 @@ import jakarta.ws.rs.core.Response;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,7 +53,13 @@ public class IssueController {
                               @QueryParam("sortBy") String sortBy) {
         try {
             List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, type, sortBy);
-            return Response.ok(issues).build();
+
+            // Convertiamo la lista di Issue in una lista di IssueResponseDto
+            List<IssueResponseDto> responseDtos = issues.stream()
+                    .map(IssueResponseDto::new)
+                    .collect(Collectors.toList());
+            
+            return Response.ok(responseDtos).build();
         }
         catch (SQLException e) {
             logger.error("error: impossible to retrieve issues with the specified filters ", e);
