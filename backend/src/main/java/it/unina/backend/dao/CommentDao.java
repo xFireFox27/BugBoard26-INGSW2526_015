@@ -16,7 +16,6 @@ import static it.unina.backend.util.DaoUtil.*;
 public class CommentDao implements CommentDaoInterface {
 
     private static CommentDao instance;
-    private static UserDao userDao = UserDao.getInstance();
 
     private CommentDao(){}
 

@@ -11,7 +11,7 @@ public class IssueDto {
 
     IssueDto(){}
 
-    IssueDto(String title, String description, String type, String priority, String status, User user) {
+    IssueDto(String title, String description, String type, String priority, String status) {
         if (!checkType(type)) {
             throw new IllegalArgumentException(
                     "Attempt to insert an invalid type: " + type +
