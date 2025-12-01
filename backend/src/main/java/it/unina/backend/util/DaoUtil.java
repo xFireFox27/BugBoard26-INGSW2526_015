@@ -23,7 +23,6 @@ public class DaoUtil {
         return new User(
                 rs.getString("email"),
                 rs.getString("username"),
-                //null,
                 rs.getString("password_hash"),
                 rs.getString("name"),
                 rs.getString("surname"),
