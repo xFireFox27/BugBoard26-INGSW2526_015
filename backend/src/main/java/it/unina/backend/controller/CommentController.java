@@ -61,6 +61,13 @@ public class CommentController {
 
         try {
             String username = securityContext.getUserPrincipal().getName();
+
+            if(!(securityContext.isUserInRole("Admin") || securityContext.isUserInRole("Normal"))) {
+                logger.warn("forbidden: user {} not allowed to insert comments", username);
+                return Response.status(Response.Status.FORBIDDEN)
+                        .entity("{\"error\": \"Only Admin and User roles can add comments\"}")
+                        .build();
+            }
             Comment comment = new Comment(commentDto);
             commentDao.insertComment(comment, username);
 
