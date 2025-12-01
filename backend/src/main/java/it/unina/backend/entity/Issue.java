@@ -58,6 +58,7 @@ public class Issue {
         this.type = issueDto.getType();
         this.priority = issueDto.getPriority();
         this.status = issueDto.getStatus();
+        this.createdBy = issueDto.getUser();
     }
 
     public Integer getId() {
