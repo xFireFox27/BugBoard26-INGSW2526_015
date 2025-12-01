@@ -37,11 +37,11 @@ public class ChangeController {
             List<Change> changes = changeDao.findChangesByIssueId(issueId);
             return Response.ok(changes).build();
         } catch (SQLException e) {
-            logger.error("Impossible to retrieve changes for the specified issues ", e);
+            logger.error("Impossible to retrieve changes for the specified issue", e);
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to retrieve changes for issue " + issueId
-                           )).build();
+                                          MESSAGE_KEY, "Impossible to retrieve changes for issue " + issueId))
+                           .build();
         }
     }
 }
