@@ -26,15 +26,17 @@ public class IssueDao implements IssueDaoInterface {
 
     @Override
     public boolean insertIssue(Issue issue) throws SQLException {
-        String sql = "INSERT INTO issue (title, description, type, priority, created_by) " +
-                    "values (?, ?, ?, ?, ?) RETURNING issue_id";
+        String sql = "INSERT INTO issue (title, description, type, priority, status, created_by) " +
+                    "values (?, ?, ?, ?, ?, ?) RETURNING issue_id";
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, issue.getTitle());
             st.setString(2, issue.getDescription());
             st.setString(3, issue.getType());
-            st.setString(4, issue.getUserUsername());
+            st.setString(4, issue.getPriority());
+            st.setString(5, issue.getStatus());
+            st.setString(6, issue.getUserUsername());
             try(ResultSet rs = st.executeQuery()){
                 if(rs.next()){
                     issue.setId(rs.getInt("issue_id"));

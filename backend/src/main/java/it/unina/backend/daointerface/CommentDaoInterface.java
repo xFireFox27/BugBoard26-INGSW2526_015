@@ -7,5 +7,5 @@ import java.util.List;
 public interface CommentDaoInterface {
 
     List<Comment> findCommentsByIssueId(int issueId) throws SQLException;
-    boolean insertComment(Comment comment, String username) throws SQLException;
+    boolean insertComment(Comment comment) throws SQLException;
 }

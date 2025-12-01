@@ -1,5 +1,6 @@
 package it.unina.backend.controller;
 
+import it.unina.backend.dao.UserDao;
 import it.unina.backend.entity.Comment;
 import it.unina.backend.dao.CommentDao;
 import it.unina.backend.security.RequireJWTAuthentication;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 public class CommentController {
 
     private final CommentDao commentDao = CommentDao.getInstance();
+    private final UserDao userDao = UserDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(CommentController.class);
 
     @GET
@@ -68,7 +70,8 @@ public class CommentController {
                         .build();
             }
             Comment comment = new Comment(commentDto);
-            commentDao.insertComment(comment, username);
+            comment.setUser(userDao.findUserByUsername(username));
+            commentDao.insertComment(comment);
 
 
             CommentResponseDto responseDto = new CommentResponseDto(comment);
