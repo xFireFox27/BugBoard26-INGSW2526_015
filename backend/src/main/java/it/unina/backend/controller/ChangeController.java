@@ -8,7 +8,6 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
-
 import java.util.List;
 import java.sql.SQLException;
 import org.slf4j.Logger;
@@ -23,10 +22,10 @@ public class ChangeController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue_id") Integer issueId) {
+    public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue-id") Integer issueId) {
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{error: \"'issue_id' must be provided\"}")
+                    .entity("{error: \"'issue-id' must be provided\"}")
                     .build();
         }
 
