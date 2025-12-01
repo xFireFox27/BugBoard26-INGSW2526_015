@@ -1,6 +1,6 @@
 package it.unina.backend.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.json.bind.annotation.JsonbTransient;
 
 import java.time.OffsetDateTime;
 
@@ -9,7 +9,6 @@ import java.time.OffsetDateTime;
 public class User{
     private final String email;
     private final String username;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private final String passwordHash;
     private final String name;
     private final String surname;
@@ -24,15 +23,8 @@ public class User{
                 String role,
                 OffsetDateTime createdOn)  {
 
-        if (!role.equals("Admin") &&
-            !role.equals("Normal") &&
-            !role.equals("External")) {
-
-            throw new IllegalArgumentException(
-                "Attempt to insert an invalid role: " +
-                role +
-                ".\nRole must be: Admin, Normal or External."
-            );
+        if (!validateUserData(email, username, passwordHash, name, surname, role)) {
+            throw new IllegalArgumentException("User data is not valid");
         }
 
         this.email = email;
@@ -52,15 +44,8 @@ public class User{
                 String surname,
                 String role)  {
 
-        if (!role.equals("Admin") &&
-            !role.equals("Normal") &&
-            !role.equals("External")) {
-
-            throw new IllegalArgumentException(
-                "Attempt to insert an invalid role: " +
-                role +
-                ".\nRole must be: Admin, Normal or External."
-            );
+        if (!validateUserData(email, username, passwordHash, name, surname, role)) {
+            throw new IllegalArgumentException("User data is not valid");
         }
 
         this.email = email;
@@ -76,6 +61,7 @@ public class User{
         return email;
     }
 
+    @JsonbTransient
     public String getPasswordHash() {
         return passwordHash;
     }
@@ -103,4 +89,30 @@ public class User{
     public void setCreatedOn(OffsetDateTime createdOn) {
         this.createdOn = createdOn;
     }
+
+    public static boolean validateUserData(String email,
+                                           String username,
+                                           String password,
+                                           String name,
+                                           String surname,
+                                           String role) {
+        if (email == null || email.isBlank()) {
+            return false;
+        }
+        if (username == null || username.isBlank()) {
+            return false;
+        }
+        if (password == null || password.length() < 8) {
+            return false;
+        }
+        if (name == null || name.isBlank()) {
+            return false;
+        }
+        if (surname == null || surname.isBlank()) {
+            return false;
+        }
+        return role.equals("Admin") || role.equals("Normal") || role.equals("External");
+    }
+
+
 }

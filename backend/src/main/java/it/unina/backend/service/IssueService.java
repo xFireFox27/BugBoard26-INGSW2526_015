@@ -22,20 +22,20 @@ public class IssueService {
         return instance;
     }
 
-    public List<Issue> getIssues() throws SQLException {
-            return issueDao.findAllIssues();
-    }
-
     public List<Issue> getIssuesFilteredAndSorted(String status,
                                                   String type,
                                                   String sortBy) throws SQLException{
         List<Issue> issues = getIssues();
         issues = applyFiltering(issues, status, type);
-        issues = applySorting(issues, sortBy);
-        return issues;
+        return applySorting(issues, sortBy);
+
     }
 
-    public List<Issue> applyFiltering(List<Issue> issues, String status, String type) {
+    private List<Issue> getIssues() throws SQLException {
+        return issueDao.findAllIssues();
+    }
+
+    private List<Issue> applyFiltering(List<Issue> issues, String status, String type) {
         return issues.stream()
             .filter(i -> (status == null || status.isBlank()) || i.getStatus().equalsIgnoreCase(status))
             .filter(i -> (type == null || type.isBlank()) || i.getType().equalsIgnoreCase(type))
@@ -43,7 +43,7 @@ public class IssueService {
         ;
     }
 
-    public List<Issue> applySorting(List<Issue> issues, String sortBy) {
+    private List<Issue> applySorting(List<Issue> issues, String sortBy) {
         String sortKey = (sortBy != null && !sortBy.isBlank()) ? sortBy.toLowerCase() : "id";
         Comparator<Issue> comparator = switch (sortKey) {
             case "title" -> Comparator.comparing(Issue::getTitle);

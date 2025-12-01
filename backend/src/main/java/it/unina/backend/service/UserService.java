@@ -27,11 +27,11 @@ public class UserService {
         User user = userDao.findUserByEmail(email);
 
         if (user == null) {
-            throw new IllegalArgumentException("Invalid credentials, no user exists with that email");
+            throw new IllegalArgumentException("Invalid credentials");
         }
 
         if (!BCrypt.checkpw(password, user.getPasswordHash())) {
-            throw new IllegalArgumentException("invalid credentials, wrong password");
+            throw new IllegalArgumentException("invalid credentials");
         }
 
         return user;

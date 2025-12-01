@@ -42,10 +42,9 @@ public class IssueDao implements IssueDaoInterface {
     @Override
     public Issue findIssueById(Integer id) throws SQLException{
         String sql = "SELECT i.issue_id, i.title, i.description, i.type, i.status, i.created_on, " +
-                     "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
-                     "FROM issue AS i JOIN \"user\" AS u ON i.created_by = u.username " +
-                     "WHERE i.issue_id = ?"
-        ;
+                "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
+                "FROM issue AS i JOIN \"user\" AS u ON i.created_by = u.username " +
+                "WHERE i.issue_id = ?";
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)) {
@@ -69,8 +68,8 @@ public class IssueDao implements IssueDaoInterface {
     @Override
     public List<Issue> findAllIssues() throws SQLException{
         String sql = "SELECT i.issue_id, i.title, i.description, i.type, i.status, i.created_on, " +
-                     "u.username, u.email, u.name, u.surname, u.role, u.created_on " +
-                     "FROM issue AS i JOIN \"user\" AS u ON i.created_by = u.username ";
+                "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
+                "FROM issue AS i JOIN \"user\" AS u ON i.created_by = u.username";
 
         List<Issue> issues = new ArrayList<>();
 

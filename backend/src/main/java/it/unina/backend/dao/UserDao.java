@@ -52,7 +52,7 @@ public class UserDao implements UserDaoInterface {
 
     @Override
     public User findUserByUsername(String username) throws SQLException {
-        String sql = "SELECT username, email, name, surname, role, " +
+        String sql = "SELECT username, email, password_hash, name, surname, role, " +
                         "created_on FROM \"user\" WHERE username = ?";
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)){
