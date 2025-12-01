@@ -77,10 +77,6 @@ public class UserDao implements UserDaoInterface {
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    OffsetDateTime createdOn = resultSet.getTimestamp("created_on")
-                            .toLocalDateTime()
-                            .atOffset(java.time.ZoneOffset.UTC);
-
                     return createUserFromResultSet(resultSet);
                 }
                 return null;
