@@ -1,6 +1,5 @@
 package it.unina.backend.entity;
 
-import jakarta.json.bind.annotation.JsonbTransient;
 
 import java.time.OffsetDateTime;
 
@@ -61,7 +60,6 @@ public class User{
         return email;
     }
 
-    @JsonbTransient
     public String getPasswordHash() {
         return passwordHash;
     }
