@@ -61,7 +61,7 @@ public class ChangeDao implements ChangeDaoInterface {
     public boolean insertChange(Connection connection, Change c) throws SQLException{
 
         String sql = "INSERT INTO Change (action, details, created_by, related_to) VALUES (?, ?, ?, ?)" +
-                    "RETURNING change_id, created_on";
+                    "RETURNING change_id, made_on";
 
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, c.getAction());
@@ -72,7 +72,7 @@ public class ChangeDao implements ChangeDaoInterface {
             try(ResultSet rs = st.executeQuery()){
                 if(rs.next()){
                     c.setId(rs.getInt("change_id"));
-                    c.setCreatedOn(rs.getObject("created_on", OffsetDateTime.class));
+                    c.setCreatedOn(rs.getObject("made_on", OffsetDateTime.class));
                     return true;
                 }
             }
