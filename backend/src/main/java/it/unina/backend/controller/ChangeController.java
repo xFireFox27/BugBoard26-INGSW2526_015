@@ -2,6 +2,7 @@ package it.unina.backend.controller;
 
 import it.unina.backend.dao.ChangeDao;
 import it.unina.backend.entity.Change;
+import it.unina.backend.dto.ChangeResponseDto; // <--- Importiamo il DTO
 import it.unina.backend.security.RequireJWTAuthentication;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -9,6 +10,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 import java.util.List;
+import java.util.stream.Collectors; // <--- Necessario per le liste
 import java.sql.SQLException;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -28,20 +30,26 @@ public class ChangeController {
     public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue-id") Integer issueId) {
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                           .entity(Map.of(ERROR_KEY, "missing_parameter",
-                                          MESSAGE_KEY, "Parameter 'issue-id' must be provided"))
-                           .build();
+                    .entity(Map.of(ERROR_KEY, "missing_parameter",
+                            MESSAGE_KEY, "Parameter 'issue-id' must be provided"))
+                    .build();
         }
 
         try {
             List<Change> changes = changeDao.findChangesByIssueId(issueId);
-            return Response.ok(changes).build();
+
+            List<ChangeResponseDto> responseDtos = changes.stream()
+                    .map(ChangeResponseDto::new)
+                    .collect(Collectors.toList());
+
+            return Response.ok(responseDtos).build();
+
         } catch (SQLException e) {
             logger.error("Impossible to retrieve changes for the specified issue", e);
             return Response.serverError()
-                           .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to retrieve changes for issue " + issueId))
-                           .build();
+                    .entity(Map.of(ERROR_KEY, "database_error",
+                            MESSAGE_KEY, "Impossible to retrieve changes for issue " + issueId))
+                    .build();
         }
     }
 }
