@@ -60,14 +60,10 @@ public class CommentController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addComment(@Context SecurityContext securityContext, CommentDto commentDto) {
-        if (commentDto == null ||
-            commentDto.getText() == null ||
-            commentDto.getText().isEmpty() ||
-            commentDto.getIssueId() == null) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                           .entity(Map.of(ERROR_KEY, "missing_fields",
-                                          MESSAGE_KEY, "All fields are required"))
-                           .build();
+        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
+            return Response.status(Response.Status.FORBIDDEN)
+                    .entity(Map.of("error", "forbidden", "message", "User not allowed"))
+                    .build();
         }
 
         try {
