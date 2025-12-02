@@ -1,6 +1,5 @@
 package it.unina.backend.controller;
 
-import it.unina.backend.dao.IssueDao;
 import it.unina.backend.dao.UserDao;
 import it.unina.backend.dto.IssueDto;
 import it.unina.backend.dto.IssueResponseDto;
@@ -15,7 +14,6 @@ import jakarta.ws.rs.core.Response;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import jakarta.ws.rs.core.SecurityContext;
 import org.slf4j.Logger;
@@ -25,7 +23,6 @@ import org.slf4j.LoggerFactory;
 @RequireJWTAuthentication
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
-    private final IssueDao issueDao = IssueDao.getInstance();
     private final UserDao userDao = UserDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(IssueController.class);
     /*
@@ -61,7 +58,7 @@ public class IssueController {
             // Convertiamo la lista di Issue in una lista di IssueResponseDto
             List<IssueResponseDto> responseDtos = issues.stream()
                     .map(IssueResponseDto::new)
-                    .collect(Collectors.toList());
+                    .toList();
             
             return Response.ok(responseDtos).build();
         }

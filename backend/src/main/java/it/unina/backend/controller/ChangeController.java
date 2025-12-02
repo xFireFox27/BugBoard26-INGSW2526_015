@@ -2,7 +2,7 @@ package it.unina.backend.controller;
 
 import it.unina.backend.dao.ChangeDao;
 import it.unina.backend.entity.Change;
-import it.unina.backend.dto.ChangeResponseDto; // <--- Importiamo il DTO
+import it.unina.backend.dto.ChangeResponseDto;
 import it.unina.backend.security.RequireJWTAuthentication;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -10,7 +10,6 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 import java.util.List;
-import java.util.stream.Collectors; // <--- Necessario per le liste
 import java.sql.SQLException;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -40,7 +39,7 @@ public class ChangeController {
 
             List<ChangeResponseDto> responseDtos = changes.stream()
                     .map(ChangeResponseDto::new)
-                    .collect(Collectors.toList());
+                    .toList();
 
             return Response.ok(responseDtos).build();
 

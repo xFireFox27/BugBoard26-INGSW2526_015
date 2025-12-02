@@ -1,6 +1,5 @@
 package it.unina.backend.controller;
 
-import it.unina.backend.dao.UserDao;
 import it.unina.backend.entity.Comment;
 import it.unina.backend.dao.CommentDao;
 import it.unina.backend.security.RequireJWTAuthentication;
@@ -17,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Path("/comments")
 @RequireJWTAuthentication
@@ -25,7 +23,6 @@ public class CommentController {
 
     private final CommentDao commentDao = CommentDao.getInstance();
     private final CommentService commentService = CommentService.getInstance();
-    private final UserDao userDao = UserDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(CommentController.class);
     private static final String ERROR_KEY = "error";
     private static final String MESSAGE_KEY = "message";
@@ -45,7 +42,7 @@ public class CommentController {
             List<Comment> comments = commentDao.findCommentsByIssueId(issueId);
             List<CommentResponseDto> responseDtos = comments.stream()
                                                             .map(CommentResponseDto::new)
-                                                            .collect(Collectors.toList());
+                                                            .toList();
             return Response.ok(responseDtos).build();
         } catch (SQLException e) {
             logger.error("Impossible to retrieve comments for the specified issue", e);
@@ -62,7 +59,7 @@ public class CommentController {
     public Response addComment(@Context SecurityContext securityContext, CommentDto commentDto) {
         if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
-                    .entity(Map.of("error", "forbidden", "message", "User not allowed"))
+                    .entity(Map.of(ERROR_KEY, "forbidden", MESSAGE_KEY, "User not allowed"))
                     .build();
         }
 
@@ -76,12 +73,12 @@ public class CommentController {
 
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of("error", "invalid_input", "message", e.getMessage()))
+                    .entity(Map.of(ERROR_KEY, "invalid_input", MESSAGE_KEY, e.getMessage()))
                     .build();
         } catch (SQLException e) {
             logger.error("Database error while adding comment", e);
             return Response.serverError()
-                    .entity(Map.of("error", "database_error", "message", "Impossible to insert comment"))
+                    .entity(Map.of(ERROR_KEY, "database_error", MESSAGE_KEY, "Impossible to insert comment"))
                     .build();
         }
     }

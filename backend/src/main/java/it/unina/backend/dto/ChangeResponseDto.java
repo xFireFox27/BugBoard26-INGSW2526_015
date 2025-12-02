@@ -9,7 +9,7 @@ public class ChangeResponseDto {
     private String details;
     private OffsetDateTime createdOn;
     private int issueId;
-    private UserResponseDto createdBy; // Usiamo il DTO sicuro qui!
+    private UserResponseDto createdBy;
 
     public ChangeResponseDto(Change change) {
         this.id = change.getId();
