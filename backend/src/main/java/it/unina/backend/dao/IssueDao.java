@@ -25,12 +25,11 @@ public class IssueDao implements IssueDaoInterface {
     }
 
     @Override
-    public boolean insertIssue(Issue issue) throws SQLException {
+    public boolean insertIssue(Connection connection, Issue issue) throws SQLException {
         String sql = "INSERT INTO issue (title, description, type, priority, status, created_by) " +
                     "values (?, ?, ?, ?, ?, ?) RETURNING issue_id";
 
-        try(Connection connection = DatabaseConnection.getInstance().getConnection();
-            PreparedStatement st = connection.prepareStatement(sql)) {
+        try(PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, issue.getTitle());
             st.setString(2, issue.getDescription());
             st.setString(3, issue.getType());

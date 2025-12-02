@@ -5,6 +5,7 @@ import it.unina.backend.dao.UserDao;
 import it.unina.backend.dto.IssueDto;
 import it.unina.backend.dto.IssueResponseDto;
 import it.unina.backend.entity.Issue;
+import it.unina.backend.entity.User;
 import it.unina.backend.security.RequireJWTAuthentication;
 import it.unina.backend.service.IssueService;
 import jakarta.ws.rs.*;
@@ -13,7 +14,6 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -88,9 +88,9 @@ public class IssueController {
                         .entity("{\"error\": \"Only Admin and User roles can submit issues\"}")
                         .build();
             }
-            issue.setCreatedBy(userDao.findUserByUsername(username));
-            issueDao.insertIssue(issue);
-
+            User user = userDao.findUserByUsername(username);
+            issue.setCreatedBy(user);
+            issueService.insertIssueWithChange(issue);
             IssueResponseDto responseDto = new IssueResponseDto(issue);
             return Response.status(Response.Status.CREATED).entity(responseDto).build();
         }

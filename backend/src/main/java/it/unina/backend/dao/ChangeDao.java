@@ -58,18 +58,25 @@ public class ChangeDao implements ChangeDaoInterface {
     }
 
     @Override
-    public boolean insertChange(Change c) throws SQLException{
+    public boolean insertChange(Connection connection, Change c) throws SQLException{
 
-        String sql = "INSERT INTO Change (action, details, created_by, related_to) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO Change (action, details, created_by, related_to) VALUES (?, ?, ?, ?)" +
+                    "RETURNING change_id, created_on";
 
-        try(Connection connection = DatabaseConnection.getInstance().getConnection();
-            PreparedStatement st = connection.prepareStatement(sql)){
+        try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, c.getAction());
             st.setString(2, c.getDetails());
             st.setString(3, c.getUserUsername());
             st.setInt(4, c.getIssueId());
-            return st.executeUpdate() == 1;
 
+            try(ResultSet rs = st.executeQuery()){
+                if(rs.next()){
+                    c.setId(rs.getInt("change_id"));
+                    c.setCreatedOn(rs.getObject("created_on", OffsetDateTime.class));
+                    return true;
+                }
+            }
         }
+        return false;
     }
 }

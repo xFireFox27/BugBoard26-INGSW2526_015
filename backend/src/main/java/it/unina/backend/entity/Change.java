@@ -3,20 +3,17 @@ package it.unina.backend.entity;
 
 import java.time.OffsetDateTime;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-
 public class Change {
     private int id;
     private String action;
     private String details;
     private OffsetDateTime createdOn;
-    @JsonProperty("createdBy")
     private User createdBy;
     private int issueId;
 
-    public Change(int id, String action, String details, OffsetDateTime createdOn, User createdBy, int issueId){
+    public Change(){}
 
+    public Change(int id, String action, String details, OffsetDateTime createdOn, User createdBy, int issueId){
         this.id = id;
         this.action = action;
         this.details = details;
@@ -52,4 +49,16 @@ public class Change {
     public String getUserUsername() {
         return createdBy.getUsername();
     }
+
+    public void setId(int id) {this.id = id;}
+
+    public void setAction(String action) {this.action = action;}
+
+    public void setDetails(String details) {this.details = details;}
+
+    public void setCreatedOn(OffsetDateTime createdOn) {this.createdOn = createdOn;}
+
+    public void setCreatedBy(User createdBy) {this.createdBy = createdBy;}
+
+    public void setIssueId(int issueId) {this.issueId = issueId;}
 }

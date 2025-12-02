@@ -72,7 +72,7 @@ public class CommentController {
             String username = securityContext.getUserPrincipal().getName();
 
             if (!securityContext.isUserInRole("Admin") &&
-                !securityContext.isUserInRole("Normal"))) {
+                !securityContext.isUserInRole("Normal")) {
                 logger.warn("User {} not allowed to insert comments", username);
                 return Response.status(Response.Status.FORBIDDEN)
                         .entity(Map.of(ERROR_KEY, "forbidden",
