@@ -6,6 +6,7 @@ import it.unina.backend.dao.CommentDao;
 import it.unina.backend.security.RequireJWTAuthentication;
 import it.unina.backend.dto.CommentDto;
 import it.unina.backend.dto.CommentResponseDto;
+import it.unina.backend.service.CommentService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 public class CommentController {
 
     private final CommentDao commentDao = CommentDao.getInstance();
+    private final CommentService commentService = CommentService.getInstance();
     private final UserDao userDao = UserDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(CommentController.class);
     private static final String ERROR_KEY = "error";
@@ -58,39 +60,30 @@ public class CommentController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addComment(@Context SecurityContext securityContext, CommentDto commentDto) {
-        if (commentDto == null ||
-            commentDto.getText() == null ||
-            commentDto.getText().isEmpty() ||
-            commentDto.getIssueId() == null) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                           .entity(Map.of(ERROR_KEY, "missing_fields",
-                                          MESSAGE_KEY, "All fields are required"))
-                           .build();
+
+        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
+            return Response.status(Response.Status.FORBIDDEN)
+                    .entity(Map.of("error", "forbidden", "message", "User not allowed"))
+                    .build();
         }
 
         try {
             String username = securityContext.getUserPrincipal().getName();
+            Comment createdComment = commentService.addComment(commentDto, username);
 
-            if (!securityContext.isUserInRole("Admin") &&
-                !securityContext.isUserInRole("Normal"))) {
-                logger.warn("User {} not allowed to insert comments", username);
-                return Response.status(Response.Status.FORBIDDEN)
-                        .entity(Map.of(ERROR_KEY, "forbidden",
-                                       MESSAGE_KEY, "Only Admin and Normal users can add comments"))
-                        .build();
-            }
+            return Response.status(Response.Status.CREATED)
+                    .entity(new CommentResponseDto(createdComment))
+                    .build();
 
-            Comment comment = new Comment(commentDto);
-            comment.setUser(userDao.findUserByUsername(username));
-            commentDao.insertComment(comment);
-            CommentResponseDto responseDto = new CommentResponseDto(comment);
-            return Response.status(Response.Status.CREATED).entity(responseDto).build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(Map.of("error", "invalid_input", "message", e.getMessage()))
+                    .build();
         } catch (SQLException e) {
-            logger.error("Impossible to insert the comment", e);
+            logger.error("Database error while adding comment", e);
             return Response.serverError()
-                           .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to insert the comment"))
-                           .build();
+                    .entity(Map.of("error", "database_error", "message", "Impossible to insert comment"))
+                    .build();
         }
     }
 }
