@@ -10,6 +10,7 @@ import java.util.List;
 
 public class AttachmentDao implements AttachmentDaoInterface {
 
+    private static final String ATTACHMENT_ID_COLUMN = "attachment_id";
     private static AttachmentDao instance;
     private AttachmentDao() {}
 
@@ -23,7 +24,7 @@ public class AttachmentDao implements AttachmentDaoInterface {
     @Override
     public boolean insertAttachment(Attachment attachment) throws SQLException {
         String sql = "INSERT INTO attachment (file_name, file_url, uploaded_on, uploaded_by, related_to) " +
-                "VALUES (?, ?, ?, ?, ?) RETURNING attachment_id";
+                "VALUES (?, ?, ?, ?, ?) RETURNING " + ATTACHMENT_ID_COLUMN;
 
         try (Connection connection = DatabaseConnection.getInstance().getConnection();
              PreparedStatement st = connection.prepareStatement(sql)) {
@@ -36,7 +37,7 @@ public class AttachmentDao implements AttachmentDaoInterface {
 
             try (ResultSet rs = st.executeQuery()) {
                 if (rs.next()) {
-                    attachment.setId(rs.getInt("attachment_id"));
+                    attachment.setId(rs.getInt(ATTACHMENT_ID_COLUMN));
                     return true;
                 }
             }
@@ -46,7 +47,7 @@ public class AttachmentDao implements AttachmentDaoInterface {
 
     @Override
     public Attachment findAttachmentById(int id) throws SQLException {
-        String sql = "SELECT * FROM attachment WHERE attachment_id = ?";
+        String sql = "SELECT * FROM attachment WHERE " + ATTACHMENT_ID_COLUMN + " = ?";
 
         try (Connection connection = DatabaseConnection.getInstance().getConnection();
              PreparedStatement st = connection.prepareStatement(sql)) {
@@ -55,11 +56,11 @@ public class AttachmentDao implements AttachmentDaoInterface {
             try (ResultSet rs = st.executeQuery()) {
                 if (rs.next()) {
                     return new Attachment(
-                            rs.getInt("attachment_id"),
+                            rs.getInt(ATTACHMENT_ID_COLUMN),
                             rs.getString("file_name"),
-                            rs.getString("url"),
+                            rs.getString("file_url"),
                             rs.getObject("uploaded_on", OffsetDateTime.class),
-                            rs.getString("created_by"),
+                            rs.getString("uploaded_by"),
                             rs.getInt("related_to")
                     );
                 }
@@ -80,7 +81,7 @@ public class AttachmentDao implements AttachmentDaoInterface {
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
                     attachments.add(new Attachment(
-                            rs.getInt("attachment_id"),
+                            rs.getInt(ATTACHMENT_ID_COLUMN),
                             rs.getString("file_name"),
                             rs.getString("file_url"),
                             rs.getObject("uploaded_on", OffsetDateTime.class),
