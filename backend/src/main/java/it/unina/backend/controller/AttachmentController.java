@@ -36,10 +36,9 @@ public class AttachmentController {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
     public Response uploadAttachment(
-        @Context SecurityContext securityContext,
-        @FormDataParam("file") FormDataBodyPart bodyPart,
-        @FormDataParam("created-by") String createdBy,
-        @FormDataParam("related-to") int relatedTo
+            @Context SecurityContext securityContext,
+            @FormDataParam("file") FormDataBodyPart bodyPart,
+            @FormDataParam("related-to") int relatedTo
     ) {
         logger.info("Uploading Attachment");
 
@@ -64,11 +63,14 @@ public class AttachmentController {
                                                       .entity("Uploaded file is empty.")
                                                       .build();
 
-            String s3Url = s3Service.uploadFile(fileBytes, fileDetail.getFileName(), contentType);
+            String createdBy = securityContext.getUserPrincipal().getName();
+            String objectKey = s3Service.uploadFile(fileBytes, fileDetail.getFileName(), contentType);
             Attachment attachment = attachmentService.createAndSaveAttachment(fileDetail.getFileName(),
-                                                                                         s3Url,
+                                                                                         objectKey,
                                                                                          createdBy,
                                                                                          relatedTo);
+
+            attachment.setUrl(s3Service.generatePresignedUrl(objectKey));
 
             return Response.ok(attachment)
                            .build();
@@ -96,6 +98,11 @@ public class AttachmentController {
     public Response getAttachmentsForIssue(@PathParam("issue-id") int issueId) {
         try {
             List<Attachment> attachments = attachmentDao.findAttachmentsByRelatedId(issueId);
+            for (Attachment attachment : attachments) {
+                String objectKey = attachment.getUrl();
+                String presignedUrl = s3Service.generatePresignedUrl(objectKey);
+                attachment.setUrl(presignedUrl);
+            }
             return Response.ok(attachments)
                            .build();
         } catch (SQLException e) {
