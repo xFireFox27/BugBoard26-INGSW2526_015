@@ -6,26 +6,25 @@ import it.unina.backend.dto.IssueResponseDto;
 import it.unina.backend.entity.Issue;
 import it.unina.backend.entity.User;
 import it.unina.backend.exception.TransactionException;
-import it.unina.backend.security.RequireJWTAuthentication;
+import it.unina.backend.security.RequireJwtAuthentication;
 import it.unina.backend.service.IssueService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
 import java.sql.SQLException;
 import java.util.List;
-
 import jakarta.ws.rs.core.SecurityContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Path("/issues")
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
     private final UserDao userDao = UserDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(IssueController.class);
+
     /*
     private IssueDao issueDao = IssueDao.getInstance();
 
@@ -52,7 +51,7 @@ public class IssueController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIssues(@QueryParam("status") String status,
                               @QueryParam("type") String type,
-                              @QueryParam("sortBy") String sortBy) {
+                              @QueryParam("sort-by") String sortBy) {
         try {
             List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, type, sortBy);
 
