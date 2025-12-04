@@ -5,7 +5,8 @@ import it.unina.backend.dto.IssueDto;
 import it.unina.backend.dto.IssueResponseDto;
 import it.unina.backend.entity.Issue;
 import it.unina.backend.entity.User;
-import it.unina.backend.security.RequireJwtAuthentication;
+import it.unina.backend.exception.TransactionException;
+import it.unina.backend.security.RequireJWTAuthentication;
 import it.unina.backend.service.IssueService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -20,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Path("/issues")
-@RequireJwtAuthentication
+@RequireJWTAuthentication
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
     private final UserDao userDao = UserDao.getInstance();
@@ -94,6 +95,10 @@ public class IssueController {
         catch (SQLException e) {
             logger.error("error: impossible to add issue with the specified filters ", e);
             return Response.serverError().entity("{\"error\": \"Database error\"}").build();
+        }
+        catch (TransactionException e) {
+            logger.error("error: Transaction error", e);
+            return Response.serverError().entity("Transaction error").build();
         }
     }
 }

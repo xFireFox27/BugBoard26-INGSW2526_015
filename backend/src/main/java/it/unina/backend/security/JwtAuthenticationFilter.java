@@ -23,7 +23,7 @@ public class JwtAuthenticationFilter implements ContainerRequestFilter {
 
         // Controllo esistenza header
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
-            abortRequest(requestContext, "Token mancante o formato errato");
+            abortRequest(requestContext, "Missing Token");
             return;
         }
 
@@ -59,10 +59,10 @@ public class JwtAuthenticationFilter implements ContainerRequestFilter {
                 });
 
             } else {
-                abortRequest(requestContext, "Token non valido o scaduto");
+                abortRequest(requestContext, "Token is invalid or expired");
             }
-        } catch (Exception e) {
-            abortRequest(requestContext, "Errore validazione token");
+        } catch (Exception _) {
+            abortRequest(requestContext, "Error while validating token");
         }
     }
 

@@ -29,10 +29,11 @@ public class JwtAuth {
 
         // 4. Validazione
         if (secret == null || secret.isEmpty()) {
-            throw new IllegalStateException("ERRORE CRITICO: JWT_SECRET non trovato nel file .env o nelle variabili d'ambiente.");
+            throw new IllegalStateException("CRITICAL ERROR: " +
+                                            "Impossible to find JWT_SECRET in .env file or in Env Vars.");
         }
         if (secret.length() < 32) {
-            throw new IllegalStateException("ERRORE SICUREZZA: JWT_SECRET deve essere lungo almeno 32 caratteri.");
+            throw new IllegalStateException("SAFETY ERROR: JWT_SECRET must be at least 32 characters long.");
         }
 
         // 5. Inizializza la chiave crittografica
@@ -59,7 +60,7 @@ public class JwtAuth {
                     .getBody();
 
             return claims.getExpiration().after(new Date());
-        } catch (Exception e) {
+        } catch (Exception _) {
             return false;
         }
     }
