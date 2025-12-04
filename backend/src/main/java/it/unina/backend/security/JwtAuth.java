@@ -60,7 +60,7 @@ public class JwtAuth {
                     .getBody();
 
             return claims.getExpiration().after(new Date());
-        } catch (Exception _) {
+        } catch (Exception e) {
             return false;
         }
     }

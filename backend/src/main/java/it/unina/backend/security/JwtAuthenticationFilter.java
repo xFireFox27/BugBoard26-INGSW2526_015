@@ -61,7 +61,7 @@ public class JwtAuthenticationFilter implements ContainerRequestFilter {
             } else {
                 abortRequest(requestContext, "Token is invalid or expired");
             }
-        } catch (Exception _) {
+        } catch (Exception e) {
             abortRequest(requestContext, "Error while validating token");
         }
     }
