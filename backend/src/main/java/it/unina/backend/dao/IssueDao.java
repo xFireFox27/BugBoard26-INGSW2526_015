@@ -99,4 +99,15 @@ public class IssueDao implements IssueDaoInterface {
         }
         return issues;
     }
+
+    public boolean existsById(int issueId) throws SQLException {
+        String sql = "SELECT 1 FROM issue WHERE issue_id = ?";
+        try (Connection connection = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement st = connection.prepareStatement(sql)) {
+            st.setInt(1, issueId);
+            try (ResultSet rs = st.executeQuery()) {
+                return rs.next();
+            }
+        }
+    }
 }

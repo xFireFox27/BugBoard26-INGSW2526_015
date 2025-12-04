@@ -13,4 +13,6 @@ public interface IssueDaoInterface {
     Issue findIssueById(Integer id) throws SQLException;
 
     public List<Issue> findAllIssues() throws SQLException;
+
+    public boolean existsById(int issueId) throws SQLException;
 }

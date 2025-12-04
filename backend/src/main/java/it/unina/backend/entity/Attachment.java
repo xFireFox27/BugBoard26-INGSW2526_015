@@ -8,9 +8,9 @@ public class Attachment {
     private String url;
     private OffsetDateTime uploadedOn;
     private String createdBy;
-    private String relatedTo;
+    private int relatedTo;
 
-    public Attachment(int id, String fileName, String url, OffsetDateTime uploadedOn, String createdBy, String relatedTo) {
+    public Attachment(int id, String fileName, String url, OffsetDateTime uploadedOn, String createdBy, int relatedTo) {
         this.id = id;
         this.fileName = fileName;
         this.url = url;
@@ -21,6 +21,10 @@ public class Attachment {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFileName() {
@@ -39,7 +43,7 @@ public class Attachment {
         return createdBy;
     }
 
-    public String getRelatedTo() {
+    public int getRelatedTo() {
         return relatedTo;
     }
 }
