@@ -25,10 +25,10 @@ import java.util.List;
 @RequireJwtAuthentication
 public class AttachmentController {
 
-    Logger logger = LoggerFactory.getLogger(AttachmentController.class);
     private final S3Service s3Service = new S3Service();
     private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
     private final IssueDao issueDao = IssueDao.getInstance();
+    private static final Logger logger = LoggerFactory.getLogger(AttachmentController.class);
 
     @POST
     @Path("/upload")
@@ -37,23 +37,20 @@ public class AttachmentController {
     public Response uploadAttachment(
         @Context SecurityContext securityContext,
         @FormDataParam("file") FormDataBodyPart bodyPart,
-        @FormDataParam("createdBy") String createdBy,
-        @FormDataParam("relatedTo") int relatedTo
+        @FormDataParam("created-by") String createdBy,
+        @FormDataParam("related-to") int relatedTo
     ) {
         logger.info("Uploading Attachment");
 
-        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
+        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal"))
             return Response.status(Response.Status.FORBIDDEN)
                            .entity("Access denied.")
                            .build();
-        }
 
         try {
-            if (!issueDao.existsById(relatedTo)) {
-                return Response.status(Response.Status.NOT_FOUND)
-                               .entity("Impossible to find the specified issue.")
-                               .build();
-            }
+            if (!issueDao.existsById(relatedTo)) return Response.status(Response.Status.NOT_FOUND)
+                                                                .entity("Impossible to find the specified issue.")
+                                                                .build();
 
             FormDataContentDisposition fileDetail = bodyPart.getFormDataContentDisposition();
             InputStream fileInputStream = bodyPart.getValueAs(InputStream.class);
@@ -61,11 +58,9 @@ public class AttachmentController {
                                                                            .toString() : "application/octet-stream";
             byte[] fileBytes = fileInputStream.readAllBytes();
 
-            if (fileBytes.length == 0) {
-                return Response.status(Response.Status.BAD_REQUEST)
-                               .entity("Uploaded file is empty.")
-                               .build();
-            }
+            if (fileBytes.length == 0) return Response.status(Response.Status.BAD_REQUEST)
+                                                      .entity("Uploaded file is empty.")
+                                                      .build();
 
             String s3Url = s3Service.uploadFile(fileBytes, fileDetail.getFileName(), contentType);
             Attachment attachment = createAndSaveAttachment(fileDetail.getFileName(), s3Url, createdBy, relatedTo);
@@ -90,11 +85,10 @@ public class AttachmentController {
         }
     }
 
-
     @GET
-    @Path("/issue/{issueId}")
+    @Path("/issue/{issue-id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAttachmentsForIssue(@PathParam("issueId") int issueId) {
+    public Response getAttachmentsForIssue(@PathParam("issue-id") int issueId) {
         try {
             List<Attachment> attachments = attachmentDao.findAttachmentsByRelatedId(issueId);
             return Response.ok(attachments)
