@@ -83,9 +83,9 @@ public class S3Service {
                     .build();
 
             s3Client.deleteObject(deleteObjectRequest);
-            System.out.println("File " + key + " eliminato con successo da S3.");
+            System.out.println("File " + key + " successfully eliminated from S3.");
         } catch (Exception e) {
-            System.err.println("Errore durante l'eliminazione del file da S3: " + e.getMessage());
+            System.err.println("Error while trying to delete from S3: " + e.getMessage());
             e.printStackTrace();
         }
     }

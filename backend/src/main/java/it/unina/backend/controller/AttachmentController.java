@@ -10,6 +10,8 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
@@ -24,6 +26,7 @@ import java.util.List;
 @RequireJWTAuthentication
 public class AttachmentController {
 
+    Logger logger = LoggerFactory.getLogger(AttachmentController.class);
     private final S3Service s3Service = new S3Service();
     private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
     private final IssueDao issueDao = IssueDao.getInstance();
@@ -38,16 +41,18 @@ public class AttachmentController {
             @FormDataParam("createdBy") String createdBy,
             @FormDataParam("relatedTo") int relatedTo
     ) {
+        logger.info("Uploading Attachment");
+
         if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
-                    .entity("Accesso negato").build();
+                    .entity("Access denied").build();
         }
 
         String s3Url = null;
         try {
             if (!issueDao.existsById(relatedTo)) {
                 return Response.status(Response.Status.NOT_FOUND)
-                        .entity("Issue non trovata.").build();
+                        .entity("Impossible to find the specified issue.").build();
             }
 
             FormDataContentDisposition fileDetail = bodyPart.getFormDataContentDisposition();
@@ -58,7 +63,7 @@ public class AttachmentController {
 
             if (fileBytes.length == 0) {
                 return Response.status(Response.Status.BAD_REQUEST)
-                        .entity("Il file caricato è vuoto.").build();
+                        .entity("Uploaded file is empty!.").build();
             }
 
             s3Url = s3Service.uploadFile(fileBytes, fileDetail.getFileName(), contentType);
@@ -68,15 +73,15 @@ public class AttachmentController {
             return Response.ok(attachment).build();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Database error: {}", e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("Errore DB").build();
+                    .entity("DB Error").build();
         } catch (IOException e) {
-            e.printStackTrace();
-            return Response.serverError().entity("Errore lettura file: " + e.getMessage()).build();
+            logger.error("IO Error: {}", e.getMessage());
+            return Response.serverError().entity("File read error: " + e.getMessage()).build();
         } catch (Exception e) {
-            e.printStackTrace();
-            return Response.serverError().entity("Errore generico: " + e.getMessage()).build();
+            logger.error("Unknown error: {}", e.getMessage());
+            return Response.serverError().entity("Generic error: " + e.getMessage()).build();
         }
     }
 
@@ -89,7 +94,7 @@ public class AttachmentController {
             List<Attachment> attachments = attachmentDao.findAttachmentsByRelatedId(issueId);
             return Response.ok(attachments).build();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Internal server error: {}", e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }

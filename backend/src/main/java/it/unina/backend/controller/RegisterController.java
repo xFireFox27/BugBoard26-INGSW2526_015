@@ -23,20 +23,21 @@ public class RegisterController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response register(UserRegistrationRequest request, @Context SecurityContext securityContext) {
+        logger.info("Attempt to register user: {}", request.getUsername());
+
         try {
             // Verifica che l'utente autenticato sia admin
             if (!securityContext.isUserInRole("Admin")) {
+                logger.warn("Admin permissions needed!");
                 return Response.status(Response.Status.FORBIDDEN)
-                        .entity(Map.of(ERROR_KEY, "Solo gli admin possono registrare nuovi utenti"))
+                        .entity(Map.of(ERROR_KEY, "Only admins can register new users"))
                         .build();
             }
-
-            logger.info("Tentativo di registrazione per utente: {}", request.getUsername());
 
             // Validazione input
             if (!request.isComplete()) {
                 return Response.status(Response.Status.BAD_REQUEST)
-                        .entity(Map.of(ERROR_KEY, "Tutti i campi sono obbligatori"))
+                        .entity(Map.of(ERROR_KEY, "All fields must be filled!"))
                         .build();
             }
 
@@ -50,21 +51,21 @@ public class RegisterController {
                     request.getRole()
             );
 
-            logger.info("Registrazione completata per utente: {}", request.getUsername());
+            logger.info("User: {} registered successfully", request.getUsername());
             return Response.status(Response.Status.CREATED)
-                    .entity(Map.of(ERROR_KEY, "Registrazione completata", "email", user.getEmail()))
+                    .entity(Map.of(ERROR_KEY, "Registration completed", "email", user.getEmail()))
                     .build();
 
         } catch (IllegalArgumentException e) {
-            logger.warn("Tentativo di registrazione fallito: {}", e.getMessage());
+            logger.warn("Attempt to register new user failed: {}", e.getMessage());
             return Response.status(Response.Status.CONFLICT)
                     .entity(Map.of(ERROR_KEY, e.getMessage()))
                     .build();
 
         } catch (Exception e) {
-            logger.error("Errore durante la registrazione", e);
+            logger.error("Error while trying to register a new user", e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity(Map.of(ERROR_KEY, "Errore durante la registrazione"))
+                    .entity(Map.of(ERROR_KEY, "Error  while trying to register a new user"))
                     .build();
         }
     }
