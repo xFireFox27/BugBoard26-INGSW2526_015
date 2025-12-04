@@ -51,7 +51,7 @@ public class AttachmentController {
 
         try {
             if (!issueDao.existsById(relatedTo)) return Response.status(Response.Status.NOT_FOUND)
-                                                                .entity("Impossible to find the specified issue.")
+                                                                .entity("Impossible to find the issue.")
                                                                 .build();
 
             FormDataContentDisposition fileDetail = bodyPart.getFormDataContentDisposition();
@@ -79,13 +79,13 @@ public class AttachmentController {
                            .build();
         } catch (IOException e) {
             logger.error("IO error: {}", e.getMessage(), e);
-            return Response.serverError()
-                           .entity("File read error: " + e.getMessage())
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                           .entity("File reading error.")
                            .build();
         } catch (Exception e) {
             logger.error("Unknown error: {}", e.getMessage(), e);
-            return Response.serverError()
-                           .entity("Generic error: " + e.getMessage())
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                           .entity("Generic error.")
                            .build();
         }
     }
@@ -99,8 +99,9 @@ public class AttachmentController {
             return Response.ok(attachments)
                            .build();
         } catch (SQLException e) {
-            logger.error("Internal server error: {}", e.getMessage(), e);
+            logger.error("Database error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                           .entity("Database error: " + e.getMessage())
                            .build();
         }
     }

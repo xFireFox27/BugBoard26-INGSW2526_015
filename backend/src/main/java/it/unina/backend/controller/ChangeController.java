@@ -26,29 +26,32 @@ public class ChangeController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getChanges(@Context SecurityContext securityContext, @QueryParam("issue-id") Integer issueId) {
+    public Response getChanges(
+        @Context SecurityContext securityContext,
+        @QueryParam("issue-id") Integer issueId
+    ) {
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "missing_parameter",
-                            MESSAGE_KEY, "Parameter 'issue-id' must be provided"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "missing_parameter",
+                                          MESSAGE_KEY, "Parameter 'issue-id' must be provided"))
+                           .build();
         }
 
         try {
             List<Change> changes = changeDao.findChangesByIssueId(issueId);
 
             List<ChangeResponseDto> responseDtos = changes.stream()
-                    .map(ChangeResponseDto::new)
-                    .toList();
+                                                          .map(ChangeResponseDto::new)
+                                                          .toList();
 
-            return Response.ok(responseDtos).build();
-
+            return Response.ok(responseDtos)
+                           .build();
         } catch (SQLException e) {
-            logger.error("Impossible to retrieve changes for the specified issue", e);
-            return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "database_error",
-                            MESSAGE_KEY, "Impossible to retrieve changes for issue " + issueId))
-                    .build();
+            logger.error("Database error: {}", e.getMessage(), e);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                           .entity(Map.of(ERROR_KEY, "database_error",
+                                          MESSAGE_KEY, "Impossible to retrieve changes for the specified issue"))
+                           .build();
         }
     }
 }
