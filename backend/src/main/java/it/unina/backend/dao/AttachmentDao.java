@@ -47,7 +47,8 @@ public class AttachmentDao implements AttachmentDaoInterface {
 
     @Override
     public Attachment findAttachmentById(int id) throws SQLException {
-        String sql = "SELECT * FROM attachment WHERE " + ATTACHMENT_ID_COLUMN + " = ?";
+        String sql = "SELECT attachment_id, file_name, file_url, uploaded_on, uploaded_by, related_to " +
+                        "FROM attachment WHERE " + ATTACHMENT_ID_COLUMN + " = ?";
 
         try (Connection connection = DatabaseConnection.getInstance().getConnection();
              PreparedStatement st = connection.prepareStatement(sql)) {
@@ -72,7 +73,8 @@ public class AttachmentDao implements AttachmentDaoInterface {
     @Override
     public List<Attachment> findAttachmentsByRelatedId(int relatedId) throws SQLException {
         List<Attachment> attachments = new ArrayList<>();
-        String sql = "SELECT * FROM attachment WHERE related_to = ?";
+        String sql = "SELECT attachment_id, file_name, file_url, uploaded_on, uploaded_by, related_to " +
+                     "FROM attachment WHERE related_to = ?";
 
         try (Connection connection = DatabaseConnection.getInstance().getConnection();
              PreparedStatement st = connection.prepareStatement(sql)) {
