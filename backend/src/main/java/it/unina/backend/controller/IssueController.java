@@ -5,7 +5,7 @@ import it.unina.backend.dto.IssueDto;
 import it.unina.backend.dto.IssueResponseDto;
 import it.unina.backend.entity.Issue;
 import it.unina.backend.entity.User;
-import it.unina.backend.security.RequireJWTAuthentication;
+import it.unina.backend.security.RequireJwtAuthentication;
 import it.unina.backend.service.IssueService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -20,7 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Path("/issues")
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
     private final UserDao userDao = UserDao.getInstance();

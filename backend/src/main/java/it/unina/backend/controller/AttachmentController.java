@@ -3,7 +3,7 @@ package it.unina.backend.controller;
 import it.unina.backend.dao.AttachmentDao;
 import it.unina.backend.dao.IssueDao;
 import it.unina.backend.entity.Attachment;
-import it.unina.backend.security.RequireJWTAuthentication;
+import it.unina.backend.security.RequireJwtAuthentication;
 import it.unina.backend.service.S3Service;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -23,7 +23,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 @Path("/attachments")
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 public class AttachmentController {
 
     Logger logger = LoggerFactory.getLogger(AttachmentController.class);

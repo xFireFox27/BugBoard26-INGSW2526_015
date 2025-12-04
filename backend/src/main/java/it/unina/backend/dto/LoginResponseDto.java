@@ -1,10 +1,10 @@
 package it.unina.backend.dto;
 
-public class LoginResponse {
+public class LoginResponseDto {
     private String token;
     private UserDto user;
 
-    public LoginResponse(String token, UserDto user) {
+    public LoginResponseDto(String token, UserDto user) {
         this.token = token;
         this.user = user;
     }

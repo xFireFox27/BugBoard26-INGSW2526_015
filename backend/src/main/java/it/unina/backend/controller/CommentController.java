@@ -2,7 +2,7 @@ package it.unina.backend.controller;
 
 import it.unina.backend.entity.Comment;
 import it.unina.backend.dao.CommentDao;
-import it.unina.backend.security.RequireJWTAuthentication;
+import it.unina.backend.security.RequireJwtAuthentication;
 import it.unina.backend.dto.CommentDto;
 import it.unina.backend.dto.CommentResponseDto;
 import it.unina.backend.service.CommentService;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @Path("/comments")
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 public class CommentController {
 
     private final CommentDao commentDao = CommentDao.getInstance();
