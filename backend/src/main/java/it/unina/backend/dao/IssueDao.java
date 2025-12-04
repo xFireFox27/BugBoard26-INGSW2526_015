@@ -14,6 +14,7 @@ import java.util.List;
 
 public class IssueDao implements IssueDaoInterface {
     private static IssueDao instance;
+    private static final String ISSUE_ID_COLUMN = "issue_id";
 
     private IssueDao() {}
 
@@ -27,7 +28,7 @@ public class IssueDao implements IssueDaoInterface {
     @Override
     public boolean insertIssue(Connection connection, Issue issue) throws SQLException {
         String sql = "INSERT INTO issue (title, description, type, priority, status, created_by) " +
-                    "values (?, ?, ?, ?, ?, ?) RETURNING issue_id";
+                    "values (?, ?, ?, ?, ?, ?) RETURNING" + ISSUE_ID_COLUMN;
 
         try(PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, issue.getTitle());
@@ -38,7 +39,7 @@ public class IssueDao implements IssueDaoInterface {
             st.setString(6, issue.getUserUsername());
             try(ResultSet rs = st.executeQuery()){
                 if(rs.next()){
-                    issue.setId(rs.getInt("issue_id"));
+                    issue.setId(rs.getInt(ISSUE_ID_COLUMN));
                     return true;
                 }
             }
@@ -59,7 +60,7 @@ public class IssueDao implements IssueDaoInterface {
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 return new Issue(
-                        rs.getInt("issue_id"),
+                        rs.getInt(ISSUE_ID_COLUMN),
                         rs.getString("title"),
                         rs.getString("description"),
                         rs.getString("type"),
@@ -86,7 +87,7 @@ public class IssueDao implements IssueDaoInterface {
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 issues.add(new Issue(
-                    rs.getInt("issue_id"),
+                    rs.getInt(ISSUE_ID_COLUMN),
                     rs.getString("title"),
                     rs.getString("description"),
                     rs.getString("type"),

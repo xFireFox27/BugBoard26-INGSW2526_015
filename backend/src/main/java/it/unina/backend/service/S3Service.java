@@ -11,12 +11,14 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.presigner.S3Presigner;
 import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignRequest;
 import software.amazon.awssdk.services.s3.presigner.model.PresignedGetObjectRequest;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.time.Duration;
 import java.util.UUID;
 
 public class S3Service {
 
+    private final Logger logger = LoggerFactory.getLogger(S3Service.class);
     private final S3Client s3Client;
     private final S3Presigner s3Presigner;
     private final String bucketName;
@@ -83,10 +85,9 @@ public class S3Service {
                     .build();
 
             s3Client.deleteObject(deleteObjectRequest);
-            System.out.println("File " + key + " successfully eliminated from S3.");
+            logger.info("File {} successfully eliminated from S3.", key);
         } catch (Exception e) {
-            System.err.println("Error while trying to delete from S3: " + e.getMessage());
-            e.printStackTrace();
+            logger.error("Error while trying to delete from S3: {}", e.getMessage(), e);
         }
     }
 

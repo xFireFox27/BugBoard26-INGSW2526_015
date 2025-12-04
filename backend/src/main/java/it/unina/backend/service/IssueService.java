@@ -12,6 +12,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import it.unina.backend.exception.TransactionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,7 +89,7 @@ public class IssueService {
                 catch(SQLException ex){
                     logger.error("impossible to establish connection to database while rollback", ex);                }
             }
-            throw new RuntimeException("Transaction error", e);
+            throw new TransactionException("Transaction error", e);
         }
         finally{
             if(connection != null){

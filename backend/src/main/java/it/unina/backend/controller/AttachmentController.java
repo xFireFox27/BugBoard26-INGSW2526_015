@@ -73,14 +73,14 @@ public class AttachmentController {
             return Response.ok(attachment).build();
 
         } catch (SQLException e) {
-            logger.error("Database error: {}", e.getMessage());
+            logger.error("Database error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("DB Error").build();
         } catch (IOException e) {
-            logger.error("IO Error: {}", e.getMessage());
+            logger.error("IO Error: {}", e.getMessage(), e);
             return Response.serverError().entity("File read error: " + e.getMessage()).build();
         } catch (Exception e) {
-            logger.error("Unknown error: {}", e.getMessage());
+            logger.error("Unknown error: {}", e.getMessage(), e);
             return Response.serverError().entity("Generic error: " + e.getMessage()).build();
         }
     }
@@ -94,7 +94,7 @@ public class AttachmentController {
             List<Attachment> attachments = attachmentDao.findAttachmentsByRelatedId(issueId);
             return Response.ok(attachments).build();
         } catch (SQLException e) {
-            logger.error("Internal server error: {}", e.getMessage());
+            logger.error("Internal server error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
@@ -105,7 +105,7 @@ public class AttachmentController {
                 createdBy != null ? createdBy : "system", relatedTo
         );
         if (!attachmentDao.insertAttachment(attachment)) {
-            throw new SQLException("Insert fallito");
+            throw new SQLException("Upload failed");
         }
         return attachment;
     }
