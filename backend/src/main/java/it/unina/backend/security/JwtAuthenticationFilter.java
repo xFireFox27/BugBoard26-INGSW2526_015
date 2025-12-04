@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.security.Principal;
 
 @Provider
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 @Priority(Priorities.AUTHENTICATION)
-public class JWTAuthenticationFilter implements ContainerRequestFilter {
+public class JwtAuthenticationFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {

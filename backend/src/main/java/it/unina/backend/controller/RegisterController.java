@@ -1,8 +1,8 @@
 package it.unina.backend.controller;
 
-import it.unina.backend.dto.UserRegistrationRequest;
+import it.unina.backend.dto.UserRegistrationRequestDto;
 import it.unina.backend.entity.User;
-import it.unina.backend.security.RequireJWTAuthentication;
+import it.unina.backend.security.RequireJwtAuthentication;
 import it.unina.backend.service.UserService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 
 @Path("/register")
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 public class RegisterController {
 
     private final UserService userService = UserService.getInstance();
@@ -22,7 +22,7 @@ public class RegisterController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response register(UserRegistrationRequest request, @Context SecurityContext securityContext) {
+    public Response register(UserRegistrationRequestDto request, @Context SecurityContext securityContext) {
         logger.info("Attempt to register user: {}", request.getUsername());
 
         try {

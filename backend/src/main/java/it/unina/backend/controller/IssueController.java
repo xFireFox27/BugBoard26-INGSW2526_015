@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Path("/issues")
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 public class IssueController {
     private final IssueService issueService = IssueService.getInstance();
     private final UserDao userDao = UserDao.getInstance();

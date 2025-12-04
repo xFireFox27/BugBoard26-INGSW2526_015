@@ -1,13 +1,13 @@
 package it.unina.backend.dto;
 
-public class LoginRequest {
+public class LoginRequestDto {
     private String email;
     private String password;
 
     // Empty constructor (necessary for JSON deserialization)
-    public LoginRequest() {}
+    public LoginRequestDto() {}
 
-    public LoginRequest(String email, String password) {
+    public LoginRequestDto(String email, String password) {
         this.email = email;
         this.password = password;
     }

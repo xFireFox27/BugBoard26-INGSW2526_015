@@ -1,6 +1,6 @@
 package it.unina.backend.dto;
 
-public class UserRegistrationRequest {
+public class UserRegistrationRequestDto {
     private String email;
     private String username;
     private String password;

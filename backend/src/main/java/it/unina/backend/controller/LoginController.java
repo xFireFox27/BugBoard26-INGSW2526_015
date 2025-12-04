@@ -1,7 +1,7 @@
 package it.unina.backend.controller;
 
-import it.unina.backend.dto.LoginRequest;
-import it.unina.backend.dto.LoginResponse;
+import it.unina.backend.dto.LoginRequestDto;
+import it.unina.backend.dto.LoginResponseDto;
 import it.unina.backend.dto.UserDto;
 import it.unina.backend.entity.User;
 import it.unina.backend.service.UserService;
@@ -25,7 +25,7 @@ public class LoginController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response login(LoginRequest request) {
+    public Response login(LoginRequestDto request) {
         if (request == null || request.getEmail() == null || request.getPassword() == null) {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity(Map.of(ERROR_KEY, "email and password required"))
@@ -38,7 +38,7 @@ public class LoginController {
             String token = JwtAuth.generateToken(user.getEmail(), user.getUsername(), user.getRole());
 
             UserDto userDto = new UserDto(user.getUsername(), user.getEmail(), user.getRole());
-            LoginResponse responseBody = new LoginResponse(token, userDto);
+            LoginResponseDto responseBody = new LoginResponseDto(token, userDto);
 
             return Response.ok(responseBody).build();
 

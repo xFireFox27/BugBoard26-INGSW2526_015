@@ -3,7 +3,7 @@ package it.unina.backend.controller;
 import it.unina.backend.dao.ChangeDao;
 import it.unina.backend.entity.Change;
 import it.unina.backend.dto.ChangeResponseDto;
-import it.unina.backend.security.RequireJWTAuthentication;
+import it.unina.backend.security.RequireJwtAuthentication;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Path("/changes")
-@RequireJWTAuthentication
+@RequireJwtAuthentication
 public class ChangeController {
 
     private final ChangeDao changeDao = ChangeDao.getInstance();
