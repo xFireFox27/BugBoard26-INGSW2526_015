@@ -4,6 +4,7 @@ import it.unina.backend.dao.AttachmentDao;
 import it.unina.backend.dao.IssueDao;
 import it.unina.backend.entity.Attachment;
 import it.unina.backend.security.RequireJwtAuthentication;
+import it.unina.backend.service.AttachmentService;
 import it.unina.backend.service.S3Service;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -18,7 +19,6 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @Path("/attachments")
@@ -26,6 +26,7 @@ import java.util.List;
 public class AttachmentController {
 
     private final S3Service s3Service = new S3Service();
+    private final AttachmentService attachmentService = new AttachmentService();
     private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
     private final IssueDao issueDao = IssueDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(AttachmentController.class);
@@ -42,10 +43,11 @@ public class AttachmentController {
     ) {
         logger.info("Uploading Attachment");
 
-        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal"))
+        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
                            .entity("Access denied.")
                            .build();
+        }
 
         try {
             if (!issueDao.existsById(relatedTo)) return Response.status(Response.Status.NOT_FOUND)
@@ -63,7 +65,10 @@ public class AttachmentController {
                                                       .build();
 
             String s3Url = s3Service.uploadFile(fileBytes, fileDetail.getFileName(), contentType);
-            Attachment attachment = createAndSaveAttachment(fileDetail.getFileName(), s3Url, createdBy, relatedTo);
+            Attachment attachment = attachmentService.createAndSaveAttachment(fileDetail.getFileName(),
+                                                                                         s3Url,
+                                                                                         createdBy,
+                                                                                         relatedTo);
 
             return Response.ok(attachment)
                            .build();
@@ -98,25 +103,5 @@ public class AttachmentController {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .build();
         }
-    }
-
-    private Attachment createAndSaveAttachment(
-        String fileName,
-        String s3Url,
-        String createdBy,
-        int relatedTo
-    ) throws SQLException {
-        Attachment attachment = new Attachment(
-            0,
-            fileName,
-            s3Url,
-            OffsetDateTime.now(),
-            createdBy != null ? createdBy : "system",
-            relatedTo
-        );
-        if (!attachmentDao.insertAttachment(attachment)) {
-            throw new SQLException("Upload failed");
-        }
-        return attachment;
     }
 }
