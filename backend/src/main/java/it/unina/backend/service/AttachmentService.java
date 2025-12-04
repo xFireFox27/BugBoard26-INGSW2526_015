@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 
 public class AttachmentService {
 
-    private static final AttachmentDao attachmentDao = AttachmentDao.getInstance();
+    private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
 
     public Attachment createAndSaveAttachment(
             String fileName,
