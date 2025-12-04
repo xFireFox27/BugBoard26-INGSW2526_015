@@ -36,57 +36,59 @@ public class AttachmentController {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
     public Response uploadAttachment(
-        @Context SecurityContext securityContext,
-        @FormDataParam("file") FormDataBodyPart bodyPart,
-        @FormDataParam("created-by") String createdBy,
-        @FormDataParam("related-to") int relatedTo
+            @Context SecurityContext securityContext,
+            @FormDataParam("file") FormDataBodyPart bodyPart,
+            @FormDataParam("related-to") int relatedTo
     ) {
         logger.info("Uploading Attachment");
 
         if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
-                           .entity("Access denied.")
-                           .build();
+                    .entity("Access denied.")
+                    .build();
         }
 
         try {
             if (!issueDao.existsById(relatedTo)) return Response.status(Response.Status.NOT_FOUND)
-                                                                .entity("Impossible to find the specified issue.")
-                                                                .build();
+                    .entity("Impossible to find the specified issue.")
+                    .build();
 
             FormDataContentDisposition fileDetail = bodyPart.getFormDataContentDisposition();
             InputStream fileInputStream = bodyPart.getValueAs(InputStream.class);
             String contentType = bodyPart.getMediaType() != null ? bodyPart.getMediaType()
-                                                                           .toString() : "application/octet-stream";
+                    .toString() : "application/octet-stream";
             byte[] fileBytes = fileInputStream.readAllBytes();
 
             if (fileBytes.length == 0) return Response.status(Response.Status.BAD_REQUEST)
-                                                      .entity("Uploaded file is empty.")
-                                                      .build();
+                    .entity("Uploaded file is empty.")
+                    .build();
 
-            String s3Url = s3Service.uploadFile(fileBytes, fileDetail.getFileName(), contentType);
+            String createdBy = securityContext.getUserPrincipal().getName();
+            String objectKey = s3Service.uploadFile(fileBytes, fileDetail.getFileName(), contentType);
             Attachment attachment = attachmentService.createAndSaveAttachment(fileDetail.getFileName(),
-                                                                                         s3Url,
-                                                                                         createdBy,
-                                                                                         relatedTo);
+                    objectKey,
+                    createdBy,
+                    relatedTo);
+
+            attachment.setUrl(s3Service.generatePresignedUrl(objectKey));
 
             return Response.ok(attachment)
-                           .build();
+                    .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                           .entity("Database error.")
-                           .build();
+                    .entity("Database error.")
+                    .build();
         } catch (IOException e) {
             logger.error("IO error: {}", e.getMessage(), e);
             return Response.serverError()
-                           .entity("File read error: " + e.getMessage())
-                           .build();
+                    .entity("File read error: " + e.getMessage())
+                    .build();
         } catch (Exception e) {
             logger.error("Unknown error: {}", e.getMessage(), e);
             return Response.serverError()
-                           .entity("Generic error: " + e.getMessage())
-                           .build();
+                    .entity("Generic error: " + e.getMessage())
+                    .build();
         }
     }
 
@@ -96,12 +98,17 @@ public class AttachmentController {
     public Response getAttachmentsForIssue(@PathParam("issue-id") int issueId) {
         try {
             List<Attachment> attachments = attachmentDao.findAttachmentsByRelatedId(issueId);
+            for (Attachment attachment : attachments) {
+                String objectKey = attachment.getUrl();
+                String presignedUrl = s3Service.generatePresignedUrl(objectKey);
+                attachment.setUrl(presignedUrl);
+            }
             return Response.ok(attachments)
-                           .build();
+                    .build();
         } catch (SQLException e) {
             logger.error("Internal server error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                           .build();
+                    .build();
         }
     }
 }

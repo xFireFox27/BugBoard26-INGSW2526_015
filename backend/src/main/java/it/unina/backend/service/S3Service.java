@@ -59,7 +59,7 @@ public class S3Service {
         // fromBytes calcola la lunghezza corretta automaticamente
         s3Client.putObject(putRequest, RequestBody.fromBytes(fileBytes));
 
-        return generatePresignedUrl(newFileName);
+        return newFileName;
     }
 
     // Metodo utility per generare link validi quando vuoi visualizzare la foto

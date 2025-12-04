@@ -35,6 +35,10 @@ public class Attachment {
         return url;
     }
 
+    public void  setUrl(String url) {
+        this.url = url;
+    }
+
     public OffsetDateTime getUploadedOn() {
         return uploadedOn;
     }
