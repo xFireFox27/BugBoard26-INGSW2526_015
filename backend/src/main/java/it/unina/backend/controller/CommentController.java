@@ -34,7 +34,7 @@ public class CommentController {
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
                            .entity(Map.of(ERROR_KEY, "missing_parameter",
-                                          MESSAGE_KEY, "Parameter 'issue-id' must be provided"))
+                                          MESSAGE_KEY, "Missing required parameter"))
                            .build();
         }
 
@@ -45,10 +45,10 @@ public class CommentController {
                                                             .toList();
             return Response.ok(responseDtos).build();
         } catch (SQLException e) {
-            logger.error("Impossible to retrieve comments for the specified issue", e);
+            logger.error("Database error: {}", e.getMessage(), e);
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to retrieve comments for the specified issue"))
+                                          MESSAGE_KEY, "Impossible to retrieve the comments"))
                            .build();
         }
     }
@@ -59,7 +59,8 @@ public class CommentController {
     public Response addComment(@Context SecurityContext securityContext, CommentDto commentDto) {
         if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
-                    .entity(Map.of(ERROR_KEY, "forbidden", MESSAGE_KEY, "User not allowed"))
+                    .entity(Map.of(ERROR_KEY, "forbidden",
+                                   MESSAGE_KEY, "User is not allowed"))
                     .build();
         }
 
@@ -70,15 +71,16 @@ public class CommentController {
             return Response.status(Response.Status.CREATED)
                     .entity(new CommentResponseDto(createdComment))
                     .build();
-
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "invalid_input", MESSAGE_KEY, e.getMessage()))
+                    .entity(Map.of(ERROR_KEY, "invalid_input",
+                                   MESSAGE_KEY, "The input is not valid"))
                     .build();
         } catch (SQLException e) {
-            logger.error("Database error while adding comment", e);
+            logger.error("Database error: {}", e.getMessage(), e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "database_error", MESSAGE_KEY, "Impossible to insert comment"))
+                    .entity(Map.of(ERROR_KEY, "database_error",
+                                   MESSAGE_KEY, "Impossible to insert the comment"))
                     .build();
         }
     }
