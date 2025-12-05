@@ -22,7 +22,6 @@ public class CommentService {
         if (issueId == null || issueId == 0 || issueId < 0) throw new IllegalArgumentException("Issue ID must be valid.");
     }
 
-
     public Comment addComment(CommentDto dto, String username) throws SQLException, IllegalArgumentException {
         if (dto == null) throw new IllegalArgumentException("Comment data must be provided.");
         validateCommentInput(dto.getText(), dto.getIssueId());

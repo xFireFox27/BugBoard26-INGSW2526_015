@@ -8,6 +8,16 @@ import java.time.OffsetDateTime;
 public class AttachmentService {
 
     private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
+    public static AttachmentService instance;
+
+    private AttachmentService() {}
+
+    public static AttachmentService getInstance() {
+        if(instance == null) {
+            instance = new AttachmentService();
+        }
+        return instance;
+    }
 
     public Attachment createAndSaveAttachment(
             String fileName,

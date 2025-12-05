@@ -60,10 +60,6 @@ public class UserService {
 
         throw new SQLException("Errore durante l'inserimento dell'utente");
     }
-
-
-
-
 }
 
 

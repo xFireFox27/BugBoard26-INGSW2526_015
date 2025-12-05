@@ -27,7 +27,7 @@ import java.util.Map;
 public class AttachmentController {
 
     private final S3Service s3Service = new S3Service();
-    private final AttachmentService attachmentService = new AttachmentService();
+    private final AttachmentService attachmentService = AttachmentService.getInstance();
     private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
     private final IssueDao issueDao = IssueDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(AttachmentController.class);
