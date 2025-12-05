@@ -23,12 +23,18 @@ public class CommentService {
     }
 
     private void validateCommentInput(String text, Integer issueId) {
-        if (text == null || text.trim().isEmpty()) throw new IllegalArgumentException("Text of the comment must be provided.");
-        if (issueId == null || issueId == 0 || issueId < 0) throw new IllegalArgumentException("Issue ID must be valid.");
+        if (text == null || text.trim().isEmpty()){
+            throw new IllegalArgumentException("Text of the comment must be provided.");
+        }
+        if (issueId == null || issueId == 0 || issueId < 0){
+            throw new IllegalArgumentException("Issue ID must be valid.");
+        }
     }
 
     public Comment addComment(CommentDto dto, String username) throws SQLException, IllegalArgumentException {
-        if (dto == null) throw new IllegalArgumentException("Comment data must be provided.");
+        if (dto == null){
+            throw new IllegalArgumentException("Comment data must be provided.");
+        }
         validateCommentInput(dto.getText(), dto.getIssueId());
 
         User user = userDao.findUserByUsername(username);
