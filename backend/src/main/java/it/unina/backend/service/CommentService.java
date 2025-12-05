@@ -18,13 +18,13 @@ public class CommentService {
     public static CommentService getInstance() { return instance; }
 
     private void validateCommentInput(String text, Integer issueId) {
-        if (text == null || text.trim().isEmpty()) throw new IllegalArgumentException("Il testo del commento è obbligatorio.");
-        if (issueId == null) throw new IllegalArgumentException("L'ID della issue è obbligatorio.");
+        if (text == null || text.trim().isEmpty()) throw new IllegalArgumentException("Text of the comment must be provided.");
+        if (issueId == null || issueId == 0 || issueId < 0) throw new IllegalArgumentException("Issue ID must be valid.");
     }
 
 
     public Comment addComment(CommentDto dto, String username) throws SQLException, IllegalArgumentException {
-        if (dto == null) throw new IllegalArgumentException("Il corpo della richiesta è vuoto.");
+        if (dto == null) throw new IllegalArgumentException("Comment data must be provided.");
         validateCommentInput(dto.getText(), dto.getIssueId());
 
         User user = userDao.findUserByUsername(username);
