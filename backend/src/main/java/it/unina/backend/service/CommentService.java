@@ -9,13 +9,18 @@ import java.sql.SQLException;
 
 public class CommentService {
 
-    private static final CommentService instance = new CommentService();
+    private static CommentService instance;
     private final CommentDao commentDao = CommentDao.getInstance();
     private final UserDao userDao = UserDao.getInstance();
 
     private CommentService() {}
 
-    public static CommentService getInstance() { return instance; }
+    public static CommentService getInstance() {
+        if (instance == null) {
+            instance = new CommentService();
+        }
+        return instance;
+    }
 
     private void validateCommentInput(String text, Integer issueId) {
         if (text == null || text.trim().isEmpty()) throw new IllegalArgumentException("Text of the comment must be provided.");
