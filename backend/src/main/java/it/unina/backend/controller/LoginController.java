@@ -21,14 +21,17 @@ public class LoginController {
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     private static final String ERROR_KEY = "error";
+    private static final String MESSAGE_KEY = "message";
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(LoginRequestDto request) {
         if (request == null || request.getEmail() == null || request.getPassword() == null) {
+            logger.warn("Login request is null or request fields are invalid");
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "email and password required"))
+                    .entity(Map.of(ERROR_KEY, "missing field",
+                                   MESSAGE_KEY, "both email and password are required"))
                     .build();
         }
 
@@ -43,13 +46,16 @@ public class LoginController {
             return Response.ok(responseBody).build();
 
         } catch (IllegalArgumentException e) {
+            logger.error("error: Login request is invalid {}", e.getMessage(), e);
             return Response.status(Response.Status.UNAUTHORIZED)
-                    .entity(Map.of(ERROR_KEY, e.getMessage()))
+                    .entity(Map.of(ERROR_KEY, "missing field",
+                                   MESSAGE_KEY, "Both email and password are required"))
                     .build();
         } catch (SQLException e) {
-            logger.error("error: Login error ", e);
+            logger.error("error: Login error {}", e.getMessage(), e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "Server error during login"))
+                    .entity(Map.of(ERROR_KEY, "Database error",
+                                   MESSAGE_KEY, "Error occurred while trying to login"))
                     .build();
         }
     }

@@ -18,6 +18,8 @@ public class RegisterController {
     private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 
     private static final String ERROR_KEY = "error";
+    private static final String MESSAGE_KEY = "message";
+    private static final String SUCCESS_KEY = "success";
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -30,14 +32,17 @@ public class RegisterController {
             if (!securityContext.isUserInRole("Admin")) {
                 logger.warn("Admin permissions needed!");
                 return Response.status(Response.Status.FORBIDDEN)
-                        .entity(Map.of(ERROR_KEY, "Only admins can register new users"))
+                        .entity(Map.of(ERROR_KEY, "Permissions error",
+                                       MESSAGE_KEY, "Only admins have permissions to create new users"))
                         .build();
             }
 
             // Validazione input
             if (!request.isComplete()) {
+                logger.warn("Request is incomplete!");
                 return Response.status(Response.Status.BAD_REQUEST)
-                        .entity(Map.of(ERROR_KEY, "All fields must be filled!"))
+                        .entity(Map.of(ERROR_KEY, "Missing field",
+                                       MESSAGE_KEY, "Both username and password are required!"))
                         .build();
             }
 
@@ -51,21 +56,22 @@ public class RegisterController {
                     request.getRole()
             );
 
-            logger.info("User: {} registered successfully", request.getUsername());
             return Response.status(Response.Status.CREATED)
-                    .entity(Map.of(ERROR_KEY, "Registration completed", "email", user.getEmail()))
+                    .entity(Map.of(SUCCESS_KEY, "Registration completed", "email", user.getEmail()))
                     .build();
 
         } catch (IllegalArgumentException e) {
-            logger.warn("Attempt to register new user failed: {}", e.getMessage());
+            logger.warn("Attempt to register new user failed: {}", e.getMessage(), e);
             return Response.status(Response.Status.CONFLICT)
-                    .entity(Map.of(ERROR_KEY, e.getMessage()))
+                    .entity(Map.of(ERROR_KEY, "invalid field!",
+                                   MESSAGE_KEY, "email already exists!"))
                     .build();
 
         } catch (Exception e) {
-            logger.error("Error while trying to register a new user", e);
+            logger.error("Error while trying to register a new user {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity(Map.of(ERROR_KEY, "Error  while trying to register a new user"))
+                    .entity(Map.of(ERROR_KEY, "Internal server error",
+                                   MESSAGE_KEY, "Error while trying to register a new user"))
                     .build();
         }
     }

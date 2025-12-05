@@ -31,9 +31,10 @@ public class ChangeController {
         @QueryParam("issue-id") Integer issueId
     ) {
         if (issueId == null) {
+            logger.error("error: no issue_id provided");
             return Response.status(Response.Status.BAD_REQUEST)
                            .entity(Map.of(ERROR_KEY, "missing_parameter",
-                                          MESSAGE_KEY, "Parameter 'issue-id' must be provided"))
+                                          MESSAGE_KEY, "missing required field"))
                            .build();
         }
 

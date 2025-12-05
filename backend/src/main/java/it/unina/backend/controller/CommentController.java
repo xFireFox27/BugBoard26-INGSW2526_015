@@ -59,7 +59,8 @@ public class CommentController {
     public Response addComment(@Context SecurityContext securityContext, CommentDto commentDto) {
         if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
-                    .entity(Map.of(ERROR_KEY, "forbidden", MESSAGE_KEY, "User not allowed"))
+                    .entity(Map.of(ERROR_KEY, "forbidden",
+                                   MESSAGE_KEY, "User not allowed"))
                     .build();
         }
 
@@ -73,12 +74,14 @@ public class CommentController {
 
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "invalid_input", MESSAGE_KEY, e.getMessage()))
+                    .entity(Map.of(ERROR_KEY, "invalid_input",
+                                   MESSAGE_KEY, e.getMessage()))
                     .build();
         } catch (SQLException e) {
             logger.error("Database error while adding comment", e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "database_error", MESSAGE_KEY, "Impossible to insert comment"))
+                    .entity(Map.of(ERROR_KEY, "database_error",
+                                   MESSAGE_KEY, "Impossible to insert comment"))
                     .build();
         }
     }

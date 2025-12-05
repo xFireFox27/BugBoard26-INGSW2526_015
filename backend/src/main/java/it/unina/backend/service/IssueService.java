@@ -72,11 +72,12 @@ public class IssueService {
             connection.setAutoCommit(false);
 
             issueDao.insertIssue(connection, issue);
-            Change change = new Change();
-            change.setIssueId(issue.getId());
-            change.setAction("Creazione Issue");
-            change.setDetails(issue.getDescription());
-            change.setCreatedBy(issue.getCreatedBy());
+            Change change = new Change(0,
+                    "Creazione Issue",
+                    issue.getDescription(),
+                    null,
+                    issue.getCreatedBy(),
+                    issue.getId());
             changeDao.insertChange(connection, change);
             connection.commit();
         }
