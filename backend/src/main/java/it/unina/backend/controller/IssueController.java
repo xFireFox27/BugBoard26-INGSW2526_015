@@ -32,9 +32,10 @@ public class IssueController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getIssues(@QueryParam("status") String status,
                               @QueryParam("type") String type,
+                              @QueryParam("priority") String priority,
                               @QueryParam("sort-by") String sortBy) {
         try {
-            List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, type, sortBy);
+            List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, type, priority, sortBy);
 
             // Convertiamo la lista di Issue in una lista di IssueResponseDto
             List<IssueResponseDto> responseDtos = issues.stream()

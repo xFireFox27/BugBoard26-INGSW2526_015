@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import it.unina.backend.exception.TransactionException;
@@ -35,9 +36,10 @@ public class IssueService {
 
     public List<Issue> getIssuesFilteredAndSorted(String status,
                                                   String type,
+                                                  String priority,
                                                   String sortBy) throws SQLException{
         List<Issue> issues = getIssues();
-        issues = applyFiltering(issues, status, type);
+        issues = applyFiltering(issues, status, type, priority);
         return applySorting(issues, sortBy);
 
     }
@@ -46,21 +48,34 @@ public class IssueService {
         return issueDao.findAllIssues();
     }
 
-    private List<Issue> applyFiltering(List<Issue> issues, String status, String type) {
+    private List<Issue> applyFiltering(List<Issue> issues, String status, String type, String priority) {
         return issues.stream()
-            .filter(i -> (status == null || status.isBlank()) || i.getStatus().equalsIgnoreCase(status))
-            .filter(i -> (type == null || type.isBlank()) || i.getType().equalsIgnoreCase(type))
-            .collect(Collectors.toCollection(java.util.ArrayList::new))
-        ;
+                .filter(i -> (status == null || status.isBlank()) || i.getStatus().equalsIgnoreCase(status))
+                .filter(i -> (type == null || type.isBlank()) || i.getType().equalsIgnoreCase(type))
+                .filter(i -> (priority == null || priority.isBlank()) || i.getPriority().equalsIgnoreCase(priority))
+                .collect(Collectors.toCollection(java.util.ArrayList::new))
+                ;
     }
 
     private List<Issue> applySorting(List<Issue> issues, String sortBy) {
         String sortKey = (sortBy != null && !sortBy.isBlank()) ? sortBy.toLowerCase() : "id";
-        Comparator<Issue> comparator = switch (sortKey) {
-            case "title" -> Comparator.comparing(Issue::getTitle);
-            case "creation time" -> Comparator.comparing(Issue::getCreatedOn).reversed();
-            default -> Comparator.comparing(Issue::getId);
-        };
+        Comparator<Issue> comparator;
+
+        switch (sortKey) {
+            case "title" -> comparator = Comparator.comparing(Issue::getTitle);
+            case "creation time" -> comparator = Comparator.comparing(Issue::getCreatedOn).reversed();
+            case "priority" -> {
+                Map<String, Integer> priorityOrder = Map.of(
+                        "Low", 1,
+                        "Medium", 2,
+                        "High", 3
+                );
+                comparator = Comparator.comparing((Issue issue) -> priorityOrder.getOrDefault(issue.getPriority(), 0))
+                        .reversed();
+            }
+            default -> comparator = Comparator.comparing(Issue::getId);
+        }
+
         issues.sort(comparator);
         return issues;
     }
@@ -84,8 +99,8 @@ public class IssueService {
         catch(Exception e){
             if(connection != null){
                 try{
-                connection.rollback();
-                logger.warn("Transaction ended in error: rollback");
+                    connection.rollback();
+                    logger.warn("Transaction ended in error: rollback");
                 }
                 catch(SQLException ex){
                     logger.error("impossible to establish connection to database while rollback", ex);                }
