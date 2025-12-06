@@ -1,7 +1,5 @@
 package it.unina.backend.dto;
 
-import it.unina.backend.entity.User;
-
 public class IssueDto {
     String title;
     String description;
@@ -9,27 +7,21 @@ public class IssueDto {
     String priority = "Low";
     String status = "To Do";
 
-    public IssueDto(){}
+    public IssueDto() {}
 
     public IssueDto(String title, String description, String type, String priority, String status) {
         if (!checkType(type)) {
-            throw new IllegalArgumentException(
-                    "Attempt to insert an invalid type: " + type +
-                            "\nType must be: Bug, Documentation, Question or Feature."
-            );
+            throw new IllegalArgumentException();
         }
+
         if (!checkStatus(status)) {
-            throw new IllegalArgumentException(
-                    "Attempt to insert an invalid status: " + status +
-                            "\nStatus must be: To Do, In Progress, Done or Archived."
-            );
+            throw new IllegalArgumentException();
         }
+
         if (!checkPriority(priority)) {
-            throw new IllegalArgumentException(
-                    "Attempt to insert an invalid priority: " + priority +
-                            "\nPriority must be: To Do, In Progress, Done or Archived."
-            );
+            throw new IllegalArgumentException();
         }
+
         this.title = title;
         this.description = description;
         this.type = type;
@@ -68,15 +60,23 @@ public class IssueDto {
     }
 
     private boolean checkType(String type){
-        return(type.equals("Bug") || type.equals("Documentation") || type.equals("Question") || type.equals("Feature"));
+        return type.equals("Bug") ||
+               type.equals("Documentation") ||
+               type.equals("Question") ||
+               type.equals("Feature");
     }
 
     private boolean checkStatus(String status){
-        return (status.equals("To Do") || status.equals("In Progress") || status.equals("Done")) || status.equals("Archived");
+        return status.equals("To Do") ||
+               status.equals("In Progress") ||
+               status.equals("Done") ||
+               status.equals("Archived");
     }
 
     private boolean checkPriority(String priority){
-        return priority.equals("Low") || priority.equals("Medium") || priority.equals("High");
+        return priority.equals("Low") ||
+               priority.equals("Medium") ||
+               priority.equals("High");
     }
 
     public boolean hasMissingFields() {

@@ -9,10 +9,19 @@ public class LoginResponseDto {
         this.user = user;
     }
 
-    // Getter e Setter
-    public String getToken() { return token; }
-    public void setToken(String token) { this.token = token; }
+    public String getToken() {
+        return token;
+    }
 
-    public UserDto getUser() { return user; }
-    public void setUser(UserDto user) { this.user = user; }
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public UserDto getUser() {
+        return user;
+    }
+
+    public void setUser(UserDto user) {
+        this.user = user;
+    }
 }

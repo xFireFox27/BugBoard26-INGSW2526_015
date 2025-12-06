@@ -4,11 +4,11 @@ import it.unina.backend.entity.Change;
 import java.time.OffsetDateTime;
 
 public class ChangeResponseDto {
-    private int id;
-    private String action;
-    private String details;
-    private OffsetDateTime createdOn;
-    private int issueId;
+    private final int id;
+    private final String action;
+    private final String details;
+    private final OffsetDateTime createdOn;
+    private final int issueId;
     private UserResponseDto createdBy;
 
     public ChangeResponseDto(Change change) {
@@ -18,17 +18,32 @@ public class ChangeResponseDto {
         this.createdOn = change.getCreatedOn();
         this.issueId = change.getIssueId();
 
-        // converte l'utente che ha creato la modifica in UserResponseDto (senza password)
         if (change.getCreatedBy() != null) {
             this.createdBy = new UserResponseDto(change.getCreatedBy());
         }
     }
 
-    // Getters necessari per la serializzazione JSON
-    public int getId() { return id; }
-    public String getAction() { return action; }
-    public String getDetails() { return details; }
-    public OffsetDateTime getCreatedOn() { return createdOn; }
-    public int getIssueId() { return issueId; }
-    public UserResponseDto getCreatedBy() { return createdBy; }
+    public int getId() {
+        return id;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public OffsetDateTime getCreatedOn() {
+        return createdOn;
+    }
+
+    public int getIssueId() {
+        return issueId;
+    }
+
+    public UserResponseDto getCreatedBy() {
+        return createdBy;
+    }
 }

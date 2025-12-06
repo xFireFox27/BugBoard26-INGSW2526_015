@@ -4,13 +4,13 @@ import it.unina.backend.entity.Issue;
 import java.time.OffsetDateTime;
 
 public class IssueResponseDto {
-    private Integer id;
-    private String title;
-    private String description;
-    private String type;
-    private String priority;
-    private String status;
-    private OffsetDateTime createdOn;
+    private final Integer id;
+    private final String title;
+    private final String description;
+    private final String type;
+    private final String priority;
+    private final String status;
+    private final OffsetDateTime createdOn;
     private UserResponseDto author; 
 
     public IssueResponseDto(Issue issue) {
@@ -22,19 +22,40 @@ public class IssueResponseDto {
         this.status = issue.getStatus();
         this.createdOn = issue.getCreatedOn();
 
-        // Se c'è un autore, lo convertiamo nel formato sicuro (senza password)
         if (issue.getCreatedBy() != null) {
             this.author = new UserResponseDto(issue.getCreatedBy());
         }
     }
 
-    // Getters necessari per la serializzazione JSON
-    public Integer getId() { return id; }
-    public String getTitle() { return title; }
-    public String getDescription() { return description; }
-    public String getType() { return type; }
-    public String getPriority() { return priority; }
-    public String getStatus() { return status; }
-    public OffsetDateTime getCreatedOn() { return createdOn; }
-    public UserResponseDto getAuthor() { return author; }
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public OffsetDateTime getCreatedOn() {
+        return createdOn;
+    }
+
+    public UserResponseDto getAuthor() {
+        return author;
+    }
 }

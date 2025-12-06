@@ -1,11 +1,10 @@
 package it.unina.backend.dto;
 
 public class CommentDto {
-
     String text;
     Integer issueId;
 
-    public CommentDto(){}
+    public CommentDto() {}
 
     public CommentDto(String text, int issueId) {
         this.text = text;

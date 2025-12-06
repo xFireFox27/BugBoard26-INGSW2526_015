@@ -4,7 +4,6 @@ public class LoginRequestDto {
     private String email;
     private String password;
 
-    // Empty constructor (necessary for JSON deserialization)
     public LoginRequestDto() {}
 
     public LoginRequestDto(String email, String password) {
