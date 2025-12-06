@@ -47,6 +47,7 @@ public class IssueController {
             return Response.ok(responseDtos).build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "Impossible to retrieve the issues."))
@@ -93,12 +94,14 @@ public class IssueController {
                            .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "Impossible to add the issue."))
                            .build();
         } catch (TransactionException e) {
             logger.error("Transaction error: {}", e.getMessage(), e);
+
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "transaction_error",
                                           MESSAGE_KEY, "An error occurred while creating the issue."))

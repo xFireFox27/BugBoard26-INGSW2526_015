@@ -1,9 +1,9 @@
 package it.unina.backend.dao;
 
+import static it.unina.backend.util.DaoUtil.*;
 import it.unina.backend.entity.User;
 import it.unina.backend.daointerface.UserDaoInterface;
 import it.unina.backend.connection.DatabaseConnection;
-import static it.unina.backend.util.DaoUtil.*;
 import java.time.OffsetDateTime;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +26,7 @@ public class UserDao implements UserDaoInterface {
     @Override
     public boolean insertUser(User user) throws SQLException {
         String sql = "INSERT INTO \"user\" (email, username, password_hash, name, surname, role) " +
-                "VALUES (?, ?, ?, ?, ?, ?) RETURNING created_on";
+                     "VALUES (?, ?, ?, ?, ?, ?) RETURNING created_on";
 
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)) {
@@ -36,8 +36,8 @@ public class UserDao implements UserDaoInterface {
             st.setString(4, user.getName());
             st.setString(5, user.getSurname());
             st.setString(6, user.getRole());
-
             ResultSet rs = st.executeQuery();
+
             if (rs.next()) {
                 user.setCreatedOn(rs.getObject("created_on", OffsetDateTime.class));
                 return true;
@@ -50,12 +50,14 @@ public class UserDao implements UserDaoInterface {
     @Override
     public User findUserByUsername(String username) throws SQLException {
         String sql = "SELECT username, email, password_hash, name, surname, role, " +
-                        "created_on FROM \"user\" WHERE username = ?";
+                     "created_on FROM \"user\" WHERE username = ?";
+
         try(Connection connection = DatabaseConnection.getInstance().getConnection();
             PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
-            if(rs.next()){
+
+            if (rs.next()) {
                 return createUserFromResultSet(rs);
             }
             return null;
@@ -65,14 +67,13 @@ public class UserDao implements UserDaoInterface {
     @Override
     public User findUserByEmail(String email) throws SQLException {
         String sql = "SELECT username, email, password_hash, name, surname, " +
-                "role, created_on FROM \"user\" WHERE email = ?";
+                     "role, created_on FROM \"user\" WHERE email = ?";
 
-        try (Connection connection = DatabaseConnection.getInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, email);
 
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+            try(ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     return createUserFromResultSet(resultSet);
                 }

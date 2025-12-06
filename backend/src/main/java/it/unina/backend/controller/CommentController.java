@@ -20,7 +20,6 @@ import java.util.Map;
 @Path("/comments")
 @RequireJwtAuthentication
 public class CommentController {
-
     private final CommentDao commentDao = CommentDao.getInstance();
     private final CommentService commentService = CommentService.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(CommentController.class);
@@ -49,6 +48,7 @@ public class CommentController {
             return Response.ok(responseDtos).build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "Impossible to retrieve the comments."))
@@ -82,12 +82,14 @@ public class CommentController {
                            .build();
         } catch (IllegalArgumentException e) {
             logger.error("Argument error: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.BAD_REQUEST)
                            .entity(Map.of(ERROR_KEY, "invalid_input",
                                           MESSAGE_KEY, "The input is not valid."))
                            .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "Impossible to insert the comment."))

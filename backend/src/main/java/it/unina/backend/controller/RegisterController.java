@@ -13,7 +13,6 @@ import java.util.Map;
 @Path("/register")
 @RequireJwtAuthentication
 public class RegisterController {
-
     private final UserService userService = UserService.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
     private static final String ERROR_KEY = "error";
@@ -49,6 +48,7 @@ public class RegisterController {
 
         } catch (IllegalArgumentException e) {
             logger.error("Illegal argument: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.CONFLICT)
                            .entity(Map.of(ERROR_KEY, "invalid_input",
                                           MESSAGE_KEY, "The email already exists."))
@@ -56,6 +56,7 @@ public class RegisterController {
 
         } catch (Exception e) {
             logger.error("Unknown error: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "generic_error",
                                           MESSAGE_KEY, "An error occurred during the registration."))

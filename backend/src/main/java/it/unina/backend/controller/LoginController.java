@@ -47,12 +47,14 @@ public class LoginController {
                            .build();
         } catch (IllegalArgumentException e) {
             logger.error("Illegal argument: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.UNAUTHORIZED)
                            .entity(Map.of(ERROR_KEY, "missing_field",
                                           MESSAGE_KEY, "The email or the password is wrong."))
                            .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "An error occurred during the login."))

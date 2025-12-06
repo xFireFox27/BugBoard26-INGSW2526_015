@@ -25,7 +25,6 @@ import java.util.Map;
 @Path("/attachments")
 @RequireJwtAuthentication
 public class AttachmentController {
-
     private final S3Service s3Service = new S3Service();
     private final AttachmentService attachmentService = AttachmentService.getInstance();
     private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
@@ -86,18 +85,21 @@ public class AttachmentController {
                            .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "Impossible to upload the attachment."))
                            .build();
         } catch (IOException e) {
             logger.error("IO error: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "reading_error",
                                           MESSAGE_KEY, "Impossible to read file content."))
                            .build();
         } catch (Exception e) {
             logger.error("Unknown error: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "generic_error",
                                           MESSAGE_KEY, "An error occurred during the upload."))
@@ -122,6 +124,7 @@ public class AttachmentController {
                            .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "Impossible to retrieve the attachments."))

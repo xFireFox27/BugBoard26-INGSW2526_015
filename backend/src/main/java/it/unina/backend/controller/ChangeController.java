@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 @Path("/changes")
 @RequireJwtAuthentication
 public class ChangeController {
-
     private final ChangeDao changeDao = ChangeDao.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(ChangeController.class);
     private static final String ERROR_KEY = "error";
@@ -49,6 +48,7 @@ public class ChangeController {
                            .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
+
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "database_error",
                                           MESSAGE_KEY, "Impossible to retrieve the changes"))

@@ -1,10 +1,9 @@
 package it.unina.backend.dao;
 
+import static it.unina.backend.util.DaoUtil.*;
 import it.unina.backend.daointerface.ChangeDaoInterface;
 import it.unina.backend.entity.Change;
-import static it.unina.backend.util.DaoUtil.*;
 import it.unina.backend.connection.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,28 +28,26 @@ public class ChangeDao implements ChangeDaoInterface {
     @Override
     public List<Change> findChangesByIssueId(int issueId) throws SQLException {
         String sql = "SELECT c.change_id, c.action, c.details, c.made_on, " +
-                "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
-                "FROM change c " +
-                "JOIN \"user\" u ON u.username = c.created_by " +
-                "WHERE c.related_to = ?";
+                     "u.username, u.email, u.password_hash, u.name, u.surname, u.role, u.created_on " +
+                     "FROM change c " +
+                     "JOIN \"user\" u ON u.username = c.created_by " +
+                     "WHERE c.related_to = ?";
 
         List<Change> changes = new ArrayList<>();
 
-        try (Connection connection = DatabaseConnection.getInstance().getConnection();
-             PreparedStatement st = connection.prepareStatement(sql)) {
-
+        try(Connection connection = DatabaseConnection.getInstance().getConnection();
+            PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, issueId);
 
             try (ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
                     changes.add(new Change(
-                            rs.getInt("change_id"),
-                            rs.getString("action"),
-                            rs.getString("details"),
-                            rs.getObject("made_on", OffsetDateTime.class),
-                            createUserFromResultSet(rs),
-                            issueId
-                    ));
+                        rs.getInt("change_id"),
+                        rs.getString("action"),
+                        rs.getString("details"),
+                        rs.getObject("made_on", OffsetDateTime.class),
+                        createUserFromResultSet(rs),
+                        issueId));
                 }
             }
             return changes;
@@ -58,10 +55,9 @@ public class ChangeDao implements ChangeDaoInterface {
     }
 
     @Override
-    public boolean insertChange(Connection connection, Change c) throws SQLException{
-
+    public boolean insertChange(Connection connection, Change c) throws SQLException {
         String sql = "INSERT INTO Change (action, details, created_by, related_to) VALUES (?, ?, ?, ?)" +
-                    "RETURNING change_id, made_on";
+                     "RETURNING change_id, made_on";
 
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, c.getAction());
@@ -70,7 +66,7 @@ public class ChangeDao implements ChangeDaoInterface {
             st.setInt(4, c.getIssueId());
 
             try(ResultSet rs = st.executeQuery()){
-                if(rs.next()){
+                if (rs.next()){
                     c.setId(rs.getInt("change_id"));
                     c.setCreatedOn(rs.getObject("made_on", OffsetDateTime.class));
                     return true;
