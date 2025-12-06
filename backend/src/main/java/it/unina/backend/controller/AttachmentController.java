@@ -45,10 +45,11 @@ public class AttachmentController {
     ) {
         logger.info("Uploading Attachment");
 
-        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
+        if (!securityContext.isUserInRole("Admin") &&
+            !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
                            .entity(Map.of(ERROR_KEY, "forbidden",
-                                          MESSAGE_KEY, "User is not allowed"))
+                                          MESSAGE_KEY, "User is not allowed to upload files."))
                            .build();
         }
 
@@ -56,7 +57,7 @@ public class AttachmentController {
             if (!issueDao.existsById(relatedTo)) {
                 return Response.status(Response.Status.NOT_FOUND)
                                .entity(Map.of(ERROR_KEY, "not_found",
-                                              MESSAGE_KEY, "The issue doesn't exist"))
+                                              MESSAGE_KEY, "The issue doesn't exist."))
                                .build();
             }
 
@@ -69,7 +70,7 @@ public class AttachmentController {
             if (fileBytes.length == 0) {
                 return Response.status(Response.Status.BAD_REQUEST)
                                .entity(Map.of(ERROR_KEY, "empty_file",
-                                              MESSAGE_KEY, "The uploaded file is empty"))
+                                              MESSAGE_KEY, "The uploaded file is empty."))
                                .build();
             }
 
@@ -79,7 +80,6 @@ public class AttachmentController {
                                                                                          objectKey,
                                                                                          createdBy,
                                                                                          relatedTo);
-
             attachment.setUrl(s3Service.generatePresignedUrl(objectKey));
 
             return Response.ok(attachment)
@@ -88,19 +88,19 @@ public class AttachmentController {
             logger.error("Database error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to upload the attachment"))
+                                          MESSAGE_KEY, "Impossible to upload the attachment."))
                            .build();
         } catch (IOException e) {
             logger.error("IO error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "reading_error",
-                                          MESSAGE_KEY, "Impossible to read file content"))
+                                          MESSAGE_KEY, "Impossible to read file content."))
                            .build();
         } catch (Exception e) {
             logger.error("Unknown error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "generic_error",
-                                          MESSAGE_KEY, "Upload failed"))
+                                          MESSAGE_KEY, "An error occurred during the upload."))
                            .build();
         }
     }
@@ -111,18 +111,20 @@ public class AttachmentController {
     public Response getAttachmentsForIssue(@PathParam("issue-id") int issueId) {
         try {
             List<Attachment> attachments = attachmentDao.findAttachmentsByRelatedId(issueId);
+
             for (Attachment attachment : attachments) {
                 String objectKey = attachment.getUrl();
                 String presignedUrl = s3Service.generatePresignedUrl(objectKey);
                 attachment.setUrl(presignedUrl);
             }
+
             return Response.ok(attachments)
                            .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to retrieve the attachments"))
+                                          MESSAGE_KEY, "Impossible to retrieve the attachments."))
                            .build();
         }
     }

@@ -78,6 +78,11 @@ public class IssueDto {
     private boolean checkPriority(String priority){
         return priority.equals("Low") || priority.equals("Medium") || priority.equals("High");
     }
+
+    public boolean hasMissingFields() {
+        return getDescription() == null ||
+               getTitle() == null ||
+               getType() == null ||
+               getStatus() == null;
+    }
 }
-
-

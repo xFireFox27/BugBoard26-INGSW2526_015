@@ -16,37 +16,30 @@ public class RegisterController {
 
     private final UserService userService = UserService.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
-
     private static final String ERROR_KEY = "error";
     private static final String MESSAGE_KEY = "message";
-    private static final String SUCCESS_KEY = "success";
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response register(UserRegistrationRequestDto request, @Context SecurityContext securityContext) {
-        logger.info("Attempt to register user: {}", request.getUsername());
+        logger.info("Registering user");
 
         try {
-            // Verifica che l'utente autenticato sia admin
             if (!securityContext.isUserInRole("Admin")) {
-                logger.warn("Admin permissions needed!");
                 return Response.status(Response.Status.FORBIDDEN)
-                        .entity(Map.of(ERROR_KEY, "Permissions error",
-                                       MESSAGE_KEY, "Only admins have permissions to create new users"))
-                        .build();
+                               .entity(Map.of(ERROR_KEY, "forbidden",
+                                              MESSAGE_KEY, "Only admins can create new users."))
+                               .build();
             }
 
-            // Validazione input
             if (!request.isComplete()) {
-                logger.warn("Request is incomplete!");
                 return Response.status(Response.Status.BAD_REQUEST)
-                        .entity(Map.of(ERROR_KEY, "Missing field",
-                                       MESSAGE_KEY, "Both username and password are required!"))
-                        .build();
+                               .entity(Map.of(ERROR_KEY, "invalid_input",
+                                              MESSAGE_KEY, "Missign required fields in the registration."))
+                               .build();
             }
 
-            // Registrazione utente
             User user = userService.registerUser(
                     request.getEmail(),
                     request.getUsername(),
@@ -57,22 +50,23 @@ public class RegisterController {
             );
 
             return Response.status(Response.Status.CREATED)
-                    .entity(Map.of(SUCCESS_KEY, "Registration completed", "email", user.getEmail()))
-                    .build();
+                           .entity(Map.of("success", "done",
+                                          "email", user.getEmail()))
+                           .build();
 
         } catch (IllegalArgumentException e) {
-            logger.warn("Attempt to register new user failed: {}", e.getMessage(), e);
+            logger.error("Illegal argument: {}", e.getMessage(), e);
             return Response.status(Response.Status.CONFLICT)
-                    .entity(Map.of(ERROR_KEY, "invalid field!",
-                                   MESSAGE_KEY, "email already exists!"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "invalid_input",
+                                          MESSAGE_KEY, "The email already exists."))
+                           .build();
 
         } catch (Exception e) {
-            logger.error("Error while trying to register a new user {}", e.getMessage(), e);
+            logger.error("Unknown error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity(Map.of(ERROR_KEY, "Internal server error",
-                                   MESSAGE_KEY, "Error while trying to register a new user"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "generic_error",
+                                          MESSAGE_KEY, "An error occurred during the registration."))
+                           .build();
         }
     }
 }

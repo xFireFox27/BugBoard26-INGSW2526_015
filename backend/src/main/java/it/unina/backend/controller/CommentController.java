@@ -31,10 +31,12 @@ public class CommentController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getComments(@QueryParam("issue-id") Integer issueId) {
 
+        logger.info("Retrieving comments");
+
         if (issueId == null) {
             return Response.status(Response.Status.BAD_REQUEST)
                            .entity(Map.of(ERROR_KEY, "missing_parameter",
-                                          MESSAGE_KEY, "Missing required parameter"))
+                                          MESSAGE_KEY, "Missing required field."))
                            .build();
         }
 
@@ -43,12 +45,13 @@ public class CommentController {
             List<CommentResponseDto> responseDtos = comments.stream()
                                                             .map(CommentResponseDto::new)
                                                             .toList();
+
             return Response.ok(responseDtos).build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
             return Response.serverError()
                            .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to retrieve the comments"))
+                                          MESSAGE_KEY, "Impossible to retrieve the comments."))
                            .build();
         }
     }
@@ -56,12 +59,18 @@ public class CommentController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addComment(@Context SecurityContext securityContext, CommentDto commentDto) {
-        if (!securityContext.isUserInRole("Admin") && !securityContext.isUserInRole("Normal")) {
+    public Response addComment(
+        @Context SecurityContext securityContext,
+        CommentDto commentDto
+    ) {
+        logger.info("Creating comment");
+
+        if (!securityContext.isUserInRole("Admin") &&
+            !securityContext.isUserInRole("Normal")) {
             return Response.status(Response.Status.FORBIDDEN)
-                    .entity(Map.of(ERROR_KEY, "forbidden",
-                                   MESSAGE_KEY, "User is not allowed"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "forbidden",
+                                          MESSAGE_KEY, "User is not allowed to insert comments."))
+                           .build();
         }
 
         try {
@@ -69,19 +78,20 @@ public class CommentController {
             Comment createdComment = commentService.addComment(commentDto, username);
 
             return Response.status(Response.Status.CREATED)
-                    .entity(new CommentResponseDto(createdComment))
-                    .build();
+                           .entity(new CommentResponseDto(createdComment))
+                           .build();
         } catch (IllegalArgumentException e) {
+            logger.error("Argument error: {}", e.getMessage(), e);
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "invalid_input",
-                                   MESSAGE_KEY, "The input is not valid"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "invalid_input",
+                                          MESSAGE_KEY, "The input is not valid."))
+                           .build();
         } catch (SQLException e) {
             logger.error("Database error: {}", e.getMessage(), e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "database_error",
-                                   MESSAGE_KEY, "Impossible to insert the comment"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "database_error",
+                                          MESSAGE_KEY, "Impossible to insert the comment."))
+                           .build();
         }
     }
 }

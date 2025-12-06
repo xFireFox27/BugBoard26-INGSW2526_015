@@ -30,17 +30,17 @@ public class ChangeController {
         @Context SecurityContext securityContext,
         @QueryParam("issue-id") Integer issueId
     ) {
+        logger.info("Retrieving changes");
+
         if (issueId == null) {
-            logger.error("error: no issue_id provided");
             return Response.status(Response.Status.BAD_REQUEST)
                            .entity(Map.of(ERROR_KEY, "missing_parameter",
-                                          MESSAGE_KEY, "missing required field"))
+                                          MESSAGE_KEY, "Missing required field."))
                            .build();
         }
 
         try {
             List<Change> changes = changeDao.findChangesByIssueId(issueId);
-
             List<ChangeResponseDto> responseDtos = changes.stream()
                                                           .map(ChangeResponseDto::new)
                                                           .toList();
@@ -51,7 +51,7 @@ public class ChangeController {
             logger.error("Database error: {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .entity(Map.of(ERROR_KEY, "database_error",
-                                          MESSAGE_KEY, "Impossible to retrieve changes for the specified issue"))
+                                          MESSAGE_KEY, "Impossible to retrieve the changes"))
                            .build();
         }
     }

@@ -30,48 +30,56 @@ public class IssueController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getIssues(@QueryParam("status") String status,
-                              @QueryParam("type") String type,
-                              @QueryParam("priority") String priority,
-                              @QueryParam("sort-by") String sortBy) {
+    public Response getIssues(
+        @QueryParam("status") String status,
+        @QueryParam("type") String type,
+        @QueryParam("priority") String priority,
+        @QueryParam("sort-by") String sortBy
+    ) {
+        logger.info("Retrieving issues");
+
         try {
             List<Issue> issues = issueService.getIssuesFilteredAndSorted(status, type, priority, sortBy);
-
-            // Convertiamo la lista di Issue in una lista di IssueResponseDto
             List<IssueResponseDto> responseDtos = issues.stream()
-                    .map(IssueResponseDto::new)
-                    .toList();
+                                                        .map(IssueResponseDto::new)
+                                                        .toList();
 
             return Response.ok(responseDtos).build();
-        }
-        catch (SQLException e) {
-            logger.error("error: impossible to retrieve issues with the specified filters ", e);
+        } catch (SQLException e) {
+            logger.error("Database error: {}", e.getMessage(), e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "database_error",
-                            MESSAGE_KEY, "Impossible to retrieve issues"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "database_error",
+                                          MESSAGE_KEY, "Impossible to retrieve the issues."))
+                           .build();
         }
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addIssue(@Context SecurityContext securityContext, IssueDto issueDto) {
-        if(issueDto == null || issueDto.getDescription() == null || issueDto.getTitle() == null ||
-                issueDto.getType() == null || issueDto.getStatus() == null) {
+    public Response addIssue(
+        @Context SecurityContext securityContext,
+        IssueDto issueDto
+    ) {
+        logger.info("Creating issue");
+
+        if (issueDto == null ||
+            issueDto.hasMissingFields()) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "invalid_input",
-                            MESSAGE_KEY, "Missing required fields in issue data"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "invalid_input",
+                                          MESSAGE_KEY, "Missing required fields in the issue."))
+                           .build();
         }
+
         try {
             String username = securityContext.getUserPrincipal().getName();
-            if(!(securityContext.isUserInRole("Admin") || securityContext.isUserInRole("Normal"))) {
-                logger.warn("forbidden: user {} not allowed to insert issues", username);
+
+            if (!securityContext.isUserInRole("Admin") &&
+                !securityContext.isUserInRole("Normal")) {
                 return Response.status(Response.Status.FORBIDDEN)
-                        .entity(Map.of(ERROR_KEY, "forbidden",
-                                MESSAGE_KEY, "Only Admin and Normal roles can submit issues"))
-                        .build();
+                               .entity(Map.of(ERROR_KEY, "forbidden",
+                                              MESSAGE_KEY, "Only Admin and Normal users can submit issues."))
+                               .build();
             }
 
             Issue issue = new Issue(issueDto);
@@ -79,21 +87,22 @@ public class IssueController {
             issue.setCreatedBy(user);
             issueService.insertIssueWithChange(issue);
             IssueResponseDto responseDto = new IssueResponseDto(issue);
-            return Response.status(Response.Status.CREATED).entity(responseDto).build();
-        }
-        catch (SQLException e) {
-            logger.error("error: impossible to add issue with the specified filters ", e);
+
+            return Response.status(Response.Status.CREATED)
+                           .entity(responseDto)
+                           .build();
+        } catch (SQLException e) {
+            logger.error("Database error: {}", e.getMessage(), e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "database_error",
-                            MESSAGE_KEY, "Impossible to add issue"))
-                    .build();
-        }
-        catch (TransactionException e) {
-            logger.error("error: Transaction error", e);
+                           .entity(Map.of(ERROR_KEY, "database_error",
+                                          MESSAGE_KEY, "Impossible to add the issue."))
+                           .build();
+        } catch (TransactionException e) {
+            logger.error("Transaction error: {}", e.getMessage(), e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "transaction_error",
-                            MESSAGE_KEY, "An error occurred during the transaction"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "transaction_error",
+                                          MESSAGE_KEY, "An error occurred while creating the issue."))
+                           .build();
         }
     }
 }

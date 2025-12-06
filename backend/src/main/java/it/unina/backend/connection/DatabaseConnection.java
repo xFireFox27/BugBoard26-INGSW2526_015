@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
+
     private static DatabaseConnection instance;
     private final String url;
     private final String username;
@@ -30,6 +31,7 @@ public class DatabaseConnection {
         if (instance == null) {
             instance = new DatabaseConnection();
         }
+
         return instance;
     }
 

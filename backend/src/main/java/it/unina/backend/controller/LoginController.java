@@ -19,7 +19,6 @@ public class LoginController {
 
     private final UserService userService = UserService.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-
     private static final String ERROR_KEY = "error";
     private static final String MESSAGE_KEY = "message";
 
@@ -27,36 +26,37 @@ public class LoginController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(LoginRequestDto request) {
-        if (request == null || request.getEmail() == null || request.getPassword() == null) {
-            logger.warn("Login request is null or request fields are invalid");
+        logger.info("Logging in");
+
+        if (request == null ||
+            request.getEmail() == null ||
+            request.getPassword() == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of(ERROR_KEY, "missing field",
-                                   MESSAGE_KEY, "both email and password are required"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "missing_field",
+                                          MESSAGE_KEY, "Both email and password are required."))
+                           .build();
         }
 
         try {
             User user = userService.authenticateUser(request.getEmail(), request.getPassword());
-
             String token = JwtAuth.generateToken(user.getEmail(), user.getUsername(), user.getRole());
-
             UserDto userDto = new UserDto(user.getUsername(), user.getEmail(), user.getRole());
             LoginResponseDto responseBody = new LoginResponseDto(token, userDto);
 
-            return Response.ok(responseBody).build();
-
+            return Response.ok(responseBody)
+                           .build();
         } catch (IllegalArgumentException e) {
-            logger.error("error: Login request is invalid {}", e.getMessage(), e);
+            logger.error("Illegal argument: {}", e.getMessage(), e);
             return Response.status(Response.Status.UNAUTHORIZED)
-                    .entity(Map.of(ERROR_KEY, "missing field",
-                                   MESSAGE_KEY, "Both email and password are required"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "missing_field",
+                                          MESSAGE_KEY, "The email or the password is wrong."))
+                           .build();
         } catch (SQLException e) {
-            logger.error("error: Login error {}", e.getMessage(), e);
+            logger.error("Database error: {}", e.getMessage(), e);
             return Response.serverError()
-                    .entity(Map.of(ERROR_KEY, "Database error",
-                                   MESSAGE_KEY, "Error occurred while trying to login"))
-                    .build();
+                           .entity(Map.of(ERROR_KEY, "database_error",
+                                          MESSAGE_KEY, "An error occurred during the login."))
+                           .build();
         }
     }
 }
