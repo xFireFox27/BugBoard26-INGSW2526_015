@@ -39,6 +39,13 @@ public class RegisterController {
                                .build();
             }
 
+            if (request.getPassword().length() < 8) {
+                return Response.status(Response.Status.BAD_REQUEST)
+                               .entity(Map.of(ERROR_KEY, "invalid_input",
+                                              MESSAGE_KEY, "Password must be at least 8 characters long."))
+                               .build();
+            }
+
             User user = userService.registerUser(request);
 
             return Response.status(Response.Status.CREATED)

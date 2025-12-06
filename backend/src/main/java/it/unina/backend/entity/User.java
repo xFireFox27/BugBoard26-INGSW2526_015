@@ -98,7 +98,7 @@ public class User{
         if (username == null || username.isBlank()) {
             return false;
         }
-        if (password == null || password.length() < 8) {
+        if (password == null || password.isBlank()) {
             return false;
         }
         if (name == null || name.isBlank()) {
