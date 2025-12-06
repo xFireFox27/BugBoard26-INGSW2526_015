@@ -1,11 +1,11 @@
 package it.unina.backend.service;
 
 import it.unina.backend.dao.UserDao;
+import it.unina.backend.dto.UserRegistrationRequestDto;
 import it.unina.backend.entity.User;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.SQLException;
-import java.time.OffsetDateTime;
 
 public class UserService {
 
@@ -37,21 +37,21 @@ public class UserService {
         return user;
     }
 
-    public User registerUser(String email, String username, String password, String name, String surname, String role) throws SQLException {
+    public User registerUser(UserRegistrationRequestDto request) throws SQLException {
         // Verifica se l'utente esiste già
-        if (userDao.findUserByEmail(email) != null) {
+        if (userDao.findUserByEmail(request.getEmail()) != null) {
             throw new IllegalArgumentException("Email già in uso");
         }
 
-        if (userDao.findUserByUsername(username) != null) {
+        if (userDao.findUserByUsername(request.getUsername()) != null) {
             throw new IllegalArgumentException("Username già in uso");
         }
 
         // Hash della password
-        String passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
+        String passwordHash = BCrypt.hashpw(request.getPassword(), BCrypt.gensalt());
 
         // Crea l'utente senza data
-        User user = new User(email, username, passwordHash, name, surname, role);
+        User user = new User(request.getEmail(), request.getUsername(), passwordHash, request.getName(), request.getSurname(), request.getRole());
 
         // Inserisci nel database (aggiorna automaticamente createdOn)
         if (userDao.insertUser(user)) {
@@ -61,7 +61,3 @@ public class UserService {
         throw new SQLException("Errore durante l'inserimento dell'utente");
     }
 }
-
-
-
-

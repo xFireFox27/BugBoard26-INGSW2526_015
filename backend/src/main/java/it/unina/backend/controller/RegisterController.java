@@ -40,14 +40,7 @@ public class RegisterController {
                                .build();
             }
 
-            User user = userService.registerUser(
-                    request.getEmail(),
-                    request.getUsername(),
-                    request.getPassword(),
-                    request.getName(),
-                    request.getSurname(),
-                    request.getRole()
-            );
+            User user = userService.registerUser(request);
 
             return Response.status(Response.Status.CREATED)
                            .entity(Map.of("success", "done",

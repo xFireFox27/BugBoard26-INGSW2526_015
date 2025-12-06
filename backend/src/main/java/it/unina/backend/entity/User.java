@@ -12,7 +12,7 @@ public class User{
     private final String name;
     private final String surname;
     private final String role;
-    private  OffsetDateTime createdOn;
+    private OffsetDateTime createdOn;
 
     public User(String email,
                 String username,
