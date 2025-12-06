@@ -102,6 +102,7 @@ public class IssueDao implements IssueDaoInterface {
         return issues;
     }
 
+    @Override
     public boolean existsById(int issueId) throws SQLException {
         String sql = "SELECT 1 FROM issue WHERE issue_id = ?";
 
