@@ -1,7 +1,6 @@
 package it.unina.backend.entity;
 
 import it.unina.backend.dto.CommentDto;
-
 import java.time.OffsetDateTime;
 
 public class Comment {
@@ -28,12 +27,20 @@ public class Comment {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getText() {
         return text;
     }
 
     public OffsetDateTime getCreatedOn() {
         return createdOn;
+    }
+
+    public void setCreatedOn(OffsetDateTime createdOn) {
+        this.createdOn = createdOn;
     }
 
     public int getIssueId() {
@@ -44,13 +51,11 @@ public class Comment {
         return writtenBy;
     }
 
-    public String getUserUsername() {
+    public String getUsername() {
         return writtenBy.getUsername();
     }
 
-    public void setId(int id) {this.id = id;}
-
-    public void setCreatedOn(OffsetDateTime createdOn) {this.createdOn = createdOn;}
-
-    public void setUser(User user) {this.writtenBy = user;}
+    public void setUser(User user) {
+        this.writtenBy = user;
+    }
 }

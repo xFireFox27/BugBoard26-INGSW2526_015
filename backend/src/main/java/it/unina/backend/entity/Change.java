@@ -1,6 +1,5 @@
 package it.unina.backend.entity;
 
-
 import java.time.OffsetDateTime;
 
 public class Change {
@@ -11,9 +10,9 @@ public class Change {
     private User createdBy;
     private int issueId;
 
-    public Change(){}
+    public Change() {}
 
-    public Change(int id, String action, String details, OffsetDateTime createdOn, User createdBy, int issueId){
+    public Change(int id, String action, String details, OffsetDateTime createdOn, User createdBy, int issueId) {
         this.id = id;
         this.action = action;
         this.details = details;
@@ -26,39 +25,51 @@ public class Change {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getAction() {
         return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
     }
 
     public String getDetails() {
         return details;
     }
 
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
     public OffsetDateTime getCreatedOn() {
         return createdOn;
+    }
+
+    public void setCreatedOn(OffsetDateTime createdOn) {
+        this.createdOn = createdOn;
     }
 
     public User getCreatedBy() {
         return createdBy;
     }
 
+    public void setCreatedBy(User createdBy) {
+        this.createdBy = createdBy;
+    }
+
     public int getIssueId() {
         return issueId;
     }
 
-    public String getUserUsername() {
-        return createdBy.getUsername();
+    public void setIssueId(int issueId) {
+        this.issueId = issueId;
     }
 
-    public void setId(int id) {this.id = id;}
-
-    public void setAction(String action) {this.action = action;}
-
-    public void setDetails(String details) {this.details = details;}
-
-    public void setCreatedOn(OffsetDateTime createdOn) {this.createdOn = createdOn;}
-
-    public void setCreatedBy(User createdBy) {this.createdBy = createdBy;}
-
-    public void setIssueId(int issueId) {this.issueId = issueId;}
+    public String getUsername() {
+        return createdBy.getUsername();
+    }
 }

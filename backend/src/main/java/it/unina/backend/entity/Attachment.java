@@ -4,11 +4,11 @@ import java.time.OffsetDateTime;
 
 public class Attachment {
     private int id;
-    private String fileName;
+    private final String fileName;
     private String url;
-    private OffsetDateTime uploadedOn;
-    private String createdBy;
-    private int relatedTo;
+    private final OffsetDateTime uploadedOn;
+    private final String createdBy;
+    private final int relatedTo;
 
     public Attachment(int id, String fileName, String url, OffsetDateTime uploadedOn, String createdBy, int relatedTo) {
         this.id = id;

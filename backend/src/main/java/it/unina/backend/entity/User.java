@@ -1,9 +1,6 @@
 package it.unina.backend.entity;
 
-
 import java.time.OffsetDateTime;
-
-
 
 public class User{
     private final String email;
@@ -14,16 +11,17 @@ public class User{
     private final String role;
     private OffsetDateTime createdOn;
 
-    public User(String email,
-                String username,
-                String passwordHash,
-                String name,
-                String surname,
-                String role,
-                OffsetDateTime createdOn)  {
-
+    public User(
+        String email,
+        String username,
+        String passwordHash,
+        String name,
+        String surname,
+        String role,
+        OffsetDateTime createdOn
+    )  {
         if (!validateUserData(email, username, passwordHash, name, surname, role)) {
-            throw new IllegalArgumentException("User data is not valid");
+            throw new IllegalArgumentException();
         }
 
         this.email = email;
@@ -35,14 +33,14 @@ public class User{
         this.createdOn = createdOn;
     }
 
-    //Costruttore senza createdOn per facilitare la registrazione degli utenti
-    public User(String email,
-                String username,
-                String passwordHash,
-                String name,
-                String surname,
-                String role)  {
-
+    public User(
+        String email,
+        String username,
+        String passwordHash,
+        String name,
+        String surname,
+        String role
+    ) {
         if (!validateUserData(email, username, passwordHash, name, surname, role)) {
             throw new IllegalArgumentException("User data is not valid");
         }
@@ -109,8 +107,8 @@ public class User{
         if (surname == null || surname.isBlank()) {
             return false;
         }
-        return role.equals("Admin") || role.equals("Normal") || role.equals("External");
+        return role.equals("Admin") ||
+               role.equals("Normal") ||
+               role.equals("External");
     }
-
-
 }

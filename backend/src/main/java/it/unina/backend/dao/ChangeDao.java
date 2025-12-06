@@ -62,7 +62,7 @@ public class ChangeDao implements ChangeDaoInterface {
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, c.getAction());
             st.setString(2, c.getDetails());
-            st.setString(3, c.getUserUsername());
+            st.setString(3, c.getUsername());
             st.setInt(4, c.getIssueId());
 
             try(ResultSet rs = st.executeQuery()){

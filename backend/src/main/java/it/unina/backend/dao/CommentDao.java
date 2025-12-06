@@ -60,7 +60,7 @@ public class CommentDao implements CommentDaoInterface {
             PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, comment.getText());
             st.setInt(2, comment.getIssueId());
-            st.setString(3, comment.getUserUsername());
+            st.setString(3, comment.getUsername());
 
             try(ResultSet rs = st.executeQuery()){
                 if (rs.next()) {

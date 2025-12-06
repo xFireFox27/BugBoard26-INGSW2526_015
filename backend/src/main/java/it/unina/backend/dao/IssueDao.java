@@ -36,7 +36,7 @@ public class IssueDao implements IssueDaoInterface {
             st.setString(3, issue.getType());
             st.setString(4, issue.getPriority());
             st.setString(5, issue.getStatus());
-            st.setString(6, issue.getUserUsername());
+            st.setString(6, issue.getUsername());
 
             try(ResultSet rs = st.executeQuery()){
                 if (rs.next()) {
