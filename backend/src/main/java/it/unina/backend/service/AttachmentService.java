@@ -8,7 +8,7 @@ import java.time.OffsetDateTime;
 public class AttachmentService {
 
     private final AttachmentDao attachmentDao = AttachmentDao.getInstance();
-    public static AttachmentService instance;
+    private static AttachmentService instance;
 
     private AttachmentService() {}
 
