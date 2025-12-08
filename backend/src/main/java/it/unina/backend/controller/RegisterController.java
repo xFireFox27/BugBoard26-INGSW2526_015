@@ -17,6 +17,7 @@ public class RegisterController {
     private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
     private static final String ERROR_KEY = "error";
     private static final String MESSAGE_KEY = "message";
+    private static final String INPUT_ERR = "invalid input";
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -34,14 +35,14 @@ public class RegisterController {
 
             if (!request.isComplete()) {
                 return Response.status(Response.Status.BAD_REQUEST)
-                               .entity(Map.of(ERROR_KEY, "invalid_input",
+                               .entity(Map.of(ERROR_KEY, INPUT_ERR,
                                               MESSAGE_KEY, "Missign required fields in the registration."))
                                .build();
             }
 
             if (request.getPassword().length() < 8) {
                 return Response.status(Response.Status.BAD_REQUEST)
-                               .entity(Map.of(ERROR_KEY, "invalid_input",
+                               .entity(Map.of(ERROR_KEY, INPUT_ERR,
                                               MESSAGE_KEY, "Password must be at least 8 characters long."))
                                .build();
             }
@@ -57,7 +58,7 @@ public class RegisterController {
             logger.error("Illegal argument: {}", e.getMessage(), e);
 
             return Response.status(Response.Status.CONFLICT)
-                           .entity(Map.of(ERROR_KEY, "invalid_input",
+                           .entity(Map.of(ERROR_KEY, INPUT_ERR,
                                           MESSAGE_KEY, "The email already exists."))
                            .build();
 
