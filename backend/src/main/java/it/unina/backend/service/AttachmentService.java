@@ -26,16 +26,18 @@ public class AttachmentService {
             int relatedTo
     ) throws SQLException {
         Attachment attachment = new Attachment(
-                0,
-                fileName,
-                s3Url,
-                OffsetDateTime.now(),
-                createdBy != null ? createdBy : "system",
-                relatedTo
+            0,
+            fileName,
+            s3Url,
+            OffsetDateTime.now(),
+            createdBy != null ? createdBy : "system",
+            relatedTo
         );
+
         if (!attachmentDao.insertAttachment(attachment)) {
-            throw new SQLException("Upload failed");
+            throw new SQLException();
         }
+
         return attachment;
     }
 }

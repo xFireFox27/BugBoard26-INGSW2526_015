@@ -5,14 +5,12 @@ import it.unina.backend.dao.ChangeDao;
 import it.unina.backend.dao.IssueDao;
 import it.unina.backend.entity.Change;
 import it.unina.backend.entity.Issue;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import it.unina.backend.exception.TransactionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +22,6 @@ public class IssueService {
     private final DatabaseConnection databaseConnection = DatabaseConnection.getInstance();
     private static final Logger logger = LoggerFactory.getLogger(IssueService.class);
 
-
     private IssueService() {}
 
     public static IssueService getInstance() {
@@ -34,14 +31,15 @@ public class IssueService {
         return instance;
     }
 
-    public List<Issue> getIssuesFilteredAndSorted(String status,
-                                                  String type,
-                                                  String priority,
-                                                  String sortBy) throws SQLException{
+    public List<Issue> getIssuesFilteredAndSorted(
+        String status,
+        String type,
+        String priority,
+        String sortBy
+    ) throws SQLException {
         List<Issue> issues = getIssues();
         issues = applyFiltering(issues, status, type, priority);
         return applySorting(issues, sortBy);
-
     }
 
     private List<Issue> getIssues() throws SQLException {
@@ -50,11 +48,10 @@ public class IssueService {
 
     private List<Issue> applyFiltering(List<Issue> issues, String status, String type, String priority) {
         return issues.stream()
-                .filter(i -> (status == null || status.isBlank()) || i.getStatus().equalsIgnoreCase(status))
-                .filter(i -> (type == null || type.isBlank()) || i.getType().equalsIgnoreCase(type))
-                .filter(i -> (priority == null || priority.isBlank()) || i.getPriority().equalsIgnoreCase(priority))
-                .collect(Collectors.toCollection(java.util.ArrayList::new))
-                ;
+                     .filter(i -> (status == null || status.isBlank()) || i.getStatus().equalsIgnoreCase(status))
+                     .filter(i -> (type == null || type.isBlank()) || i.getType().equalsIgnoreCase(type))
+                     .filter(i -> (priority == null || priority.isBlank()) || i.getPriority().equalsIgnoreCase(priority))
+                     .collect(Collectors.toCollection(java.util.ArrayList::new));
     }
 
     private List<Issue> applySorting(List<Issue> issues, String sortBy) {
@@ -66,12 +63,12 @@ public class IssueService {
             case "creation time" -> comparator = Comparator.comparing(Issue::getCreatedOn).reversed();
             case "priority" -> {
                 Map<String, Integer> priorityOrder = Map.of(
-                        "Low", 1,
-                        "Medium", 2,
-                        "High", 3
+                    "Low", 1,
+                    "Medium", 2,
+                    "High", 3
                 );
                 comparator = Comparator.comparing((Issue issue) -> priorityOrder.getOrDefault(issue.getPriority(), 0))
-                        .reversed();
+                                                                                .reversed();
             }
             default -> comparator = Comparator.comparing(Issue::getId);
         }
@@ -80,41 +77,39 @@ public class IssueService {
         return issues;
     }
 
-    public void insertIssueWithChange(Issue issue){
+    public void insertIssueWithChange(Issue issue) {
+        logger.info("Creating Issue and Change");
         Connection connection = null;
+
         try{
             connection = databaseConnection.getConnection();
             connection.setAutoCommit(false);
-
             issueDao.insertIssue(connection, issue);
             Change change = new Change(0,
-                    "Creazione Issue",
-                    issue.getDescription(),
-                    null,
-                    issue.getCreatedBy(),
-                    issue.getId());
+                "Creating Issue",
+                issue.getDescription(),
+                null,
+                issue.getCreatedBy(),
+                issue.getId());
             changeDao.insertChange(connection, change);
             connection.commit();
-        }
-        catch(Exception e){
-            if(connection != null){
-                try{
+        } catch(Exception e) {
+            if (connection != null) {
+                try {
                     connection.rollback();
-                    logger.warn("Transaction ended in error: rollback");
-                }
-                catch(SQLException ex){
-                    logger.error("impossible to establish connection to database while rollback", ex);                }
+                    logger.warn("Rollback");
+                } catch(SQLException ex){
+                    logger.error("Database error: {}", ex.getMessage(), ex);                }
             }
             throw new TransactionException("Transaction error", e);
-        }
-        finally{
-            if(connection != null){
+        } finally {
+            if (connection != null) {
                 try {
                     connection.setAutoCommit(true);
                     connection.close();
+                } catch(SQLException e) {
+                    logger.error("Database error: {}", e.getMessage(), e);
                 }
-                catch(SQLException e){
-                    logger.error("Error while closing connection to database", e);                }
             }
         }
     }
