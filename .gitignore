@@ -51,7 +51,7 @@ target/
 .kotlin
 .mvn
 mvnw
-.cmd
+mvnw.cmd
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
