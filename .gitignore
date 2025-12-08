@@ -49,6 +49,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .kotlin
+.mvn
+mvnw
+.cmd
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
