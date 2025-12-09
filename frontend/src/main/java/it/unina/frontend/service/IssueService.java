@@ -63,7 +63,8 @@ public class IssueService {
             if (response.statusCode() == 200) {
                 return mapper.readValue(response.body(), new TypeReference<List<Issue>>() {});
             } else {
-                throw new IssueServiceException("Errore ricerca (" + response.statusCode() + "): " + response.body(), response.statusCode());
+                throw new IssueServiceException("Errore ricerca (" + response.statusCode() + "): "
+                        + response.body(), response.statusCode());
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

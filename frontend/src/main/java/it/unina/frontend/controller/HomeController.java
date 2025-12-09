@@ -9,8 +9,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -89,6 +92,20 @@ public class HomeController {
             }
         }
 
+        issuesTable.setRowFactory(tv -> {
+            TableRow<Issue> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                // Controlla che la riga non sia vuota e che sia un doppio click (o click singolo se preferisci)
+                if (!row.isEmpty() && event.getButton() == javafx.scene.input.MouseButton.PRIMARY
+                        && event.getClickCount() == 2) {
+
+                        Issue clickedIssue = row.getItem();
+                        openIssueView(clickedIssue);
+                    }
+                });
+                return row;
+            });
+
         refreshTable();
     }
 
@@ -142,5 +159,29 @@ public class HomeController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private void openIssueView(Issue issue) {
+        try {
+            // 1. Carichiamo il loader manualmente (invece di usare MainApp.setRoot)
+            // per poter prendere il controller PRIMA di mostrare la scena.
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unina/frontend/view/IssueView.fxml")); // Controlla il path!
+            Parent root = loader.load();
+
+            // 2. Recuperiamo il controller della pagina di dettaglio
+            IssueViewController controller = loader.getController();
+
+            // 3. Passiamo i dati della issue cliccata al nuovo controller
+            controller.setIssueData(issue);
+
+            // 4. Cambiamo la scena attuale con la nuova view
+            // Recuperiamo lo Stage (finestra) attuale da un elemento della UI (es. issuesTable)
+            Stage stage = (Stage) issuesTable.getScene().getWindow();
+            stage.getScene().setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Errore", "Impossibile aprire i dettagli della segnalazione: " + e.getMessage());
+        }
     }
 }

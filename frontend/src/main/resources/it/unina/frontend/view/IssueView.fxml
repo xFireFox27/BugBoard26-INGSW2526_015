@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unina.frontend.controller.IssueViewController">
+    <content>
+        <VBox spacing="25.0" style="-fx-background-color: #f4f6f9;">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <children>
+                <VBox spacing="10.0">
+                    <children>
+                        <Button fx:id="btnBack" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #666; -fx-cursor: hand;" text="← Torna alla Dashboard">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Label fx:id="lblTitle" text="Bug #23: Database connection timeout" textFill="#333333" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="28.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <Separator prefWidth="200.0" />
+
+                <GridPane hgap="20.0" vgap="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Stato:" textFill="#777777">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblStatus" style="-fx-background-color: #f0ad4e; -fx-background-radius: 4; -fx-padding: 2 8;" text="To Do" textFill="WHITE" GridPane.columnIndex="1">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label text="Priorità:" textFill="#777777" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblPriority" text="High" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label text="Autore:" textFill="#777777" GridPane.columnIndex="2">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblAuthor" text="GigiS" GridPane.columnIndex="3">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label text="Data:" textFill="#777777" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblDate" text="05/12/2025 18:45" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </GridPane>
+
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Descrizione" textFill="#337ab7">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="txtDescription" editable="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-control-inner-background: #fff;" text="Qui comparirà la descrizione lunga del problema..." wrapText="true" />
+                    </children>
+                </VBox>
+
+                <VBox spacing="10.0">
+                    <children>
+                        <Label text="Allegato" textFill="#337ab7">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <HBox style="-fx-border-color: #ddd; -fx-border-radius: 5; -fx-padding: 10; -fx-background-color: white;">
+                            <children>
+                                <ImageView fx:id="imgAttachment" fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+                                <Label fx:id="lblNoAttachment" text="Nessun allegato disponibile" textFill="#999999" visible="false" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <Separator prefWidth="200.0" />
+
+                <VBox spacing="15.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <Label text="Commenti" textFill="#337ab7">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button mnemonicParsing="false" onAction="#handleAddComment" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="+ Aggiungi Commento">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+
+                        <VBox fx:id="vboxCommentsList" spacing="10.0" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

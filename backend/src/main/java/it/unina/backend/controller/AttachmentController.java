@@ -130,5 +130,13 @@ public class AttachmentController {
                                           MESSAGE_KEY, "Impossible to retrieve the attachments."))
                            .build();
         }
+        catch (Exception e) {
+            logger.error("Unexpected error retrieving attachments: {}", e.getMessage(), e);
+
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(Map.of(ERROR_KEY, "internal_error",
+                            MESSAGE_KEY, "An unexpected error occurred: " + e.getMessage()))
+                    .build();
+        }
     }
 }

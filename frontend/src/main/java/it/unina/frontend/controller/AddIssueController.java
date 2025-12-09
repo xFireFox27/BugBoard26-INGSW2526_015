@@ -1,5 +1,6 @@
 package it.unina.frontend.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import it.unina.frontend.MainApp;
 import it.unina.frontend.model.Issue;
 import it.unina.frontend.model.IssueCreateRequest;
@@ -23,7 +24,7 @@ public class AddIssueController {
 
     // Services
     private final IssueService issueService = new IssueService();
-    private final AttachmentService attachmentService = new AttachmentService();
+    private final AttachmentService attachmentService = new AttachmentService(new ObjectMapper());
 
     // Stato locale
     private File selectedFile;
