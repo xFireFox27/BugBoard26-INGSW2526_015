@@ -50,8 +50,7 @@ target/
 !**/src/test/**/target/
 .kotlin
 .mvn
-mvnw
-mvnw.cmd
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
