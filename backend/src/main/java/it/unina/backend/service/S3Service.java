@@ -23,40 +23,61 @@ public class S3Service {
     private final String bucketName;
 
     public S3Service() {
-        Dotenv dotenv = Dotenv.load();
-        this.bucketName = dotenv.get("AWS_BUCKET_NAME");
-        String accessKey = dotenv.get("AWS_ACCESS_KEY_ID");
-        String secretKey = dotenv.get("AWS_SECRET_ACCESS_KEY");
-        String regionStr = dotenv.get("AWS_REGION");
+        Dotenv dotenv = Dotenv.configure()
+                .ignoreIfMissing()
+                .load();
+
+        // Usiamo un metodo helper che cerca prima nel file .env e poi nelle variabili di sistema
+        this.bucketName = getValue(dotenv, "AWS_BUCKET_NAME");
+        String accessKey = getValue(dotenv, "AWS_ACCESS_KEY_ID");
+        String secretKey = getValue(dotenv, "AWS_SECRET_ACCESS_KEY");
+        String regionStr = getValue(dotenv, "AWS_REGION");
+
+
+        if (accessKey == null || secretKey == null) {
+            logger.error("ATTENZIONE: Le credenziali AWS sono NULL! Verifica il docker-compose o il file .env");
+        }
+
         Region region = Region.of(regionStr);
         var credentials = StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKey, secretKey));
+
         this.s3Client = S3Client.builder()
-                                .region(region)
-                                .credentialsProvider(credentials)
-                                .build();
+                .region(region)
+                .credentialsProvider(credentials)
+                .build();
+
         this.s3Presigner = S3Presigner.builder()
-                                      .region(region)
-                                      .credentialsProvider(credentials)
-                                      .build();
+                .region(region)
+                .credentialsProvider(credentials)
+                .build();
+    }
+
+
+    private String getValue(Dotenv dotenv, String key) {
+        String value = dotenv.get(key);
+        if (value == null) {
+            return System.getenv(key);
+        }
+        return value;
     }
 
     public String uploadFile(byte[] fileBytes, String originalFileName, String contentType) {
         String newFileName = UUID.randomUUID() + "-" + originalFileName;
         PutObjectRequest putRequest = PutObjectRequest.builder()
-                                                      .bucket(bucketName)
-                                                      .key(newFileName)
-                                                      .contentType(contentType)
-                                                      .build();
+                .bucket(bucketName)
+                .key(newFileName)
+                .contentType(contentType)
+                .build();
         s3Client.putObject(putRequest, RequestBody.fromBytes(fileBytes));
         return newFileName;
     }
 
     public String generatePresignedUrl(String objectKey) {
         GetObjectPresignRequest presignRequest = GetObjectPresignRequest.builder()
-                                                                        .signatureDuration(Duration.ofMinutes(30))
-                                                                        .getObjectRequest(b -> b.bucket(bucketName)
-                                                                                                       .key(objectKey))
-                                                                        .build();
+                .signatureDuration(Duration.ofMinutes(30))
+                .getObjectRequest(b -> b.bucket(bucketName)
+                        .key(objectKey))
+                .build();
         PresignedGetObjectRequest presignedRequest = s3Presigner.presignGetObject(presignRequest);
         return presignedRequest.url().toString();
     }
@@ -66,9 +87,9 @@ public class S3Service {
         try {
             String key = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
             DeleteObjectRequest deleteObjectRequest = DeleteObjectRequest.builder()
-                                                                         .bucket(bucketName)
-                                                                         .key(key)
-                                                                         .build();
+                    .bucket(bucketName)
+                    .key(key)
+                    .build();
             s3Client.deleteObject(deleteObjectRequest);
             logger.info("File deleted");
         } catch (Exception e) {

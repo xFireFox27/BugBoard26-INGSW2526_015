@@ -6,6 +6,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import it.unina.frontend.exception.IssueServiceException;
 import it.unina.frontend.model.Issue;
 import it.unina.frontend.model.IssueCreateRequest;
+import it.unina.frontend.util.ApiConfig;
 import it.unina.frontend.util.SessionManager;
 
 import java.net.URI;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class IssueService {
 
-    private static final String API_URL = "http://localhost:8080/api/issues";
+    private static final String API_URL = ApiConfig.BASE_URL + "/issues";
     private static final String ALL_FILTER = "Tutti";
     private final HttpClient client;
     private final ObjectMapper mapper;

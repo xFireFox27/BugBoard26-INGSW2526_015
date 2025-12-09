@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import it.unina.frontend.exception.AuthServiceException;
 import it.unina.frontend.model.LoginRequest;
 import it.unina.frontend.model.LoginResponse;
+import it.unina.frontend.util.ApiConfig;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -12,7 +13,7 @@ import java.net.http.HttpResponse;
 
 public class AuthService {
 
-    private static final String API_URL = "http://localhost:8080/api/login";
+    private static final String API_URL = ApiConfig.BASE_URL + "/login";
 
     private final HttpClient client;
     private final ObjectMapper mapper;
