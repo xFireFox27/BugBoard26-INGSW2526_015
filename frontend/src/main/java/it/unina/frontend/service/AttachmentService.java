@@ -1,6 +1,6 @@
 package it.unina.frontend.service;
 
-import it.unina.frontend.util.ApiConfig; // Usa la nuova classe config
+import it.unina.frontend.util.ApiConfig;
 import it.unina.frontend.util.SessionManager;
 
 import java.io.ByteArrayOutputStream;
@@ -16,7 +16,6 @@ import java.time.Duration;
 
 public class AttachmentService {
 
-    // Ora l'URL lo prendiamo dalla config centrale
     private static final String UPLOAD_URL = ApiConfig.BASE_URL + "/attachments/upload";
 
     private final HttpClient client;
@@ -24,7 +23,6 @@ public class AttachmentService {
     public AttachmentService() {
         this.client = HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_1_1)
-                // Aumentiamo il timeout perché l'upload su internet è più lento di localhost
                 .connectTimeout(Duration.ofSeconds(60))
                 .build();
     }
@@ -39,14 +37,9 @@ public class AttachmentService {
                 .uri(URI.create(UPLOAD_URL))
                 .header("Authorization", "Bearer " + token)
                 .header("Content-Type", "multipart/form-data; boundary=" + boundary)
-                // TRUCCO PER IL CLOUD: Disabilitiamo l'attesa del "100-continue"
-                // A volte aiuta inserire un valore vuoto o forzare l'invio diretto.
-                // Con Java 11+ e ofByteArray, Java calcola la lunghezza e di solito
-                // evita il chunking, ma per sicurezza aumentiamo la robustezza.
                 .POST(HttpRequest.BodyPublishers.ofByteArray(fullBody))
                 .build();
 
-        // Invio con timeout esteso per la risposta
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         if (response.statusCode() != 200) {
