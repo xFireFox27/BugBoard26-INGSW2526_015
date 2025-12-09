@@ -76,7 +76,8 @@ public class IssueService {
         return getFilteredIssues(null, null, null, null);
     }
 
-    public void createIssue(IssueCreateRequest requestBody) throws IssueServiceException {
+
+    public Issue createIssue(IssueCreateRequest requestBody) throws IssueServiceException {
         String token = SessionManager.getInstance().getToken();
 
         try {
@@ -91,7 +92,9 @@ public class IssueService {
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            if (response.statusCode() != 201 && response.statusCode() != 200) {
+            if (response.statusCode() == 201 || response.statusCode() == 200) {
+                return mapper.readValue(response.body(), Issue.class);
+            } else {
                 throw new IssueServiceException("Errore creazione (" + response.statusCode() + "): " + response.body(), response.statusCode());
             }
         } catch (InterruptedException e) {
@@ -101,4 +104,5 @@ public class IssueService {
             throw new IssueServiceException("Errore durante la creazione dell'issue", e);
         }
     }
+
 }
