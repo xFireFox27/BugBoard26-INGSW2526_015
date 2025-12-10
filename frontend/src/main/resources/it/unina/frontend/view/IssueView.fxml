@@ -41,7 +41,7 @@
                 <children>
                     <HBox alignment="CENTER_LEFT" spacing="15.0">
                         <children>
-                            <Label fx:id="lblTitle" style="-fx-font-weight: bold; -fx-font-size: 28px;" text="Bug #23: Caricamento Dati..." textFill="#2c3e50" wrapText="true" HBox.hgrow="ALWAYS" />
+                            <Label fx:id="lblTitle" style="-fx-font-weight: bold; -fx-font-size: 28px;" text="Issue #23: Caricamento Dati..." textFill="#2c3e50" wrapText="true" HBox.hgrow="ALWAYS" />
 
                             <Label fx:id="lblStatus" style="-fx-background-color: #f0ad4e; -fx-background-radius: 4; -fx-padding: 5 12; -fx-font-weight: bold; -fx-font-size: 14px;" text="Stato" textFill="WHITE" />
                         </children>
@@ -67,13 +67,18 @@
                                     <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Priorità" textFill="#95a5a6">
                                         <graphic><FontIcon iconColor="#95a5a6" iconLiteral="fas-exclamation-circle" /></graphic>
                                     </Label>
-
                                     <Label fx:id="lblPriority" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="High" GridPane.columnIndex="1" />
 
                                     <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Autore" textFill="#95a5a6" GridPane.columnIndex="2">
                                         <graphic><FontIcon iconColor="#95a5a6" iconLiteral="fas-user" /></graphic>
                                     </Label>
                                     <Label fx:id="lblAuthor" style="-fx-font-size: 15px;" text="Utente" textFill="#34495e" GridPane.columnIndex="3" />
+
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Tipo" textFill="#95a5a6" GridPane.rowIndex="1">
+                                        <graphic><FontIcon iconColor="#95a5a6" iconLiteral="fas-tag" /></graphic>
+                                    </Label>
+
+                                    <Label fx:id="lblType" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Bug" textFill="#34495e" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                                     <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Data" textFill="#95a5a6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                         <graphic><FontIcon iconColor="#95a5a6" iconLiteral="far-calendar-alt" /></graphic>

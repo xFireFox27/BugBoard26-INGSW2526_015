@@ -72,7 +72,7 @@ public class IssueViewController implements Initializable {
 
         this.currentIssueId = issue.getId();
 
-        lblTitle.setText("Bug #" + issue.getId() + ": " + (issue.getTitle() != null ? issue.getTitle() : "Nessun Titolo"));
+        lblTitle.setText("Issue #" + issue.getId() + ": " + (issue.getTitle() != null ? issue.getTitle() : "Nessun Titolo"));
         lblPriority.setText(issue.getPriority());
         lblStatus.setText(issue.getStatus());
         txtDescription.setText(issue.getDescription());
