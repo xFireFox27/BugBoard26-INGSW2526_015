@@ -39,6 +39,7 @@ public class IssueViewController implements Initializable {
     @FXML private Label lblPriority;
     @FXML private Label lblAuthor;
     @FXML private Label lblDate;
+    @FXML private Label lblType;
     @FXML private TextArea txtDescription;
     @FXML private ImageView imgAttachment;
     @FXML private Label lblNoAttachment;
@@ -75,6 +76,7 @@ public class IssueViewController implements Initializable {
         lblTitle.setText("Issue #" + issue.getId() + ": " + (issue.getTitle() != null ? issue.getTitle() : "Nessun Titolo"));
         lblPriority.setText(issue.getPriority());
         lblStatus.setText(issue.getStatus());
+        lblType.setText(issue.getType());
         txtDescription.setText(issue.getDescription());
 
         String authorName = (issue.getAuthor() != null) ? issue.getAuthor().getUsername() : "Sconosciuto";
@@ -94,10 +96,6 @@ public class IssueViewController implements Initializable {
         }).start();
     }
 
-    /**
-     * Gestisce il click sul bottone "Aggiungi Commento".
-     * Apre un dialog, crea il CommentRequest e chiama il Service.
-     */
     @FXML
     public void handleAddComment() {
         // 1. Creiamo il Dialog

@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.layout.StackPane?>
 
 <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unina.frontend.controller.IssueViewController">
     <content>
@@ -102,14 +103,15 @@
                     <VBox spacing="10.0">
                         <Label style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Allegato" textFill="#2c3e50" />
 
-                        <HBox alignment="CENTER" minHeight="100.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #bdc3c7; -fx-border-width: 2; -fx-border-style: dashed; -fx-padding: 15;">
+                        <StackPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #bdc3c7; -fx-border-width: 2; -fx-border-style: dashed; -fx-padding: 15;" minHeight="150.0">
                             <children>
                                 <ImageView fx:id="imgAttachment" fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+
                                 <Label fx:id="lblNoAttachment" style="-fx-font-size: 14px;" text="Nessun allegato disponibile" textFill="#bdc3c7" visible="false">
                                     <graphic><FontIcon iconColor="#bdc3c7" iconLiteral="fas-paperclip" iconSize="20" /></graphic>
                                 </Label>
                             </children>
-                        </HBox>
+                        </StackPane>
                     </VBox>
 
                     <Separator style="-fx-opacity: 0.5;" />
