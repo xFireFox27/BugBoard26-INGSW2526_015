@@ -31,6 +31,14 @@
                             <FontIcon iconColor="#7f8c8d" iconLiteral="fas-arrow-left" iconSize="14" />
                         </graphic>
                     </Button>
+
+                    <javafx.scene.layout.Pane HBox.hgrow="ALWAYS" />
+
+                    <Button onAction="#handleOpenChangelog" style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-cursor: hand; -fx-font-weight: bold; -fx-background-radius: 4; -fx-padding: 8 15;" text="Cronologia Modifiche">
+                        <graphic>
+                            <FontIcon iconColor="WHITE" iconLiteral="fas-history" />
+                        </graphic>
+                    </Button>
                 </children>
             </HBox>
 

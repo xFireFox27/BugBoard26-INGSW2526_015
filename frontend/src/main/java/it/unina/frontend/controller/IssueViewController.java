@@ -1,5 +1,6 @@
 package it.unina.frontend.controller;
 
+import javafx.stage.Stage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import it.unina.frontend.MainApp;
@@ -94,6 +95,37 @@ public class IssueViewController implements Initializable {
             loadComments(this.currentIssueId);
             loadAttachment(this.currentIssueId);
         }).start();
+    }
+
+    @FXML
+    public void handleOpenChangelog() {
+        try {
+            // 1. Carica il nuovo FXML
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/it/unina/frontend/view/changelog.fxml"));
+            javafx.scene.Parent root = loader.load();
+
+            // 2. Ottieni il controller e passa i dati
+            ChangelogController controller = loader.getController();
+
+            // Passiamo l'ID della issue e le dipendenze (Client e Mapper già istanziati in questo controller)
+            // Nota: sto riutilizzando le istanze create in initialize() per efficienza
+            HttpClient sharedClient = HttpClient.newHttpClient();
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.registerModule(new JavaTimeModule());
+
+            controller.initData(this.currentIssueId, sharedClient, mapper);
+
+            // 3. Crea e mostra lo Stage (finestra)
+            Stage stage = new Stage();
+            stage.setTitle("Cronologia Issue #" + this.currentIssueId);
+            stage.setScene(new javafx.scene.Scene(root));
+            stage.initModality(javafx.stage.Modality.APPLICATION_MODAL); // Blocca la finestra sotto
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Errore", "Impossibile aprire la cronologia: " + e.getMessage());
+        }
     }
 
     @FXML

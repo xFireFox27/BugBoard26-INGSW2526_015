@@ -71,7 +71,7 @@ public class CommentService {
             if(response.statusCode() == 200){
                 return mapper.readValue(response.body(), new TypeReference<List<CommentResponse>>() {});
             }
-            else if(response.statusCode() == 400){
+            else if(response.statusCode() == 404){
                 return List.of();
             }
             else{
@@ -82,7 +82,7 @@ public class CommentService {
             throw new CommentServiceException("Operation interrupted", e);
         }
         catch(Exception e){
-            throw new CommentServiceException("Error getting comments" + e);
+            throw new CommentServiceException("Error getting comments", e);
         }
     }
 }
