@@ -163,24 +163,16 @@ public class HomeController {
 
     private void openIssueView(Issue issue) {
         try {
-            // 1. Carichiamo il loader manualmente (invece di usare MainApp.setRoot)
-            // per poter prendere il controller PRIMA di mostrare la scena.
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unina/frontend/view/IssueView.fxml")); // Controlla il path!
             Parent root = loader.load();
 
-            // 2. Recuperiamo il controller della pagina di dettaglio
             IssueViewController controller = loader.getController();
-
-            // 3. Passiamo i dati della issue cliccata al nuovo controller
             controller.setIssueData(issue);
 
-            // 4. Cambiamo la scena attuale con la nuova view
-            // Recuperiamo lo Stage (finestra) attuale da un elemento della UI (es. issuesTable)
             Stage stage = (Stage) issuesTable.getScene().getWindow();
             stage.getScene().setRoot(root);
 
         } catch (IOException e) {
-            e.printStackTrace();
             showAlert("Errore", "Impossibile aprire i dettagli della segnalazione: " + e.getMessage());
         }
     }

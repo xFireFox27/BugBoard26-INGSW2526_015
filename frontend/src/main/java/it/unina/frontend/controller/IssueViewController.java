@@ -22,7 +22,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.scene.paint.Color;
-
 import java.io.IOException;
 import java.net.URL;
 import java.net.http.HttpClient;
@@ -100,73 +99,53 @@ public class IssueViewController implements Initializable {
     @FXML
     public void handleOpenChangelog() {
         try {
-            // 1. Carica il nuovo FXML
             javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/it/unina/frontend/view/changelog.fxml"));
             javafx.scene.Parent root = loader.load();
 
-            // 2. Ottieni il controller e passa i dati
             ChangelogController controller = loader.getController();
-
-            // Passiamo l'ID della issue e le dipendenze (Client e Mapper già istanziati in questo controller)
-            // Nota: sto riutilizzando le istanze create in initialize() per efficienza
             HttpClient sharedClient = HttpClient.newHttpClient();
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JavaTimeModule());
 
-            controller.initData(this.currentIssueId, sharedClient, mapper);
+            controller.initialize(this.currentIssueId, sharedClient, mapper);
 
-            // 3. Crea e mostra lo Stage (finestra)
             Stage stage = new Stage();
             stage.setTitle("Cronologia Issue #" + this.currentIssueId);
             stage.setScene(new javafx.scene.Scene(root));
-            stage.initModality(javafx.stage.Modality.APPLICATION_MODAL); // Blocca la finestra sotto
+            stage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
             stage.show();
 
         } catch (IOException e) {
-            e.printStackTrace();
             showAlert("Errore", "Impossibile aprire la cronologia: " + e.getMessage());
         }
     }
 
     @FXML
     public void handleAddComment() {
-        // 1. Creiamo il Dialog
         Dialog<String> dialog = new Dialog<>();
         dialog.setTitle("Nuovo Commento");
         dialog.setHeaderText("Scrivi il tuo commento");
 
-        // 2. Configurazione dei ButtonType personalizzati
-        // Usiamo ButtonData.OK_DONE per "Invia" in modo che reagisca all'Invio (opzionale)
         ButtonType buttonTypeInvia = new ButtonType("Invia", ButtonBar.ButtonData.OK_DONE);
         ButtonType buttonTypeAnnulla = ButtonType.CANCEL;
 
         dialog.getDialogPane().getButtonTypes().addAll(buttonTypeInvia, buttonTypeAnnulla);
 
-        // --- STILIZZAZIONE PULSANTI ---
-
-        // Recuperiamo il nodo del pulsante "Invia" e lo stilizziamo (VERDE)
         Button btnInvia = (Button) dialog.getDialogPane().lookupButton(buttonTypeInvia);
         btnInvia.setStyle("-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 15;");
 
-        // Recuperiamo il nodo del pulsante "Annulla" e lo stilizziamo (ROSSO)
         Button btnAnnulla = (Button) dialog.getDialogPane().lookupButton(buttonTypeAnnulla);
-        btnAnnulla.setText("Annulla"); // Assicuriamoci che il testo sia in italiano
+        btnAnnulla.setText("Annulla");
         btnAnnulla.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 15;");
 
-        // ------------------------------
-
-        // 3. Creazione dell'area di testo
         TextArea textArea = new TextArea();
         textArea.setPromptText("Inserisci qui il commento...");
         textArea.setWrapText(true);
         textArea.setPrefRowCount(5);
         textArea.setPrefWidth(400);
-
-        // 4. Label per il contatore caratteri
         Label charCountLabel = new Label("0/1000");
         charCountLabel.setStyle("-fx-text-fill: #999; -fx-font-size: 11px;");
 
-        // 5. Listener per limite caratteri (uguale a prima)
         textArea.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.length() > 1000) {
                 textArea.setText(oldValue);
@@ -180,15 +159,12 @@ public class IssueViewController implements Initializable {
             }
         });
 
-        // 6. Layout
         VBox content = new VBox(10);
         content.getChildren().addAll(textArea, charCountLabel);
         dialog.getDialogPane().setContent(content);
 
-        // Focus sulla text area
         Platform.runLater(textArea::requestFocus);
 
-        // 7. Convertitore risultato
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == buttonTypeInvia) {
                 return textArea.getText();
@@ -196,7 +172,6 @@ public class IssueViewController implements Initializable {
             return null;
         });
 
-        // 8. Mostra e gestisci risposta
         Optional<String> result = dialog.showAndWait();
 
         result.ifPresent(text -> {
@@ -205,19 +180,14 @@ public class IssueViewController implements Initializable {
                 return;
             }
 
-            // Creazione richiesta
             CommentRequest requestBody = new CommentRequest(text, this.currentIssueId);
-
-            // Thread separato per la chiamata
             new Thread(() -> {
                 try {
                     commentService.createComment(requestBody);
                     Platform.runLater(() -> loadComments(this.currentIssueId));
                 } catch (CommentServiceException e) {
-                    e.printStackTrace();
                     Platform.runLater(() -> showAlert("Errore", "Impossibile aggiungere il commento: " + e.getMessage()));
                 } catch (Exception e) {
-                    e.printStackTrace();
                     Platform.runLater(() -> showAlert("Errore Imprevisto", "Errore: " + e.getMessage()));
                 }
             }).start();
@@ -243,7 +213,6 @@ public class IssueViewController implements Initializable {
                 }
             });
         } catch (AttachmentServiceException e) {
-            // Gestione specifica per server down
             boolean isConnectionError = e.getCause() != null && e.getCause().toString().contains("ConnectException");
             Platform.runLater(() -> {
                 showNoAttachmentPlaceholder();
@@ -318,24 +287,19 @@ public class IssueViewController implements Initializable {
     private void updatePriorityColor(String priority) {
         if (priority == null) return;
 
-        // Stile base: grassetto e dimensione fissa per evitare il resize
         String baseStyle = "-fx-font-weight: bold; -fx-font-size: 15px; ";
 
         switch (priority.toLowerCase()) {
             case "high":
-                // Rosso
                 lblPriority.setStyle(baseStyle + "-fx-text-fill: #e74c3c;");
                 break;
             case "medium":
-                // Arancione
                 lblPriority.setStyle(baseStyle + "-fx-text-fill: #e67e22;");
                 break;
             case "low":
-                // Giallo Ocra (il giallo puro è illeggibile su bianco, uso un giallo scuro/oro)
                 lblPriority.setStyle(baseStyle + "-fx-text-fill: #f1c40f;");
                 break;
             default:
-                // Grigio default
                 lblPriority.setStyle(baseStyle + "-fx-text-fill: #7f8c8d;");
                 break;
         }
@@ -345,7 +309,6 @@ public class IssueViewController implements Initializable {
         try {
             MainApp.setRoot("home");
         } catch (IOException e) {
-            e.printStackTrace();
             showAlert("Errore", "Impossibile tornare alla Dashboard.");
         }
     }

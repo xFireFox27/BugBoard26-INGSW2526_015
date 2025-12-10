@@ -28,24 +28,17 @@ public class ChangelogController {
     private ChangeService changeService;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-    /**
-     * Metodo chiamato dal controller precedente per passare i dati e inizializzare il servizio
-     */
-    public void initData(int issueId, HttpClient client, ObjectMapper mapper) {
-        // Inizializza il service
+    public void initialize(int issueId, HttpClient client, ObjectMapper mapper) {
         this.changeService = new ChangeService(client, mapper);
 
         lblSubtitle.setText("Storico delle attività per Issue #" + issueId);
 
-        // Configurazione Colonne Tabella
         setupTableColumns();
 
-        // Caricamento asincrono dei dati
         new Thread(() -> loadChanges(issueId)).start();
     }
 
     private void setupTableColumns() {
-        // 1. Data: Formattiamo l'OffsetDateTime
         colDate.setCellValueFactory(cellData -> {
             if (cellData.getValue().getCreatedOn() != null) {
                 return new SimpleStringProperty(cellData.getValue().getCreatedOn().format(formatter));
@@ -53,7 +46,6 @@ public class ChangelogController {
             return new SimpleStringProperty("-");
         });
 
-        // 2. Autore: Navighiamo nell'oggetto User (createdBy)
         colAuthor.setCellValueFactory(cellData -> {
             if (cellData.getValue().getCreatedBy() != null) {
                 return new SimpleStringProperty(cellData.getValue().getCreatedBy().getUsername());
@@ -61,12 +53,10 @@ public class ChangelogController {
             return new SimpleStringProperty("Sconosciuto");
         });
 
-        // 3. Azione (String semplice)
         colAction.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getAction()));
         enableTooltip(colAction);
 
-        // 4. Dettagli (String semplice)
         colDetails.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getDetails()));
         enableTooltip(colDetails);
@@ -74,10 +64,8 @@ public class ChangelogController {
 
     private void loadChanges(int issueId) {
         try {
-            // Chiamata al backend
             List<Change> changes = changeService.getChangesByIssue(issueId);
 
-            // Aggiornamento UI nel thread JavaFX
             Platform.runLater(() -> {
                 if (changes != null) {
                     tableChanges.getItems().setAll(changes);
