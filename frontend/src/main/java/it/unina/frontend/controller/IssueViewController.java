@@ -131,16 +131,16 @@ public class IssueViewController implements Initializable {
         textArea.setPrefWidth(400);
 
         // 4. Label per il contatore caratteri
-        Label charCountLabel = new Label("0/100");
+        Label charCountLabel = new Label("0/1000");
         charCountLabel.setStyle("-fx-text-fill: #999; -fx-font-size: 11px;");
 
         // 5. Listener per limite caratteri (uguale a prima)
         textArea.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.length() > 100) {
+            if (newValue.length() > 1000) {
                 textArea.setText(oldValue);
             } else {
-                charCountLabel.setText(newValue.length() + "/100");
-                if (newValue.length() >= 90) {
+                charCountLabel.setText(newValue.length() + "/1000");
+                if (newValue.length() >= 950) {
                     charCountLabel.setStyle("-fx-text-fill: #e74c3c; -fx-font-size: 11px; -fx-font-weight: bold;");
                 } else {
                     charCountLabel.setStyle("-fx-text-fill: #999; -fx-font-size: 11px;");
