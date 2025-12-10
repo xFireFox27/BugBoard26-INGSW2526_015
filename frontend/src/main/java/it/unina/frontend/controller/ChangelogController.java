@@ -9,7 +9,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
+import javafx.scene.control.TableCell;
+import javafx.scene.control.Tooltip;
+import javafx.util.Duration;
 import java.net.http.HttpClient;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -62,10 +64,12 @@ public class ChangelogController {
         // 3. Azione (String semplice)
         colAction.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getAction()));
+        enableTooltip(colAction);
 
         // 4. Dettagli (String semplice)
         colDetails.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getDetails()));
+        enableTooltip(colDetails);
     }
 
     private void loadChanges(int issueId) {
@@ -88,5 +92,28 @@ public class ChangelogController {
                     tableChanges.setPlaceholder(new Label("Errore durante il caricamento dati."))
             );
         }
+    }
+
+    private void enableTooltip(TableColumn<Change, String> column) {
+        column.setCellFactory(col -> new TableCell<Change, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (item == null || empty) {
+                    setText(null);
+                    setTooltip(null);
+                } else {
+                    setText(item);
+
+                    Tooltip tooltip = new Tooltip(item);
+                    tooltip.setPrefWidth(300);
+                    tooltip.setWrapText(true);
+                    tooltip.setShowDelay(Duration.millis(200));
+
+                    setTooltip(tooltip);
+                }
+            }
+        });
     }
 }
