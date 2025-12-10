@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -13,137 +14,129 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<ScrollPane fitToWidth="true" hbarPolicy="NEVER" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unina.frontend.controller.IssueViewController">
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unina.frontend.controller.IssueViewController">
     <content>
-        <VBox spacing="25.0" style="-fx-background-color: #f4f6f9;">
-            <padding>
-                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-            </padding>
-            <children>
-                <VBox spacing="10.0">
-                    <children>
-                        <Button fx:id="btnBack" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #666; -fx-cursor: hand;" text="← Torna alla Dashboard">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Button>
-                        <Label fx:id="lblTitle" text="Bug #23: Database connection timeout" textFill="#333333" wrapText="true">
-                            <font>
-                                <Font name="System Bold" size="28.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </VBox>
+        <VBox alignment="TOP_CENTER" spacing="0" style="-fx-background-color: #ecf0f1;">
 
-                <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: white; -fx-padding: 15 30; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
+                <effect>
+                    <DropShadow color="#0000001a" height="5.0" radius="2.0" width="0.0" />
+                </effect>
+                <children>
+                    <Button fx:id="btnBack" contentDisplay="LEFT" style="-fx-background-color: transparent; -fx-text-fill: #7f8c8d; -fx-cursor: hand; -fx-font-weight: bold; -fx-font-size: 14px;" text="Torna alla Dashboard">
+                        <graphic>
+                            <FontIcon iconColor="#7f8c8d" iconLiteral="fas-arrow-left" iconSize="14" />
+                        </graphic>
+                    </Button>
+                </children>
+            </HBox>
 
-                <GridPane hgap="20.0" vgap="15.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="120.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="120.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <children>
-                        <Label text="Stato:" textFill="#777777">
-                            <font>
-                                <Font name="System Bold" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblStatus" style="-fx-background-color: #f0ad4e; -fx-background-radius: 4; -fx-padding: 2 8;" text="To Do" textFill="WHITE" GridPane.columnIndex="1">
-                            <font>
-                                <Font name="System Bold" size="13.0" />
-                            </font>
-                        </Label>
-                        <Label text="Priorità:" textFill="#777777" GridPane.rowIndex="1">
-                            <font>
-                                <Font name="System Bold" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblPriority" text="High" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Label text="Autore:" textFill="#777777" GridPane.columnIndex="2">
-                            <font>
-                                <Font name="System Bold" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblAuthor" text="GigiS" GridPane.columnIndex="3">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Label text="Data:" textFill="#777777" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                            <font>
-                                <Font name="System Bold" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblDate" text="05/12/2025 18:45" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </GridPane>
+            <VBox maxWidth="1000.0" spacing="20.0">
+                <padding>
+                    <Insets bottom="40.0" left="40.0" right="40.0" top="30.0" />
+                </padding>
 
-                <VBox spacing="5.0">
-                    <children>
-                        <Label text="Descrizione" textFill="#337ab7">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                        </Label>
-                        <TextArea fx:id="txtDescription" editable="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-control-inner-background: #fff;" text="Qui comparirà la descrizione lunga del problema..." wrapText="true" />
-                    </children>
-                </VBox>
+                <children>
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <children>
+                            <Label fx:id="lblTitle" style="-fx-font-weight: bold; -fx-font-size: 28px;" text="Bug #23: Caricamento Dati..." textFill="#2c3e50" wrapText="true" HBox.hgrow="ALWAYS" />
 
-                <VBox spacing="10.0">
-                    <children>
-                        <Label text="Allegato" textFill="#337ab7">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                        </Label>
-                        <HBox style="-fx-border-color: #ddd; -fx-border-radius: 5; -fx-padding: 10; -fx-background-color: white;">
+                            <Label fx:id="lblStatus" style="-fx-background-color: #f0ad4e; -fx-background-radius: 4; -fx-padding: 5 12; -fx-font-weight: bold; -fx-font-size: 14px;" text="Stato" textFill="WHITE" />
+                        </children>
+                    </HBox>
+
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 2);">
+                        <padding>
+                            <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                        </padding>
+                        <children>
+                            <GridPane hgap="30.0" vgap="15.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                                    <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Priorità" textFill="#95a5a6">
+                                        <graphic><FontIcon iconColor="#95a5a6" iconLiteral="fas-exclamation-circle" /></graphic>
+                                    </Label>
+
+                                    <Label fx:id="lblPriority" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="High" GridPane.columnIndex="1" />
+
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Autore" textFill="#95a5a6" GridPane.columnIndex="2">
+                                        <graphic><FontIcon iconColor="#95a5a6" iconLiteral="fas-user" /></graphic>
+                                    </Label>
+                                    <Label fx:id="lblAuthor" style="-fx-font-size: 15px;" text="Utente" textFill="#34495e" GridPane.columnIndex="3" />
+
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="Data" textFill="#95a5a6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                        <graphic><FontIcon iconColor="#95a5a6" iconLiteral="far-calendar-alt" /></graphic>
+                                    </Label>
+                                    <Label fx:id="lblDate" style="-fx-font-size: 15px;" text="--/--/----" textFill="#34495e" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                </children>
+                            </GridPane>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Descrizione" textFill="#2c3e50" />
+
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #ecf0f1; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 1);">
+                            <children>
+                                <TextArea fx:id="txtDescription" editable="false" prefHeight="150.0" style="-fx-background-color: transparent; -fx-control-inner-background: white; -fx-text-fill: #34495e; -fx-padding: 5; -fx-font-size: 14px;" wrapText="true" />
+                            </children>
+                        </VBox>
+                    </VBox>
+
+                    <VBox spacing="10.0">
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Allegato" textFill="#2c3e50" />
+
+                        <HBox alignment="CENTER" minHeight="100.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #bdc3c7; -fx-border-width: 2; -fx-border-style: dashed; -fx-padding: 15;">
                             <children>
                                 <ImageView fx:id="imgAttachment" fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
-                                <Label fx:id="lblNoAttachment" text="Nessun allegato disponibile" textFill="#999999" visible="false" />
-                            </children>
-                        </HBox>
-                    </children>
-                </VBox>
-
-                <Separator prefWidth="200.0" />
-
-                <VBox spacing="15.0">
-                    <children>
-                        <HBox alignment="CENTER_LEFT" spacing="15.0">
-                            <children>
-                                <Label text="Commenti" textFill="#337ab7">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
+                                <Label fx:id="lblNoAttachment" style="-fx-font-size: 14px;" text="Nessun allegato disponibile" textFill="#bdc3c7" visible="false">
+                                    <graphic><FontIcon iconColor="#bdc3c7" iconLiteral="fas-paperclip" iconSize="20" /></graphic>
                                 </Label>
-                                <Button mnemonicParsing="false" onAction="#handleAddComment" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="+ Aggiungi Commento">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                </Button>
                             </children>
                         </HBox>
+                    </VBox>
 
-                        <VBox fx:id="vboxCommentsList" spacing="10.0" />
-                    </children>
-                </VBox>
-            </children>
+                    <Separator style="-fx-opacity: 0.5;" />
+
+                    <VBox spacing="15.0">
+                        <children>
+                            <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                <children>
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Commenti" textFill="#2c3e50">
+                                        <graphic>
+                                            <FontIcon iconColor="#3498db" iconLiteral="far-comments" />
+                                        </graphic>
+                                    </Label>
+
+                                    <HBox HBox.hgrow="ALWAYS" />
+
+                                    <Button mnemonicParsing="false" onAction="#handleAddComment" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4; -fx-padding: 8 15; -fx-font-weight: bold; -fx-font-size: 13px;" text="Aggiungi Commento">
+                                        <graphic>
+                                            <FontIcon iconColor="WHITE" iconLiteral="fas-plus" />
+                                        </graphic>
+                                        <effect>
+                                            <DropShadow color="#00000033" height="5.0" radius="2.0" width="0.0" />
+                                        </effect>
+                                    </Button>
+                                </children>
+                            </HBox>
+
+                            <VBox fx:id="vboxCommentsList" spacing="15.0" style="-fx-padding: 0 0 20 0;" />
+                        </children>
+                    </VBox>
+                </children>
+            </VBox>
         </VBox>
     </content>
 </ScrollPane>

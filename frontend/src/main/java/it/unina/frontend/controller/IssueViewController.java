@@ -20,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.net.URL;
@@ -69,10 +70,8 @@ public class IssueViewController implements Initializable {
     public void setIssueData(Issue issue) {
         if (issue == null) return;
 
-        // Memorizziamo l'ID per usarlo successivamente (es. per creare commenti)
         this.currentIssueId = issue.getId();
 
-        // --- Popolamento Dati Statici ---
         lblTitle.setText("Bug #" + issue.getId() + ": " + (issue.getTitle() != null ? issue.getTitle() : "Nessun Titolo"));
         lblPriority.setText(issue.getPriority());
         lblStatus.setText(issue.getStatus());
@@ -86,6 +85,7 @@ public class IssueViewController implements Initializable {
         }
 
         updateStatusColor(issue.getStatus());
+        updatePriorityColor(issue.getPriority());
 
         // --- Caricamento Asincrono (Commenti e Allegati) ---
         new Thread(() -> {
@@ -100,12 +100,73 @@ public class IssueViewController implements Initializable {
      */
     @FXML
     public void handleAddComment() {
-        // 1. Chiediamo il testo all'utente
-        TextInputDialog dialog = new TextInputDialog();
+        // 1. Creiamo il Dialog
+        Dialog<String> dialog = new Dialog<>();
         dialog.setTitle("Nuovo Commento");
         dialog.setHeaderText("Scrivi il tuo commento");
-        dialog.setContentText("Testo:");
 
+        // 2. Configurazione dei ButtonType personalizzati
+        // Usiamo ButtonData.OK_DONE per "Invia" in modo che reagisca all'Invio (opzionale)
+        ButtonType buttonTypeInvia = new ButtonType("Invia", ButtonBar.ButtonData.OK_DONE);
+        ButtonType buttonTypeAnnulla = ButtonType.CANCEL;
+
+        dialog.getDialogPane().getButtonTypes().addAll(buttonTypeInvia, buttonTypeAnnulla);
+
+        // --- STILIZZAZIONE PULSANTI ---
+
+        // Recuperiamo il nodo del pulsante "Invia" e lo stilizziamo (VERDE)
+        Button btnInvia = (Button) dialog.getDialogPane().lookupButton(buttonTypeInvia);
+        btnInvia.setStyle("-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 15;");
+
+        // Recuperiamo il nodo del pulsante "Annulla" e lo stilizziamo (ROSSO)
+        Button btnAnnulla = (Button) dialog.getDialogPane().lookupButton(buttonTypeAnnulla);
+        btnAnnulla.setText("Annulla"); // Assicuriamoci che il testo sia in italiano
+        btnAnnulla.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 15;");
+
+        // ------------------------------
+
+        // 3. Creazione dell'area di testo
+        TextArea textArea = new TextArea();
+        textArea.setPromptText("Inserisci qui il commento...");
+        textArea.setWrapText(true);
+        textArea.setPrefRowCount(5);
+        textArea.setPrefWidth(400);
+
+        // 4. Label per il contatore caratteri
+        Label charCountLabel = new Label("0/100");
+        charCountLabel.setStyle("-fx-text-fill: #999; -fx-font-size: 11px;");
+
+        // 5. Listener per limite caratteri (uguale a prima)
+        textArea.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.length() > 100) {
+                textArea.setText(oldValue);
+            } else {
+                charCountLabel.setText(newValue.length() + "/100");
+                if (newValue.length() >= 90) {
+                    charCountLabel.setStyle("-fx-text-fill: #e74c3c; -fx-font-size: 11px; -fx-font-weight: bold;");
+                } else {
+                    charCountLabel.setStyle("-fx-text-fill: #999; -fx-font-size: 11px;");
+                }
+            }
+        });
+
+        // 6. Layout
+        VBox content = new VBox(10);
+        content.getChildren().addAll(textArea, charCountLabel);
+        dialog.getDialogPane().setContent(content);
+
+        // Focus sulla text area
+        Platform.runLater(textArea::requestFocus);
+
+        // 7. Convertitore risultato
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == buttonTypeInvia) {
+                return textArea.getText();
+            }
+            return null;
+        });
+
+        // 8. Mostra e gestisci risposta
         Optional<String> result = dialog.showAndWait();
 
         result.ifPresent(text -> {
@@ -114,19 +175,14 @@ public class IssueViewController implements Initializable {
                 return;
             }
 
-            // 2. Creiamo l'oggetto Request usando il costruttore @AllArgsConstructor di Lombok
-            //
+            // Creazione richiesta
             CommentRequest requestBody = new CommentRequest(text, this.currentIssueId);
 
-            // 3. Eseguiamo la chiamata al service in un thread separato
+            // Thread separato per la chiamata
             new Thread(() -> {
                 try {
-                    // Chiamata esatta al metodo del service
                     commentService.createComment(requestBody);
-
-                    // Se va a buon fine, ricarichiamo la lista dei commenti
                     Platform.runLater(() -> loadComments(this.currentIssueId));
-
                 } catch (CommentServiceException e) {
                     e.printStackTrace();
                     Platform.runLater(() -> showAlert("Errore", "Impossibile aggiungere il commento: " + e.getMessage()));
@@ -222,10 +278,36 @@ public class IssueViewController implements Initializable {
         if (status == null) return;
         String baseStyle = "-fx-text-fill: white; -fx-padding: 2 8; -fx-background-radius: 4; ";
         switch (status.toLowerCase()) {
-            case "done": case "completed": lblStatus.setStyle(baseStyle + "-fx-background-color: #5cb85c;"); break;
+            case "done": lblStatus.setStyle(baseStyle + "-fx-background-color: #5cb85c;"); break;
             case "in progress": lblStatus.setStyle(baseStyle + "-fx-background-color: #5bc0de;"); break;
-            case "to do": case "open": lblStatus.setStyle(baseStyle + "-fx-background-color: #f0ad4e;"); break;
+            case "to do": lblStatus.setStyle(baseStyle + "-fx-background-color: #f0ad4e;"); break;
             default: lblStatus.setStyle(baseStyle + "-fx-background-color: #777;");
+        }
+    }
+
+    private void updatePriorityColor(String priority) {
+        if (priority == null) return;
+
+        // Stile base: grassetto e dimensione fissa per evitare il resize
+        String baseStyle = "-fx-font-weight: bold; -fx-font-size: 15px; ";
+
+        switch (priority.toLowerCase()) {
+            case "high":
+                // Rosso
+                lblPriority.setStyle(baseStyle + "-fx-text-fill: #e74c3c;");
+                break;
+            case "medium":
+                // Arancione
+                lblPriority.setStyle(baseStyle + "-fx-text-fill: #e67e22;");
+                break;
+            case "low":
+                // Giallo Ocra (il giallo puro è illeggibile su bianco, uso un giallo scuro/oro)
+                lblPriority.setStyle(baseStyle + "-fx-text-fill: #f1c40f;");
+                break;
+            default:
+                // Grigio default
+                lblPriority.setStyle(baseStyle + "-fx-text-fill: #7f8c8d;");
+                break;
         }
     }
 
