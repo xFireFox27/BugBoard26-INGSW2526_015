@@ -1,15 +1,13 @@
 package it.unina.frontend.controller;
 
+import it.unina.frontend.model.*;
+import it.unina.frontend.util.SessionManager;
 import javafx.stage.Stage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import it.unina.frontend.MainApp;
 import it.unina.frontend.exception.AttachmentServiceException;
 import it.unina.frontend.exception.CommentServiceException;
-import it.unina.frontend.model.Attachment;
-import it.unina.frontend.model.CommentRequest;
-import it.unina.frontend.model.CommentResponse;
-import it.unina.frontend.model.Issue;
 import it.unina.frontend.service.AttachmentService;
 import it.unina.frontend.service.CommentService;
 import javafx.application.Platform;
@@ -44,6 +42,7 @@ public class IssueViewController implements Initializable {
     @FXML private ImageView imgAttachment;
     @FXML private Label lblNoAttachment;
     @FXML private VBox vboxCommentsList;
+    @FXML private Button btnAddComment;
 
     // --- Servizi ---
     private CommentService commentService;
@@ -66,6 +65,12 @@ public class IssueViewController implements Initializable {
 
         // Listener
         btnBack.setOnAction(event -> handleBackAction());
+
+        User user = SessionManager.getInstance().getCurrentUser();
+
+        if (user != null && user.getRole() != null && user.getRole().equalsIgnoreCase("External")) {
+            btnAddComment.setVisible(false);
+        }
     }
 
     public void setIssueData(Issue issue) {
