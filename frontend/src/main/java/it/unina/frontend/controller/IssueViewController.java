@@ -104,7 +104,7 @@ public class IssueViewController implements Initializable {
     @FXML
     public void handleOpenChangelog() {
         try {
-            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/it/unina/frontend/view/changelog.fxml"));
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/it/unina/frontend/view/Changelog.fxml"));
             javafx.scene.Parent root = loader.load();
 
             ChangelogController controller = loader.getController();
