@@ -156,12 +156,8 @@ public class HomeController {
     @FXML
     private void handleUserManagementAction() {
         try {
-            // Chiama il metodo setRoot per caricare la nuova vista
             MainApp.setRoot("UserManagementView");
         } catch (IOException e) {
-            // Gestione dell'errore (usa il tuo metodo showAlert se ne hai uno)
-            // Ad esempio:
-            // showAlert("Errore", "Impossibile aprire la pagina di gestione utenza.");
             System.err.println("Errore nel caricamento di UserManagementView: " + e.getMessage());
         }
     }
