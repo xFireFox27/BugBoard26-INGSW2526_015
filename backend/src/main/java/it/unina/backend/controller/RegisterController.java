@@ -17,7 +17,7 @@ public class RegisterController {
     private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
     private static final String ERROR_KEY = "error";
     private static final String MESSAGE_KEY = "message";
-    private static final String INPUT_ERR = "invalid input";
+    private static final String INPUT_ERR = "invalid_input";
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -55,11 +55,19 @@ public class RegisterController {
                            .build();
 
         } catch (IllegalArgumentException e) {
-            logger.error("Illegal argument: {}", e.getMessage(), e);
+            logger.error("Illegal argument: {}", e.getMessage());
 
             return Response.status(Response.Status.CONFLICT)
                            .entity(Map.of(ERROR_KEY, INPUT_ERR,
                                           MESSAGE_KEY, "The email already exists."))
+                           .build();
+
+        } catch (IllegalStateException e) {
+            logger.error("Illegal state: {}", e.getMessage());
+
+            return Response.status(Response.Status.CONFLICT)
+                           .entity(Map.of(ERROR_KEY, INPUT_ERR,
+                                          MESSAGE_KEY, "The username is already taken."))
                            .build();
 
         } catch (Exception e) {

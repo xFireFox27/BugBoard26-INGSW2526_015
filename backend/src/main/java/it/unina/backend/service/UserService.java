@@ -41,7 +41,7 @@ public class UserService {
         }
 
         if (userDao.findUserByUsername(request.getUsername()) != null) {
-            throw new IllegalArgumentException();
+            throw new IllegalStateException();
         }
 
         String passwordHash = BCrypt.hashpw(request.getPassword(), BCrypt.gensalt());
