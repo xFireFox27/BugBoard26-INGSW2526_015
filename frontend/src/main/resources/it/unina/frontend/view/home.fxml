@@ -32,9 +32,13 @@
                     <graphic><FontIcon iconLiteral="fas-plus" iconColor="WHITE"/></graphic>
                 </Button>
 
-                <Button fx:id="btnManageUsers" text="Gestione Utenti" maxWidth="Infinity"
-                        styleClass="btn, btn-info">
-                    <graphic><FontIcon iconLiteral="fas-users" iconColor="WHITE"/></graphic>
+                <Button fx:id="btnManageUsers"
+                        text="Nuovo Utente"
+                        maxWidth="Infinity"
+                        onAction="#handleUserManagementAction"
+                        styleClass="btn, btn-info"> <graphic>
+                        <FontIcon iconLiteral="fas-users" iconColor="WHITE"/>
+                    </graphic>
                 </Button>
             </VBox>
 
