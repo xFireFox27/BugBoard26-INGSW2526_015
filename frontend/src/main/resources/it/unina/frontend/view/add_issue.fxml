@@ -39,10 +39,14 @@
         </HBox>
 
         <VBox spacing="15">
+
             <VBox spacing="5">
                 <Label text="Titolo *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
                 <TextField fx:id="titleField" promptText="Es. Errore durante il login..."
                            style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;"/>
+
+                <Label fx:id="titleCharCountLabel" text="0/100" maxWidth="Infinity" alignment="CENTER_RIGHT"
+                       style="-fx-text-fill: #95a5a6; -fx-font-size: 11px;"/>
             </VBox>
 
             <HBox spacing="20">
@@ -63,6 +67,9 @@
                 <Label text="Descrizione *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
                 <TextArea fx:id="descArea" prefRowCount="6" wrapText="true" promptText="Descrivi i passaggi per riprodurre l'errore..."
                           style="-fx-background-color: transparent; -fx-control-inner-background: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+
+                <Label fx:id="descCharCountLabel" text="0/1000" maxWidth="Infinity" alignment="CENTER_RIGHT"
+                       style="-fx-text-fill: #95a5a6; -fx-font-size: 11px;"/>
             </VBox>
 
             <VBox spacing="5">

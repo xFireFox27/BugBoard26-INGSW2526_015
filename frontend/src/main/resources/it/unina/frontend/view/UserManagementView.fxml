@@ -64,12 +64,17 @@
                 </VBox>
             </HBox>
 
-            <HBox spacing="15.0">
+            <HBox spacing="15.0" alignment="TOP_LEFT">
                 <VBox spacing="5.0" HBox.hgrow="ALWAYS">
                     <Label text="Password *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;" />
                     <PasswordField fx:id="pwdPassword" promptText="••••••••"
                                    style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;" />
+
+                    <Label fx:id="lblPasswordStatus" text="La password deve avere almeno 8 caratteri"
+                           maxWidth="Infinity" alignment="CENTER_LEFT"
+                           style="-fx-text-fill: #95a5a6; -fx-font-size: 11px; -fx-font-style: italic;"/>
                 </VBox>
+
                 <VBox spacing="5.0" HBox.hgrow="ALWAYS">
                     <Label text="Ruolo *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;" />
                     <ComboBox fx:id="cmbRole" maxWidth="Infinity" promptText="Seleziona..."
