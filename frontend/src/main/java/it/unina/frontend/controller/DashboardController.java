@@ -1,0 +1,115 @@
+package it.unina.frontend.controller;
+
+import it.unina.frontend.model.Issue;
+import it.unina.frontend.model.User;
+import it.unina.frontend.service.IssueService;
+import it.unina.frontend.util.SessionManager;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+public class DashboardController {
+
+    @FXML private Label welcomeLabel;
+    @FXML private TableView<Issue> issuesTable;
+    @FXML private TableColumn<Issue, Integer> colId;
+    @FXML private TableColumn<Issue, String> colTitle;
+    @FXML private TableColumn<Issue, String> colState;
+    @FXML private TableColumn<Issue, String> colPriority;
+    @FXML private TableColumn<Issue, String> colType;
+    @FXML private TableColumn<Issue, String> colAuthor;
+    @FXML private TableColumn<Issue, String> colDate;
+
+    @FXML private ComboBox<String> filterStatus;
+    @FXML private ComboBox<String> filterType;
+    @FXML private ComboBox<String> filterPriority;
+    @FXML private ComboBox<String> sortCombo;
+
+    private final IssueService issueService = new IssueService();
+    private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+    private HomeController mainController;
+
+    public void setMainController(HomeController mainController) {
+        this.mainController = mainController;
+    }
+
+    @FXML
+    public void initialize() {
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colPriority.setCellValueFactory(new PropertyValueFactory<>("priority"));
+        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        colState.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        colAuthor.setCellValueFactory(cellData -> {
+            User author = cellData.getValue().getAuthor();
+            return new SimpleStringProperty(author != null ? author.getUsername() : "Sconosciuto");
+        });
+
+        colDate.setCellValueFactory(cellData -> {
+            if (cellData.getValue().getCreatedOn() != null) {
+                return new SimpleStringProperty(cellData.getValue().getCreatedOn().format(dateFormatter));
+            }
+            return new SimpleStringProperty("");
+        });
+
+        issuesTable.setRowFactory(tv -> {
+            TableRow<Issue> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    Issue rowData = row.getItem();
+                    if (mainController != null) {
+                        mainController.showIssueDetail(rowData);
+                    }
+                }
+            });
+            return row;
+        });
+
+
+        filterStatus.getItems().addAll("Tutti", "To Do", "In Progress", "Done", "Archived");
+        filterStatus.getSelectionModel().select("Tutti");
+        filterType.getItems().addAll("Tutti", "Bug", "Feature", "Documentation", "Question");
+        filterType.getSelectionModel().select("Tutti");
+        filterPriority.getItems().addAll("Tutti", "Low", "Medium", "High");
+        filterPriority.getSelectionModel().select("Tutti");
+        sortCombo.getItems().addAll("id", "title", "creation time", "priority");
+        sortCombo.getSelectionModel().select("id");
+
+        User user = SessionManager.getInstance().getCurrentUser();
+        if (user != null) {
+            welcomeLabel.setText("Benvenuto, " + user.getUsername());
+        }
+
+        refreshTable();
+    }
+
+    @FXML
+    public void refreshTable() {
+        try {
+            String status = filterStatus.getValue();
+            String type = filterType.getValue();
+            String priority = filterPriority.getValue();
+            String sortBy = sortCombo.getValue();
+
+            List<Issue> issues = issueService.getFilteredIssues(status, type, priority, sortBy);
+            issuesTable.setItems(FXCollections.observableArrayList(issues));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void resetFilters() {
+        filterStatus.getSelectionModel().select("Tutti");
+        filterType.getSelectionModel().select("Tutti");
+        filterPriority.getSelectionModel().select("Tutti");
+        sortCombo.getSelectionModel().select("id");
+        refreshTable();
+    }
+}

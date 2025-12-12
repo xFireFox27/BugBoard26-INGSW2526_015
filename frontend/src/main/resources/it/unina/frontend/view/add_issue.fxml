@@ -6,8 +6,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
@@ -16,52 +19,77 @@
       fx:controller="it.unina.frontend.controller.AddIssueController"
       alignment="CENTER" spacing="20"
       style="-fx-padding: 40; -fx-background-color: #ecf0f1;"
-      prefWidth="800" prefHeight="600">
+      maxWidth="Infinity" maxHeight="Infinity">
 
-    <VBox spacing="15" maxWidth="600"
-          style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+    <VBox spacing="20" maxWidth="700"
+          style="-fx-background-color: white; -fx-padding: 35; -fx-background-radius: 15;">
 
-        <HBox alignment="CENTER_LEFT" spacing="10">
-            <FontIcon iconLiteral="fas-plus-circle" iconSize="24" iconColor="#2ecc71"/>
-            <Text text="Nuova Segnalazione" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
-        </HBox>
+        <effect>
+            <DropShadow color="#0000001a" radius="15" spread="0.05" offsetY="5"/>
+        </effect>
 
-        <VBox spacing="5">
-            <Label text="Titolo *" style="-fx-font-weight: bold;"/>
-            <TextField fx:id="titleField" promptText="Breve riassunto del problema"/>
-        </VBox>
-
-        <HBox spacing="20">
-            <VBox spacing="5" HBox.hgrow="ALWAYS">
-                <Label text="Tipo *" style="-fx-font-weight: bold;"/>
-                <ComboBox fx:id="typeCombo" maxWidth="Infinity"/>
-            </VBox>
-
-            <VBox spacing="5" HBox.hgrow="ALWAYS">
-                <Label text="Priorità *" style="-fx-font-weight: bold;"/>
-                <ComboBox fx:id="priorityCombo" maxWidth="Infinity"/>
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <StackPane style="-fx-background-color: #eafaf1; -fx-background-radius: 50; -fx-min-width: 50; -fx-min-height: 50;">
+                <FontIcon iconLiteral="fas-bug" iconSize="24" iconColor="#2ecc71"/>
+            </StackPane>
+            <VBox>
+                <Text text="Nuova Segnalazione" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+                <Text text="Inserisci i dettagli del problema riscontrato" style="-fx-font-size: 13px; -fx-fill: #95a5a6;"/>
             </VBox>
         </HBox>
 
-        <VBox spacing="5">
-            <Label text="Descrizione *" style="-fx-font-weight: bold;"/>
-            <TextArea fx:id="descArea" prefRowCount="5" wrapText="true" promptText="Descrivi il problema in dettaglio..."/>
-        </VBox>
+        <VBox spacing="15">
+            <VBox spacing="5">
+                <Label text="Titolo *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <TextField fx:id="titleField" promptText="Es. Errore durante il login..."
+                           style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;"/>
+            </VBox>
 
-        <VBox spacing="5">
-            <Label text="Allegato (Opzionale)" style="-fx-font-weight: bold;"/>
-            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #f8f9fa; -fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #dee2e6; -fx-border-radius: 5;">
-                <Button text="Seleziona File..." onAction="#onSelectFile" styleClass="btn, btn-info">
-                    <graphic><FontIcon iconLiteral="fas-paperclip" iconColor="WHITE"/></graphic>
-                </Button>
-                <Label fx:id="fileNameLabel" text="Nessun file selezionato" style="-fx-text-fill: #7f8c8d; -fx-font-style: italic;"/>
+            <HBox spacing="20">
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <Label text="Tipo *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="typeCombo" maxWidth="Infinity"
+                              style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;"/>
+                </VBox>
+
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <Label text="Priorità *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="priorityCombo" maxWidth="Infinity"
+                              style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;"/>
+                </VBox>
             </HBox>
+
+            <VBox spacing="5">
+                <Label text="Descrizione *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <TextArea fx:id="descArea" prefRowCount="6" wrapText="true" promptText="Descrivi i passaggi per riprodurre l'errore..."
+                          style="-fx-background-color: transparent; -fx-control-inner-background: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Allegato (Opzionale)" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="15" alignment="CENTER_LEFT"
+                      style="-fx-background-color: #e8f6fd; -fx-background-radius: 8; -fx-border-color: #3498db; -fx-border-style: dashed; -fx-border-radius: 8; -fx-padding: 15;">
+
+                    <Button text="Scegli File" onAction="#onSelectFile"
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;">
+                        <graphic><FontIcon iconLiteral="fas-cloud-upload-alt" iconColor="WHITE"/></graphic>
+                    </Button>
+
+                    <Label fx:id="fileNameLabel" text="Nessun file selezionato" style="-fx-text-fill: #7f8c8d; -fx-font-style: italic;"/>
+                </HBox>
+            </VBox>
         </VBox>
 
         <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
-            <Button text="Annulla" onAction="#onCancel" styleClass="btn, btn-default"/>
-            <Button text="Crea Segnalazione" onAction="#onSave" styleClass="btn, btn-success" defaultButton="true">
-                <graphic><FontIcon iconLiteral="fas-save" iconColor="WHITE"/></graphic>
+            <Button text="Annulla" onAction="#onCancel"
+                    style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #7f8c8d; -fx-cursor: hand;"/>
+
+            <Button text="Crea Segnalazione" onAction="#onSave" defaultButton="true"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;">
+                <graphic><FontIcon iconLiteral="fas-check" iconColor="WHITE"/></graphic>
+                <effect>
+                    <DropShadow color="#2ecc7140" radius="10" offsetY="3"/>
+                </effect>
             </Button>
         </HBox>
 
