@@ -24,21 +24,24 @@ public class CommentService {
 
     private void validateCommentInput(String text, Integer issueId) {
         if (text == null || text.trim().isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Comment text cannot be null or empty");
         }
 
         if (issueId == null || issueId == 0 || issueId < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid issue ID");
         }
     }
 
     public Comment addComment(CommentDto dto, String username) throws SQLException, IllegalArgumentException {
         if (dto == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Comment data cannot be null");
         }
 
         validateCommentInput(dto.getText(), dto.getIssueId());
         User user = userDao.findUserByUsername(username);
+        if(user == null) {
+            throw new IllegalArgumentException("User not found" + username);
+        }
         Comment comment = new Comment(dto);
         comment.setUser(user);
         commentDao.insertComment(comment);
