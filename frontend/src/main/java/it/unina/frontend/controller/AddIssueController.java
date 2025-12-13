@@ -6,9 +6,15 @@ import it.unina.frontend.model.Issue;
 import it.unina.frontend.model.IssueCreateRequest;
 import it.unina.frontend.service.AttachmentService;
 import it.unina.frontend.service.IssueService;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +27,8 @@ public class AddIssueController {
     @FXML private ComboBox<String> priorityCombo;
     @FXML private Label fileNameLabel;
 
+    @FXML private Button btnSave;
+
     @FXML private Label titleCharCountLabel;
     @FXML private Label descCharCountLabel;
 
@@ -30,47 +38,44 @@ public class AddIssueController {
 
     @FXML
     public void initialize() {
-        // Setup Combo
         typeCombo.getItems().addAll("Bug", "Feature", "Documentation", "Question");
         typeCombo.getSelectionModel().select("Bug");
 
         priorityCombo.getItems().addAll("Low", "Medium", "High");
         priorityCombo.getSelectionModel().select("Low");
 
-        // --- LIMITATORE TITOLO (Max 100) ---
-        final int MAX_TITLE_CHARS = 100;
-        titleCharCountLabel.setText("0/" + MAX_TITLE_CHARS);
+        final int MAX_TITLE = 100;
+        updateCharCountLabel(titleCharCountLabel, 0, MAX_TITLE);
 
         titleField.textProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal == null) return;
-            if (newVal.length() > MAX_TITLE_CHARS) {
-                titleField.setText(newVal.substring(0, MAX_TITLE_CHARS));
+            if (newVal.length() > MAX_TITLE) {
+                titleField.setText(newVal.substring(0, MAX_TITLE));
                 return;
             }
-            updateCharCountLabel(titleCharCountLabel, newVal.length(), MAX_TITLE_CHARS);
+            updateCharCountLabel(titleCharCountLabel, newVal.length(), MAX_TITLE);
         });
 
-        // --- LIMITATORE DESCRIZIONE (Max 1000) ---
-        final int MAX_DESC_CHARS = 1000;
-        descCharCountLabel.setText("0/" + MAX_DESC_CHARS);
+        final int MAX_DESC = 1000;
+        updateCharCountLabel(descCharCountLabel, 0, MAX_DESC);
 
         descArea.textProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal == null) return;
-            if (newVal.length() > MAX_DESC_CHARS) {
-                descArea.setText(newVal.substring(0, MAX_DESC_CHARS));
+            // Limita lunghezza
+            if (newVal.length() > MAX_DESC) {
+                descArea.setText(newVal.substring(0, MAX_DESC));
                 return;
             }
-            updateCharCountLabel(descCharCountLabel, newVal.length(), MAX_DESC_CHARS);
+            updateCharCountLabel(descCharCountLabel, newVal.length(), MAX_DESC);
         });
     }
 
-    // Metodo helper per evitare codice duplicato
-    private void updateCharCountLabel(Label label, int currentLength, int max) {
-        label.setText(currentLength + "/" + max);
-        if (currentLength >= max) {
-            label.setStyle("-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 11px;");
+    private void updateCharCountLabel(Label label, int current, int max) {
+        label.setText(current + "/" + max);
+        if (current == max) {
+            label.setStyle("-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 11px;"); // Rosso
         } else {
-            label.setStyle("-fx-text-fill: #95a5a6; -fx-font-size: 11px;");
+            label.setStyle("-fx-text-fill: #95a5a6; -fx-font-size: 11px;"); // Grigio
         }
     }
 
@@ -79,8 +84,7 @@ public class AddIssueController {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleziona Allegato");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Immagini", "*.png", "*.jpg", "*.jpeg", "*.gif"),
-                new FileChooser.ExtensionFilter("Documenti PDF", "*.pdf"),
+                new FileChooser.ExtensionFilter("File supportati", "*.png", "*.jpg", "*.pdf", "*.txt"),
                 new FileChooser.ExtensionFilter("Tutti i file", "*.*")
         );
 
@@ -108,28 +112,54 @@ public class AddIssueController {
                 "To Do"
         );
 
-        try {
-            Issue createdIssue = issueService.createIssue(request);
+        new Thread(() -> {
+            try {
+                // 1. Crea Issue
+                Issue createdIssue = issueService.createIssue(request);
 
-            if (selectedFile != null) {
-                try {
+                // 2. Upload Allegato
+                if (selectedFile != null) {
                     attachmentService.uploadAttachment(selectedFile, createdIssue.getId());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    showAlert(Alert.AlertType.WARNING, "Upload Fallito",
-                            "Issue creata (ID: " + createdIssue.getId() + "), ma allegato fallito: " + e.getMessage());
-                    MainApp.setRoot("home");
-                    return;
                 }
+
+                Platform.runLater(() -> {
+                    showSuccessNotification("Issue Creata!", "Segnalazione #" + createdIssue.getId() + " salvata.");
+                    clearForm();
+                });
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                Platform.runLater(() -> showAlert(Alert.AlertType.ERROR, "Errore", "Impossibile salvare: " + e.getMessage()));
             }
+        }).start();
+    }
 
-            showAlert(Alert.AlertType.INFORMATION, "Successo", "Segnalazione creata correttamente!");
-            MainApp.setRoot("home");
+    private void showSuccessNotification(String title, String text) {
+        FontIcon icon = new FontIcon("fas-check-circle");
+        icon.setIconColor(Color.web("#2ecc71"));
+        icon.setIconSize(48);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Errore Critico", "Impossibile creare la segnalazione: " + e.getMessage());
-        }
+        Notifications.create()
+                .title(title)
+                .text(text)
+                .owner(btnSave)
+                .hideAfter(Duration.seconds(4))
+                .position(Pos.BOTTOM_RIGHT)
+                .graphic(icon)
+                .show();
+    }
+
+    private void clearForm() {
+        titleField.clear();
+        descArea.clear();
+        typeCombo.getSelectionModel().select("Bug");
+        priorityCombo.getSelectionModel().select("Low");
+        selectedFile = null;
+        fileNameLabel.setText("Nessun file selezionato");
+        fileNameLabel.setStyle("-fx-text-fill: #7f8c8d; -fx-font-style: italic;");
+
+        updateCharCountLabel(titleCharCountLabel, 0, 100);
+        updateCharCountLabel(descCharCountLabel, 0, 1000);
     }
 
     @FXML
