@@ -67,7 +67,8 @@ public class RegisterController {
 
             return Response.status(Response.Status.CONFLICT)
                            .entity(Map.of(ERROR_KEY, INPUT_ERR,
-                                          MESSAGE_KEY, "The username is already taken."))
+                                          MESSAGE_KEY, "invalid application state! Not allowed to register" +
+                                           " a user at this time."))
                            .build();
 
         } catch (Exception e) {
