@@ -75,7 +75,6 @@ public class ChangelogController {
             });
 
         } catch (Exception e) {
-            e.printStackTrace();
             Platform.runLater(() ->
                     tableChanges.setPlaceholder(new Label("Errore durante il caricamento dati."))
             );

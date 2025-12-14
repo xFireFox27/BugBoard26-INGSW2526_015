@@ -59,7 +59,7 @@ public class RegisterController {
 
             return Response.status(Response.Status.CONFLICT)
                            .entity(Map.of(ERROR_KEY, INPUT_ERR,
-                                          MESSAGE_KEY, "The email already exists."))
+                                          MESSAGE_KEY, "The email or the username already exists."))
                            .build();
 
         } catch (IllegalStateException e) {

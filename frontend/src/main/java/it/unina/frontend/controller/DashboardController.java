@@ -83,7 +83,7 @@ public class DashboardController {
 
         User user = SessionManager.getInstance().getCurrentUser();
         if (user != null) {
-            welcomeLabel.setText("Benvenuto, " + user.getUsername());
+            welcomeLabel.setText("Benvenuto, " + user.getName());
         }
 
         refreshTable();

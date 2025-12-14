@@ -116,7 +116,12 @@ public class IssueViewController implements Initializable {
 
             Stage stage = new Stage();
             stage.setTitle("Cronologia Issue #" + this.currentIssueId);
+            Stage parentStage = (Stage) btnBack.getScene().getWindow();
+            stage.initOwner(parentStage);
             stage.setScene(new javafx.scene.Scene(root));
+            stage.setMinWidth(800);
+            stage.setMinHeight(600);
+            stage.setResizable(false);
             stage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
             stage.show();
 
