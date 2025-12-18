@@ -16,31 +16,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.layout.Region?>
 
 <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unina.frontend.controller.IssueViewController">
     <content>
         <VBox alignment="TOP_CENTER" spacing="0" style="-fx-background-color: #ecf0f1;">
-
-            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: white; -fx-padding: 15 30; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
-                <effect>
-                    <DropShadow color="#0000001a" height="5.0" radius="2.0" width="0.0" />
-                </effect>
-                <children>
-                    <Button fx:id="btnBack" contentDisplay="LEFT" style="-fx-background-color: transparent; -fx-text-fill: #7f8c8d; -fx-cursor: hand; -fx-font-weight: bold; -fx-font-size: 14px;" text="Torna alla Dashboard">
-                        <graphic>
-                            <FontIcon iconColor="#7f8c8d" iconLiteral="fas-arrow-left" iconSize="14" />
-                        </graphic>
-                    </Button>
-
-                    <javafx.scene.layout.Pane HBox.hgrow="ALWAYS" />
-
-                    <Button onAction="#handleOpenChangelog" style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-cursor: hand; -fx-font-weight: bold; -fx-background-radius: 4; -fx-padding: 8 15;" text="Cronologia Modifiche">
-                        <graphic>
-                            <FontIcon iconColor="WHITE" iconLiteral="fas-history" />
-                        </graphic>
-                    </Button>
-                </children>
-            </HBox>
 
             <VBox maxWidth="1000.0" spacing="20.0">
                 <padding>
@@ -50,9 +30,17 @@
                 <children>
                     <HBox alignment="CENTER_LEFT" spacing="15.0">
                         <children>
-                            <Label fx:id="lblTitle" style="-fx-font-weight: bold; -fx-font-size: 28px;" text="Issue #23: Caricamento Dati..." textFill="#2c3e50" wrapText="true" HBox.hgrow="ALWAYS" />
+                            <Label fx:id="lblTitle" style="-fx-font-weight: bold; -fx-font-size: 28px;" text="Issue #23: Caricamento Dati..." textFill="#2c3e50" wrapText="true" maxWidth="500.0" />
 
                             <Label fx:id="lblStatus" style="-fx-background-color: #f0ad4e; -fx-background-radius: 4; -fx-padding: 5 12; -fx-font-weight: bold; -fx-font-size: 14px;" text="Stato" textFill="WHITE" />
+
+                            <Region HBox.hgrow="ALWAYS" />
+
+                            <Button contentDisplay="RIGHT" onAction="#handleOpenChangelog" style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-cursor: hand; -fx-font-weight: bold; -fx-background-radius: 4; -fx-padding: 8 15;" text="Cronologia Modifiche">
+                                <graphic>
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-history" />
+                                </graphic>
+                            </Button>
                         </children>
                     </HBox>
 

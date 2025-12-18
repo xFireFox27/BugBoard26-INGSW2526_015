@@ -26,9 +26,7 @@ public class AddIssueController {
     @FXML private ComboBox<String> typeCombo;
     @FXML private ComboBox<String> priorityCombo;
     @FXML private Label fileNameLabel;
-
     @FXML private Button btnSave;
-
     @FXML private Label titleCharCountLabel;
     @FXML private Label descCharCountLabel;
 
@@ -128,7 +126,6 @@ public class AddIssueController {
                 });
 
             } catch (Exception e) {
-                e.printStackTrace();
                 Platform.runLater(() -> showAlert(Alert.AlertType.ERROR, "Errore", "Impossibile salvare: " + e.getMessage()));
             }
         }).start();

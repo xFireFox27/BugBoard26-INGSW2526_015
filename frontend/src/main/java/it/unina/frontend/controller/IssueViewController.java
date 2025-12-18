@@ -2,10 +2,13 @@ package it.unina.frontend.controller;
 
 import it.unina.frontend.model.*;
 import it.unina.frontend.util.SessionManager;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import it.unina.frontend.MainApp;
 import it.unina.frontend.exception.AttachmentServiceException;
 import it.unina.frontend.exception.CommentServiceException;
 import it.unina.frontend.service.AttachmentService;
@@ -19,7 +22,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.scene.paint.Color;
 import java.io.IOException;
 import java.net.URL;
 import java.net.http.HttpClient;
@@ -31,7 +33,6 @@ import java.util.ResourceBundle;
 public class IssueViewController implements Initializable {
 
     // --- Riferimenti all'FXML ---
-    @FXML private Button btnBack;
     @FXML private Label lblTitle;
     @FXML private Label lblStatus;
     @FXML private Label lblPriority;
@@ -62,9 +63,6 @@ public class IssueViewController implements Initializable {
         // Inizializzazione Service
         this.commentService = new CommentService(sharedClient, mapper);
         this.attachmentService = new AttachmentService(mapper);
-
-        // Listener
-        btnBack.setOnAction(event -> handleBackAction());
 
         User user = SessionManager.getInstance().getCurrentUser();
 
@@ -104,8 +102,8 @@ public class IssueViewController implements Initializable {
     @FXML
     public void handleOpenChangelog() {
         try {
-            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/it/unina/frontend/view/Changelog.fxml"));
-            javafx.scene.Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unina/frontend/view/Changelog.fxml"));
+            Parent root = loader.load();
 
             ChangelogController controller = loader.getController();
             HttpClient sharedClient = HttpClient.newHttpClient();
@@ -116,13 +114,13 @@ public class IssueViewController implements Initializable {
 
             Stage stage = new Stage();
             stage.setTitle("Cronologia Issue #" + this.currentIssueId);
-            Stage parentStage = (Stage) btnBack.getScene().getWindow();
+            Stage parentStage = (Stage) lblTitle.getScene().getWindow();
             stage.initOwner(parentStage);
-            stage.setScene(new javafx.scene.Scene(root));
+            stage.setScene(new Scene(root));
             stage.setMinWidth(800);
             stage.setMinHeight(600);
             stage.setResizable(false);
-            stage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();
 
         } catch (IOException e) {
@@ -312,14 +310,6 @@ public class IssueViewController implements Initializable {
             default:
                 lblPriority.setStyle(baseStyle + "-fx-text-fill: #7f8c8d;");
                 break;
-        }
-    }
-
-    private void handleBackAction() {
-        try {
-            MainApp.setRoot("home");
-        } catch (IOException e) {
-            showAlert("Errore", "Impossibile tornare alla Dashboard.");
         }
     }
 
