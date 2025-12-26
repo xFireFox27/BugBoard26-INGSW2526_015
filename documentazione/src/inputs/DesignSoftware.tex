@@ -2,3 +2,186 @@
 In questo capitolo viene approfondita la progettazione del sistema software realizzato.
 L'obiettivo è documentare le scelte implementative che hanno guidato la traduzione dei requisiti e dell'architettura
 in un software pienamente funzionante.
+
+\subsection{Schema per la persistenza dei dati}
+Il sistema utilizza un database relazionale (PostgreSQL) per la persistenza dei dati. Di seguito viene riportato lo schema logico delle tabelle definite.
+
+\lstset{
+    language=SQL,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{black},
+    commentstyle=\color{gray},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    breaklines=true,
+    captionpos=b
+}
+
+\subsubsection{Tabella User}
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Definizione della tabella User}]
+CREATE TABLE User (
+    username VARCHAR(100) PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    surname VARCHAR(100) NOT NULL,
+    role VARCHAR(100) NOT NULL,
+    created_on TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT ck_email CHECK (email LIKE '_%@_%._%'),
+    CONSTRAINT ck_role CHECK (role IN ('Normal', 'Admin', 
+        'External'))
+);
+\end{lstlisting}
+\end{minipage}
+
+\subsubsection{Tabella Issue}
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Definizione della tabella Issue}]
+CREATE TABLE Issue (
+    issue_id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    status VARCHAR(100) DEFAULT 'To Do' NOT NULL,
+    created_on TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(100),
+    
+    CONSTRAINT ck_type CHECK (type IN ('Question', 'Documentation', 
+        'Bug', 'Feature')),
+    CONSTRAINT ck_status CHECK (status IN ('To Do', 'In Progress', 
+        'Done', 'Archived')),
+    CONSTRAINT fk_created_by FOREIGN KEY (created_by) 
+        REFERENCES User(username)
+);
+\end{lstlisting}
+\end{minipage}
+
+\subsubsection{Tabella Comment}
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Definizione della tabella Comment}]
+CREATE TABLE Comment (
+    comment_id SERIAL PRIMARY KEY,
+    text VARCHAR(100) NOT NULL,
+    created_on TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    related_to INTEGER,
+    written_by VARCHAR(100),
+
+    CONSTRAINT fk_comment_issue FOREIGN KEY (related_to) 
+        REFERENCES Issue(issue_id) ON DELETE CASCADE,
+    CONSTRAINT fk_comment_user FOREIGN KEY (written_by) 
+        REFERENCES User(username)
+);
+\end{lstlisting}
+\end{minipage}
+
+\subsubsection{Tabella Change}
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Definizione della tabella Change}]
+CREATE TABLE Change (
+    change_id SERIAL PRIMARY KEY,
+    action VARCHAR(100) NOT NULL,
+    details VARCHAR(1000),
+    made_on TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(100),
+    related_to INTEGER,
+
+    CONSTRAINT fk_related_to FOREIGN KEY (related_to) 
+        REFERENCES Issue(issue_id) ON DELETE CASCADE,
+    CONSTRAINT fk_created_by FOREIGN KEY (created_by) 
+        REFERENCES User(username)
+);
+\end{lstlisting}
+\end{minipage}
+
+\subsubsection{Tabella Attachment}
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[caption={Definizione della tabella Attachment}]
+CREATE TABLE Attachment (
+    attachment_id SERIAL PRIMARY KEY,
+    file_name VARCHAR(100) NOT NULL,
+    file_url VARCHAR(100) NOT NULL,
+    uploaded_on TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    uploaded_by VARCHAR(100),
+    related_to INTEGER,
+
+    CONSTRAINT fk_related_to FOREIGN KEY (related_to) 
+        REFERENCES Issue(issue_id) ON DELETE CASCADE,
+    CONSTRAINT fk_uploaded_by FOREIGN KEY (uploaded_by) 
+        REFERENCES User(username)
+);
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Diagramma delle classi}
+In questa sezione viene presentato il diagramma delle classi di design relative al modello di dominio del sistema.
+Il diagramma illustra le entità principali individuate durante l'analisi e la loro struttura interna (attributi e metodi principali), 
+nonché le relazioni che intercorrono tra di esse. Le relazioni evidenziano come ogni elemento sia riconducibile a un utente creatore e, 
+nel caso di commenti, allegati e modifiche, alla specifica segnalazione di riferimento.
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{src/images/class_diagram.png}
+    \caption{Diagramma delle classi del modello di dominio}
+    \label{fig:class_diagram}
+\end{figure}
+
+\subsection{Scelte di software design}
+In questa sezione vengono illustrate le principali decisioni progettuali che hanno guidato lo sviluppo del codice sorgente.
+L'approccio adottato mira a garantire la qualità del software in termini di modularità, manutenibilità ed estensibilità.
+La progettazione delle classi e delle loro interazioni è stata realizzata seguendo i paradigmi della programmazione orientata agli oggetti, 
+con una forte enfasi sulla separazione delle responsabilità e sul disaccoppiamento dei componenti.
+Di seguito vengono approfonditi i pattern specifici e i principi che costituiscono le fondamenta logiche dell'applicazione.
+
+\subsubsection{Design Pattern adottati}
+Durante lo sviluppo sono stati applicati diversi design pattern per risolvere problemi ricorrenti:
+
+\begin{itemize}
+    \item \textbf{Singleton Pattern}:
+    Utilizzato per le classi di servizio, i DAO e la gestione della connessione al database. 
+    Questo garantisce che esista una sola istanza di questi componenti stateless in memoria, ottimizzando l'uso delle risorse.
+    
+    \item \textbf{DAO Pattern}:
+    Separa la logica di accesso ai dati dalla logica di business, permettendo di modificare l'implementazione della persistenza senza impattare sui livelli superiori.
+    
+    \item \textbf{DTO Pattern}:
+    Utilizzato per trasferire dati tra il client e il server, evitando di esporre direttamente le entità del database e permettendo di aggregare o 
+    filtrare i dati inviati in risposta.
+\end{itemize}
+
+\subsubsection{Adesione ai principi SOLID}
+Il design del software è stato guidato dai principi SOLID per garantire modularità e manutenibilità:
+
+\begin{itemize}
+    \item \textbf{Single Responsibility Principle (SRP)}:
+    Ogni classe ha una responsabilità ben definita. Ad esempio, i \texttt{Controller} gestiscono solo le richieste HTTP, 
+    i \texttt{Service} contengono la logica di business e i \texttt{DAO} si occupano esclusivamente dell'accesso ai dati. 
+    Anche le classi di utilità come \texttt{DatabaseConnection} hanno un unico scopo (gestire la connessione).
+    
+    \item \textbf{Open/Closed Principle (OCP)}:
+    Il sistema è aperto all'estensione ma chiuso alla modifica. L'uso di interfacce per i DAO permette di aggiungere nuove implementazioni di persistenza 
+    (es. un database diverso o un mock per i test) senza modificare il codice che le utilizza nei Service.
+    
+    \item \textbf{Liskov Substitution Principle (LSP)}:
+    Le implementazioni dei DAO rispettano i contratti definiti dalle loro interfacce, garantendo che possano essere sostituite senza alterare la correttezza del programma.
+    
+    \item \textbf{Interface Segregation Principle (ISP)}:
+    Le interfacce dei DAO sono granulari e specifiche per entità, evitando di costringere le classi a dipendere da metodi che non utilizzano.
+    
+    \item \textbf{Dependency Inversion Principle (DIP)}:
+    I componenti di alto livello (Service) non dipendono direttamente dalle implementazioni di basso livello (DAO concreti), 
+    ma dalle loro astrazioni (Interfacce). L'uso delle interfacce per i componenti di basso livello disaccoppia la logica di business dall'implementazione 
+    specifica della persistenza.
+\end{itemize}
