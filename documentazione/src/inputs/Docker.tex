@@ -1,0 +1,106 @@
+\section{Dockerfile e file di build automatica}
+In questa sezione vengono presentati il \textbf{Dockerfile} utilizzato per la creazione dell'immagine Docker del server e il 
+processo di build automatica per configurare e distribuire l'applicazione in un ambiente containerizzato.
+
+\subsection{Dockerfile}
+Il file di configurazione per la creazione dell'immagine Docker adotta un approccio \textbf{Multi-Stage Build}. Questa strategia permette di separare l'ambiente di compilazione da quello di esecuzione, ottimizzando le dimensioni finali dell'immagine e migliorando la sicurezza.
+
+Il processo è diviso in due stadi distinti:
+\begin{enumerate}
+    \item \textbf{Stage 1: Build}. La prima fase utilizza l'immagine base \texttt{maven:3.8.5-openjdk-17}. In questo stadio vengono copiati il file \texttt{pom.xml} e il codice sorgente, ed eseguito il comando \texttt{mvn package} per generare l'artefatto JAR, escludendo i test unitari.
+    \item \textbf{Stage 2: Run}. La seconda fase utilizza un'immagine leggera \texttt{eclipse-temurin:17-jre}. Viene copiato solamente l'artefatto compilato dallo stage precedente e configurato l'entrypoint per avviare l'applicazione sulla porta 8080.
+\end{enumerate}
+
+Di seguito è riportato il codice completo del \texttt{Dockerfile} utilizzato:
+
+\begin{lstlisting}[language=Dockerfile, caption={Dockerfile per la build del backend}]
+# Stage 1: Build
+FROM maven:3.8.5-openjdk-17 AS build
+WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src ./src
+RUN mvn package -DskipTests
+
+# Stage 2: Run
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+
+COPY --from=build /app/target/backend-1.0-SNAPSHOT.jar app.jar
+
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
+\end{lstlisting}
+
+\subsection{Orchestrazione con Docker Compose}
+Per facilitare la gestione dei container e la configurazione dell'ambiente, viene utilizzato lo strumento \textbf{Docker Compose}. 
+Di seguito è mostrata la configurazione completa del file \texttt{docker-compose.yml}:
+\\\\\\
+\begin{lstlisting}[language=yaml, caption={Configurazione docker-compose.yml}]
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: bugboard-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_URL=${DB_URL}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    container_name: bugboard-db
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: bugboard-pgadmin
+    restart: always
+    environment:
+      # Credenziali per accedere all'interfaccia web di pgAdmin
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: Admin1926
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+
+volumes:
+  db-data:
+\end{lstlisting}
+
+
+\subsection{Descrizione dei Servizi Docker Compose}
+Il file \texttt{docker-compose.yml} configura l'architettura dell'applicazione definendo tre servizi principali che collaborano tra loro:
+
+\begin{itemize}
+    \item \textbf{db}: Utilizza l'immagine ufficiale \texttt{postgres:13} per fornire un database relazionale robusto. È configurato con credenziali specifiche (utente, password, nome database) tramite variabili d'ambiente e utilizza un volume Docker (\texttt{db-data}) per garantire che i dati non vadano persi al riavvio dei container.
+    \\ \textit{(Questo servizio gestisce la persistenza dei dati)}
+
+    \item \textbf{backend}: Definisce il servizio per l'applicazione principale, costruito in tempo reale utilizzando il \texttt{Dockerfile} presente nella directory corrente. Il servizio espone la porta \texttt{8080} per le richieste API e include tutte le configurazioni necessarie per la connessione al database, la sicurezza (JWT) e i servizi cloud (AWS). La direttiva \texttt{depends\_on} assicura che questo container si avvii solo dopo il database.
+    \\ \textit{(Questo servizio gestisce la logica di business dell'applicazione)}
+
+    \item \textbf{pgadmin}: Utilizza l'immagine \texttt{dpage/pgadmin4} per fornire un'interfaccia grafica web per la gestione del database PostgreSQL. Esposto sulla porta \texttt{5050}, permette agli amministratori di interrogare e visualizzare i dati in modo visuale senza dover accedere alla riga di comando.
+    \\ \textit{(Questo servizio fornisce gli strumenti di amministrazione e monitoraggio del database)}
+\end{itemize}
+
+Questo approccio semplifica notevolmente la gestione dell'infrastruttura, consentendo un deployment replicabile e scalabile dell'intera applicazione con un singolo comando.

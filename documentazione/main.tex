@@ -19,6 +19,53 @@
 \usepackage{tcolorbox}
 \usepackage{array}
 
+% Colori personalizzati per il codice
+\definecolor{dockerblue}{rgb}{0.1, 0.3, 0.6}
+\definecolor{dockergreen}{rgb}{0, 0.6, 0}
+\definecolor{dockergray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{dockerpurple}{rgb}{0.58, 0, 0.82}
+
+% Definizione del linguaggio Dockerfile
+\lstdefinelanguage{Dockerfile}{
+  keywords={FROM, RUN, CMD, LABEL, MAINTAINER, EXPOSE, ENV, ADD, COPY, ENTRYPOINT, VOLUME, USER, WORKDIR, ARG, ONBUILD, STOPSIGNAL, HEALTHCHECK, SHELL},
+  keywordstyle=\color{dockerblue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{\#},
+  commentstyle=\color{dockergray}\ttfamily,
+  stringstyle=\color{dockerpurple}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+% Definizione del linguaggio YAML (per docker-compose)
+\lstdefinelanguage{yaml}{
+  keywords={true,false,null,y,n},
+  keywordstyle=\color{darkgray}\bfseries,
+  basicstyle=\ttfamily\footnotesize,
+  sensitive=false,
+  comment=[l]{\#},
+  commentstyle=\color{dockergray}\ttfamily,
+  stringstyle=\color{dockerpurple}\ttfamily,
+  moredelim=[l][\color{orange}]{\&},
+  moredelim=[l][\color{magenta}]{*},
+  moredelim=**[il][\color{dockergreen}]{:}, % Colora le chiavi in verde scuro
+  morestring=[b]',
+  morestring=[b]"
+}
+
+% Stile generale per i listing
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    captionpos=b,
+    showstringspaces=false
+}
+
+
 \newcommand{\sref}[1]{\nobreak\textsuperscript{\hyperref[#1]{\ref{#1}}}}
 
 \definecolor{niceblue}{RGB}{30,144,255}
@@ -95,6 +142,8 @@
   \input{src/inputs/Personas.tex}
   \newpage
   \input{src/inputs/DesignSistema.tex}
+  \newpage
+  \input{src/inputs/Docker.tex}
   \newpage
   \input{src/inputs/DesignSoftware.tex}
 \end{document}

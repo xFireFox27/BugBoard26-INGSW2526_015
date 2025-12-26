@@ -1,1 +1,61 @@
 \section{Design del sistema}
+In questo capitolo viene approfondita la progettazione del sistema realizzato.
+L'obiettivo è documentare le scelte progettuali che hanno guidato la traduzione dei requisiti
+in un sistema pienamente funzionante.
+
+\subsection{Architettura del sistema}
+Il software sviluppato adotta una architettura \textbf{client-server}. Tale decisione è stata presa per
+diversi motivi:
+\begin{itemize}
+    \item \textbf{Scalabilità}: L'architettura client-server consente di scalare facilmente il sistema, aggiungendo risorse al server
+    senza dover modificare i client.
+    \item \textbf{Manutenibilità}: Centralizzando la logica di business sul server, è più semplice effettuare aggiornamenti e manutenzioni.
+    \item \textbf{Sicurezza}: La gestione centralizzata dei dati sul server permette di implementare misure di sicurezza più efficaci.
+    \item \textbf{Accessibilità}: I client possono accedere al server da diverse piattaforme e dispositivi, migliorando la fruibilità del sistema.
+\end{itemize}
+I componenti principali dell'architettura sono il \textbf{client} che mette a disposizione una semplice interfaccia per gli utenti
+del sistema, e il \textbf{server} che gestisce la logica di business, l'accesso ai dati e le comunicazioni con i client. Il database
+viene utilizzato per la persistenza dei dati.
+
+\subsubsection{Client}
+Il Client è stato sviluppato usando \textbf{Java}, sfruttando il framework \textbf{JavaFX} per la realizzazione dell'interfaccia grafica.
+È stato scelto Java per la sua portabilità e per la vasta disponibilità di librerie che facilitano lo sviluppo di applicazioni desktop.
+JavaFX è stato selezionato per la sua capacità di creare interfacce utente moderne e reattive, oltre alla sua integrazione nativa con Java.
+Abbiamo scelto di adottare un'architettura Model-View-Controller (MVC) per il client, che separa la logica di presentazione dalla logica di business,
+migliorando la manutenibilità e la testabilità del codice. La scelta ricade su questo design in quanto
+il suo utilizzo presenta vantaggi in diversi aspetti: 
+\begin{itemize}
+    \item \textbf{Separazione delle responsabilità}: Ogni componente (Model, View, Controller) ha una responsabilità chiara e distinta, 
+    facilitando la gestione del codice.
+    \item \textbf{Facilità di manutenzione}: Le modifiche alla logica di business o all'interfaccia utente possono essere effettuate in modo indipendente,
+    riducendo il rischio di introdurre errori.
+    \item \textbf{Testabilità}: La separazione delle componenti consente di testare ogni parte del sistema in modo isolato, migliorando la qualità del software.
+\end{itemize}
+
+\subsubsection{Server}
+Il server è stato sviluppato utilizzando \textbf{Java} e gestito tramite \textbf{Maven} per la build e la gestione delle dipendenze. L'architettura backend si basa sulle specifiche 
+\textbf{Jakarta EE}, in particolare utilizzando \textbf{Jakarta RESTful Web Services (JAX-RS)} per la creazione delle API REST.
+Questa struttura a più livelli consente di isolare le diverse responsabilità, migliorando la manutenibilità e la scalabilità del sistema.
+Il server comunica con un database \textbf{PostgreSQL} per la persistenza dei dati, utilizzando \textbf{JDBC} per l'interazione con il database.
+\\
+
+\textbf{Architettura backend} \\
+Il server adotta un'architettura a più livelli, suddividendo le responsabilità in vari strati:
+\begin{itemize}
+    \item \textbf{Controller}: Gestisce le richieste HTTP in arrivo dai client, instradandole ai servizi appropriati.
+    \item \textbf{Service}: Contiene la logica di business del sistema, elaborando i dati e coordinando le operazioni tra i vari componenti.
+    \item \textbf{Data Access Object (DAO)}: Si occupa dell'accesso ai dati, interagendo con il database per eseguire operazioni di lettura e scrittura.
+    \item \textbf{Database Connection}: Gestisce la connessione al database, garantendo l'efficienza e la sicurezza delle operazioni di accesso ai dati.
+\end{itemize}
+
+\newpage
+\subsection{Scelte tecnologiche adottate}
+In questa sezione vengono descritte le principali tecnologie e librerie utilizzate nello sviluppo del sistema,
+insieme alle motivazioni che hanno portato alla loro selezione.
+\subsubsection{Servizi Cloud usati:}
+\begin{itemize}
+    \item \textbf{Amazon EC2}: \textbf{Amazon Elastic Compute Cloud (EC2)} è un servizio di cloud computing che fornisce capacità di calcolo scalabile nel cloud gestito da Amazon Web Services (AWS).
+    Consente di eseguire applicazioni su un'infrastruttura cloud sicura e affidabile, offrendo flessibilità nella gestione delle risorse di calcolo. Abbiamo scelto EC2 per la sua scalabilità, affidabilità e integrazione con altri servizi AWS.
+    \item \textbf{Amazon S3}: \textbf{Amazon Simple Storage Service (S3)} è un servizio di storage di oggetti scalabile e durevole offerto da Amazon Web Services (AWS).
+    Consente di archiviare e recuperare qualsiasi quantità di dati in qualsiasi momento, offrendo alta disponibilità e sicurezza. Abbiamo scelto S3 per garantire un'archiviazione sicura e scalabile dei file caricati dagli utenti e per la sua integrazione con altri servizi AWS.
+\end{itemize}
