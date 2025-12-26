@@ -37,13 +37,13 @@ public class LoginController {
             passwordTextField.setManaged(true);
             passwordField.setVisible(false);
             passwordField.setManaged(false);
-            passwordIcon.setIconLiteral("fas-eye-slash"); // Cambia icona
+            passwordIcon.setIconLiteral("fas-eye-slash");
         } else {
             passwordTextField.setVisible(false);
             passwordTextField.setManaged(false);
             passwordField.setVisible(true);
             passwordField.setManaged(true);
-            passwordIcon.setIconLiteral("fas-eye"); // Ripristina icona
+            passwordIcon.setIconLiteral("fas-eye");
         }
     }
 

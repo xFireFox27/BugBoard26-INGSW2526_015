@@ -64,7 +64,6 @@
                       style="-fx-background-color: #f1f2f6; -fx-background-radius: 30; -fx-padding: 10 15;">
                     <FontIcon iconLiteral="fas-lock" iconColor="#bdc3c7" iconSize="16"/>
 
-                    <!-- StackPane per sovrapporre PasswordField e TextField -->
                     <StackPane HBox.hgrow="ALWAYS">
                         <PasswordField fx:id="passwordField" promptText="••••••••"
                                        style="-fx-background-color: transparent; -fx-text-fill: #2c3e50; -fx-prompt-text-fill: #95a5a6;"
@@ -84,7 +83,6 @@
                         </TextField>
                     </StackPane>
 
-                    <!-- Bottone occhio -->
                     <Button onAction="#togglePasswordVisibility" style="-fx-background-color: transparent; -fx-cursor: hand;">
                         <graphic>
                             <FontIcon fx:id="passwordIcon" iconLiteral="fas-eye" iconColor="#bdc3c7" iconSize="16"/>
