@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.io.IOException;
 
@@ -15,9 +16,36 @@ public class LoginController {
 
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
+    @FXML private TextField passwordTextField;
+    @FXML private FontIcon passwordIcon;
     @FXML private Label errorLabel;
 
     private final AuthService authService = new AuthService();
+    private boolean isPasswordVisible = false;
+
+    @FXML
+    public void initialize() {
+        passwordTextField.textProperty().bindBidirectional(passwordField.textProperty());
+    }
+
+    @FXML
+    protected void togglePasswordVisibility() {
+        isPasswordVisible = !isPasswordVisible;
+
+        if (isPasswordVisible) {
+            passwordTextField.setVisible(true);
+            passwordTextField.setManaged(true);
+            passwordField.setVisible(false);
+            passwordField.setManaged(false);
+            passwordIcon.setIconLiteral("fas-eye-slash"); // Cambia icona
+        } else {
+            passwordTextField.setVisible(false);
+            passwordTextField.setManaged(false);
+            passwordField.setVisible(true);
+            passwordField.setManaged(true);
+            passwordIcon.setIconLiteral("fas-eye"); // Ripristina icona
+        }
+    }
 
     @FXML
     protected void onLoginButtonClick() {
@@ -30,16 +58,10 @@ public class LoginController {
         }
 
         try {
-            // 1. Chiamata al backend
             LoginResponse response = authService.login(email, password);
-
-            // 2. Salva la sessione (Token e Utente)
             SessionManager.getInstance().setToken(response.getToken());
             SessionManager.getInstance().setCurrentUser(response.getUser());
-
             System.out.println("Login effettuato! Ruolo: " + response.getUser().getRole());
-
-            // 3. CAMBIO SCENA: Vai alla Home
             MainApp.setRoot("home");
 
         } catch (IOException e) {

@@ -63,13 +63,33 @@
                 <HBox alignment="CENTER_LEFT" spacing="10"
                       style="-fx-background-color: #f1f2f6; -fx-background-radius: 30; -fx-padding: 10 15;">
                     <FontIcon iconLiteral="fas-lock" iconColor="#bdc3c7" iconSize="16"/>
-                    <PasswordField fx:id="passwordField" promptText="••••••••"
+
+                    <!-- StackPane per sovrapporre PasswordField e TextField -->
+                    <StackPane HBox.hgrow="ALWAYS">
+                        <PasswordField fx:id="passwordField" promptText="••••••••"
+                                       style="-fx-background-color: transparent; -fx-text-fill: #2c3e50; -fx-prompt-text-fill: #95a5a6;"
+                                       maxWidth="Infinity">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </PasswordField>
+
+                        <TextField fx:id="passwordTextField" promptText="••••••••"
+                                   visible="false" managed="false"
                                    style="-fx-background-color: transparent; -fx-text-fill: #2c3e50; -fx-prompt-text-fill: #95a5a6;"
-                                   HBox.hgrow="ALWAYS">
-                        <font>
-                            <Font size="14.0"/>
-                        </font>
-                    </PasswordField>
+                                   maxWidth="Infinity">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </TextField>
+                    </StackPane>
+
+                    <!-- Bottone occhio -->
+                    <Button onAction="#togglePasswordVisibility" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <FontIcon fx:id="passwordIcon" iconLiteral="fas-eye" iconColor="#bdc3c7" iconSize="16"/>
+                        </graphic>
+                    </Button>
                 </HBox>
             </VBox>
         </VBox>
