@@ -115,10 +115,8 @@ public class AddIssueController {
 
         new Thread(() -> {
             try {
-                // 1. Crea Issue
                 Issue createdIssue = issueService.createIssue(request);
 
-                // 2. Upload Allegato
                 if (selectedFile != null) {
                     attachmentService.uploadAttachment(selectedFile, createdIssue.getId());
                 }

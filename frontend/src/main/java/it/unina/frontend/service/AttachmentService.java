@@ -101,14 +101,12 @@ public class AttachmentService {
         String crlf = "\r\n";
         String twoHyphens = "--";
 
-        // 1. ID (related-to)
         output.write((twoHyphens + boundary + crlf).getBytes(StandardCharsets.UTF_8));
         output.write(("Content-Disposition: form-data; name=\"related-to\"" + crlf).getBytes(StandardCharsets.UTF_8));
         output.write(crlf.getBytes(StandardCharsets.UTF_8));
         output.write(String.valueOf(issueId).getBytes(StandardCharsets.UTF_8));
         output.write(crlf.getBytes(StandardCharsets.UTF_8));
 
-        // 2. FILE
         String fileName = file.getName();
         String mimeType = Files.probeContentType(file.toPath());
         if (mimeType == null) mimeType = "application/octet-stream";
@@ -121,7 +119,6 @@ public class AttachmentService {
         output.write(Files.readAllBytes(file.toPath()));
         output.write(crlf.getBytes(StandardCharsets.UTF_8));
 
-        // 3. CHIUSURA
         output.write((twoHyphens + boundary + twoHyphens + crlf).getBytes(StandardCharsets.UTF_8));
 
         return output.toByteArray();

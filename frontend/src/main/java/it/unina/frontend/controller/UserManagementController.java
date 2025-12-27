@@ -38,7 +38,7 @@ public class UserManagementController implements Initializable {
 
     private UserService userService;
 
-    private static final String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+    private static final String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,}$";
     private static final String PASSWORD_LENGTH_ERROR = "La password deve contenere almeno 8 caratteri";
     private static final String ERROR_BOX_STYLE = "-fx-text-fill: #95a5a6; -fx-font-style: italic; -fx-font-size: 11px;";
     private static final String VALID_BOX_STYLE = "-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 11px;";
@@ -60,13 +60,11 @@ public class UserManagementController implements Initializable {
         final int MAX_CHARS = 100;
         final int MIN_CHARS = 8;
 
-        // Limite "Silenzioso" (tronca senza dire nulla)
         addSilentLimit(txtUsername, MAX_CHARS);
         addSilentLimit(txtEmail, MAX_CHARS);
         addSilentLimit(txtName, MAX_CHARS);
         addSilentLimit(txtSurname, MAX_CHARS);
 
-        // --- VALIDAZIONE VISIVA EMAIL ---
         lblEmailStatus.setText("");
         txtEmail.textProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal == null || newVal.isEmpty()) {
@@ -85,7 +83,6 @@ public class UserManagementController implements Initializable {
             }
         });
 
-        // --- VALIDAZIONE VISIVA PASSWORD ---
         lblPasswordStatus.setText(PASSWORD_LENGTH_ERROR);
         lblPasswordStatus.setStyle(ERROR_BOX_STYLE);
 
@@ -122,7 +119,6 @@ public class UserManagementController implements Initializable {
         String password = pwdPassword.getText();
         String role = cmbRole.getValue();
 
-        // Controlli bloccanti (mostrano Alert perché sono errori dell'utente)
         if (username.isEmpty() || email.isEmpty() || name.isEmpty() || surname.isEmpty() || password.isEmpty() || role == null) {
             showAlert(Alert.AlertType.WARNING, "Dati mancanti",
                                             "Compila tutti i campi obbligatori.");
@@ -150,7 +146,6 @@ public class UserManagementController implements Initializable {
             try {
                 User newUser = userService.createUser(userRequest);
 
-                // --- SUCCESSO: Mostra NOTIFICA TOAST (Verde, Basso a Destra) ---
                 showSuccessNotification("Utente creato!",
                                         "L'utente " + newUser.getUsername() + " è stato aggiunto.");
 
