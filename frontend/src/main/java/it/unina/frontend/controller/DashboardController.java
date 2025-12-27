@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DashboardController {
 
@@ -31,6 +33,8 @@ public class DashboardController {
 
     private final IssueService issueService = new IssueService();
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    private static final String ALL = "Tutti";
+    private static final Logger logger = LoggerFactory.getLogger(DashboardController.class);
 
     private HomeController mainController;
 
@@ -72,12 +76,12 @@ public class DashboardController {
         });
 
 
-        filterStatus.getItems().addAll("Tutti", "To Do", "In Progress", "Done", "Archived");
-        filterStatus.getSelectionModel().select("Tutti");
-        filterType.getItems().addAll("Tutti", "Bug", "Feature", "Documentation", "Question");
-        filterType.getSelectionModel().select("Tutti");
-        filterPriority.getItems().addAll("Tutti", "Low", "Medium", "High");
-        filterPriority.getSelectionModel().select("Tutti");
+        filterStatus.getItems().addAll(ALL, "To Do", "In Progress", "Done", "Archived");
+        filterStatus.getSelectionModel().select(ALL);
+        filterType.getItems().addAll(ALL, "Bug", "Feature", "Documentation", "Question");
+        filterType.getSelectionModel().select(ALL);
+        filterPriority.getItems().addAll(ALL, "Low", "Medium", "High");
+        filterPriority.getSelectionModel().select(ALL);
         sortCombo.getItems().addAll("id", "title", "creation time", "priority");
         sortCombo.getSelectionModel().select("id");
 
@@ -100,15 +104,15 @@ public class DashboardController {
             List<Issue> issues = issueService.getFilteredIssues(status, type, priority, sortBy);
             issuesTable.setItems(FXCollections.observableArrayList(issues));
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 
     @FXML
     public void resetFilters() {
-        filterStatus.getSelectionModel().select("Tutti");
-        filterType.getSelectionModel().select("Tutti");
-        filterPriority.getSelectionModel().select("Tutti");
+        filterStatus.getSelectionModel().select(ALL);
+        filterType.getSelectionModel().select(ALL);
+        filterPriority.getSelectionModel().select(ALL);
         sortCombo.getSelectionModel().select("id");
         refreshTable();
     }

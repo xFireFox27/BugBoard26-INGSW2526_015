@@ -9,14 +9,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-
 import java.io.IOException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class HomeController {
 
     @FXML private BorderPane mainLayout;
     @FXML private Button btnAddIssue;
     @FXML private Button btnManageUsers;
+
+    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @FXML
     public void initialize() {
@@ -46,7 +49,7 @@ public class HomeController {
 
             mainLayout.setCenter(view);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 
@@ -60,7 +63,7 @@ public class HomeController {
 
             mainLayout.setCenter(view);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 
@@ -80,7 +83,7 @@ public class HomeController {
             Parent view = loader.load();
             mainLayout.setCenter(view);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 

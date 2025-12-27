@@ -16,6 +16,7 @@ module it.unina.frontend {
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.datatype.jsr310;
     requires static lombok;
+    requires org.slf4j;
 
     // --- EXPORTS & OPENS ---
 

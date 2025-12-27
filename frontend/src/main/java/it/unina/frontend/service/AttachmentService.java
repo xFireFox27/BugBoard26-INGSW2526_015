@@ -19,6 +19,8 @@ import java.nio.file.Files;
 import java.time.Duration;
 import java.util.List;
 import java.util.ArrayList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AttachmentService {
 
@@ -28,6 +30,8 @@ public class AttachmentService {
     private final HttpClient client;
     ObjectMapper mapper;
 
+    private static final Logger logger = LoggerFactory.getLogger(AttachmentService.class);
+
     public AttachmentService(ObjectMapper mapper) {
         this.client = HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_1_1)
@@ -36,7 +40,7 @@ public class AttachmentService {
         this.mapper = mapper;
     }
 
-    public void uploadAttachment(File file, Integer issueId) throws Exception {
+    public void uploadAttachment(File file, Integer issueId) throws IOException, InterruptedException {
         String token = SessionManager.getInstance().getToken();
         String boundary = "MioBoundary" + System.currentTimeMillis();
 
@@ -52,8 +56,8 @@ public class AttachmentService {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         if (response.statusCode() != 200) {
-            System.err.println("Errore Backend Cloud: " + response.body());
-            throw new RuntimeException("Errore Upload (" + response.statusCode() + "): " + response.body());
+            logger.error("Errore Backend Cloud");
+            throw new IOException("Errore Upload (" + response.statusCode() + "): " + response.body());
         }
     }
 
@@ -83,6 +87,7 @@ public class AttachmentService {
             }
         }
         catch(InterruptedException e){
+            Thread.currentThread().interrupt();
             throw new AttachmentServiceException("Operation interrupted while searching for the attachment", e);
         }
         catch(Exception e){

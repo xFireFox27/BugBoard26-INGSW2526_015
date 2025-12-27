@@ -47,6 +47,7 @@ public class CommentService {
             }
         }
         catch(InterruptedException e){
+            Thread.currentThread().interrupt();
             throw new CommentServiceException("Operation interrupted" + e);
         }
         catch(Exception e){
@@ -79,6 +80,7 @@ public class CommentService {
             }
         }
         catch(InterruptedException e){
+            Thread.currentThread().interrupt();
             throw new CommentServiceException("Operation interrupted", e);
         }
         catch(Exception e){

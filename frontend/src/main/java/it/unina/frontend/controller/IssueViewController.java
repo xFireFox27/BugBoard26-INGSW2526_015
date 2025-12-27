@@ -29,6 +29,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class IssueViewController implements Initializable {
 
@@ -45,13 +47,12 @@ public class IssueViewController implements Initializable {
     @FXML private VBox vboxCommentsList;
     @FXML private Button btnAddComment;
 
-    // --- Servizi ---
     private CommentService commentService;
     private AttachmentService attachmentService;
-
-    // Stato corrente
     private int currentIssueId;
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    private static final String ADD_COMMENT_ERROR = "Impossibile aggiungere il commento: ";
+    private static final Logger logger = LoggerFactory.getLogger(IssueViewController.class);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -125,6 +126,7 @@ public class IssueViewController implements Initializable {
 
         } catch (IOException e) {
             showAlert("Errore", "Impossibile aprire la cronologia: " + e.getMessage());
+            logger.error("Impossibile aprire la cronologia: {}", e.getMessage());
         }
     }
 
@@ -194,9 +196,11 @@ public class IssueViewController implements Initializable {
                     commentService.createComment(requestBody);
                     Platform.runLater(() -> loadComments(this.currentIssueId));
                 } catch (CommentServiceException e) {
-                    Platform.runLater(() -> showAlert("Errore", "Impossibile aggiungere il commento: " + e.getMessage()));
+                    Platform.runLater(() -> showAlert("Errore", ADD_COMMENT_ERROR + e.getMessage()));
+                    logger.error(ADD_COMMENT_ERROR + e.getMessage(), e);
                 } catch (Exception e) {
                     Platform.runLater(() -> showAlert("Errore Imprevisto", "Errore: " + e.getMessage()));
+                    logger.error(ADD_COMMENT_ERROR + e.getMessage(), e);
                 }
             }).start();
         });
@@ -225,7 +229,8 @@ public class IssueViewController implements Initializable {
             Platform.runLater(() -> {
                 showNoAttachmentPlaceholder();
                 if (isConnectionError) {
-                    System.err.println("Impossibile contattare il server per gli allegati.");
+                    logger.error("Impossibile contattare il server per gli allegati.");
+
                 }
             });
         }
@@ -249,6 +254,7 @@ public class IssueViewController implements Initializable {
                 err.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
                 vboxCommentsList.getChildren().add(err);
             });
+            logger.error("Impossibile caricare i commenti: {}", e.getMessage(), e);
         }
     }
 

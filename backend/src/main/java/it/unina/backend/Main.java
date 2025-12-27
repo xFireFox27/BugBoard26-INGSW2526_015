@@ -3,9 +3,10 @@ package it.unina.backend;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-
-import java.io.IOException;
 import java.net.URI;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Main class.
@@ -14,6 +15,8 @@ public class Main {
     // Base URI the Grizzly HTTP server will listen on
     // Nota: 0.0.0.0 è fondamentale per Docker affinché sia raggiungibile dall'esterno
     public static final String BASE_URI = "http://0.0.0.0:8080/api/";
+
+    public static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -33,12 +36,11 @@ public class Main {
     /**
      * Main method.
      * @param args
-     * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         final HttpServer server = startServer();
-        System.out.println(String.format("Jersey app started with endpoints available at "
-                + "%s%nRunning in Docker mode (Ctrl-C to stop)...", BASE_URI));
+        logger.info("Jersey app started with endpoints available at "
+                + "%s%nRunning in Docker mode (Ctrl-C to stop)... " + BASE_URI);
 
         try {
             // MODIFICA FONDAMENTALE PER DOCKER:
@@ -46,7 +48,8 @@ public class Main {
             // che in Docker non esiste e causerebbe lo spegnimento immediato.
             Thread.currentThread().join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            logger.error(e.getMessage(), e);
         }
 
         server.stop();

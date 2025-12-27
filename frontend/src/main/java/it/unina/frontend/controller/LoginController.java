@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.kordamp.ikonli.javafx.FontIcon;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -22,6 +24,7 @@ public class LoginController {
 
     private final AuthService authService = new AuthService();
     private boolean isPasswordVisible = false;
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @FXML
     public void initialize() {
@@ -61,15 +64,15 @@ public class LoginController {
             LoginResponse response = authService.login(email, password);
             SessionManager.getInstance().setToken(response.getToken());
             SessionManager.getInstance().setCurrentUser(response.getUser());
-            System.out.println("Login effettuato! Ruolo: " + response.getUser().getRole());
+            logger.info("Login effettuato! Ruolo: {}", response.getUser().getRole());
             MainApp.setRoot("home");
 
         } catch (IOException e) {
-            e.printStackTrace();
             errorLabel.setText("Errore caricamento Home: " + e.getMessage());
+            logger.error(e.getMessage(), e);
         } catch (Exception e) {
-            e.printStackTrace();
             errorLabel.setText("Credenziali non valide o errore server.");
+            logger.error(e.getMessage(), e);
         }
     }
 }

@@ -15,6 +15,8 @@ import javafx.util.Duration;
 import java.net.http.HttpClient;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ChangelogController {
 
@@ -27,6 +29,7 @@ public class ChangelogController {
 
     private ChangeService changeService;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    private static final Logger logger = LoggerFactory.getLogger(ChangelogController.class);
 
     public void initialize(int issueId, HttpClient client, ObjectMapper mapper) {
         this.changeService = new ChangeService(client, mapper);
@@ -78,6 +81,7 @@ public class ChangelogController {
             Platform.runLater(() ->
                     tableChanges.setPlaceholder(new Label("Errore durante il caricamento dati."))
             );
+            logger.error(e.getMessage(), e);
         }
     }
 

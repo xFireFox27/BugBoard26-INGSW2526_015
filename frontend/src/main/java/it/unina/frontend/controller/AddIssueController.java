@@ -15,6 +15,8 @@ import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 import org.kordamp.ikonli.javafx.FontIcon;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,6 +35,7 @@ public class AddIssueController {
     private final IssueService issueService = new IssueService();
     private final AttachmentService attachmentService = new AttachmentService(new ObjectMapper());
     private File selectedFile;
+    private static final Logger logger = LoggerFactory.getLogger(AddIssueController.class);
 
     @FXML
     public void initialize() {
@@ -127,6 +130,7 @@ public class AddIssueController {
 
             } catch (Exception e) {
                 Platform.runLater(() -> showAlert(Alert.AlertType.ERROR, "Errore", "Impossibile salvare: " + e.getMessage()));
+                logger.error(e.getMessage(), e);
             }
         }).start();
     }

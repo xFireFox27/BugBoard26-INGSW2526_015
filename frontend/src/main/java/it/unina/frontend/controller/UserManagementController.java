@@ -15,7 +15,8 @@ import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.kordamp.ikonli.javafx.FontIcon;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.net.http.HttpClient;
@@ -38,6 +39,11 @@ public class UserManagementController implements Initializable {
     private UserService userService;
 
     private static final String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+    private static final String PASSWORD_LENGTH_ERROR = "La password deve contenere almeno 8 caratteri";
+    private static final String ERROR_BOX_STYLE = "-fx-text-fill: #95a5a6; -fx-font-style: italic; -fx-font-size: 11px;";
+    private static final String VALID_BOX_STYLE = "-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 11px;";
+
+    private static final Logger logger = LoggerFactory.getLogger(UserManagementController.class);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +58,7 @@ public class UserManagementController implements Initializable {
 
     private void setupValidation() {
         final int MAX_CHARS = 100;
+        final int MIN_CHARS = 8;
 
         // Limite "Silenzioso" (tronca senza dire nulla)
         addSilentLimit(txtUsername, MAX_CHARS);
@@ -62,40 +69,38 @@ public class UserManagementController implements Initializable {
         // --- VALIDAZIONE VISIVA EMAIL ---
         lblEmailStatus.setText("");
         txtEmail.textProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal == null) return;
-            // Tronca se troppo lungo
-            if (newVal.length() > MAX_CHARS) txtEmail.setText(newVal.substring(0, MAX_CHARS));
-
-            if (newVal.isEmpty()) {
+            if (newVal == null || newVal.isEmpty()) {
                 lblEmailStatus.setText("");
                 return;
             }
+            // Tronca se troppo lungo
+            if (newVal.length() > MAX_CHARS) txtEmail.setText(newVal.substring(0, MAX_CHARS));
+
             if (newVal.matches(EMAIL_REGEX)) {
-                lblEmailStatus.setText("Email valida ✓");
-                lblEmailStatus.setStyle("-fx-text-fill: #27ae60; -fx-font-size: 11px; -fx-font-weight: bold;");
+                lblEmailStatus.setText("Vaild Email ✓");
+                lblEmailStatus.setStyle(VALID_BOX_STYLE);
             } else {
-                lblEmailStatus.setText("Formato non valido");
-                lblEmailStatus.setStyle("-fx-text-fill: #e74c3c; -fx-font-size: 11px;");
+                lblEmailStatus.setText("Email format is incorrect");
+                lblEmailStatus.setStyle(ERROR_BOX_STYLE);
             }
         });
 
         // --- VALIDAZIONE VISIVA PASSWORD ---
-        lblPasswordStatus.setText("La password deve avere almeno 8 caratteri");
-        lblPasswordStatus.setStyle("-fx-text-fill: #95a5a6; -fx-font-style: italic; -fx-font-size: 11px;");
+        lblPasswordStatus.setText(PASSWORD_LENGTH_ERROR);
+        lblPasswordStatus.setStyle(ERROR_BOX_STYLE);
 
         pwdPassword.textProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal == null) return;
             if (newVal.length() > MAX_CHARS) pwdPassword.setText(newVal.substring(0, MAX_CHARS));
 
-            if (newVal.isEmpty()) {
-                lblPasswordStatus.setText("La password deve avere almeno 8 caratteri");
-                lblPasswordStatus.setStyle("-fx-text-fill: #95a5a6; -fx-font-style: italic; -fx-font-size: 11px;");
-            } else if (newVal.length() < 8) {
-                lblPasswordStatus.setText("Password troppo corta (" + newVal.length() + "/8)");
-                lblPasswordStatus.setStyle("-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 11px;");
+            if (newVal == null || newVal.isEmpty()) {
+                lblPasswordStatus.setText(PASSWORD_LENGTH_ERROR);
+                lblPasswordStatus.setStyle(ERROR_BOX_STYLE);
+            } else if (newVal.length() < MIN_CHARS) {
+                lblPasswordStatus.setText(PASSWORD_LENGTH_ERROR + "(Password length: " + newVal.length() + "/8)");
+                lblPasswordStatus.setStyle(ERROR_BOX_STYLE);
             } else {
-                lblPasswordStatus.setText("Password valida ✓");
-                lblPasswordStatus.setStyle("-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 11px;");
+                lblPasswordStatus.setText("Valid Password ✓");
+                lblPasswordStatus.setStyle(VALID_BOX_STYLE);
             }
         });
     }
@@ -119,15 +124,17 @@ public class UserManagementController implements Initializable {
 
         // Controlli bloccanti (mostrano Alert perché sono errori dell'utente)
         if (username.isEmpty() || email.isEmpty() || name.isEmpty() || surname.isEmpty() || password.isEmpty() || role == null) {
-            showAlert(Alert.AlertType.WARNING, "Dati mancanti", "Compila tutti i campi obbligatori.");
+            showAlert(Alert.AlertType.WARNING, "Dati mancanti",
+                                            "Compila tutti i campi obbligatori.");
             return;
         }
         if (!email.matches(EMAIL_REGEX)) {
-            showAlert(Alert.AlertType.WARNING, "Email Invalida", "Correggi il formato dell'email.");
+            showAlert(Alert.AlertType.WARNING, "Email non valida",
+                                            "Correggi il formato dell'email.");
             return;
         }
         if (password.length() < 8) {
-            showAlert(Alert.AlertType.WARNING, "Password Debole", "La password deve essere di almeno 8 caratteri.");
+            showAlert(Alert.AlertType.WARNING, "Password debole", PASSWORD_LENGTH_ERROR);
             return;
         }
 
@@ -144,12 +151,13 @@ public class UserManagementController implements Initializable {
                 User newUser = userService.createUser(userRequest);
 
                 // --- SUCCESSO: Mostra NOTIFICA TOAST (Verde, Basso a Destra) ---
-                showSuccessNotification("Utente creato!", "L'utente " + newUser.getUsername() + " è stato aggiunto.");
+                showSuccessNotification("Utente creato!",
+                                        "L'utente " + newUser.getUsername() + " è stato aggiunto.");
 
                 clearForm();
             } catch (UserServiceException e) {
-                e.printStackTrace();
-                showAlert(Alert.AlertType.ERROR, "Errore", "Impossibile creare utente: " + e.getMessage());
+                showAlert(Alert.AlertType.ERROR, "Errore","Impossibile creare utente: " + e.getMessage());
+                logger.error("Impossiblie creare utente: {}", e.getMessage(), e);
             }
         });
     }
@@ -183,7 +191,7 @@ public class UserManagementController implements Initializable {
         try {
             MainApp.setRoot("home");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 
@@ -195,7 +203,7 @@ public class UserManagementController implements Initializable {
         pwdPassword.clear();
         cmbRole.getSelectionModel().clearSelection();
         lblEmailStatus.setText("");
-        lblPasswordStatus.setText("La password deve avere almeno 8 caratteri");
-        lblPasswordStatus.setStyle("-fx-text-fill: #95a5a6; -fx-font-style: italic; -fx-font-size: 11px;");
+        lblPasswordStatus.setText(PASSWORD_LENGTH_ERROR);
+        lblPasswordStatus.setStyle(ERROR_BOX_STYLE);
     }
 }
