@@ -58,4 +58,8 @@ public class Comment {
     public void setUser(User user) {
         this.writtenBy = user;
     }
+
+    public User getUser() {
+        return writtenBy;
+    }
 }
