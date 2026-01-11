@@ -10,14 +10,18 @@ import java.sql.SQLException;
 public class CommentService {
 
     private static CommentService instance;
-    private final CommentDao commentDao = CommentDao.getInstance();
-    private final UserDao userDao = UserDao.getInstance();
 
-    private CommentService() {}
+    private final CommentDao commentDao;
+    private final UserDao userDao;
 
-    public static CommentService getInstance() {
+    protected CommentService(CommentDao commentDao, UserDao userDao) {
+        this.commentDao = commentDao;
+        this.userDao = userDao;
+    }
+
+    public static synchronized CommentService getInstance() {
         if (instance == null) {
-            instance = new CommentService();
+            instance = new CommentService(CommentDao.getInstance(), UserDao.getInstance());
         }
         return instance;
     }
@@ -38,10 +42,12 @@ public class CommentService {
         }
 
         validateCommentInput(dto.getText(), dto.getIssueId());
+
         User user = userDao.findUserByUsername(username);
         if(user == null) {
             throw new IllegalArgumentException("User not found" + username);
         }
+
         Comment comment = new Comment(dto);
         comment.setUser(user);
         commentDao.insertComment(comment);
