@@ -1,0 +1,84 @@
+\section{Test-Plan per la funzionalità di aggiunta commento}
+In questa sezione viene descritto il piano di test adottato. Il piano di test include le 
+strategie, le metodologie e gli strumenti utilizzati per 
+garantire la qualità del software sviluppato.
+In particolare andremo a descrivere il test plan per la funzionalità di aggiunta di un commento
+nella sezione dei dettagli di una Issue.
+
+\subsection{Strategia di Test}
+La strategia di test adottata per la funzionalità di aggiunta commento prevede l'utilizzo di test 
+automatizzati. I test automatizzati verranno eseguiti utilizzando jUnit per verificare che la funzionalità
+di aggiunta commento funzioni correttamente in diversi scenari. In particolare la strategia utilizzata è di Black-Box 
+testing, questa si basa sul partizionamento in classi di equivalenza, concentrandosi sui requisiti funzionali
+senza considerare l'implementazione interna del codice. Per garantire una copertura soddisfacente, abbiamo utilizzato
+l'approccio di testing R-WECT (Robust-Weak Equivalence Class Testing), che prevede un'analisi approfondita delle classi non valide, 
+e una più superficiale delle classi valide per mantenere un numero gestibile di test case.
+
+\subsection{Strumenti utilizzati}
+Per l'esecuzione dei test automatizzati, utilizziamo jUnit, un framework di testing per Java che consente di scrivere e
+eseguire test in modo semplice ed efficiente. jUnit offre funzionalità avanzate per la gestione dei test, 
+inclusa la possibilità di raggruppare i test in suite e di generare report dettagliati sui risultati dei test.
+Altro strumento utilizzato è Mockito, un framework di mocking per Java che consente di creare oggetti fittizi (mock) per isolare le unità di codice durante i test. 
+Mockito permette di simulare il comportamento di dipendenze esterne, facilitando la scrittura di test unitari più efficaci.
+
+\newpage
+
+\section{Test Case}
+Di seguito sono riportati i test case per la funzione di aggiunta commento (metodo addComment) e la funzione di validazione dei dati
+utente (metodo validateUserData).
+
+\subsection{Test Case per il metodo addComment}
+\subsubsection{Classi d'equivalenza individuate}
+Queste sono le classi di equivalenza individuate per il metodo \texttt{addComment}:
+\begin{itemize}
+    \item \textbf{Oggetto DTO}:
+    \begin{itemize}
+        \item \textbf{CE1 (Valida)}: \texttt{DTO} istanzato.
+        \item \textbf{CE2 (Non Valida)}: \texttt{DTO} nullo (\texttt{null}).
+    \end{itemize}
+    \item \textbf{Campo \texttt{text}}:
+    \begin{itemize}
+        \item \textbf{CE3 (Valida)}: Stringa valida (non vuota).
+        \item \textbf{CE4 (Non Valida)}: \texttt{null}.
+        \item \textbf{CE5 (Non Valida)}: Stringa vuota (\texttt{""}).
+        \item \textbf{CE6 (Non Valida)}: Stringa blank (\texttt{" "}).
+    \end{itemize}
+    \item \textbf{Campo \texttt{issueId}}:
+    \begin{itemize}
+        \item \textbf{CE7 (Valida)}: Intero positivo ($> 0$).
+        \item \textbf{CE8 (Non Valida)}: \texttt{null}.
+        \item \textbf{CE9 (Non Valida)}: Zero ($0$).
+        \item \textbf{CE10 (Non Valida)}: Negativo ($< 0$).
+    \end{itemize}
+    \item \textbf{User (DB/Dao)}:
+    \begin{itemize}
+        \item \textbf{CE11 (Valida)}: Utente esistente (trovato).
+        \item \textbf{CE12 (Non Valida)}: Utente inesistente (non trovato/\texttt{null}).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Test Case per il metodo validateUserData}
+\subsubsection{Classi d'equivalenza individuate}
+Queste sono le classi di equivalenza individuate per il metodo \texttt{validateUserData}:
+\begin{itemize}
+    \item \textbf{Tutti i campi String}:
+    \begin{itemize}
+        \item \textbf{CE1 (Valida)}: Stringa valida (non \texttt{null}, non vuota).
+        \item \textbf{CE2 (Non Valida)}: Valore \texttt{null}.
+        \item \textbf{CE3 (Non Valida)}: Stringa vuota (\texttt{""}).
+        \item \textbf{CE4 (Non Valida)}: Stringa solo spazi (\texttt{" "}).
+    \end{itemize}
+    \item \textbf{Role}:
+    \begin{itemize}
+        \item \textbf{CE5 (Valida)}: Ruolo "Admin".
+        \item \textbf{CE6 (Valida)}: Ruolo "Normal".
+        \item \textbf{CE7 (Valida)}: Ruolo "External".
+        \item \textbf{CE8 (Non Valida)}: Ruolo non riconosciuto.
+        \item \textbf{CE9 (Non Valida)}: Ruolo \texttt{null}.
+    \end{itemize}
+\end{itemize}
+
+\newpage
+  
+
+

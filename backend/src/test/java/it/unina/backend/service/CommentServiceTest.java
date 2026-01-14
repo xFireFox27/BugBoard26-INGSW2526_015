@@ -31,28 +31,26 @@ class CommentServiceTest {
                 "test@example.com", // email
                 username,           // username
                 "hashedPassword",   // passwordHash
-                "Mario",            // name
-                "Rossi",            // surname
+                "Christian",            // name
+                "Ranavolo",            // surname
                 "Normal"            // role (Admin, Normal, o External)
         );
     }
 
-    // --- TC1: WEAK - HAPPY PATH ---
+    // --- TC1: WEAK - CORRECT PATH ---
 
     @Test
     @DisplayName("TC1 (CE1, CE3, CE7, CE11): Flusso Valido - DTO e User corretti -> Salva commento")
     void testAddComment_Success() throws Exception {
         // ARRANGE
-        String username = "mario.rossi";
+        String username = "crisrana";
 
         CommentDto validDto = new CommentDto();
-        validDto.setText("Ciao mondo");
+        validDto.setText("Prova test");
         validDto.setIssueId(10);
 
-        // CREAZIONE CORRETTA DELL'UTENTE
         User mockUser = createValidUser(username);
 
-        // Simuliamo che il DAO restituisca questo utente
         when(userDao.findUserByUsername(username)).thenReturn(mockUser);
 
         // ACT
@@ -61,7 +59,7 @@ class CommentServiceTest {
         // ASSERT
         assertNotNull(result);
         assertEquals(mockUser, result.getUser()); // Verifica che l'utente sia stato associato
-        assertEquals("Ciao mondo", result.getText());
+        assertEquals("Prova test", result.getText());
 
         verify(commentDao, times(1)).insertComment(any(Comment.class));
     }
