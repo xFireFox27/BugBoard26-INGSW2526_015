@@ -1,5 +1,4 @@
 module it.unina.frontend {
-    // ... tutti i tuoi requires ...
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -22,14 +21,10 @@ module it.unina.frontend {
 
     exports it.unina.frontend;
 
-    // Controller: aperto a FXML per gestire l'interfaccia
     opens it.unina.frontend.controller to javafx.fxml;
 
-    // MODEL: Modifica QUESTA RIGA.
-    // Deve essere aperto sia a Jackson (per il JSON) sia a JavaFX Base (per la Tabella)
     opens it.unina.frontend.model to com.fasterxml.jackson.databind, javafx.base;
 
-    // View (opzionale, ma male non fa)
     opens it.unina.frontend.view to javafx.fxml;
     opens it.unina.frontend.util to javafx.fxml;
 
