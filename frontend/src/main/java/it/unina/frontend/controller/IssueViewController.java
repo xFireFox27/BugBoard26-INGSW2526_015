@@ -3,8 +3,13 @@ package it.unina.frontend.controller;
 import it.unina.frontend.model.*;
 import it.unina.frontend.util.SessionManager;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,11 +52,20 @@ public class IssueViewController implements Initializable {
     @FXML private Label lblNoAttachment;
     @FXML private VBox vboxCommentsList;
     @FXML private Button btnAddComment;
+    @FXML private StackPane imageOverlay;
+    @FXML private ImageView fullImageView;
 
     private CommentService commentService;
     private AttachmentService attachmentService;
     private int currentIssueId;
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+    // Variabili per zoom e pan
+    private double currentScale = 1.0;
+    private double translateX = 0;
+    private double translateY = 0;
+    private double dragStartX;
+    private double dragStartY;
 
     private static final String STYLE_BTN_CONFIRM = "-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 15;";
     private static final String STYLE_BTN_CANCEL = "-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 15;";
@@ -65,6 +79,94 @@ public class IssueViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         setupServices();
         checkPermissions();
+        setupImageClickHandler();
+    }
+
+    private void setupImageClickHandler() {
+        // Click sull'immagine piccola per aprire overlay
+        imgAttachment.setOnMouseClicked(event -> {
+            if (imgAttachment.getImage() != null) {
+                showImageOverlay(imgAttachment.getImage());
+            }
+        });imgAttachment.setStyle("-fx-cursor: hand;");
+
+        // Setup overlay
+        imageOverlay.setOnMouseClicked(this::handleOverlayClick);
+        imageOverlay.setOnScroll(this::handleZoom);
+        imageOverlay.setOnMousePressed(this::handleDragStart);
+        imageOverlay.setOnMouseDragged(this::handleDrag);
+        imageOverlay.setOnMouseReleased(e -> imageOverlay.setCursor(Cursor.DEFAULT));
+
+        imageOverlay.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ESCAPE) {
+                hideImageOverlay();
+            }
+        });
+
+        imageOverlay.setFocusTraversable(true);
+    }
+
+    private void handleOverlayClick(MouseEvent e) {
+        if (e.getClickCount() == 2) {
+            resetZoom();
+        } else if (e.getClickCount() == 1) {
+            // Chiudi solo se non si sta trascinando
+            if (Math.abs(translateX) < 5 && Math.abs(translateY) < 5) {
+                hideImageOverlay();
+            }
+        }
+    }
+
+    private void showImageOverlay(Image image) {
+        fullImageView.setImage(image);
+        fullImageView.setFitWidth(800);
+        fullImageView.setFitHeight(600);
+        resetZoom();
+        imageOverlay.setVisible(true);
+        imageOverlay.requestFocus();
+    }
+
+    private void hideImageOverlay() {
+        imageOverlay.setVisible(false);
+        resetZoom();
+    }
+
+    private void resetZoom() {
+        currentScale = 1.0;
+        translateX = 0;
+        translateY = 0;
+        applyTransform();
+    }
+
+    private void handleZoom(ScrollEvent e) {
+        double zoomFactor = e.getDeltaY() > 0 ? 1.1 : 0.9;
+        double newScale = currentScale * zoomFactor;
+
+        if (newScale >= 0.5 && newScale <= 5.0) {
+            currentScale = newScale;
+            applyTransform();
+        }
+        e.consume();
+    }
+
+    private void handleDragStart(MouseEvent e) {
+        dragStartX = e.getSceneX() - translateX;
+        dragStartY = e.getSceneY() - translateY;
+        imageOverlay.setCursor(Cursor.CLOSED_HAND);
+    }
+
+    private void handleDrag(MouseEvent e) {
+        translateX = e.getSceneX() - dragStartX;
+        translateY = e.getSceneY() - dragStartY;
+        applyTransform();
+        e.consume();
+    }
+
+    private void applyTransform() {
+        fullImageView.setScaleX(currentScale);
+        fullImageView.setScaleY(currentScale);
+        fullImageView.setTranslateX(translateX);
+        fullImageView.setTranslateY(translateY);
     }
 
     private void setupServices() {
@@ -80,7 +182,7 @@ public class IssueViewController implements Initializable {
         User user = SessionManager.getInstance().getCurrentUser();
         if (user != null && "External".equalsIgnoreCase(user.getRole())) {
             btnAddComment.setVisible(false);
-            btnAddComment.setManaged(false); // Rimuove anche lo spazio occupato
+            btnAddComment.setManaged(false);
         }
     }
 
@@ -107,7 +209,6 @@ public class IssueViewController implements Initializable {
             loadAttachment(this.currentIssueId);
         }).start();
     }
-
 
     @FXML
     public void handleAddComment() {
@@ -226,7 +327,6 @@ public class IssueViewController implements Initializable {
         return commentBox;
     }
 
-
     private void loadAttachment(int issueId) {
         try {
             List<Attachment> attachments = attachmentService.getAttachmentsByIssue(issueId);
@@ -255,7 +355,6 @@ public class IssueViewController implements Initializable {
         imgAttachment.setVisible(false);
         lblNoAttachment.setVisible(true);
     }
-
 
     @FXML
     public void handleOpenChangelog() {
